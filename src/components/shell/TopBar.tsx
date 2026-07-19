@@ -12,6 +12,7 @@ type SessionUser = {
   name?: string | null;
   username?: string | null;
   image?: string | null;
+  isAdmin?: boolean;
 } | null;
 
 export function TopBar({ user }: { user: SessionUser }) {
@@ -84,6 +85,10 @@ export function TopBar({ user }: { user: SessionUser }) {
                     <MenuLink href="/me" icon="person" label="My Profile" onClick={() => setMenuOpen(false)} />
                     <MenuLink href="/me/teams" icon="group" label="My Teams" onClick={() => setMenuOpen(false)} />
                     <MenuLink href="/organizer" icon="emoji_events" label="Organizer" onClick={() => setMenuOpen(false)} />
+                    <MenuLink href="/marketplace/orders" icon="receipt_long" label="My Orders" onClick={() => setMenuOpen(false)} />
+                    {user.isAdmin && (
+                      <MenuLink href="/admin" icon="admin_panel_settings" label="Admin Panel" onClick={() => setMenuOpen(false)} />
+                    )}
                     <MenuLink href="/settings" icon="settings" label="Settings" onClick={() => setMenuOpen(false)} />
                     <div className="border-t border-outline-variant my-1" />
                     <button

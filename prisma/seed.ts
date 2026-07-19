@@ -17,7 +17,7 @@ async function main() {
   // Demo login account
   await prisma.user.upsert({
     where: { email: "demo@khelabase.com" },
-    update: {},
+    update: { isAdmin: true },
     create: {
       email: "demo@khelabase.com",
       name: "Demo Manager",
@@ -25,6 +25,7 @@ async function main() {
       passwordHash,
       district: "Dhaka",
       isVerified: true,
+      isAdmin: true,
       bio: "Test-driving Khelabase. Football is life. ⚽",
       playerProfile: {
         create: { preferredPosition: "MIDFIELDER", preferredFoot: "RIGHT", jerseyNumber: 10, experienceLevel: "SEMI_PRO" },
@@ -215,7 +216,38 @@ async function main() {
     });
   }
 
-  console.log(`Done. Users: ${await prisma.user.count()}, Teams: ${await prisma.team.count()}, Tournaments: ${await prisma.tournament.count()}`);
+  // Marketplace products
+  if ((await prisma.product.count()) === 0) {
+    const products = [
+      { name: "Bashundhara Kings Home Jersey 2024", category: "JERSEY", price: 1200, brand: "Kings", stock: 25 },
+      { name: "Nike Mercurial Boots", category: "BOOTS", price: 4500, brand: "Nike", stock: 12 },
+      { name: "Adidas Match Football (Size 5)", category: "FOOTBALL", price: 1800, brand: "Adidas", stock: 40 },
+      { name: "Goalkeeper Gloves Pro", category: "GLOVES", price: 950, brand: "Uhlsport", stock: 18 },
+      { name: "Training Cones Set (20 pcs)", category: "TRAINING", price: 600, brand: "Khelabase", stock: 50 },
+      { name: "Shin Guards Lightweight", category: "ACCESSORY", price: 450, brand: "Nike", stock: 30 },
+      { name: "Away Jersey 2024 - Sylhet United", category: "JERSEY", price: 1100, brand: "Sylhet", stock: 20 },
+      { name: "Puma King Boots", category: "BOOTS", price: 5200, brand: "Puma", stock: 8 },
+    ] as const;
+    for (let i = 0; i < products.length; i++) {
+      const pr = products[i];
+      await prisma.product.create({
+        data: {
+          sellerId: users[i % users.length].id,
+          name: pr.name,
+          slug: slug(pr.name),
+          category: pr.category,
+          price: pr.price,
+          brand: pr.brand,
+          stock: pr.stock,
+          images: [],
+          rating: 4 + (i % 10) / 10,
+          description: `${pr.brand} — premium quality ${pr.category.toLowerCase()} for footballers.`,
+        },
+      });
+    }
+  }
+
+  console.log(`Done. Users: ${await prisma.user.count()}, Teams: ${await prisma.team.count()}, Tournaments: ${await prisma.tournament.count()}, Products: ${await prisma.product.count()}`);
   console.log("Login with demo@khelabase.com / password123");
 }
 

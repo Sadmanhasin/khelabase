@@ -11,6 +11,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         name: session.user.name,
         username: session.user.username,
         image: session.user.image,
+        isAdmin: session.user.isAdmin ?? false,
       }
     : null;
 
