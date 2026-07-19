@@ -90,6 +90,51 @@ export async function requestToJoin(teamId: string, path: string) {
   return { ok: true as const };
 }
 
+async function assertCanManage(teamId: string, userId: string) {
+  const actor = await prisma.teamMember.findUnique({
+    where: { teamId_userId: { teamId, userId } },
+  });
+  const managerRoles: TeamRole[] = [TeamRole.OWNER, TeamRole.MANAGER];
+  return !!actor && managerRoles.includes(actor.role);
+}
+
+export async function updateMember(
+  memberId: string,
+  data: { role?: TeamRole; jerseyNumber?: number | null },
+  path: string
+) {
+  const userId = await getCurrentUserId();
+  if (!userId) return { ok: false as const, error: "Login required" };
+  const member = await prisma.teamMember.findUnique({ where: { id: memberId } });
+  if (!member) return { ok: false as const, error: "Not found" };
+  if (!(await assertCanManage(member.teamId, userId))) {
+    return { ok: false as const, error: "Not authorized" };
+  }
+  await prisma.teamMember.update({
+    where: { id: memberId },
+    data: {
+      ...(data.role ? { role: data.role } : {}),
+      ...(data.jerseyNumber !== undefined ? { jerseyNumber: data.jerseyNumber } : {}),
+    },
+  });
+  revalidatePath(path);
+  return { ok: true as const };
+}
+
+export async function removeMember(memberId: string, path: string) {
+  const userId = await getCurrentUserId();
+  if (!userId) return { ok: false as const, error: "Login required" };
+  const member = await prisma.teamMember.findUnique({ where: { id: memberId } });
+  if (!member) return { ok: false as const, error: "Not found" };
+  if (member.role === TeamRole.OWNER) return { ok: false as const, error: "Cannot remove the owner" };
+  if (!(await assertCanManage(member.teamId, userId))) {
+    return { ok: false as const, error: "Not authorized" };
+  }
+  await prisma.teamMember.delete({ where: { id: memberId } });
+  revalidatePath(path);
+  return { ok: true as const };
+}
+
 export async function respondToJoinRequest(memberId: string, approve: boolean, path: string) {
   const userId = await getCurrentUserId();
   if (!userId) return { ok: false as const, error: "Login required" };
