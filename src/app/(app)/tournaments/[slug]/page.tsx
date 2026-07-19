@@ -12,6 +12,7 @@ import {
   RegistrationActions,
   GenerateFixturesButton,
   MatchResultForm,
+  ComputeAwardsButton,
 } from "./TournamentActions";
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ tab?: string }> };
@@ -25,6 +26,7 @@ async function getTournament(slug: string) {
       teams: { include: { team: true }, orderBy: { registeredAt: "asc" } },
       matches: { include: { homeTeam: true, awayTeam: true }, orderBy: [{ round: "asc" }, { kickoff: "asc" }] },
       standings: { include: { team: true } },
+      awards: { include: { player: { include: { user: true } } }, orderBy: { type: "asc" } },
     },
   });
 }
@@ -35,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: t?.name ?? "Tournament" };
 }
 
-const TABS = ["overview", "teams", "fixtures", "standings"];
+const TABS = ["overview", "teams", "fixtures", "standings", "awards"];
 
 export default async function TournamentPage({ params, searchParams }: Props) {
   const { slug } = await params;
@@ -214,30 +216,42 @@ export default async function TournamentPage({ params, searchParams }: Props) {
             </p>
           ) : (
             <div className="space-y-sm">
-              {t.matches.map((m) => (
-                <div key={m.id} className="flex items-center justify-between gap-md p-sm rounded-lg border border-outline-variant">
-                  <div className="flex items-center gap-sm flex-1 justify-end min-w-0">
-                    <span className="font-label-md text-body-md truncate text-right">{m.homeTeam.name}</span>
-                    <Avatar src={m.homeTeam.logo} name={m.homeTeam.name} size={32} />
-                  </div>
-                  <div className="text-center shrink-0">
-                    {m.status === "COMPLETED" ? (
-                      <span className="font-extrabold text-body-lg">{m.homeScore} - {m.awayScore}</span>
-                    ) : (
-                      <Badge tone="neutral">{m.round ?? "TBD"}</Badge>
+              {t.matches.map((m) => {
+                const live = m.status === "LIVE" || m.status === "HALFTIME";
+                return (
+                  <div key={m.id} className="flex items-center justify-between gap-md p-sm rounded-lg border border-outline-variant">
+                    <Link href={`/matches/${m.id}`} className="flex items-center gap-md flex-1 min-w-0 group">
+                      <div className="flex items-center gap-sm flex-1 justify-end min-w-0">
+                        <span className="font-label-md text-body-md truncate text-right group-hover:text-primary">{m.homeTeam.name}</span>
+                        <Avatar src={m.homeTeam.logo} name={m.homeTeam.name} size={32} />
+                      </div>
+                      <div className="text-center shrink-0 w-16">
+                        {live ? (
+                          <span className="font-extrabold text-body-lg text-error flex items-center justify-center gap-1">
+                            {m.homeScore}-{m.awayScore}
+                          </span>
+                        ) : m.status === "COMPLETED" ? (
+                          <span className="font-extrabold text-body-lg">{m.homeScore} - {m.awayScore}</span>
+                        ) : (
+                          <Badge tone="neutral">{m.round ?? "TBD"}</Badge>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-sm flex-1 min-w-0">
+                        <Avatar src={m.awayTeam.logo} name={m.awayTeam.name} size={32} />
+                        <span className="font-label-md text-body-md truncate group-hover:text-primary">{m.awayTeam.name}</span>
+                      </div>
+                    </Link>
+                    {isOrganizer && (
+                      <div className="shrink-0 flex items-center gap-xs">
+                        <MatchResultForm matchId={m.id} home={m.homeScore} away={m.awayScore} path={`${path}?tab=fixtures`} />
+                        <Link href={`/matches/${m.id}/control`} className="p-2 rounded-lg text-primary hover:bg-primary-container/10" title="Live control">
+                          <Icon name="sports" size={20} />
+                        </Link>
+                      </div>
                     )}
                   </div>
-                  <div className="flex items-center gap-sm flex-1 min-w-0">
-                    <Avatar src={m.awayTeam.logo} name={m.awayTeam.name} size={32} />
-                    <span className="font-label-md text-body-md truncate">{m.awayTeam.name}</span>
-                  </div>
-                  {isOrganizer && (
-                    <div className="shrink-0">
-                      <MatchResultForm matchId={m.id} home={m.homeScore} away={m.awayScore} path={`${path}?tab=fixtures`} />
-                    </div>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </section>
@@ -286,6 +300,42 @@ export default async function TournamentPage({ params, searchParams }: Props) {
                 ))}
               </tbody>
             </table>
+          )}
+        </section>
+      )}
+
+      {tab === "awards" && (
+        <section className="bg-white rounded-xl border border-outline-variant p-lg">
+          <div className="flex items-center justify-between mb-md">
+            <h3 className="text-title-lg font-title-lg flex items-center gap-xs">
+              <Icon name="military_tech" className="text-secondary" filled /> Awards
+            </h3>
+            {isOrganizer && <ComputeAwardsButton tournamentId={t.id} path={`${path}?tab=awards`} />}
+          </div>
+          {t.awards.length === 0 ? (
+            <p className="text-body-md text-on-surface-variant">
+              No awards yet.{isOrganizer ? " Log match events, then recompute awards." : " They appear automatically as matches are played."}
+            </p>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+              {t.awards.map((a) => (
+                <div key={a.id} className="rounded-xl border border-outline-variant p-md flex items-center gap-sm bg-surface-container-low">
+                  <div className="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+                    <Icon name="emoji_events" filled />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-label-sm text-on-surface-variant uppercase tracking-wide">{a.title}</p>
+                    {a.player?.user ? (
+                      <Link href={`/players/${a.player.user.username ?? a.player.user.id}`} className="font-title-lg text-body-lg truncate hover:text-primary block">
+                        {a.player.user.name}
+                      </Link>
+                    ) : (
+                      <p className="font-title-lg text-body-lg text-on-surface-variant">TBD</p>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           )}
         </section>
       )}

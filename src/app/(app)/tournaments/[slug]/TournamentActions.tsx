@@ -8,6 +8,7 @@ import {
   generateFixtures,
   recordMatchResult,
 } from "@/lib/actions/tournaments";
+import { computeTournamentAwards } from "@/lib/actions/awards";
 import { Button } from "@/components/ui/Button";
 import { Select, Input } from "@/components/ui/Input";
 import { Icon } from "@/components/ui/Icon";
@@ -95,6 +96,30 @@ export function GenerateFixturesButton({ tournamentId, path }: { tournamentId: s
         }
       >
         <Icon name="auto_awesome" size={18} /> {pending ? "Generating…" : "Generate Fixtures"}
+      </Button>
+      {msg && <span className="text-label-sm text-on-surface-variant">{msg}</span>}
+    </div>
+  );
+}
+
+export function ComputeAwardsButton({ tournamentId, path }: { tournamentId: string; path: string }) {
+  const router = useRouter();
+  const [msg, setMsg] = useState<string | null>(null);
+  const [pending, startTransition] = useTransition();
+  return (
+    <div className="flex items-center gap-sm">
+      <Button
+        variant="premium"
+        disabled={pending}
+        onClick={() =>
+          startTransition(async () => {
+            const res = await computeTournamentAwards(tournamentId, path);
+            setMsg(res.ok ? `Awards updated (${res.count})` : res.error);
+            router.refresh();
+          })
+        }
+      >
+        <Icon name="auto_awesome" size={18} /> {pending ? "Computing…" : "Recompute Awards"}
       </Button>
       {msg && <span className="text-label-sm text-on-surface-variant">{msg}</span>}
     </div>
