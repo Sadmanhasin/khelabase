@@ -29,7 +29,7 @@ export async function computeTournamentAwards(tournamentId: string, path?: strin
   const stats = await prisma.playerMatchStat.groupBy({
     by: ["playerId"],
     where: { matchId: { in: matchIds } },
-    _sum: { goals: true, assists: true, cleanSheets: true, yellowCards: true, redCards: true },
+    _sum: { goals: true, assists: true, yellowCards: true, redCards: true },
     _count: { _all: true },
   });
   const cleanSheetCounts = await prisma.playerMatchStat.groupBy({

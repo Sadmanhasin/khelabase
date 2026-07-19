@@ -182,6 +182,23 @@ enum AwardType {
   CUSTOM
 }
 
+enum ProductCategory {
+  JERSEY
+  BOOTS
+  FOOTBALL
+  GLOVES
+  TRAINING
+  ACCESSORY
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  SHIPPED
+  DELIVERED
+  CANCELLED
+}
+
 // ─────────────────────────────────────────────────────────────
 // Auth.js (NextAuth) tables
 // ─────────────────────────────────────────────────────────────
@@ -257,6 +274,9 @@ model User {
   following       Follow[]         @relation("Follower")
   notifications   Notification[]   @relation("Recipient")
   actorNotifications Notification[] @relation("Actor")
+  products        Product[]
+  cartItems       CartItem[]
+  orders          Order[]
 
   @@index([district])
 }
@@ -620,4 +640,66 @@ model Notification {
   createdAt DateTime         @default(now())
 
   @@index([userId, isRead])
+}
+
+// ─────────────────────────────────────────────────────────────
+// Marketplace
+// ─────────────────────────────────────────────────────────────
+
+model Product {
+  id          String          @id @default(cuid())
+  sellerId    String
+  seller      User            @relation(fields: [sellerId], references: [id], onDelete: Cascade)
+  name        String
+  slug        String          @unique
+  description String?
+  category    ProductCategory
+  price       Int             // in BDT (whole taka)
+  stock       Int             @default(0)
+  images      String[]
+  brand       String?
+  rating      Float?          @default(0)
+  isActive    Boolean         @default(true)
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  @@index([category])
+}
+
+model CartItem {
+  id        String  @id @default(cuid())
+  userId    String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  quantity  Int     @default(1)
+
+  @@unique([userId, productId])
+}
+
+model Order {
+  id        String      @id @default(cuid())
+  buyerId   String
+  buyer     User        @relation(fields: [buyerId], references: [id], onDelete: Cascade)
+  total     Int
+  status    OrderStatus @default(PENDING)
+  address   String?
+  phone     String?
+  createdAt DateTime    @default(now())
+
+  items OrderItem[]
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String?
+  product   Product? @relation(fields: [productId], references: [id])
+  name      String
+  price     Int
+  quantity  Int     @default(1)
 }
