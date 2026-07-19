@@ -88,13 +88,13 @@ export async function updateCartQuantity(itemId: string, quantity: number) {
 
 export async function checkout(formData: FormData) {
   const userId = await getCurrentUserId();
-  if (!userId) return { ok: false as const, error: "Login required" };
+  if (!userId) redirect("/login?callbackUrl=/marketplace/cart");
 
   const items = await prisma.cartItem.findMany({
     where: { userId },
     include: { product: true },
   });
-  if (items.length === 0) return { ok: false as const, error: "Your cart is empty" };
+  if (items.length === 0) redirect("/marketplace/cart");
 
   const total = items.reduce((sum, i) => sum + i.product.price * i.quantity, 0);
 
