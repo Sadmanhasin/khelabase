@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import { LoginForm } from "./LoginForm";
 
@@ -14,7 +15,9 @@ export default function LoginPage() {
         </p>
       </div>
       <div className="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg premium-card-shadow">
-        <LoginForm />
+        <Suspense fallback={<div className="h-64" />}>
+          <LoginForm />
+        </Suspense>
       </div>
       <p className="text-center mt-lg text-body-md text-on-surface-variant">
         New to Khelabase?{" "}
