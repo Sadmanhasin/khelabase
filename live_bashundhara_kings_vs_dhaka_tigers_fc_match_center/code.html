@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Live Match Center | Kings vs Tigers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#bdcaba",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-tertiary-fixed": "#00174b",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "inverse-primary": "#62df7d",
+                        "secondary": "#795900",
+                        "primary-container": "#00873a",
+                        "on-primary-container": "#f7fff2",
+                        "outline": "#6e7b6c",
+                        "secondary-container": "#ffc329",
+                        "background": "#f8f9ff",
+                        "primary-fixed": "#7ffc97",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e6eeff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "surface-dim": "#d0dbed",
+                        "on-background": "#121c2a",
+                        "surface-variant": "#d9e3f6",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#dee9fc",
+                        "on-primary-fixed": "#002109",
+                        "error": "#ba1a1a",
+                        "primary": "#006b2c",
+                        "inverse-surface": "#27313f",
+                        "primary-fixed-dim": "#62df7d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#3e4a3d",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#005320",
+                        "on-surface": "#121c2a",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "surface-tint": "#006e2d",
+                        "on-tertiary-container": "#fefcff",
+                        "on-secondary-container": "#6f5100",
+                        "tertiary-container": "#316bf3",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#0051d5",
+                        "secondary-fixed": "#ffdf9f",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "md": "16px",
+                        "base": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Manrope"],
+                        "title-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .premium-card-border {
+            border-top: 2px solid #FBBF24;
+        }
+        .pitch-gradient {
+            background: linear-gradient(180deg, #006b2c 0%, #004d20 100%);
+        }
+        .pulse-live {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bdcaba;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-lg text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-surface dark:bg-on-background shadow-sm z-50">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md font-extrabold text-primary dark:text-primary-fixed">Khelabase</div>
+<div class="hidden md:flex gap-xl items-center">
+<a class="text-on-surface-variant font-body-lg text-body-lg hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-on-surface-variant font-body-lg text-body-lg hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-lg text-body-lg" href="#">Tournaments</a>
+<a class="text-on-surface-variant font-body-lg text-body-lg hover:text-primary transition-colors" href="#">Teams</a>
+<a class="text-on-surface-variant font-body-lg text-body-lg hover:text-primary transition-colors" href="#">Marketplace</a>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl text-body-md focus:ring-2 focus:ring-primary" placeholder="Search match..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all duration-200 active:opacity-80">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all duration-200 active:opacity-80">person</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter mt-lg">
+<!-- Scoreboard Header -->
+<header class="relative overflow-hidden rounded-xl bg-on-background text-white p-xl mb-xl">
+
+<div class="relative z-10 flex flex-col items-center">
+<div class="flex items-center gap-xs mb-md">
+<span class="flex items-center gap-1 px-3 py-1 bg-error rounded-full text-label-sm uppercase tracking-wider">
+<span class="w-2 h-2 bg-white rounded-full pulse-live"></span>
+                        Live
+                    </span>
+<span class="text-label-md text-surface-variant uppercase tracking-widest">64' Minutes Played</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 items-center w-full max-w-4xl gap-lg">
+<!-- Home Team -->
+<div class="flex flex-col md:flex-row items-center gap-md md:justify-end">
+<div class="text-center md:text-right">
+<h1 class="font-headline-lg text-headline-lg text-white">Bashundhara Kings</h1>
+<p class="text-body-md text-surface-variant">Home Team</p>
+</div>
+<div class="w-20 h-20 bg-white p-2 rounded-2xl shadow-lg">
+<img class="w-full h-full object-contain" data-alt="A professional football crest for Bashundhara Kings featuring a majestic golden lion and deep emerald green background. The style is modern minimalist with clean vector lines and gold accents, consistent with a premium sports brand identity in a high-key lighting setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCBOYZIcQyhMkFhligHu9J66HZOz2D95jpak9rd7GAwwagRlptIuTcVrw2XTDn3pxUN-2NJCVl5ngelhRwQeOvvVnhp7-Z1YY3TDhl9JvsE6lD8wjar-PU7-SC0uatoZi1pb8Jtyug3VzvZWKkuTjWx-oUmN1iNiRv5Rav4lPHYIM7XSjzLFarRxDtbNQhB6f3sM3T6_aEbe5xCeI24idTYbsX_bt8cEZhjwnqWf7-4D5bFHGM0pNxarShg1fUyopeqH4ev1JbxWs"/>
+</div>
+</div>
+<!-- Score -->
+<div class="flex flex-col items-center">
+<div class="font-display-lg text-[64px] font-extrabold flex items-center gap-xl leading-none">
+<span>2</span>
+<span class="text-primary-fixed">-</span>
+<span>1</span>
+</div>
+<div class="mt-4 px-4 py-1.5 bg-white/10 rounded-lg backdrop-blur-md border border-white/20">
+<span class="text-body-md text-white font-semibold">Bashundhara Kings Arena</span>
+</div>
+</div>
+<!-- Away Team -->
+<div class="flex flex-col-reverse md:flex-row items-center gap-md md:justify-start">
+<div class="w-20 h-20 bg-white p-2 rounded-2xl shadow-lg">
+<img class="w-full h-full object-contain" data-alt="A professional football crest for Dhaka Tigers FC featuring a fierce orange tiger mascot and black primary colors. The design is a modern sports emblem with bold strokes and a premium matte finish, set against a clean white background for high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuzF06dngDf1kNgkG0CsMpzby5jashwnlpRKuOh048e090RoX2W-RyN5X6Spl3OkqnAHwUdPu3TeB7XYo131aIy2E4_YEdWNFt8yGU_x8rg4WOpn-d8h3KegTQQ9PvwGt8i_Tt7wKdC8Id_3K875hNH3hbQEwhkJ8gIMcAN3fbMAgtFDWNP-JSDjyI7UO8x4cbZ0cztKtgMlARv4FI_VkJa2NL50aVbx9z4ldEeZ8pjflqUUOaqVqvaJ2VqOPqiRergwzY3kExunE"/>
+</div>
+<div class="text-center md:text-left">
+<h1 class="font-headline-lg text-headline-lg text-white">Dhaka Tigers FC</h1>
+<p class="text-body-md text-surface-variant">Away Team</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main Content Area -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Tab Navigation -->
+<div class="bg-surface-container-low rounded-xl p-1 flex overflow-x-auto gap-1">
+<button class="px-6 py-2.5 rounded-lg bg-surface-container-lowest text-primary font-bold shadow-sm flex-1 whitespace-nowrap transition-all">Timeline</button>
+<button class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high flex-1 whitespace-nowrap transition-all">Lineups</button>
+<button class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high flex-1 whitespace-nowrap transition-all">Stats</button>
+<button class="px-6 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high flex-1 whitespace-nowrap transition-all">Commentary</button>
+</div>
+<!-- Match Center Layout (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Live Timeline -->
+<div class="bg-white rounded-xl border border-outline-variant p-lg flex flex-col">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-title-lg text-title-lg">Match Timeline</h3>
+<span class="text-label-md text-on-surface-variant bg-surface-container-low px-2 py-1 rounded">Last update: 62'</span>
+</div>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-high">
+<div class="flex items-start gap-md relative">
+<div class="w-6 h-6 rounded-full bg-primary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-white" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-body-lg">58' Goal!</span>
+<span class="text-label-md text-primary font-bold">KINGS</span>
+</div>
+<p class="text-body-md text-on-surface-variant">J. Doe converts from the penalty spot with a powerful low strike.</p>
+</div>
+</div>
+<div class="flex items-start gap-md relative">
+<div class="w-6 h-6 rounded-full bg-secondary-container flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">rectangle</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-body-lg">42' Yellow Card</span>
+<span class="text-label-md text-secondary font-bold">TIGERS</span>
+</div>
+<p class="text-body-md text-on-surface-variant">R. Ahmed cautioned for a tactical foul on the counter-attack.</p>
+</div>
+</div>
+<div class="flex items-start gap-md relative">
+<div class="w-6 h-6 rounded-full bg-surface-container-highest flex items-center justify-center z-10">
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">sync</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-baseline">
+<span class="font-bold text-body-lg">31' Substitution</span>
+<span class="text-label-md text-on-surface-variant font-bold">KINGS</span>
+</div>
+<p class="text-body-md text-on-surface-variant">H. Khan enters for L. Messi (Injury precaution).</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Match Stats -->
+<div class="bg-white rounded-xl border border-outline-variant p-lg">
+<h3 class="font-title-lg text-title-lg mb-lg">Live Statistics</h3>
+<div class="space-y-xl">
+<!-- Possession -->
+<div class="space-y-sm">
+<div class="flex justify-between text-label-md uppercase tracking-wide">
+<span>Possession</span>
+</div>
+<div class="flex h-3 w-full rounded-full bg-surface-container overflow-hidden">
+<div class="bg-primary h-full transition-all duration-500" style="width: 58%"></div>
+<div class="bg-secondary-container h-full transition-all duration-500" style="width: 42%"></div>
+</div>
+<div class="flex justify-between font-bold text-title-lg">
+<span class="text-primary">58%</span>
+<span class="text-secondary">42%</span>
+</div>
+</div>
+<!-- Shots -->
+<div class="space-y-sm">
+<div class="flex justify-between text-label-md uppercase tracking-wide">
+<span>Shots (Target)</span>
+</div>
+<div class="flex items-center gap-lg">
+<span class="text-headline-md text-primary w-12 text-center">12(5)</span>
+<div class="flex-1 space-y-1">
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="bg-primary h-full" style="width: 75%"></div>
+</div>
+<div class="h-1 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full" style="width: 45%"></div>
+</div>
+</div>
+<span class="text-headline-md text-secondary w-12 text-center">8(3)</span>
+</div>
+</div>
+<!-- Corners -->
+<div class="space-y-sm">
+<div class="flex justify-between text-label-md uppercase tracking-wide">
+<span>Corners</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-low p-4 rounded-xl">
+<div class="text-center">
+<div class="text-display-lg text-primary leading-none mb-1">6</div>
+<div class="text-label-sm text-on-surface-variant">KINGS</div>
+</div>
+<div class="w-px h-12 bg-outline-variant"></div>
+<div class="text-center">
+<div class="text-display-lg text-secondary leading-none mb-1">4</div>
+<div class="text-label-sm text-on-surface-variant">TIGERS</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Visual Formations -->
+<div class="bg-white rounded-xl border border-outline-variant p-lg">
+<div class="flex items-center justify-between mb-lg">
+<h3 class="font-title-lg text-title-lg">Tactical Lineups</h3>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/10 text-primary text-label-sm rounded-full">4-3-3 ATT</span>
+<span class="px-3 py-1 bg-secondary/10 text-secondary text-label-sm rounded-full">4-4-2 DEF</span>
+</div>
+</div>
+<div class="pitch-gradient aspect-[16/10] rounded-xl relative overflow-hidden border-4 border-white/10 p-gutter">
+<!-- Pitch Lines -->
+<div class="absolute inset-gutter border-2 border-white/20 pointer-events-none rounded-lg"></div>
+<div class="absolute top-1/2 left-gutter right-gutter h-px bg-white/20 -translate-y-1/2"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-white/20 rounded-full"></div>
+<!-- Kings (Top - Attacking Down) -->
+<div class="relative h-full flex flex-col justify-between items-center py-sm">
+<!-- Forwards -->
+<div class="flex gap-xl justify-center w-full">
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">10</div>
+<span class="text-label-sm text-white mt-1 bg-black/40 px-2 py-0.5 rounded">Messi</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer relative">
+<span class="absolute -top-2 -right-2 material-symbols-outlined text-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div class="w-12 h-12 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">9</div>
+<span class="text-label-sm text-white mt-1 bg-black/40 px-2 py-0.5 rounded">Kingsley (C)</span>
+</div>
+<div class="flex flex-col items-center group cursor-pointer">
+<div class="w-12 h-12 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">7</div>
+<span class="text-label-sm text-white mt-1 bg-black/40 px-2 py-0.5 rounded">Bishwanath</span>
+</div>
+</div>
+<!-- Midfielders -->
+<div class="flex gap-2xl justify-center w-full">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">8</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">14</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">17</div>
+</div>
+<!-- Defenders -->
+<div class="flex gap-lg justify-center w-full">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">3</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">4</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">5</div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-primary-container flex items-center justify-center text-white font-bold">2</div>
+</div>
+<!-- GK -->
+<div class="w-10 h-10 rounded-full border-2 border-white bg-secondary flex items-center justify-center text-white font-bold">1</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<aside class="lg:col-span-4 space-y-lg">
+<!-- Player Performance Spotlight -->
+<div class="bg-on-background rounded-xl p-lg text-white premium-card-border">
+<div class="flex items-center justify-between mb-xl">
+<h3 class="font-title-lg text-title-lg">Man of the Match</h3>
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex items-center gap-lg mb-xl">
+<div class="relative">
+<div class="w-24 h-24 rounded-full border-4 border-primary bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a confident Bangladeshi football player in a green jersey. High-quality lighting casting soft shadows, athletic build, focused gaze, premium sports photography style with a clean neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvyTeNP0bVQnV9bNZZRREMnvvA1Awi2NnBCLGyDdKd2JqQNpLZGbiqoesp7X66psi_WgqscREfkvj1hSicSCAA1DFHn4cLhG8fDFairFkx3FyZIlvI5KOn0XUr5C9tALq7JpiZw4adkILQ_DFIvr4kdC_BcoKyjGnwcte4n2F6mlNTavbNfvHeO9EFMi-G2DOLKPIfaj2SSswkM7M8JgAq_N5GLWHAPvtZ_T85qQrG7vUHivi_Udwo3CEa2qrXpmrDNdvQmFijiHM"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold shadow-lg">8.9</div>
+</div>
+<div>
+<div class="font-headline-md text-headline-md">Kingsley O.</div>
+<div class="text-body-md text-surface-variant">Bashundhara Kings • Forward</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="bg-white/10 p-3 rounded-lg border border-white/10">
+<div class="text-label-sm text-surface-variant uppercase mb-1">Goals</div>
+<div class="text-title-lg font-bold">1</div>
+</div>
+<div class="bg-white/10 p-3 rounded-lg border border-white/10">
+<div class="text-label-sm text-surface-variant uppercase mb-1">Assists</div>
+<div class="text-title-lg font-bold">1</div>
+</div>
+<div class="bg-white/10 p-3 rounded-lg border border-white/10">
+<div class="text-label-sm text-surface-variant uppercase mb-1">Pass accuracy</div>
+<div class="text-title-lg font-bold">88%</div>
+</div>
+<div class="bg-white/10 p-3 rounded-lg border border-white/10">
+<div class="text-label-sm text-surface-variant uppercase mb-1">Dribbles</div>
+<div class="text-title-lg font-bold">4/6</div>
+</div>
+</div>
+</div>
+<!-- Suggested Tournaments -->
+<div class="bg-white rounded-xl border border-outline-variant p-lg">
+<h3 class="font-title-lg text-title-lg mb-lg">Recommended Leagues</h3>
+<div class="space-y-md">
+<div class="flex items-center gap-md p-3 rounded-xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">BPL</div>
+<div class="flex-1">
+<div class="font-bold text-body-lg">Bangladesh Premier League</div>
+<div class="text-label-md text-on-surface-variant">Top Tier • 12 Teams</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="flex items-center gap-md p-3 rounded-xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">AFC</div>
+<div class="flex-1">
+<div class="font-bold text-body-lg">AFC Cup</div>
+<div class="text-label-md text-on-surface-variant">Continental • Group Stage</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="flex items-center gap-md p-3 rounded-xl hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-white transition-all">FED</div>
+<div class="flex-1">
+<div class="font-bold text-body-lg">Federation Cup</div>
+<div class="text-label-md text-on-surface-variant">Knockout • Quarter Finals</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+<button class="w-full mt-lg py-3 rounded-xl border border-outline text-primary font-bold hover:bg-primary-container hover:text-white hover:border-transparent transition-all">View All Tournaments</button>
+</div>
+<!-- Live Chat Widget -->
+<div class="bg-surface-container-low rounded-xl p-lg flex flex-col h-[400px]">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<h3 class="font-title-lg text-title-lg">Live Community</h3>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar space-y-md pr-2">
+<div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm border border-outline-variant/30">
+<span class="text-label-sm text-primary font-bold">@TigersFan</span>
+<p class="text-body-md mt-1">Ref missed a clear offside there! 😤</p>
+</div>
+<div class="bg-primary/10 p-3 rounded-xl rounded-tr-none shadow-sm border border-primary/20 ml-auto max-w-[80%]">
+<span class="text-label-sm text-primary-fixed-dim font-bold">@KingsLoyal</span>
+<p class="text-body-md mt-1">Kingsley is unplayable today. Best in the league.</p>
+</div>
+<div class="bg-white p-3 rounded-xl rounded-tl-none shadow-sm border border-outline-variant/30">
+<span class="text-label-sm text-primary font-bold">@NeutralGuy</span>
+<p class="text-body-md mt-1">The energy in the stadium is insane.</p>
+</div>
+</div>
+<div class="mt-md relative">
+<input class="w-full pl-4 pr-12 py-3 rounded-xl border-none bg-white focus:ring-2 focus:ring-primary text-body-md" placeholder="Add to the noise..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-2xl bg-surface-container-highest dark:bg-on-background">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-2xl px-gutter max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-md font-extrabold text-primary dark:text-primary-fixed mb-md">Khelabase</div>
+<p class="text-on-surface-variant text-body-md leading-relaxed">The ultimate ecosystem for professional football in Bangladesh. Scout, analyze, and compete with world-class precision.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-bold text-on-surface uppercase text-label-sm tracking-wider mb-sm">Platform</span>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Scouting</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Elite Analytics</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Tournaments</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-bold text-on-surface uppercase text-label-sm tracking-wider mb-sm">Community</span>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Forums</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Teams Directory</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Support Center</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="font-bold text-on-surface uppercase text-label-sm tracking-wider mb-sm">Legal</span>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity duration-200" href="#">Cookie Settings</a>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter pb-xl flex flex-col md:flex-row justify-between items-center gap-md border-t border-outline-variant pt-lg">
+<p class="text-body-md text-on-surface-variant">© 2024 Khelabase. Athletic Precision for the Modern Game.</p>
+<div class="flex gap-lg">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">language</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">share</button>
+</div>
+</div>
+</footer>
+<script>
+        // Simple tab switching logic for demo
+        const tabs = document.querySelectorAll('.bg-surface-container-low button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+                    t.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+                });
+                tab.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold', 'shadow-sm');
+                tab.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+            });
+        });
+
+        // Interactive Stats Simulation
+        setTimeout(() => {
+            const possessionBar = document.querySelector('.bg-primary.h-full.transition-all');
+            if (possessionBar) {
+                possessionBar.style.width = '60%';
+                possessionBar.nextElementSibling.style.width = '40%';
+            }
+        }, 3000);
+    </script>
+</body></html>

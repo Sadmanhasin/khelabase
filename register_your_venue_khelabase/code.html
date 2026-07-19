@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Create Venue - Khelabase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#6e7b6c",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "surface-container-highest": "#d9e3f6",
+                    "secondary-container": "#ffc329",
+                    "tertiary": "#0051d5",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "primary-fixed-dim": "#62df7d",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002109",
+                    "surface-variant": "#d9e3f6",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-primary-fixed-variant": "#005320",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "on-tertiary-container": "#fefcff",
+                    "tertiary-fixed": "#dbe1ff",
+                    "surface": "#f8f9ff",
+                    "on-background": "#121c2a",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#795900",
+                    "primary-fixed": "#7ffc97",
+                    "tertiary-container": "#316bf3",
+                    "primary": "#006b2c",
+                    "on-surface": "#121c2a",
+                    "on-primary-container": "#f7fff2",
+                    "on-secondary-fixed": "#261a00",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "inverse-primary": "#62df7d",
+                    "on-tertiary-fixed": "#00174b",
+                    "secondary-fixed": "#ffdf9f",
+                    "surface-dim": "#d0dbed",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#dee9fc",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#006e2d",
+                    "outline-variant": "#bdcaba",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6f5100",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#00873a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "base": "4px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "container-max": "1280px",
+                    "xs": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .step-active {
+            color: #006b2c;
+            position: relative;
+        }
+        .step-active::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #006b2c;
+            border-radius: 99px;
+        }
+        .venue-card-radio:checked + label {
+            border-color: #006b2c;
+            background-color: #f7fff2;
+            box-shadow: 0 0 0 1px #006b2c;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased overflow-x-hidden">
+<!-- Header Navigation Shell -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant shadow-sm h-16 flex items-center justify-between px-lg max-w-container-max mx-auto">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-display-lg font-extrabold text-primary dark:text-primary-fixed leading-none">Khelabase</span>
+</div>
+<nav class="hidden md:flex items-center gap-xl">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Venues</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Discovery</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Events</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full">settings</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a sports venue manager in a clean, minimalist office setting. High-quality corporate photography style with soft natural lighting and a blurred modern background of a football stadium through a window." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0LZ-r1JHqQxIUjFaBn0gvfsscqiCZuRFtCpjXEmviDlogUYP63gI2h2wPxbgDi-GC1z3Y38oIFAAxtOPs-XWiybBoxhpsEZI88l9XGCn2my5hKRfo7z9sIqGtaZfJmbOL7kWkyhGRXDdndFagw8NzKWadOZScU7KsPNafc-xLnCU_q-ElbDSE4pfafzMUwi9Ub4d4GFV-zM7se3XLAITe0LAvTwSFTdM9B8Fe5zohL4nhGXJXPGm_Ab0hjdrMp1oDQXARNpUHtBo"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-2xl px-md md:px-lg max-w-container-max mx-auto">
+<!-- Wizard Progress Section -->
+<section class="mb-xl">
+<div class="flex flex-col md:flex-row items-center justify-between gap-md border-b border-outline-variant pb-base">
+<div class="flex flex-wrap items-center gap-xl md:gap-2xl w-full justify-center md:justify-start">
+<div class="step-active flex items-center gap-xs font-label-md text-label-md cursor-default">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-primary text-white text-[10px]">1</span>
+                        Basic Info
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant opacity-60">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">2</span>
+                        Facilities
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant opacity-60">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">3</span>
+                        Gallery
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant opacity-60">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">4</span>
+                        Contact
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant opacity-60">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">5</span>
+                        Review
+                    </div>
+<div class="flex items-center gap-xs font-label-md text-label-md text-on-surface-variant opacity-60">
+<span class="w-6 h-6 flex items-center justify-center rounded-full bg-surface-container-high text-on-surface-variant text-[10px]">6</span>
+                        Publish
+                    </div>
+</div>
+</div>
+</section>
+<!-- Form Layout: Bento Grid Style -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left Column: Primary Form Fields -->
+<div class="lg:col-span-8 space-y-lg">
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] p-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Venue Core Details</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Provide the foundational details for your athletic facility. This helps players find and identify your turf.</p>
+<div class="space-y-xl">
+<!-- Venue Name -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface block">Venue Name <span class="text-error">*</span></label>
+<input class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-lg text-body-lg outline-none" placeholder="e.g. Lusail Stadium Turf" type="text"/>
+</div>
+<!-- Venue Type Selection -->
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface block">Venue Type <span class="text-error">*</span></label>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-sm">
+<div>
+<input checked="" class="hidden venue-card-radio" id="football" name="venue_type" type="radio"/>
+<label class="flex flex-col items-center justify-center p-md border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-all" for="football">
+<span class="material-symbols-outlined mb-xs text-primary">sports_soccer</span>
+<span class="font-label-sm text-label-sm text-center">Football Turf</span>
+</label>
+</div>
+<div>
+<input class="hidden venue-card-radio" id="mini" name="venue_type" type="radio"/>
+<label class="flex flex-col items-center justify-center p-md border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-all" for="mini">
+<span class="material-symbols-outlined mb-xs text-primary">stadium</span>
+<span class="font-label-sm text-label-sm text-center">Mini Turf</span>
+</label>
+</div>
+<div>
+<input class="hidden venue-card-radio" id="indoor" name="venue_type" type="radio"/>
+<label class="flex flex-col items-center justify-center p-md border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-all" for="indoor">
+<span class="material-symbols-outlined mb-xs text-primary">domain</span>
+<span class="font-label-sm text-label-sm text-center">Indoor</span>
+</label>
+</div>
+<div>
+<input class="hidden venue-card-radio" id="outdoor" name="venue_type" type="radio"/>
+<label class="flex flex-col items-center justify-center p-md border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-all" for="outdoor">
+<span class="material-symbols-outlined mb-xs text-primary">wb_sunny</span>
+<span class="font-label-sm text-label-sm text-center">Outdoor</span>
+</label>
+</div>
+<div>
+<input class="hidden venue-card-radio" id="ground" name="venue_type" type="radio"/>
+<label class="flex flex-col items-center justify-center p-md border border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-all" for="ground">
+<span class="material-symbols-outlined mb-xs text-primary">landscape</span>
+<span class="font-label-sm text-label-sm text-center">Ground</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface block">Description</label>
+<textarea class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-lg text-body-lg outline-none resize-none" placeholder="Tell players about your facility's pitch quality, lighting, and history..." rows="4"></textarea>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] p-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Location Precision</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-lg">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface block">District <span class="text-error">*</span></label>
+<select class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-lg text-body-lg outline-none appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236b7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22m6%208%204%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
+<option>Select District</option>
+<option>Central Dhaka</option>
+<option>Gulshan</option>
+<option>Banani</option>
+<option>Uttara</option>
+<option>Dhanmondi</option>
+</select>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface block">Search Map Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-lg text-body-lg outline-none" placeholder="Search for your landmark..." type="text"/>
+</div>
+</div>
+</div>
+<div class="space-y-xs mb-lg">
+<label class="font-label-md text-label-md text-on-surface block">Street Address <span class="text-error">*</span></label>
+<textarea class="w-full px-md py-sm rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all font-body-lg text-body-lg outline-none resize-none" placeholder="Full physical address..." rows="2"></textarea>
+</div>
+<div class="relative w-full h-[300px] rounded-xl overflow-hidden border border-outline-variant">
+<div class="absolute inset-0 bg-surface-container-high flex items-center justify-center">
+<div class="w-full h-full" data-alt="A detailed, clean Google Maps interface focused on a modern city center with athletic facilities highlighted. The map uses a minimalist, light-mode palette with emerald green indicators for sports venues and light gray streets. High precision digital cartography style." data-location="Dhaka City Center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAwmHJguja43atJJKvjwjDObE32CJj_kW_zO1RRH6QKOoIaAbRsL3pdo-GIqKHyLjT_L2eF5hbOOz8px7mLRe-_CnN0NZPdH1QxwFRYhnXVyh3VxtGsv-Jb9B5SUYsWWv3SvLUm76yna-BsGDgLKYxi8yWhC9LU47VFz50FG4hchp31TzTM5N_iQc1zysgwsUNPnaVcjJ55WssbYeds81CdUwXB-pmisAld1HfLtmil0MTP1iNI8QxHkk5rcoc0X9Lhct5S2IxRu4')"></div>
+</div>
+<div class="absolute top-4 left-4 glass-panel px-md py-sm rounded-lg flex items-center gap-xs shadow-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-md text-label-md text-on-surface">Drag pin to adjust</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Contextual Help & Summary -->
+<div class="lg:col-span-4 space-y-lg">
+<!-- Tips Card -->
+<div class="bg-primary-container rounded-xl p-lg border border-primary/20 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-lg opacity-10">
+<span class="material-symbols-outlined text-[120px]">lightbulb</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-primary-container mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined">auto_awesome</span>
+                        Pro Tips
+                    </h3>
+<ul class="space-y-md relative z-10">
+<li class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<p class="font-body-md text-body-md text-on-primary-container/80">Venues with descriptions longer than 150 words get 40% more bookings.</p>
+</li>
+<li class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<p class="font-body-md text-body-md text-on-primary-container/80">Make sure your address matches your Google Maps location precisely.</p>
+</li>
+<li class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<p class="font-body-md text-body-md text-on-primary-container/80">Indoor venues are trending this season! Highlight your AC facilities if applicable.</p>
+</li>
+</ul>
+</div>
+<!-- Preview Card Skeleton -->
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="h-40 bg-surface-container-high relative">
+<img class="w-full h-full object-cover opacity-50" data-alt="A wide angle, cinematic shot of a pristine emerald green football turf at sunset. The lighting is dramatic and warm, highlighting the texture of the artificial grass. The setting is modern and professional, embodying athletic precision and high-end facility management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM3iSNDsTdxxTekdYN_YTwhyjgvWALP7h5vuPjRf2xcTaFafqzlZOHayXqNGhyg_IRUT6ZHP_8cnF65uiATR2y_DPb04YLxAOnS01Qi0k-eq0cttAFUXWneNX89HKETlINmwn2FwnZBMeSg7bAzivNFDpnEbBjOX8oFbsm-Qa24vjMRfSXkU_s6PQskAk6FjngT9vZrJtu6MxT9FrcqmiascvbHOd5qbbWyZ6AdRM3QaD2Y8tfCsIQc7p5v225ncsfv9bDiOwTQS0"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="bg-white/90 px-md py-sm rounded-full font-label-md text-label-md text-on-surface-variant backdrop-blur-md">Live Preview</span>
+</div>
+</div>
+<div class="p-md space-y-sm">
+<div class="h-6 w-3/4 bg-surface-container-highest rounded animate-pulse"></div>
+<div class="h-4 w-1/2 bg-surface-container rounded animate-pulse"></div>
+<div class="pt-md border-t border-outline-variant flex justify-between">
+<div class="h-4 w-16 bg-surface-container rounded"></div>
+<div class="h-4 w-20 bg-surface-container rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Footer Actions -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t border-outline-variant px-lg py-md z-40">
+<div class="max-w-container-max mx-auto flex flex-col sm:flex-row items-center justify-between gap-md">
+<p class="font-body-md text-body-md text-on-surface-variant italic">Draft saved automatically 2 mins ago</p>
+<div class="flex items-center gap-md w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-xl py-sm rounded-xl border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-all active:scale-95">
+                        Save as Draft
+                    </button>
+<button class="flex-1 sm:flex-none px-xl py-sm rounded-xl bg-primary text-white font-label-md text-label-md hover:opacity-90 transition-all shadow-md active:scale-95 flex items-center justify-center gap-xs">
+                        Next: Facilities
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile) -->
+<footer class="md:hidden fixed bottom-16 left-0 w-full z-40 bg-white border-t border-outline-variant flex items-center justify-around h-16 px-md">
+<button class="flex flex-col items-center gap-xs text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-label-sm">Build</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-label-sm">Insights</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined">help</span>
+<span class="text-[10px] font-label-sm">Help</span>
+</button>
+</footer>
+<!-- Global Footer -->
+<footer class="w-full py-xl px-lg mt-auto flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto border-t border-outline-variant bg-white">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Khelabase. Athletic Precision for the Modern Pitch.</p>
+<div class="flex gap-lg mt-md md:mt-0">
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+<script>
+        // Simple Interaction logic for Venue Type Selection
+        const radioButtons = document.querySelectorAll('.venue-card-radio');
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                // Future expansion: Trigger specific preview updates based on selection
+                console.log('Selected Venue Type:', e.target.id);
+            });
+        });
+
+        // Soft interaction for form inputs
+        const inputs = document.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+                input.parentElement.classList.add('transition-transform');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>

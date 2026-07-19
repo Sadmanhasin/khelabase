@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bashundhara Kings - Team Players | FootballBD</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#62df7d",
+                    "surface-dim": "#d0dbed",
+                    "on-secondary-container": "#6f5100",
+                    "on-tertiary-container": "#fefcff",
+                    "on-surface": "#121c2a",
+                    "on-background": "#121c2a",
+                    "on-primary-container": "#f7fff2",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-primary-fixed-variant": "#005320",
+                    "primary-fixed-dim": "#62df7d",
+                    "background": "#f8f9ff",
+                    "inverse-surface": "#27313f",
+                    "secondary-fixed": "#ffdf9f",
+                    "primary": "#006b2c",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#795900",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-variant": "#d9e3f6",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "tertiary": "#0051d5",
+                    "surface-container-high": "#dee9fc",
+                    "tertiary-container": "#316bf3",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-secondary-fixed": "#261a00",
+                    "primary-fixed": "#7ffc97",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#00873a",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-primary-fixed": "#002109",
+                    "surface-tint": "#006e2d",
+                    "surface-container": "#e6eeff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#00174b",
+                    "secondary-container": "#ffc329",
+                    "surface": "#f8f9ff",
+                    "outline-variant": "#bdcaba",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "outline": "#6e7b6c",
+                    "tertiary-fixed": "#dbe1ff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "container-max": "1280px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "sm": "12px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card-shadow {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .player-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest dark:bg-inverse-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">FootballBD</span>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Explore</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Tournaments</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Teams</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all duration-200">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all duration-200">account_circle</button>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-xl font-label-md text-label-md hover:scale-95 transition-transform">Create</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-lg py-2xl">
+<!-- Team Header Section -->
+<section class="mb-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xl">
+<div class="flex items-center gap-lg">
+<div class="w-24 h-24 bg-surface-container-high rounded-2xl flex items-center justify-center p-md border border-outline-variant shadow-sm">
+<img class="w-full h-full object-contain" data-alt="Official logo of Bashundhara Kings football club, featuring a regal crown and vibrant red and green colors, designed with a clean modern athletic aesthetic for a high-performance sports brand. The logo is centered on a crisp white background with sharp vector edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbyAE3W8fQT_VGghlr9Era1ikNdNNQ3xfughCoCYcG3M41ouVog9XFxQih_J6ZHVleVwEFJ991JDZBhkiW44EUONY4iEhVQ39IOADcd11b1yL3Y9d-eT4BAchcYxsUEBEZ5aAFmUJB4InXjEZsjXRSHfQmX2bqfroF-QWSHga6WLV7g7gBOMM-IZA27DXzA6Vqno-Wizu-0cNUgEU9D8hxUWBXm8I4cVAXiTxCXihk5Vt-S1nozjY70lCC8QFblQyQ3yIALprQRsY"/>
+</div>
+<div>
+<div class="flex items-center gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> PREMIER LEAGUE
+                            </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface mt-2">Bashundhara Kings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Founded 2013 • Dhaka, Bangladesh</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="flex items-center gap-2 border border-outline text-on-surface px-lg py-3 rounded-xl font-label-md text-label-md hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined">share</span>
+                        Invite
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-xl py-3 rounded-xl font-label-md text-label-md hover:shadow-lg transition-all">
+<span class="material-symbols-outlined">person_add</span>
+                        Add Player
+                    </button>
+</div>
+</div>
+<!-- Tab Navigation -->
+<div class="flex border-b border-outline-variant gap-xl">
+<button class="pb-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Overview</button>
+<button class="pb-md font-label-md text-label-md text-primary border-b-2 border-primary font-bold">Players</button>
+<button class="pb-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Matches</button>
+<button class="pb-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Statistics</button>
+<button class="pb-md font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors">Finances</button>
+</div>
+</section>
+<!-- Players Grid Section -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-lg">
+<!-- Player Card 1 (Elite) -->
+<div class="player-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden transition-all duration-300 premium-card-shadow border-t-2 border-t-secondary-container">
+<div class="relative h-64 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a star football forward wearing a vibrant red Bashundhara Kings jersey. The lighting is dramatic and high-contrast, characteristic of premium sports broadcasting. The athlete has a focused and determined expression, set against a subtle emerald-tinted atmospheric background with soft light leaks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCERXjcfCbhtbO4uf6P7bDnWQC0xuHPgVYasnfXn0Y_2YQLq_7WOui1SlOZ-bsnkIcs0wlkuEeRzJZx61hFkBy7dwMxvn1TN5hs4_Jt-Ry4guoH_YGZtlkEQ7NINjJrgUL5ZwZ1LCw47fV8plIRuFrL7fGKbXXW0Bl2p7aIY5cGAG99AmczcfE9HK10p7ELfWaq48uurDdyigoE10dzhPmycBVY3VI33pHDHIrcDlriiFSygR_y4EEmCObdx4iIBLG5Z71i1OYiRCI"/>
+<div class="absolute top-md right-md bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface">OVR</span>
+<span class="font-title-lg text-title-lg text-primary">88</span>
+</div>
+<div class="absolute bottom-md left-md">
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<span class="text-white font-label-sm text-label-sm">Available</span>
+</div>
+</div>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg text-on-surface">Robson Azevedo</h3>
+<span class="font-display-lg text-headline-md text-outline-variant/30">10</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Forward • Brazil</p>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant/50">
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">GOALS</p>
+<p class="font-title-lg text-title-lg text-primary">12</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">ASSISTS</p>
+<p class="font-title-lg text-title-lg text-primary">8</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">APPS</p>
+<p class="font-title-lg text-title-lg text-primary">14</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Player Card 2 -->
+<div class="player-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden transition-all duration-300 premium-card-shadow">
+<div class="relative h-64 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a skilled midfielder in an emerald and red football kit. He is shown from the chest up with a confident stance. The background features a blurred modern stadium atmosphere with clean studio lighting that emphasizes the athlete's features and the high-quality fabric of the team jersey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4fd1epZ2CB1G7eyt0eXNfyeiAour_6_aXTJ6TUcCqeV6u_Aqp__Ww1GMHpAhBXK1rSUF1WsSmMhnu3eS0GB_rXDcIjpB5uNWAIjBSpSJbRkCGIjpTPwAkSYZxXPSGu5DoV1llU-Z0UPckeG-sS4pC4BYJHH8nxisivOitN5qICa0hP1e0SDDXeQ-cw5thzIgS7rpojdH6tj-gZ2S_vEY7t8FQ2_TXhyama-22c_UfrY0ghjTog0UoE-YjExPzdU9vTVgSZwDRsTU"/>
+<div class="absolute top-md right-md bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface">OVR</span>
+<span class="font-title-lg text-title-lg text-primary">84</span>
+</div>
+<div class="absolute bottom-md left-md">
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-container"></div>
+<span class="text-white font-label-sm text-label-sm">Minor Injury</span>
+</div>
+</div>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg text-on-surface">Miguel Figueira</h3>
+<span class="font-display-lg text-headline-md text-outline-variant/30">08</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Midfielder • Portugal</p>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant/50">
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">GOALS</p>
+<p class="font-title-lg text-title-lg text-primary">4</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">ASSISTS</p>
+<p class="font-title-lg text-title-lg text-primary">11</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">APPS</p>
+<p class="font-title-lg text-title-lg text-primary">15</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Player Card 3 -->
+<div class="player-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden transition-all duration-300 premium-card-shadow">
+<div class="relative h-64 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A heroic shot of a tall defender in a red football uniform, standing on a lush green pitch during the golden hour. The sunlight creates a warm rim light around the athlete, highlighting a professional and sturdy athletic build. The overall mood is epic and premium, consistent with a high-end sports team profile page." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCvbXlRRvpL9CPqg4GXNdZbwAiFYwN4HtvYYJY-pKymEoQI7r2-xK9oaDyS17TGjv774vjP-RJtAT-rraR78-Qqgmc-9yaEKjoD1QY9Rq7WuLUvdGK2XZgtKqPpwXd-sBR7ZJOLpuv-a9jjROesS2KQyZcsSb8xohkwruGi0hcZFkBRdKVtfVMILAJ5WHCNTFj99ADPmJF63qdLz70cuAfdNV-4dedwr8n26Bvbk__ajZm7Cnd1HdtTf9uQhBCwmPkRds1dATdFgQ"/>
+<div class="absolute top-md right-md bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface">OVR</span>
+<span class="font-title-lg text-title-lg text-primary">82</span>
+</div>
+<div class="absolute bottom-md left-md">
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<span class="text-white font-label-sm text-label-sm">Available</span>
+</div>
+</div>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg text-on-surface">Boburbek Yuldashov</h3>
+<span class="font-display-lg text-headline-md text-outline-variant/30">04</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Defender • Uzbekistan</p>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant/50">
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">CLEAN SHEET</p>
+<p class="font-title-lg text-title-lg text-primary">7</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">TACKLES</p>
+<p class="font-title-lg text-title-lg text-primary">42</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">APPS</p>
+<p class="font-title-lg text-title-lg text-primary">15</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Player Card 4 -->
+<div class="player-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden transition-all duration-300 premium-card-shadow">
+<div class="relative h-64 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young, agile football goalkeeper in a bright neon goalkeeper jersey, holding a match ball under one arm. The setting is a professional training facility with high-key lighting. The style is sharp, clean, and modern, emphasizing the high-tech equipment and the focused gaze of the athlete. Vibrant emerald green accents tie the image to the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApnraq9bFRHHJW8EWXYc2UQ6gwC4cdaXR72vAe-dJ1E_GJRpalBKbqhoSaYkQLEpvaV6t9lboUvv9ldNRNCs9NGa6tOlyqskHA7FfdW81RPoR1aI5xvNxP-7ToZvI9OlMoiQyjvsRWMH0Oxy2hQXr-P14FsWRb4ziEfxJz6U2PuhU0XMXTTPNowhTbrtNg8ZaM8r0jlsfc7xlmeOe5IoKbHjkgReTa2htEpglWSCFayUs_M7-s6rgBHlTMWwMrPc3tY6XlNMz8yNE"/>
+<div class="absolute top-md right-md bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-surface">OVR</span>
+<span class="font-title-lg text-title-lg text-primary">85</span>
+</div>
+<div class="absolute bottom-md left-md">
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+<div class="w-2.5 h-2.5 rounded-full bg-primary-container"></div>
+<span class="text-white font-label-sm text-label-sm">Available</span>
+</div>
+</div>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg text-on-surface">Anisur Rahman</h3>
+<span class="font-display-lg text-headline-md text-outline-variant/30">01</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Goalkeeper • Bangladesh</p>
+<div class="flex items-center justify-between pt-md border-t border-outline-variant/50">
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">SAVES</p>
+<p class="font-title-lg text-title-lg text-primary">56</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">CLEAN SHEET</p>
+<p class="font-title-lg text-title-lg text-primary">9</p>
+</div>
+<div class="text-center">
+<p class="text-label-sm font-label-sm text-on-surface-variant">APPS</p>
+<p class="font-title-lg text-title-lg text-primary">15</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Add Player Placeholder -->
+<div class="group border-2 border-dashed border-outline-variant rounded-2xl flex flex-col items-center justify-center p-2xl text-center hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-surface-container-high group-hover:bg-primary/10 flex items-center justify-center mb-md transition-colors">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface group-hover:text-primary transition-colors">Add New Player</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Update your roster for the upcoming season</p>
+</div>
+</section>
+<!-- Secondary Actions Section -->
+<section class="mt-2xl bg-surface-container-low rounded-3xl p-xl border border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center gap-xl">
+<div class="flex items-center gap-lg">
+<div class="w-12 h-12 bg-secondary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">group_add</span>
+</div>
+<div>
+<h4 class="font-title-lg text-title-lg text-on-surface">Build your Dream Team</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Invite scouts or agents to manage player transfers and trials.</p>
+</div>
+</div>
+<div class="flex gap-md w-full md:w-auto">
+<button class="flex-1 md:flex-none border border-outline text-on-surface px-lg py-3 rounded-xl font-label-md text-label-md hover:bg-white transition-all">Agent Portal</button>
+<button class="flex-1 md:flex-none bg-primary text-on-primary px-lg py-3 rounded-xl font-label-md text-label-md hover:shadow-lg transition-all">Bulk Invite Scouts</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container dark:bg-surface-container-highest mt-2xl">
+<div class="w-full py-2xl px-lg max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-title-lg text-title-lg font-extrabold text-primary dark:text-primary-fixed">FootballBD</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 FootballBD. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Contact Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Partner Program</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Simple hover effect for cards
+        const cards = document.querySelectorAll('.player-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for more complex JS animations here
+            });
+        });
+
+        // Search highlight or tab switching could be added here
+        const tabButtons = document.querySelectorAll('.border-b button');
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabButtons.forEach(b => {
+                    b.classList.remove('text-primary', 'border-b-2', 'border-primary', 'font-bold');
+                    b.classList.add('text-on-surface-variant');
+                });
+                btn.classList.add('text-primary', 'border-b-2', 'border-primary', 'font-bold');
+                btn.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

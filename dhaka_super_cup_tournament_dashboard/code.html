@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dhaka Super Cup | Tournament Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#f7fff2",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#d9e3f6",
+                    "surface-container": "#e6eeff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "secondary-container": "#ffc329",
+                    "surface-dim": "#d0dbed",
+                    "surface-container-low": "#eff4ff",
+                    "primary": "#006b2c",
+                    "outline": "#6e7b6c",
+                    "surface": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#795900",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#006e2d",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "on-primary-fixed": "#002109",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed": "#00174b",
+                    "tertiary-container": "#316bf3",
+                    "primary-container": "#00873a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed": "#7ffc97",
+                    "on-surface": "#121c2a",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary-fixed": "#261a00",
+                    "on-secondary-container": "#6f5100",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#62df7d",
+                    "on-primary-fixed-variant": "#005320",
+                    "on-background": "#121c2a",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dee9fc",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#fefcff",
+                    "tertiary": "#0051d5",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#62df7d",
+                    "outline-variant": "#bdcaba",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#3e4a3d",
+                    "secondary-fixed-dim": "#f9bd22"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "sm": "12px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #F8FAFC; color: #121C2A; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .sidebar-active { background-color: #006b2c; color: #ffffff; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid #E5E7EB; }
+        .custom-shadow { shadow: 0px 4px 20px rgba(31, 41, 55, 0.05); }
+        .stepper-line { position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: #E5E7EB; z-index: -1; transform: translateY(-50%); }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- Navigation Sidebar -->
+<aside class="w-64 bg-surface-container-lowest border-r border-outline-variant hidden md:flex flex-col sticky top-0 h-screen">
+<div class="p-lg">
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary">Khelabase</h1>
+<p class="text-label-md font-label-md text-on-surface-variant opacity-70">Dhaka Super Cup Admin</p>
+</div>
+<nav class="flex-1 px-md overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 px-md py-sm rounded-xl sidebar-active group transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">Teams</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Players</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-label-md">Fixtures</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="font-label-md text-label-md">Matches</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">format_list_numbered</span>
+<span class="font-label-md text-label-md">Standings</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-label-md text-label-md">Statistics</span>
+</a>
+<div class="h-px bg-outline-variant my-md mx-md"></div>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-label-md text-label-md">Awards</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-label-md text-label-md">Media</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Finance</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 group" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</nav>
+<div class="p-lg border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a South Asian sports administrator, clean-cut, wearing a smart polo shirt, in a brightly lit office setting with subtle football memorabilia in the background. High-key lighting, corporate minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgj-LY_xZLzfC5F73or5GOQMS3sAR0ee0d_ZPeCii1-3crcdfJ86V7-Ih4Pvk5FdLVE67iNTmyss49fSap_tgDmtDWkYDX0wEzAygxL62UJEGPP2Q_L6yBJ6pts1V842VjFnP7UfeOATZETuY3fDC4B14I_KD5stnM8mn0m1OlkVabH2A8EYZZHAEm2Xm6Y_HgU924t06MiL-cx7OUWjaratEIeavEC9yhc2YiuVHsbgTSQ4khkJZ6Rj2RNvt70g9aT_4Cp3tG2k8"/>
+</div>
+<div class="flex-1">
+<p class="text-label-md font-label-md text-on-surface">Rahat Khan</p>
+<p class="text-xs text-on-surface-variant">Director</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col min-w-0">
+<!-- Top Navbar -->
+<header class="h-20 bg-surface-container-lowest border-b border-outline-variant px-2xl flex items-center justify-between sticky top-0 z-30">
+<div>
+<h2 class="text-title-lg font-title-lg text-on-surface">Dhaka Super Cup 2024</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Tournament Management Dashboard</p>
+</div>
+<div class="flex items-center gap-lg">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-md py-2 bg-background border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none w-64 text-body-md" placeholder="Search teams, fixtures..." type="text"/>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low transition-colors relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<div class="h-8 w-px bg-outline-variant mx-xs"></div>
+<div class="flex gap-md">
+<button class="bg-primary text-white px-md py-2 rounded-xl text-label-md font-label-md flex items-center gap-2 shadow-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+                        Create
+                    </button>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-2xl space-y-xl max-w-container-max mx-auto w-full">
+<!-- Quick Actions & KPI Row -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-lg">
+<!-- KPI 1 -->
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex items-center gap-lg">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">sports_soccer</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Today's Matches</p>
+<p class="text-headline-md font-headline-md text-on-surface">3 Games</p>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex items-center gap-lg">
+<div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Teams Registered</p>
+<p class="text-headline-md font-headline-md text-on-surface">24/32</p>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex items-center gap-lg">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl">pending_actions</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Pending Approvals</p>
+<p class="text-headline-md font-headline-md text-on-surface">5 Apps</p>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-white p-lg rounded-xl border border-outline-variant shadow-sm flex items-center gap-lg">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">payments</span>
+</div>
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Total Revenue</p>
+<p class="text-headline-md font-headline-md text-on-surface">৳450,000</p>
+</div>
+</div>
+</div>
+<!-- Main Layout Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-xl">
+<!-- Left Column: Registration Queue & Progress -->
+<div class="xl:col-span-2 space-y-xl">
+<!-- Tournament Progress Stepper -->
+<section class="bg-white p-xl rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="flex items-center justify-between mb-2xl">
+<h3 class="text-title-lg font-title-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                                Tournament Progress
+                            </h3>
+<span class="px-md py-1 bg-surface-container rounded-full text-label-md font-label-md text-primary">In Progress</span>
+</div>
+<div class="relative px-md">
+<div class="stepper-line"></div>
+<div class="flex justify-between relative z-10">
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<span class="text-label-md font-label-md">Registration</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+<span class="text-label-md font-label-md">Draws</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mb-xs border-4 border-white">
+<span class="material-symbols-outlined text-lg">play_arrow</span>
+</div>
+<span class="text-label-md font-label-md text-primary">Group Stage</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-outline flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-lg">lock</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Knockouts</span>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-outline flex items-center justify-center mb-xs">
+<span class="material-symbols-outlined text-lg">lock</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">Finals</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Registration Queue Table -->
+<section class="bg-white rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex items-center justify-between">
+<h3 class="text-title-lg font-title-lg">Registration Queue</h3>
+<button class="text-primary text-label-md font-label-md hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant">Team Details</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant">Type</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant">Submitted</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant">Status</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist professional football club logo featuring a stylized tiger in emerald green and black, vector art style on a clean white background. High-performance sports branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUiMcltcpH3KgL6codN-1GOMxPy75tyoHTA6LsOW6qP3ApstfWq02puT9DSet37r62fhVkWDKBWexsoDvue7V0kRRmWOnCEEId6RKpsaIrC_doKkbRznBD_bz4pguRjrkGUSC2xQohIQH-kEt_C9vkC7wnq8apaPkV8WO7h20DAzcZWFkg2_yCvIXelitEhhIsznbyXEuKHwBzhvkrpmEgB_bvSdzWfZhWPXklvCjcsTdgyA4sAWJ5_7GaCBd9CZIiBOSn8ScyIy8"/>
+</div>
+<div>
+<p class="text-body-md font-bold">Dhaka Tigers FC</p>
+<p class="text-xs text-on-surface-variant">Coach: S. Ahmed</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md">Elite Div</td>
+<td class="px-lg py-md text-body-md">2h ago</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">Review</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern minimalist football club crest with a stylized falcon in navy blue and gold, clean lines, professional league identity design. White background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDukvFUKxxcQiVMgbd3ZutDeVL9eG2GM_Px4ThjHCfBqsAHNp-BbD5ujt9rBcf76Rl7qbbX9BrFngYCS9ZGFdlYbKaAHeeOsTMwq0ENScRsIOgv4YO0a5OO1541DtB42NobcW6--V0yK7XzZdYjCKC44eOgQ0joLySTvSd22jEOapySzG71FgyedkUlvUpzTm968ceCITsSz9kRoB7UFgTmql_zUZn4n0-zQhxF5uB7xv6-4j-MlTzQKUis9zd6zfJOMG4YUeEe_T8"/>
+</div>
+<div>
+<p class="text-body-md font-bold">Banani Falcons</p>
+<p class="text-xs text-on-surface-variant">Coach: K. Zaman</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md">Elite Div</td>
+<td class="px-lg py-md text-body-md">4h ago</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">Review</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional sports team logo with a rising sun and bridge motif in crimson and grey, minimalist vector design, representing a bridge to success. Modern athletic branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdPyeCPKQSD_OaJlX0clTW-bg6wH7rVuHULHTQDka-8cO7vqnIBfpuP9CbDvpDSlV_5_-zJQ_y1UfLqEQQSASAOswiFNEBI2hi2fWW_T3pncMUuj6g0ZJPUdlN2mpzWgodQCPrg03jalv9UArLcn9Ls92mKeaLYTrmJDHVb7InZA9zxMDxkhCG6KmPRrUhXaToNbkOvw4aElm5A4z-Y3WjiAL5q7Nj1xpD2DWhbU5gWNLMwfOJAFpUmkIWcTvVqiA9MQzPvUBzysw"/>
+</div>
+<div>
+<p class="text-body-md font-bold">Padma Royals</p>
+<p class="text-xs text-on-surface-variant">Coach: M. Islam</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md">U-19</td>
+<td class="px-lg py-md text-body-md">Yesterday</td>
+<td class="px-lg py-md">
+<span class="px-sm py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold">Review</span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-xs">
+<button class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">check</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-error-container text-on-error-container flex items-center justify-center hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Right Column: Quick Actions & Activity -->
+<div class="space-y-xl">
+<!-- Quick Actions -->
+<section class="bg-white p-xl rounded-xl border border-outline-variant shadow-sm">
+<h3 class="text-title-lg font-title-lg mb-lg">Quick Actions</h3>
+<div class="space-y-md">
+<button class="w-full flex items-center justify-between p-md rounded-xl border border-outline-variant hover:bg-surface-container-low transition-all group active:scale-95">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<span class="text-label-md font-label-md">Generate Fixtures</span>
+</div>
+<span class="material-symbols-outlined text-sm text-outline group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+<button class="w-full flex items-center justify-between p-md rounded-xl border border-outline-variant hover:bg-surface-container-low transition-all group active:scale-95">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="text-label-md font-label-md">Approve Payments</span>
+</div>
+<span class="material-symbols-outlined text-sm text-outline group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+<button class="w-full flex items-center justify-between p-md rounded-xl border border-outline-variant hover:bg-surface-container-low transition-all group active:scale-95">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-tertiary">campaign</span>
+<span class="text-label-md font-label-md">Publish Announcement</span>
+</div>
+<span class="material-symbols-outlined text-sm text-outline group-hover:translate-x-1 transition-transform">arrow_forward_ios</span>
+</button>
+</div>
+</section>
+<!-- Latest Activity -->
+<section class="bg-white p-xl rounded-xl border border-outline-variant shadow-sm flex flex-col min-h-[400px]">
+<h3 class="text-title-lg font-title-lg mb-lg">Latest Activity</h3>
+<div class="flex-1 space-y-lg">
+<div class="flex gap-md">
+<div class="w-2 bg-primary rounded-full"></div>
+<div>
+<p class="text-body-md font-bold">Match Result Updated</p>
+<p class="text-xs text-on-surface-variant">Group A: Titans 2 - 0 Kings</p>
+<p class="text-[10px] text-outline mt-1 uppercase tracking-wider font-bold">12 minutes ago</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-2 bg-secondary rounded-full"></div>
+<div>
+<p class="text-body-md font-bold">New Sponsorship Payment</p>
+<p class="text-xs text-on-surface-variant">Confirmed ৳150,000 from Apex Ltd.</p>
+<p class="text-[10px] text-outline mt-1 uppercase tracking-wider font-bold">1 hour ago</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-2 bg-tertiary rounded-full"></div>
+<div>
+<p class="text-body-md font-bold">Fixture Change</p>
+<p class="text-xs text-on-surface-variant">Round 16 match postponed to Oct 22nd.</p>
+<p class="text-[10px] text-outline mt-1 uppercase tracking-wider font-bold">3 hours ago</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-2 bg-primary rounded-full"></div>
+<div>
+<p class="text-body-md font-bold">Staff Role Assigned</p>
+<p class="text-xs text-on-surface-variant">Admin access granted to Arif Hossein.</p>
+<p class="text-[10px] text-outline mt-1 uppercase tracking-wider font-bold">5 hours ago</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-xl text-primary text-label-md font-label-md py-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-colors">
+                            View Activity Log
+                        </button>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-2xl px-2xl mt-auto bg-inverse-surface border-t border-outline-variant">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-lg">
+<div class="text-center md:text-left">
+<h4 class="text-title-lg font-title-lg font-bold text-primary-fixed">Khelabase</h4>
+<p class="text-label-sm font-label-sm text-inverse-on-surface mt-1 opacity-70">© 2024 Khelabase. Bangladesh's Premier Football Ecosystem.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="text-label-sm font-label-sm text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#">Community</a>
+<a class="text-label-sm font-label-sm text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#">Tournaments</a>
+<a class="text-label-sm font-label-sm text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#">Teams</a>
+<a class="text-label-sm font-label-sm text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#">Players</a>
+<a class="text-label-sm font-label-sm text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- FAB (Suppressed as per rules on detail/dashboard pages, but shown here for primary intent interaction) -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all md:hidden">
+<span class="material-symbols-outlined text-2xl">add</span>
+</button>
+<script>
+        // Micro-interactions and small UI logic
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Simulating some dynamic status changes or interactions
+        const approveButtons = document.querySelectorAll('.bg-primary.text-white.flex.items-center.justify-center');
+        approveButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const statusBadge = row.querySelector('.bg-secondary-container');
+                if (statusBadge) {
+                    statusBadge.innerText = 'Approved';
+                    statusBadge.className = 'px-sm py-1 bg-primary-container text-on-primary-container rounded-full text-xs font-bold transition-all duration-300';
+                    this.parentElement.innerHTML = '<span class="text-primary material-symbols-outlined">check_circle</span>';
+                }
+            });
+        });
+    </script>
+</body></html>

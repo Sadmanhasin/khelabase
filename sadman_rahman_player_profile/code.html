@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase | Premium Player Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-secondary-container": "#6f5100",
+                    "on-surface-variant": "#3e4a3d",
+                    "inverse-primary": "#62df7d",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bdcaba",
+                    "on-primary-container": "#f7fff2",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "primary-fixed-dim": "#62df7d",
+                    "primary": "#006b2c",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#006e2d",
+                    "on-primary-fixed": "#002109",
+                    "secondary": "#795900",
+                    "secondary-container": "#ffc329",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-dim": "#d0dbed",
+                    "outline": "#6e7b6c",
+                    "tertiary-container": "#316bf3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "tertiary-fixed": "#dbe1ff",
+                    "inverse-surface": "#27313f",
+                    "surface-variant": "#d9e3f6",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dee9fc",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary": "#0051d5",
+                    "on-surface": "#121c2a",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-tertiary-container": "#fefcff",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "on-background": "#121c2a",
+                    "on-tertiary-fixed": "#00174b",
+                    "primary-fixed": "#7ffc97",
+                    "primary-container": "#00873a",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#005320"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "2xl": "48px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+        .premium-glow {
+            border-top: 2px solid #FBBF24;
+        }
+        .radar-grid {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        .form-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 9999px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #16A34A;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface custom-scrollbar">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<span class="text-headline-md font-headline-md font-extrabold text-primary">Khelabase</span>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Explore</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Tournaments</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Teams</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Marketplace</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined p-xs hover:bg-surface-container-low rounded-full transition-all">search</button>
+<button class="material-symbols-outlined p-xs hover:bg-surface-container-low rounded-full transition-all">notifications</button>
+<button class="hidden md:block bg-surface-container-low text-on-surface px-md py-xs rounded-lg font-label-md text-label-md">Login</button>
+<button class="bg-primary text-on-primary px-md py-xs rounded-lg font-label-md text-label-md active:scale-95 transition-transform duration-150">Create</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center border border-outline-variant" data-alt="A clean professional studio portrait of a young male athlete with a focused expression, wearing a sleek green sports polo. The lighting is soft and flattering, highlighting modern athletic precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3VI7ISta0BXDHOrjZu9SQCF0U8XnDbt66lfZLD5MGdz_9ogCeAVIohnNRSlqZHURdXvb8Kp-wJXWkuvArDWUmKlcsuoxbJ_zmig7d0cjGHkEXhI1wmTSEYLCBTl1RKwxNsiZaD2qAoGLUH6KXm6u70lnRg0mRu-NxS1dlTHILyErrosMLnYk_XxyNRIoZyH3DsL9qwLi4tzfitnxdvR86XLxnFqKARRW6y4dzX9eVBSY3SaBdJNv7Jse1OjEhilUT40ZSl74qKpQ')"></div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-lg py-xl flex flex-col md:flex-row gap-lg">
+<!-- Main Content Area -->
+<div class="flex-1 space-y-lg">
+<!-- Profile Header Card -->
+<section class="bento-card overflow-hidden">
+<div class="h-48 md:h-64 relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A wide cinematic shot of a vibrant, professional football stadium at dusk. The lush emerald green pitch glows under stadium floodlights, creating an atmospheric, high-performance sports environment with a slight motion blur of a crowd in the background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuClwItfyZ44WsXQ5yFbVRGbuqBk3hGqlG_EcVskzQ6pH2qAaSlHggy3qatkCwCsxkNzcNKzTaPe-QglL5SUD_DamTB87YrFHUvOatFdeIuZCOsrcaBTRc3iwK9JZsuN3YmGl7Nr3Z8ACCbnhqGUd716ejiDmAabXC1w4Pq0KMAKa5aQuDglPXlVLID6VaY9JBDVaMQ_7_DyE8lkhkcYY3nQcKtanOckoW5bWFDS3txFFgjWA00F_pC73uL_0P8-Dq9nDppijuQLSFQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="px-lg pb-lg relative">
+<div class="flex flex-col md:flex-row items-end md:items-center justify-between -mt-16 md:-mt-20 gap-md">
+<div class="flex flex-col md:flex-row items-center md:items-end gap-md">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden bg-white shadow-lg">
+<img class="w-full h-full object-cover" data-alt="A detailed close-up portrait of a professional football player in a green and yellow kit, looking confidently at the camera. He has a determined athletic look with a clean-cut hairstyle. High-contrast studio lighting emphasizes his facial features and the premium texture of the jersey." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTqJtIwCfcGAl64AiMyOqNxHXxLb85oAprSmUIlRCTJpeDhTHcP7KcCr91GIKBa82J1CTKPn1DJWfEt1by7DbJF2Kr4d_FzFuSDrMTx-D3GTyIcElI1cgm8x5t6wBcXMFwMTxn0v-f2EGn0Ct2mADVhJfzLMNwYJwEQR4eepYKtomXvUp-I0DnmTIYG1TCBxIdEvwoVCA7FGVngzlkB89I8puoGttmY9-decsC1kOjPK2qUNljXlJpzfTPB12ocdQDA_cHT67DYh8"/>
+</div>
+<div class="mb-xs text-center md:text-left">
+<div class="flex items-center justify-center md:justify-start gap-xs">
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Tanvir Ahmed</h1>
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Midfielder • Bashundhara Kings • #10</p>
+<div class="flex flex-wrap items-center justify-center md:justify-start gap-sm mt-xs">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-surface-container-low rounded-full text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">location_on</span> Dhaka, Bangladesh
+                                    </span>
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-surface-container-low rounded-full text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">footprint</span> Right Footed
+                                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-sm mb-xs">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label-md text-label-md flex items-center gap-xs shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">person_add</span> Follow
+                            </button>
+<button class="bg-white border border-outline-variant text-on-surface px-md py-sm rounded-xl font-label-md text-label-md flex items-center gap-xs hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">mail</span> Message
+                            </button>
+<button class="bg-white border border-outline-variant p-sm rounded-xl hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-2 md:grid-cols-5 gap-md">
+<div class="bento-card p-md flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Matches</span>
+<span class="text-headline-md font-headline-md text-primary">124</span>
+</div>
+<div class="bento-card p-md flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Goals</span>
+<span class="text-headline-md font-headline-md text-primary">42</span>
+</div>
+<div class="bento-card p-md flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Assists</span>
+<span class="text-headline-md font-headline-md text-primary">58</span>
+</div>
+<div class="bento-card p-md flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Win Rate</span>
+<span class="text-headline-md font-headline-md text-primary">76%</span>
+</div>
+<div class="bento-card p-md flex flex-col items-center justify-center text-center">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">MOTM</span>
+<span class="text-headline-md font-headline-md text-secondary">18</span>
+</div>
+</section>
+<!-- Performance & Form -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<section class="bento-card p-lg">
+<h3 class="text-title-lg font-title-lg text-on-surface mb-lg">Performance Matrix</h3>
+<div class="relative h-64 flex items-center justify-center">
+<!-- Simplified Visual Radar Chart -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-48 h-48 border-2 border-outline-variant radar-grid opacity-20"></div>
+<div class="w-32 h-32 border-2 border-outline-variant radar-grid absolute opacity-40"></div>
+<div class="w-16 h-16 border-2 border-outline-variant radar-grid absolute opacity-60"></div>
+<!-- Player Data Polygon -->
+<div class="w-40 h-40 bg-primary/30 border-2 border-primary radar-grid absolute animate-pulse"></div>
+</div>
+<!-- Axis Labels -->
+<div class="absolute top-0 text-label-sm font-label-sm uppercase">Speed (88)</div>
+<div class="absolute bottom-0 text-label-sm font-label-sm uppercase">Strength (74)</div>
+<div class="absolute left-0 text-label-sm font-label-sm uppercase -rotate-90 origin-center -translate-x-4">Defense (62)</div>
+<div class="absolute right-0 text-label-sm font-label-sm uppercase rotate-90 origin-center translate-x-4">Passing (94)</div>
+</div>
+</section>
+<section class="bento-card p-lg">
+<h3 class="text-title-lg font-title-lg text-on-surface mb-md">Recent Form</h3>
+<div class="space-y-md">
+<div class="flex items-center justify-between p-md bg-surface-container-low rounded-xl">
+<span class="text-body-md font-body-md">Last 5 Matches</span>
+<div class="flex gap-sm">
+<div class="form-dot bg-primary flex items-center justify-center text-[8px] text-white font-bold">W</div>
+<div class="form-dot bg-primary flex items-center justify-center text-[8px] text-white font-bold">W</div>
+<div class="form-dot bg-primary flex items-center justify-center text-[8px] text-white font-bold">W</div>
+<div class="form-dot bg-secondary flex items-center justify-center text-[8px] text-white font-bold">D</div>
+<div class="form-dot bg-error flex items-center justify-center text-[8px] text-white font-bold">L</div>
+</div>
+</div>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center justify-between border-b border-outline-variant pb-xs">
+<div class="flex items-center gap-sm">
+<span class="w-8 h-8 rounded-full bg-cover" data-alt="Small circular logo for a fictional football team named 'Dhaka Strikers', featuring a modern stylized eagle in blue and white." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCV68EW9VIqvWDBEslRf4g_LT8ZATmLDDLCv9usQNoYe-7iznKWGFpH3gSfUeXb1yoj6ab0SYEUSTKoKxe1Ev2oetMm100TgKv7zqZHsI2Z6wV9DXm3ukMgVi0OhLsGN5VRreoQl6e8-5XrpTUTsX5mw7RkqITzojecijXaWG3ToY77-RBvuVyoWx4SAajZ4kC5yQQHznCqVRvONV653igr6rg55mWHgcJKk0Vnjj2YwW3NitPnglM8nSrlfxlDsGDHOSxB50BQrjk')"></span>
+<span class="text-body-md font-body-md">vs. Dhaka Strikers</span>
+</div>
+<span class="text-label-md font-label-md text-primary font-bold">2 - 0 (W)</span>
+</div>
+<div class="flex items-center justify-between border-b border-outline-variant pb-xs">
+<div class="flex items-center gap-sm">
+<span class="w-8 h-8 rounded-full bg-cover" data-alt="Small circular logo for a fictional football team named 'CTG Warriors', featuring a coastal wave and anchor design in navy and gold." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGWL3srM7eqWo6AldFKPlRmV9LZrtrHTLKp13vl3WasjdPgWyJ3LUF7bp7cLjt-2S5x1sDRYwwpiIGhpyl7uQAfFI28Uvc72H4llkyM17A2Ues0rv8Cyfajya6-64uRas5i_K5lfuIZ7_POtasoFt78XjGM2hq6cQpYW_aYFgNqp2D1_40X23Y5cFA4Llz96TkKaaaQseDM-QzNdCiqZlHBLFvYQ-FzKIsToFbvHNN_KHTv0D1tOjsKUeze0xNfaEkDK2VwI2J9K8')"></span>
+<span class="text-body-md font-body-md">vs. CTG Warriors</span>
+</div>
+<span class="text-label-md font-label-md text-primary font-bold">3 - 1 (W)</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Achievements (Gold Accents) -->
+<section>
+<h3 class="text-title-lg font-title-lg text-on-surface mb-md">Achievements</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bento-card premium-glow p-lg flex items-center gap-lg">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Dhaka Super Cup</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Winners • Season 2023</p>
+</div>
+</div>
+<div class="bento-card premium-glow p-lg flex items-center gap-lg">
+<div class="w-16 h-16 bg-secondary-fixed rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Top Scorer League</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Golden Boot • 24 Goals</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Career History Timeline -->
+<section class="bento-card p-lg">
+<h3 class="text-title-lg font-title-lg text-on-surface mb-lg">Career History</h3>
+<div class="space-y-xl relative before:content-[''] before:absolute before:left-4 before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant">
+<div class="relative pl-12">
+<div class="absolute left-[13px] top-2 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-primary/20"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-xs">
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Bashundhara Kings</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">2022 - Present • Professional League</p>
+</div>
+<span class="text-label-md font-label-md px-sm py-xs bg-primary-container/20 text-primary rounded-lg self-start md:self-center">64 Apps</span>
+</div>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-[14px] top-2 w-2 h-2 rounded-full bg-outline"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-xs">
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">Mohammedan SC</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">2020 - 2022 • Professional League</p>
+</div>
+<span class="text-label-md font-label-md px-sm py-xs bg-surface-container-low text-on-surface-variant rounded-lg self-start md:self-center">42 Apps</span>
+</div>
+</div>
+<div class="relative pl-12">
+<div class="absolute left-[14px] top-2 w-2 h-2 rounded-full bg-outline"></div>
+<div>
+<h4 class="text-body-lg font-bold text-on-surface">BKSP Youth Academy</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">2017 - 2020 • Youth Career</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<aside class="w-full md:w-80 space-y-lg">
+<!-- Suggested Players -->
+<section class="bento-card p-lg">
+<div class="flex items-center justify-between mb-md">
+<h3 class="text-label-md font-label-md uppercase text-on-surface-variant">Similar Players</h3>
+<a class="text-primary text-label-sm font-label-sm hover:underline" href="#">View All</a>
+</div>
+<div class="space-y-md">
+<div class="flex items-center gap-md p-xs hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-cover" data-alt="Close up avatar of a young athletic footballer with dark hair and a focused look, wearing a blue training kit. Clean minimalist aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8wF8wmjn1NxiSbrNtZ8ATZGIO0i9jPyym4zeZg3iy2JVMYmQXzlYDscNiSxKoxqbC24rDy6UzkfxYTrDxJWJD8qwgpv0CDnMO69EDMDtD7DIfAGW3aFyrpO3zw5jCyJ_IRQTzK1Q2QocqCXPPiFnoz2lfwuoeUaLDlPWgAeDjpxP1A3J_R522Lt64Q2rlhBPMsper8a9X7YlLEiarLo8gkSlCCRjuRVcu9ac-qB_CwuK6HGWb4XCBEefq8w1HpuW6lLYEhAhXgI4')"></div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Rakib Hossain</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Forward • Abahani Ltd</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-xs hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-cover" data-alt="Close up avatar of a smiling professional footballer with a light beard, wearing a red team jersey. Professional studio portrait." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBighLPIdqst0OeTMiW1OzFI7t5dK-5s1efjwaqEuu1vgtnsuWAcmeKkgzTk7IsPG_RqqfPqE6D_3_d1GaQMkdpkKOWdkStv4gpRjUmzwPorCDXl0UobW4L9e8D2Rhg5rFXPfGhk5oj1tn5lnfiod7xWuwwc8RjoRulkstzd-swK_F_ATkMDaqGrFDQL2TFxW5sBD2JOYmm3omfCoOvqDQyp1qzptlecPabMw71FHpERYlmMBRbo_ehpFZLVH0t_A6rSnubZ9hHVOQ')"></div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Zoni Islam</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Winger • Sheikh Jamal</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-xs hover:bg-surface-container-low rounded-xl transition-colors cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-cover" data-alt="Close up avatar of a sharp looking athlete with short cropped hair, wearing a white sports jersey. Bright lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqM1WwVJ2D8raxDVySMA92p2WM9kHIpL5j6upghQ2JVKgs3kjZ3IT0DAWYUO_g0wqA-GsWQB1bskCvDxfi2H11vXbIx_UOd7RfzQtsbwwFPzzxBM4do5nytLgqtQhdD7grUGi8s9_jSn2dE7jx63NyTV3AQjaom0Ti9_6c7ukgLtj7AAz8DDbiUvJFwQslnSH8Bd7QmJLWNmeo3gjzV9yo45_gykgS-Av8qWLrPj8hbd1XYYOR4Rq6XthPR7H3NZ6vbH3NRG-H-rQ')"></div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Mehedi Hasan</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Defender • Police FC</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Tournament -->
+<section class="bento-card p-lg bg-inverse-surface text-inverse-on-surface overflow-hidden relative group">
+<div class="absolute top-0 right-0 p-lg opacity-10 scale-150 group-hover:scale-[1.7] transition-transform">
+<span class="material-symbols-outlined text-[100px]">sports_soccer</span>
+</div>
+<h3 class="text-label-md font-label-md uppercase text-outline-variant mb-md">Upcoming Event</h3>
+<div class="relative z-10">
+<h4 class="text-headline-md font-headline-md mb-xs">Independence Cup</h4>
+<p class="text-body-md font-body-md text-outline-variant mb-lg">Quarter Finals vs. Muktijoddha Sangsad</p>
+<div class="flex items-center gap-md">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-inverse-surface bg-cover" data-alt="Bashundhara Kings club logo, featuring a fierce king's crown and crest in red and gold." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFeUjCMjRvQBXEGtA4sM5SqcBNiQ-T90Yu-hoDeZhMiHzrhdZPfS5bDnwkaO04zkpTXHtvi51GWf4CaLjS-HfY1AALdSbKnrq-9228ynNFrKKCTfkh6gA8AsJs4cQK3iRkxyjlW_8uAetF47EcjBynA51hjc1Eyi0TNjTnJ9dH52F4DVmqOaIRR0gB1j2ouagvZqWVKupomzGUwFxvSHDtnbZT2FTYr6ijc2wKqEQLW-9s-7D_l8U3smVO2BLzyqhUTgtmY43T7Tw')"></div>
+<div class="w-10 h-10 rounded-full border-2 border-inverse-surface bg-cover" data-alt="Muktijoddha Sangsad KC logo, showing traditional cultural symbols and football in green and red." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrV09nbyrwVW7o_QZY_KDwS98r8Hk6RMPy8r7XSwuVloBf7L5CJHkFuKFSNjB9lKV1vT8mgUmFlO4hgCpFt-xhfkay8q-FvUuelxfopsRBhMyOC1xPcg84bIQPwdOGPg1p3WynikiEKsWdYv0Kf2K4Hpahw-oYQxH-WUXziA64DeQxYIL37k3z5n2pRxHtHndO1h044kdQsN3GU_Zhs5YNpkmRDjg14dQSlc0Hut9yTu6CJo3Du9sz5ij7-dV6DLFTnn76-9dW1NI')"></div>
+</div>
+<span class="text-label-md font-label-md">Oct 24, 4:00 PM</span>
+</div>
+</div>
+</section>
+<!-- Premium Sponsored Banner -->
+<section class="bento-card p-base bg-gradient-to-br from-secondary-fixed via-secondary-container to-secondary-fixed-dim border-none shadow-xl">
+<div class="p-lg bg-white/40 backdrop-blur-md rounded-[12px] flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-secondary text-[40px] mb-sm" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<h3 class="text-title-lg font-bold text-on-secondary-container mb-xs">Khelabase Pro</h3>
+<p class="text-body-md font-body-md text-on-secondary-fixed-variant mb-lg">Unlock advanced scouting reports and full match videos.</p>
+<button class="w-full bg-secondary text-on-primary px-md py-sm rounded-xl font-bold shadow-md hover:brightness-110 active:scale-95 transition-all">Go Premium</button>
+</div>
+</section>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest w-full py-2xl px-lg mt-auto border-t border-outline-variant">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between gap-xl mb-xl">
+<div>
+<span class="text-title-lg font-title-lg font-bold text-primary-fixed">Khelabase</span>
+<p class="text-body-md font-body-md text-inverse-on-surface mt-md max-w-sm">Empowering Bangladesh's football talent with data-driven insights and premium community exposure.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-xl">
+<div class="flex flex-col gap-sm">
+<span class="text-label-md font-label-md text-primary-fixed uppercase tracking-widest">Platform</span>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Community</a>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Tournaments</a>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Teams</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="text-label-md font-label-md text-primary-fixed uppercase tracking-widest">Resources</span>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Players</a>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Marketplace</a>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">About Us</a>
+</div>
+<div class="flex flex-col gap-sm">
+<span class="text-label-md font-label-md text-primary-fixed uppercase tracking-widest">Legal</span>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Privacy Policy</a>
+<a class="text-inverse-on-surface hover:text-primary-fixed hover:underline transition-all font-body-md" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="pt-xl border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="text-label-sm font-label-sm text-on-surface-variant/80">© 2024 Khelabase. Bangladesh's Premier Football Ecosystem.</span>
+<div class="flex gap-lg">
+<a class="text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">play_circle</span></a>
+<a class="text-inverse-on-surface hover:text-primary-fixed transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential hover effects managed by CSS, but can add JS triggers here
+            });
+        });
+
+        // Sticky Navbar subtle scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

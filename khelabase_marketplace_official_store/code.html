@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Marketplace | Official Football Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d0dbed",
+                    "inverse-on-surface": "#eaf1ff",
+                    "outline": "#6e7b6c",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-surface": "#121c2a",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "on-primary-fixed": "#002109",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d9e3f6",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-error": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "surface": "#f8f9ff",
+                    "on-primary-fixed-variant": "#005320",
+                    "on-background": "#121c2a",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed": "#dbe1ff",
+                    "primary": "#006b2c",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-tint": "#006e2d",
+                    "secondary": "#795900",
+                    "tertiary": "#0051d5",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-container": "#f7fff2",
+                    "inverse-surface": "#27313f",
+                    "on-secondary-container": "#6f5100",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "inverse-primary": "#62df7d",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "on-tertiary-container": "#fefcff",
+                    "surface-container-high": "#dee9fc",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "secondary-container": "#ffc329",
+                    "primary-container": "#00873a",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#00174b",
+                    "tertiary-container": "#316bf3",
+                    "primary-fixed-dim": "#62df7d",
+                    "outline-variant": "#bdcaba",
+                    "primary-fixed": "#7ffc97",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d9e3f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "14px",
+                    "xl": "16px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "2xl": "48px",
+                    "gutter": "24px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "container-max": "1280px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "sm": "12px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8f9ff;
+            color: #121c2a;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .product-card-shadow {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .premium-glow:hover {
+            box-shadow: 0px 10px 30px rgba(22, 163, 74, 0.15);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-container-low shadow-sm">
+<nav class="max-w-container-max mx-auto px-lg flex items-center justify-between h-16">
+<div class="flex items-center gap-xl">
+<span class="text-title-lg font-display-lg text-primary dark:text-primary-fixed">Khelabase</span>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Tournaments</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Teams</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Marketplace</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 hover:bg-surface-container-lowest transition-colors duration-200 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-surface-container-lowest transition-colors duration-200 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[480px] md:h-[560px] flex items-center overflow-hidden bg-surface-dim">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-90" data-alt="A cinematic, low-angle shot of a premium, emerald-green football stadium pitch at dusk. The lighting is soft and professional, highlighting the high-performance texture of the grass. A single high-end football and a pair of professional boots are positioned artistically in the foreground. The mood is aspirational and modern, reflecting an elite athletic brand aesthetic with plenty of copy space." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE-IVs6XHxQf3VdPV3afuXpaMqxpXQr1Aqb6nPfTqoWEgSY6kOcwUQ0NKrqd3I31ZEY9Wy21ld4vN5ojkM1awPbbgBR3dAFGVdXAlJfob6Pye_OUZA8GocufggMx4taG1MXj6HIUSxYixa0rLohNH3LafsvfpRZFa3n--CGaJKYFU4A3bOHUSDnPLG9w2eO_8Cnsa15hvFK1NYpxzDXzHYQcsJCaxe0u3aXLE78JL6TFQe2QxY93pr9Oj7dDjGzNob-ENusto57Rs')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/90 via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-lg w-full">
+<div class="max-w-2xl">
+<span class="inline-flex items-center gap-xs px-sm py-1 bg-primary/10 text-primary rounded-full mb-md font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[14px]">verified</span> Exclusive Gear
+                    </span>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-md">Official Football Marketplace</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl leading-relaxed">
+                        Precision-engineered equipment for the modern player. Quality football gear curated and certified by Khelabase professionals.
+                    </p>
+<div class="flex flex-wrap gap-md">
+<button class="bg-primary text-on-primary px-xl py-md rounded-lg font-title-lg text-body-lg hover:brightness-110 active:scale-95 transition-all shadow-md">
+                            Shop Collections
+                        </button>
+<button class="bg-surface-container-highest text-on-surface-variant border border-outline-variant px-xl py-md rounded-lg font-title-lg text-body-lg hover:bg-surface-bright active:scale-95 transition-all">
+                            View New Arrivals
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Search Section -->
+<section class="max-w-container-max mx-auto px-lg -mt-8 relative z-20">
+<div class="bg-surface-container-lowest p-base rounded-xl shadow-lg max-w-3xl mx-auto border border-outline-variant">
+<div class="flex items-center gap-md px-lg h-16">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="flex-1 bg-transparent border-none focus:ring-0 font-body-lg text-body-lg text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search football products..." type="text"/>
+<div class="h-8 w-px bg-outline-variant"></div>
+<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:bg-primary/5 px-md py-sm rounded-lg transition-colors">
+                        Filters <span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Categories Grid -->
+<section class="max-w-container-max mx-auto px-lg py-2xl">
+<div class="flex items-center justify-between mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Shop by Category</h2>
+<a class="text-primary font-label-md text-label-md hover:underline" href="#">View All Categories</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
+<!-- Category Tiles -->
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A high-resolution, stylized product shot of a sleek professional football jersey in vibrant colors, hanging in a clean, minimalist studio environment with soft shadows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBbnjZ3B740FhYDf0feeeyWFY0VU1DAC9bWihiZTK8Gv1bxObn44lDlKahubystOeXJFvSPjKt18PIEhzWTcw-DqgjM2yHroLLCEKnBaQteLJ_cG21tVIHSoKLp_qUt_FjLqtt3SYa2IJMG8PM3fb8aWukrp3R5OE-V-grAjwusw7qq9nIM7t1_OwwjKot1RrSPOokLrxzhGfegfheisXDyfy-FYJb8sE3aNc3p7TW5zjQbEXi6lWfd_mMwh9M0jwZ7gG_l1pgCqfw')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Jerseys</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A pair of high-performance football boots showcasing intricate texture and modern design, shot on a clean white background with professional studio lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA50T-OvaawWSfS5m2UWct-XlxcE3yAqeXEEwcZ-a4OLCkaHUmRUXxQnS1zIwX26gkiNnBwcADa0T26M3xHPNq-nV7WsDfnyZoOT3ezYfo_uhSaMWAXLqsyMf7Q1_eEGrTC4gyMBRIMp6NoDPTKsTilvatfYHU9vM67uKKi9O8tHRlJN68k9jRaK-Bs469MoEWNVwnGwNbo1OMAuGoNlr9ZmYCqIOhmZ1Ho0UJPsRgoL7_Ha13QlUROpX1zMzfi_Jz-_qEt6Ygdbvw')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Boots</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A modern professional-grade football with dynamic geometric patterns, floating in a bright studio space with soft ambient occlusion." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB2hanAA9G2YU-FDxxQ9IuGxGQlQc--e2rKE_MxDQcY-8ZY54_SNulWPgP8sb7PFb37K95ajGv-YX1Yuyye0ROLGHRNlGdKnkqGhmTRE8EPBD_f1lHZqdROeulVQXO3i93HHL3PKU8HXYkEqruwsiUlx9eUViKoIRNoewMLI3QPiBigIkzI6g7kwanmffwczFJ5bZX0oJUZs11eDc6w8M101bnZrgiPYp0lcD37ol3NYFTb4IEjbltt7nuVvDF1PC-X-9SjW9cHyeU')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Footballs</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Goalkeeper gloves with advanced grip texture, presented in a clean athletic aesthetic with soft lighting highlighting the premium materials." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChw6H8i2ADa2GcG65YUdp_UMJwWtehPsSAYYxuaNAzqm5GVrF6p0guT-aC_FBddDhj2JpMfaV1VZ1JEWpW2Gp7yWoID9jpCern1v2KovZ_Vx1s7ao4XARO1Eeejn37MCu5uY7LiYqYpkVzYT5DtNZpbfHjs-kIeHQ2laSU54AYZ-NMg-zpMZ7FineCsPGiMG1LjdDQM708-ly500Dvj7y3976x9e35W67-RpzKd1s2jEdDGdOY2FExTao8HLQUZ9j3QzjdICuTqU0')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Gloves</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Professional training equipment like cones and ladders arranged neatly in a bright, high-performance athletic facility setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjAbnbSgdxt3o3pXSbvn3oK4_xHqrCx3052owYklWT2NaZ7HKq7jwDjsIZdSH3HREEfMSDhqnex1yp2po4Yd0rtGcieuhBJH21nRgMa8CJuBSJ7ZSeJoZKJwGKtD330FGlKDmpxfvr22vOOiKblopNmUTl-Y053HoOZD-bFb6jH4HuAS_SMi3C1935Ng0S64ztUtDsAmsAArx5p7XRr3C6KyjmAsK5e5s4jKWxgsFsdVvKVQjUJx7cn39c5h208OsHiE-cgJhE9fs')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Training</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="A durable, premium sports bag for football gear, featuring multiple compartments and a sleek black aesthetic in a well-lit studio." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_Yv52vvhvnXtB8aLDkbMsuUa6HBvrOwq--rng8rVzX6xXWkLAj7ayHnoLCFlPBpYyyvJ5Lrvvsmp79omoRE5GqxpkSvpL2DxMOXNr_at74n91RTTrrUjofYx-SVmuK-GPdb-V0Kk5cxxngATlUjXa1AZRAy6m223BQBedE2W18_LW-_oABK5CAw7YfPYu-FdDu0FPWP08ZkbJ2xKy-FzXNXyqRgyV2dpQ_LVaADOiGNa0PacU7v7csDwtEZ-QS95LVVreEV0oA-w')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Bags</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Lightweight carbon fiber shin guards for football players, displayed to highlight their strength and ergonomic design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAx2sZbBSPz7T-syIHztD2VGwqi7QrSl3MCvyZCXXKU9N_9iFG1CgdFVTs7oE0Lp7qoW5dJpD95DzEoW4eS1Nz1CsQ2mXdhJ8ptQmvPXqkeoX5t3qNyjliCfRCsfaUW02COD_KiMdVf1-nAEG_uwd0xzdy8n6y7HedXu1k0-vxSA13PXFEE5BXcybuAYS1Q-aCURpA-JNG5yDgnCUE441sb4kLX2TgcHA4bacKL9Evi1Vu0K-jgDtREsfC3a0_CJoh775kMhU-d9Ks')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Shin Guards</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden mb-md border border-outline-variant transition-all group-hover:shadow-md">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Assorted football accessories like captain bands and sweatbands, neatly arranged with a clean, sporty minimalist vibe." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0Ht6wX6JSMeZxa8Jotlp8NTvVQFVT0jlDd6t_G87JOaWRUrIQIQ9vx8O0WzT_Ni8Y6f7CybOVoO7WFKpNyeD9ZGGG8MoHHW0qSCCu7GLou1Ug6M4xbbm6TQF8LppTQjLjXmzxaxLVPrn-tAcQq_1Khk9qSbPnuDVxRy91_-Ibkmfvs0Rg_jYq9V93Dv-Gh24gxhtEKgXczCHFPbyyNXmBOiS7mlW1Mzpvw9eJMzXXb2ux4dLxzZ5ZGgUJn7UBt00Iz13k6Xre6cU')"></div>
+</div>
+<p class="font-title-lg text-title-lg text-on-surface text-center group-hover:text-primary transition-colors">Accessories</p>
+</div>
+</div>
+</section>
+<!-- New Arrivals (Horizontal Scroll) -->
+<section class="bg-surface-container-low py-2xl overflow-hidden">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex items-center justify-between mb-xl">
+<div class="flex items-center gap-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">New Arrivals</h2>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded text-label-sm font-label-sm">JUST DROPPED</span>
+</div>
+<div class="flex gap-md">
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-lg overflow-x-auto no-scrollbar pb-lg -mx-2 px-2">
+<!-- Product Card 1 -->
+<div class="min-w-[280px] md:min-w-[320px] bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-[4/5]">
+<div class="w-full h-full bg-cover bg-center" data-alt="Close-up of a premium 2024 elite jersey with intricate fabric weave, professional stitching, and vibrant colors on a studio model." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAkgO9KukESpSlkMA3mIODrYM9cFGTMkyFi6QyN6MD6WsGgBmGukEpCPVy3KF6CSBTOqsK4mCY-RxjePOcHip6X6COIrOMplvZanvAfJLlK_MDmh8omqR5CAXbySk1hwRUkOFaRiymIqnm70zyc-EM2thA2N6GqcflmGW0RgXJgLDHxWPuOV9_5DgqqCWFrcLuv1fy-oLN1fnOln5hqaG6DSaYlRPxvG9_XOVCaJD4t1SbXTq83z9A1VnB0grAGl7kJ7ys40gh5s4')"></div>
+<div class="absolute top-md left-md bg-primary text-on-primary px-sm py-1 rounded text-label-sm font-label-sm">NEW</div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Adidas Performance</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Elite Match Jersey '24</h3>
+<div class="flex items-center justify-between mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$89.99</p>
+<button class="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[280px] md:min-w-[320px] bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-[4/5]">
+<div class="w-full h-full bg-cover bg-center" data-alt="High-performance football cleats in a stunning metallic finish, positioned dynamically in a bright, clean commercial environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzTFgFamg3GnR_CV0H24XxG8i7nFDwbhLGLD9GYyhXph6FlD8kMqzMPwb9bH37CoAYRBly6PT93LwXf8ra9FAEM4Z1CyHVrwV_XuwT-0hVRscEU9HNdCv51Q3b1fxiQRYvUHZPA9UhiTtoexO1yl_EJhnJArxLiu1V6RN_S3K5_TaHASpgHiLQVxj1hIIPMC-T2DQr0q9ouQUITUSFpgBhGN-WXPJM30ACgQ7AWdGaGClvZ9EP7MN0cqW4BfTob2v5cIMPgB8CufI')"></div>
+<div class="absolute top-md left-md bg-primary text-on-primary px-sm py-1 rounded text-label-sm font-label-sm">NEW</div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Nike Football</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Mercurial Superfly X</h3>
+<div class="flex items-center justify-between mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$249.00</p>
+<button class="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[280px] md:min-w-[320px] bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-[4/5]">
+<div class="w-full h-full bg-cover bg-center" data-alt="A premium training vest and compression gear worn by a professional athlete in a high-tech training facility, minimalist lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCi_KWhjlLJmc6LuACDKdXMis34EA-La8t7j2OedZBTuP5aUM5cyaTVSQ0IIuhEr5_z43YXFlrgnwHPrdbuBjSGwnZOPGcW3CJd-a1yv8fGGxvLJVuAwjIYnHWD0C3wfQ4O9f53rmTsHZpB7mUXUGyGa-kbIbnemSOuuy0sfGaCCkefSbWwbNXQ24KhTGwWE-AGxY3dCMuLEFmW7RFLLY-FB42VO8G0iecP9tUEsNz3EpAvpblZMEr8o5i8ca6GzfntJ0kugmqR3p8')"></div>
+<div class="absolute top-md left-md bg-primary text-on-primary px-sm py-1 rounded text-label-sm font-label-sm">NEW</div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Khelabase Pro</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Smart GPS Tracker Vest</h3>
+<div class="flex items-center justify-between mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$120.00</p>
+<button class="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="min-w-[280px] md:min-w-[320px] bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-[4/5]">
+<div class="w-full h-full bg-cover bg-center" data-alt="Official match ball for a major league, featuring vibrant color ribbons and thermal bonding, presented on a pedestal in studio light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHHlYIUfPNFlSfrFY5Ha8aEqO3TdLDHgDAU31BwWT50awN0tFjkCslVTF_A0jiFug4LwGvVMryDmhH9wNw0qnfV7nyqjuoQGuWDTq8qU7A6Zh3tdKLgOpG_8NJHhJf04gSfATJDOlVjA8fUoteBrKl6FiYQcXxN2XOaA2DwIfJbKjxunJOfrvSLOnlOJfmv2YznFSYwH57f63Ph0HNk9UVWAC-k2ETLEdqkGKcQv_-tJk4aLzyQupcM5Y3gKa_tea5rD-cmqyOILI')"></div>
+<div class="absolute top-md left-md bg-primary text-on-primary px-sm py-1 rounded text-label-sm font-label-sm">NEW</div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Select Sports</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Official Match Ball Pro</h3>
+<div class="flex items-center justify-between mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$145.00</p>
+<button class="p-2 bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Best Sellers -->
+<section class="max-w-container-max mx-auto px-lg py-2xl">
+<div class="flex items-center justify-between mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Best Sellers</h2>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-xs">
+                    Shop All Favorites <span class="material-symbols-outlined">trending_up</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Best Seller 1 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="A pair of iconic white and gold football boots displayed in a high-end luxury fashion style, emphasizing the premium quality and craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAY3s6tO0XgY8965xPz86ukdtwVKoqLJa9YtiwerDEDc-ZiKFFzuzddeZwCxWzA1tasvlUCacLm12Evtqipz3Sqhi_nytBxuVhtD_h3xQYvkJKike3YWoWD7ZQXR0C8LBV4FCve2Xx-4GxbSWmuVD_gKALzisWVNiBggVUEzX0KBoK2gKEjQXbiUBRa9snfInOOxoc5o9NaTc_UoqGWbWAuxMvqTNb4INlyfxx9YEfFz3H1XXq47fKycsN4CTyXmooZLO06WedukUg')"></div>
+<div class="absolute top-md left-md bg-error text-on-error px-sm py-1 rounded text-label-sm font-label-sm">SALE -20%</div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Puma Football</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Future Ultimate FG</h3>
+<div class="flex items-center gap-md mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$176.00</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-through">$220.00</p>
+</div>
+<button class="w-full mt-lg bg-surface-container-highest text-on-surface-variant border border-outline-variant py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center justify-center gap-md">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Best Seller 2 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="Professional training cones and markers in bright neon colors, shot with shallow depth of field in a clean grassy training environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYzMo45TbsXf1la4p9rpPjpL1scLw3OQ3h-K2AqsonvE_a0ADrmXUFQh8Ku0ufE_JIyFeBu7t8d7SOCgaRFQ9yEKlfJtzjWRxbmhKP7vbYlYF1AQl6OmhlaiHKma8fYP2DHiTQ8HkMuBJtulMGbya-_ROzaI-Q_ByZSwfHt6iiL4rXtA1XoiSjQ3yQovsv7bsKRrHeGnh4ZfQgpPsMhXy8HtTGJkD3j8cXfD1oikyDH5HBVvbxrg5qH1PIQXA1AfieMMa6OQc3r7c')"></div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Training Pro</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Agility Cone Set (24pc)</h3>
+<div class="flex items-center gap-md mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$34.99</p>
+</div>
+<button class="w-full mt-lg bg-surface-container-highest text-on-surface-variant border border-outline-variant py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center justify-center gap-md">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Best Seller 3 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="Compression shorts and athletic wear for football, highlighting the ergonomic seams and high-tech moisture-wicking fabric in a studio setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW51v_eQ74olvQX7RftYx3sYtr04xQ4SRBK3N8X-xSHgZ9ztgYT4c7Qwfba-dFti_DR3lY9moLOi9LjdBZrAYDPi_tlypCAKXAnmqEQxFMGFoBPV5Q-_DNK-QqLotJ3StoTMbUtr1WHVHvMNFW9P9fOLANRwNEBUUiXgahJc6CfUvaI8uwG9aqcx9a-wmgX9E_hKy7ZyjRfoNX3x0vrVSZkcGRv3gsdOZDNm1hSqi-QkU5SWQhWB6BEnNGCDclkro9IqQGgimDEI4')"></div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Under Armour</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Tech Compression Base</h3>
+<div class="flex items-center gap-md mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$45.00</p>
+</div>
+<button class="w-full mt-lg bg-surface-container-highest text-on-surface-variant border border-outline-variant py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center justify-center gap-md">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<!-- Best Seller 4 -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant overflow-hidden flex flex-col group product-card-shadow premium-glow transition-all">
+<div class="relative aspect-square">
+<div class="w-full h-full bg-cover bg-center" data-alt="High-quality team training bibs in various bright colors, neatly folded in a stack in a professional athletic locker room environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXuXYlVfguZuHLh9KAScYqgpxFQXM45jgW-gEhcqhDxmLirM0C0hutHzWdYlzY_THaiiLlLGNVUEFmLknqqOpUsjvv81iJKsbQhqmTLn_ooDIFZpddrmU6smDLmXSGScueDonah1ojUCRvrL9CxvGMydnmYJszzp2yaZMyYg9VuB8DpN21snqHYjeGPr-QcmTtwTn4-Illu99skxG-Vr7PgB4CyTG1ixi7c997-8odvcQUyjyzKuLC5_Wpw8kBP3OBirOJhbYCV-k')"></div>
+<button class="absolute top-md right-md p-2 bg-surface/80 backdrop-blur-sm rounded-full text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="p-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-base uppercase tracking-tighter">Team Essentials</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-sm group-hover:text-primary transition-colors">Training Bib Multi-Pack</h3>
+<div class="flex items-center gap-md mt-auto">
+<p class="font-headline-md text-headline-md text-primary">$59.00</p>
+</div>
+<button class="w-full mt-lg bg-surface-container-highest text-on-surface-variant border border-outline-variant py-sm rounded-lg hover:bg-primary hover:text-on-primary hover:border-primary transition-all flex items-center justify-center gap-md">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Promo Bento Section -->
+<section class="max-w-container-max mx-auto px-lg py-2xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg h-auto md:h-[400px]">
+<div class="md:col-span-2 relative rounded-xl overflow-hidden bg-primary p-2xl flex flex-col justify-end group">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60" data-alt="A stylized image of a focused football player in silhouette during a training session, with glowing green data points and tech overlays representing performance tracking." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCb8tzP7JTf_Tb9KIbbrqS2LsJK04kmLioCseNNfRNadO08n-1AgPV_sxrndtmOgKFIoinvNpGRJp3u9_VqoPstjEWuF0Be7M7P0SrpSNluPbyslLfYalIj_liaPROMgTizRATZ3CrFYnJRHTOT7pX-oPktu0FrEbiicAjAvRGseIiBYXGaGKqiXNSNMFpM5Ci0vIoSFSB_qkEuCaxjvU5AhbtLOS91v8IXSKADTw45LFW1H40jWafz_KjLe9yoLoWQ_iyEOWJm1u0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+</div>
+<div class="relative z-10 text-on-primary max-w-lg">
+<h3 class="font-display-lg text-headline-lg mb-md">Unlock Elite Performance</h3>
+<p class="font-body-lg text-body-lg mb-xl opacity-90">Join our newsletter to get early access to limited edition drops, pro-scouting equipment, and exclusive training insights from the Khelabase team.</p>
+<div class="flex gap-md max-w-md">
+<input class="flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/60 rounded-lg focus:ring-primary focus:border-white px-md" placeholder="Your email address" type="email"/>
+<button class="bg-white text-primary px-xl py-md rounded-lg font-title-lg font-bold hover:bg-white/90 transition-all whitespace-nowrap">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="bg-secondary-container rounded-xl p-xl flex flex-col items-center justify-center text-center group border border-outline-variant">
+<span class="material-symbols-outlined text-on-secondary-container text-[64px] mb-lg group-hover:scale-110 transition-transform">local_shipping</span>
+<h3 class="font-headline-md text-on-secondary-container mb-sm">Free Express Shipping</h3>
+<p class="font-body-md text-on-secondary-container opacity-80 mb-lg">On all orders over $150. Get your gear on the pitch faster than ever.</p>
+<a class="font-label-md text-on-secondary-container border-b border-on-secondary-container pb-1" href="#">Learn More</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-low dark:bg-surface-dim border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div>
+<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed block mb-md">Khelabase</span>
+<p class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md">
+                    © 2024 Khelabase. Athletic Precision for the Modern Pitch.
+                </p>
+</div>
+<div class="flex flex-wrap gap-lg md:justify-end">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scroll for nav links (mockup only)
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Prevent default only if it's a hash link
+                    if (link.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+
+            // Wishlist toggle interaction
+            const heartButtons = document.querySelectorAll('.material-symbols-outlined');
+            heartButtons.forEach(btn => {
+                if (btn.textContent === 'favorite') {
+                    btn.parentElement.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const isFilled = btn.style.fontVariationSettings.includes("'FILL' 1");
+                        if (isFilled) {
+                            btn.style.fontVariationSettings = "'FILL' 0, 'wght' 400";
+                            btn.style.color = "inherit";
+                        } else {
+                            btn.style.fontVariationSettings = "'FILL' 1, 'wght' 400";
+                            btn.style.color = "#ba1a1a"; // error color for heart
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>

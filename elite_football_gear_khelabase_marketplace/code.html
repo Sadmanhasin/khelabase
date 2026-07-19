@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Marketplace | Elite Football Gear</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#d0dbed",
+                "inverse-on-surface": "#eaf1ff",
+                "outline": "#6e7b6c",
+                "on-tertiary": "#ffffff",
+                "on-surface-variant": "#3e4a3d",
+                "on-surface": "#121c2a",
+                "on-tertiary-fixed-variant": "#003ea8",
+                "on-primary-fixed": "#002109",
+                "error-container": "#ffdad6",
+                "surface-container-highest": "#d9e3f6",
+                "secondary-fixed": "#ffdf9f",
+                "on-error": "#ffffff",
+                "surface-container": "#e6eeff",
+                "surface": "#f8f9ff",
+                "on-primary-fixed-variant": "#005320",
+                "on-background": "#121c2a",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "background": "#f8f9ff",
+                "tertiary-fixed": "#dbe1ff",
+                "primary": "#006b2c",
+                "surface-bright": "#f8f9ff",
+                "on-secondary-fixed": "#261a00",
+                "surface-tint": "#006e2d",
+                "secondary": "#795900",
+                "tertiary": "#0051d5",
+                "surface-container-low": "#eff4ff",
+                "on-primary-container": "#f7fff2",
+                "inverse-surface": "#27313f",
+                "on-secondary-container": "#6f5100",
+                "on-secondary-fixed-variant": "#5c4300",
+                "inverse-primary": "#62df7d",
+                "secondary-fixed-dim": "#f9bd22",
+                "on-tertiary-container": "#fefcff",
+                "surface-container-high": "#dee9fc",
+                "tertiary-fixed-dim": "#b4c5ff",
+                "secondary-container": "#ffc329",
+                "primary-container": "#00873a",
+                "on-secondary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#00174b",
+                "tertiary-container": "#316bf3",
+                "primary-fixed-dim": "#62df7d",
+                "outline-variant": "#bdcaba",
+                "primary-fixed": "#7ffc97",
+                "on-primary": "#ffffff",
+                "surface-variant": "#d9e3f6"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "lg": "24px",
+                "2xl": "48px",
+                "gutter": "24px",
+                "md": "16px",
+                "xl": "32px",
+                "container-max": "1280px",
+                "xs": "8px",
+                "base": "4px",
+                "sm": "12px",
+                "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                "label-md": ["Manrope"],
+                "label-sm": ["Manrope"],
+                "headline-lg-mobile": ["Manrope"],
+                "headline-md": ["Manrope"],
+                "body-md": ["Manrope"],
+                "body-lg": ["Manrope"],
+                "title-lg": ["Manrope"],
+                "headline-lg": ["Manrope"],
+                "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .card-shadow:hover {
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E7EB;
+            border-radius: 10px;
+        }
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #16A34A;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .product-image-container:hover .view-button {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- Top Navigation Bar -->
+<nav class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-container-low shadow-sm">
+<div class="max-w-container-max mx-auto px-lg flex items-center justify-between h-16">
+<div class="flex items-center gap-xl">
+<span class="text-title-lg font-display-lg text-primary dark:text-primary-fixed">Khelabase</span>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Tournaments</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-label-md text-label-md transition-colors duration-200" href="#">Teams</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Marketplace</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-xl text-body-md focus:ring-2 focus:ring-primary w-64" placeholder="Search gear..." type="text"/>
+</div>
+<button class="p-2 hover:bg-surface-container-lowest transition-colors duration-200 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-surface-container-lowest transition-colors duration-200 rounded-full active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="max-w-container-max mx-auto px-lg py-xl flex flex-col md:flex-row gap-gutter flex-1 w-full">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="sticky top-24 space-y-md">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-title-lg text-title-lg text-on-surface">Filters</h2>
+<button class="text-primary text-label-md hover:underline">Clear All</button>
+</div>
+<!-- Category Accordion -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden" open="">
+<summary class="flex items-center justify-between p-md cursor-pointer list-none hover:bg-surface-container-low transition-colors">
+<span class="font-label-md text-on-surface">Category</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md flex flex-col gap-sm">
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input checked="" class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Football Boots</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Jerseys</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Equipment</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Training Wear</span>
+</label>
+</div>
+</details>
+<!-- Brand Accordion -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden" open="">
+<summary class="flex items-center justify-between p-md cursor-pointer list-none hover:bg-surface-container-low transition-colors">
+<span class="font-label-md text-on-surface">Brand</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md flex flex-col gap-sm">
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Nike</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Adidas</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Puma</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group/item">
+<input class="rounded-base border-outline text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover/item:text-on-surface">Khelabase Official</span>
+</label>
+</div>
+</details>
+<!-- Price Range -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md">
+<h3 class="font-label-md text-on-surface mb-sm">Price Range</h3>
+<input class="w-full h-2 bg-surface-container-high rounded-full appearance-none cursor-pointer mb-sm" max="500" min="0" type="range" value="250"/>
+<div class="flex justify-between text-label-md text-on-surface-variant">
+<span>$0</span>
+<span>$500+</span>
+</div>
+</div>
+<!-- Size -->
+<details class="group bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<summary class="flex items-center justify-between p-md cursor-pointer list-none hover:bg-surface-container-low transition-colors">
+<span class="font-label-md text-on-surface">Size (UK)</span>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="px-md pb-md grid grid-cols-4 gap-xs">
+<button class="py-2 border border-outline-variant rounded-lg text-label-md hover:bg-primary hover:text-white transition-colors">7</button>
+<button class="py-2 border border-outline-variant rounded-lg text-label-md hover:bg-primary hover:text-white transition-colors">8</button>
+<button class="py-2 border border-outline-variant rounded-lg text-label-md bg-primary text-white">9</button>
+<button class="py-2 border border-outline-variant rounded-lg text-label-md hover:bg-primary hover:text-white transition-colors">10</button>
+<button class="py-2 border border-outline-variant rounded-lg text-label-md hover:bg-primary hover:text-white transition-colors">11</button>
+</div>
+</details>
+</div>
+</aside>
+<!-- Product Listing -->
+<section class="flex-1">
+<!-- Grid Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-md mb-xl">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Elite Football Boots</h1>
+<p class="text-body-md text-on-surface-variant">Showing 1-12 of 84 products</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="text-label-md text-on-surface-variant">Sort by:</span>
+<select class="bg-surface-container-lowest border-outline-variant rounded-xl text-body-md px-md py-2 focus:ring-primary focus:border-primary">
+<option>Newest</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Best Seller</option>
+</select>
+</div>
+</div>
+<!-- Bento Grid of Products -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group transition-all duration-300 card-shadow">
+<div class="relative product-image-container aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A high-end professional football boot in a striking neon green and black colorway, set against a clean studio backdrop. The lighting is crisp, highlighting the advanced texture of the synthetic upper. The image captures the dynamic energy of professional sport while maintaining a premium, minimalist commercial aesthetic with deep green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZWw_fZD3OPAc3_mNcvvC-4PuVvgziHLjmWsKK9rg75BYo3NC6i2GvNIInvecGJBL_PBZh6vNHH1fyLUuwzGa5U_ZFDswrW8WH8SSTe1RrPecLMQX-fI2Z2CRp56KhDZTvqzAeGWHUoiRuQa7SSMS46_Wiht9xTTv94TpWNDbt_fXLYsPwAT3cU-2f4jVpZpbIas-Mr4xoAQYQOVUs0aDtG3Q7-LxUyfU6F80DuW1f4eFC_pVkd1tYV65RLrREI2tiUUr_cT5laog"/>
+<div class="absolute top-md left-md flex flex-col gap-xs">
+<span class="bg-secondary text-on-secondary px-sm py-1 rounded-full text-label-sm uppercase tracking-wider">Best Seller</span>
+</div>
+<button class="view-button absolute inset-x-lg bottom-lg bg-primary text-white py-3 rounded-xl font-label-md opacity-0 translate-y-4 transition-all duration-300 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                            View Product
+                        </button>
+</div>
+<div class="p-md">
+<p class="text-label-sm text-primary uppercase font-bold tracking-widest mb-1">Nike</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2 group-hover:text-primary transition-colors">Mercurial Superfly 9</h3>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-on-surface">$279.99</span>
+<div class="flex items-center text-secondary-container bg-secondary-container/10 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-md ml-1 text-secondary">4.9</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group transition-all duration-300 card-shadow">
+<div class="relative product-image-container aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Sophisticated black and gold Adidas Predator football boots showcased in a high-key professional lighting setup. The premium gold accents on the metallic sole plate shimmer under the bright studio lights. The composition is sleek and airy, emphasizing the luxurious and powerful design of the athletic gear for elite players." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvZMQcaAYQzfeZG4U95y6CVvS2hlXa0K6XyVecMiAKfv5I3zZouMwgS9EjDu2FkDsEFydlNzvPFRfUfOPYPWzIFTSv8fLHToUy0b2aScIMo45haYOe_FAjs9WHES9KfIbmxSzZvcUHWzeTgM0HUdX_qjqI6WBM8WAnrk5XZArT6khBhstjg0akukSqF8hLbMVrMY6DTFpAnUhUvXl6TQBpP7cEgmPpzsJZP7UxL2TtKkczL3CywyRg79X0xfkIrKRvWEPxWXr2zcg"/>
+<div class="absolute top-md left-md flex flex-col gap-xs">
+<span class="bg-error text-on-error px-sm py-1 rounded-full text-label-sm uppercase tracking-wider">Limited Stock</span>
+</div>
+<button class="view-button absolute inset-x-lg bottom-lg bg-primary text-white py-3 rounded-xl font-label-md opacity-0 translate-y-4 transition-all duration-300 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                            View Product
+                        </button>
+</div>
+<div class="p-md">
+<p class="text-label-sm text-primary uppercase font-bold tracking-widest mb-1">Adidas</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2 group-hover:text-primary transition-colors">Predator Elite FT</h3>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-on-surface">$240.00</span>
+<div class="flex items-center text-secondary-container bg-secondary-container/10 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-md ml-1 text-secondary">4.8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 (Premium Card) -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-secondary-container overflow-hidden group transition-all duration-300 card-shadow relative">
+<div class="relative product-image-container aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A pristine white Khelabase Official edition football boot with holographic emerald detailing. The boot appears to be floating in a minimalist digital space with soft, ambient green lighting. This premium sports item is designed for elite performance, featuring a sleek and futuristic silhouette that reflects a high-performance SaaS aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsvUJL3I6b7C3MFrHRC5PcWTdyJpEHkiPZc63in06GlUpyl3l8MuooaA7Tvlma_M--rXyQlGUZ_VhJzMgXq93k8SDgC2Kx5kfPPTwT0bJZtheNiHq05E6W-bJYell5s-LG29EsXPC_8TMDfoKI2Feit3R9V0qZofnEcHquEB3bClBaTfW5ZlztKgYncSokq3LS3fJd5Cy9VnrINMIjrGMDW3xpp7yPtbtB0UPJlS-Dben0CKQXLApEHVNXlnA1iAGidIUJcyPD1Pw"/>
+<div class="absolute top-md left-md flex flex-col gap-xs">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-label-sm uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">workspace_premium</span>
+                                Premium
+                            </span>
+</div>
+<button class="view-button absolute inset-x-lg bottom-lg bg-primary text-white py-3 rounded-xl font-label-md opacity-0 translate-y-4 transition-all duration-300 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                            View Product
+                        </button>
+</div>
+<div class="p-md">
+<p class="text-label-sm text-secondary uppercase font-bold tracking-widest mb-1">Khelabase Official</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2 group-hover:text-primary transition-colors">KB Alpha Strike Pro</h3>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-on-surface">$310.00</span>
+<div class="flex items-center text-secondary-container bg-secondary-container/10 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-md ml-1 text-secondary">5.0</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden group transition-all duration-300 card-shadow">
+<div class="relative product-image-container aspect-square overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Vibrant orange and yellow Puma Future football boots displayed on a minimalist grey pedestal. The lighting is dramatic and directional, creating deep shadows that emphasize the unique lacing system and texture. The overall feel is modern, athletic, and energetic, perfectly suited for a high-performance marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeyO8UfezQG_wXoEECTXVg5sm4OtXXzTO8HGIrp1V7PoAk54eto7Q3H72oilzquBE28-fmk2CgcxXqALCMWVbvpvAeHzIwujOCPqKqyAXPp_GbxZZs8-ILxs2Q7-8AiJBoQteCaih-dSvdl7KBiQPN6IfHJNuRA-r5lN-ndfYPLwCcyQ-T1h4waOMz9XPSfwZ5pmtjAi2QXi54Yh5DWhbIcqphHscKyHO29V3vb1YQnXBveiEgmCOs-RO9Vnkc1ZdhBZyPF_7JgH4"/>
+<button class="view-button absolute inset-x-lg bottom-lg bg-primary text-white py-3 rounded-xl font-label-md opacity-0 translate-y-4 transition-all duration-300 flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                            View Product
+                        </button>
+</div>
+<div class="p-md">
+<p class="text-label-sm text-primary uppercase font-bold tracking-widest mb-1">Puma</p>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-2 group-hover:text-primary transition-colors">Future Ultimate 7</h3>
+<div class="flex items-center justify-between">
+<span class="text-headline-md font-headline-md text-on-surface">$215.00</span>
+<div class="flex items-center text-secondary-container bg-secondary-container/10 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-md ml-1 text-secondary">4.7</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default, shown for demonstration) -->
+<div class="hidden flex flex-col items-center justify-center py-2xl text-center space-y-md" id="empty-state">
+<div class="w-64 h-64 bg-surface-container-low rounded-full flex items-center justify-center mb-xl">
+<span class="material-symbols-outlined text-[120px] text-outline-variant">search_off</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">No Products Found</h2>
+<p class="text-body-lg text-on-surface-variant max-w-md mx-auto">We couldn't find any matches for your current filters. Try adjusting your search or resetting the filters.</p>
+<div class="flex flex-wrap justify-center gap-sm mt-xl">
+<span class="px-md py-2 bg-surface-container-low rounded-full text-label-md cursor-pointer hover:bg-primary hover:text-white transition-colors">Nike Phantom</span>
+<span class="px-md py-2 bg-surface-container-low rounded-full text-label-md cursor-pointer hover:bg-primary hover:text-white transition-colors">World Cup Edition</span>
+<span class="px-md py-2 bg-surface-container-low rounded-full text-label-md cursor-pointer hover:bg-primary hover:text-white transition-colors">Goalie Gloves</span>
+</div>
+<button class="mt-xl bg-primary text-white px-xl py-3 rounded-xl font-label-md hover:shadow-lg transition-shadow">Reset All Filters</button>
+</div>
+<!-- Pagination -->
+<div class="mt-2xl flex items-center justify-center gap-sm">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container-low text-on-surface-variant font-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container-low text-on-surface-variant font-label-md">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container-low text-on-surface-variant font-label-md">7</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-low dark:bg-surface-dim border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="space-y-sm">
+<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed">Khelabase</span>
+<p class="text-body-md text-on-surface-variant max-w-sm">© 2024 Khelabase. Athletic Precision for the Modern Pitch.</p>
+</div>
+<div class="flex flex-wrap gap-x-xl gap-y-md md:justify-end">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Contact</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary font-body-md transition-colors" href="#">Shipping &amp; Returns</a>
+</div>
+</div>
+</footer>
+<!-- Floating Action Button for Mobile Filter Access -->
+<button class="md:hidden fixed bottom-lg right-lg bg-primary text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center z-50 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<script>
+        // Simple logic for demonstrating filter behavior
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const emptyState = document.getElementById('empty-state');
+        const productGrid = document.querySelector('.grid');
+        const pagination = document.querySelector('.mt-2xl');
+
+        // This is just a UI interaction demo, not functional filtering
+        function toggleView(showProducts) {
+            if (showProducts) {
+                productGrid.classList.remove('hidden');
+                pagination.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+            } else {
+                productGrid.classList.add('hidden');
+                pagination.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            }
+        }
+
+        // For demo: if you click certain checkboxes, show empty state
+        checkboxes.forEach((cb, index) => {
+            cb.addEventListener('change', () => {
+                // If more than 3 brands selected for this demo, show empty
+                const checked = Array.from(checkboxes).filter(c => c.checked).length;
+                if (checked > 5) {
+                    toggleView(false);
+                } else {
+                    toggleView(true);
+                }
+            });
+        });
+    </script>
+</body></html>

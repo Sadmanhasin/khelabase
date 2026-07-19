@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase | Football Ecosystem</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dee9fc",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdf9f",
+                        "inverse-primary": "#62df7d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#62df7d",
+                        "primary": "#006b2c",
+                        "secondary": "#795900",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "on-surface": "#121c2a",
+                        "on-primary-fixed": "#002109",
+                        "secondary-container": "#ffc329",
+                        "on-tertiary-fixed": "#00174b",
+                        "on-background": "#121c2a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#0051d5",
+                        "outline-variant": "#bdcaba",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-primary-container": "#f7fff2",
+                        "tertiary-container": "#316bf3",
+                        "surface-dim": "#d0dbed",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#6f5100",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e6eeff",
+                        "on-secondary-fixed": "#261a00",
+                        "outline": "#6e7b6c",
+                        "surface-tint": "#006e2d",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#3e4a3d",
+                        "primary-fixed": "#7ffc97",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#005320",
+                        "surface-variant": "#d9e3f6",
+                        "on-tertiary-container": "#fefcff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d9e3f6",
+                        "primary-container": "#00873a",
+                        "inverse-surface": "#27313f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "title-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f8f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .custom-shadow { shadow: 0px 4px 20px rgba(31, 41, 55, 0.05); }
+        /* FUT Card Styling */
+        .fut-card {
+            background: linear-gradient(135deg, #16A34A 0%, #006b2c 100%);
+            border: 2px solid #FBBF24;
+            clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation (Mobile/Universal) -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-lg w-full bg-surface h-16 border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="font-display-lg text-headline-md text-primary tracking-tight">Khelabase</span>
+</div>
+<div class="hidden md:flex flex-1 max-w-xl mx-xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-2 pl-10 focus:ring-2 focus:ring-primary text-body-md" placeholder="Search players, teams, tournaments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">chat</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young football player with athletic gear, set against a blurred stadium background with clean studio lighting, high resolution, premium sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuClj-W-jLWAXHKSs9nIsvdzheoDpH-pPXDyf1i-OnsZGePc6lg586oeOePcvmZ56XFaDtSKgc8cLrASVgC0gSErQbT8uapw_Yt-YbKpun1hgz4olqNu1pH0FT7oQrbSNamCyJ2at9HVHs3fS6KFCNkNLnhU7ffuRGm_E7B1ovC2owxZe-fBszlpjwY5z6MQrMMlX1UZAJjozd8cV0j8mSDhdA3fpdwlxlYSOm9QCE6H2IsbPfs8SdWtjjGS7iFqc95EthaoDy75m9w"/>
+</div>
+</div>
+</header>
+<div class="max-w-[1440px] mx-auto flex min-h-screen relative">
+<!-- SideNavBar -->
+<nav class="hidden lg:flex flex-col h-[calc(100vh-64px)] fixed left-0 top-16 p-md gap-md border-r border-outline-variant w-64 bg-surface">
+<div class="flex flex-col gap-xs">
+<a class="bg-primary-container text-on-primary-container rounded-xl font-bold flex items-center gap-sm px-md py-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-md">Home</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-label-md">Explore</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md">Teams</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-label-md">Tournaments</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">stadium</span>
+<span class="text-label-md">Venues</span>
+</a>
+</div>
+<div class="mt-auto flex flex-col gap-xs">
+<button class="bg-primary text-on-primary w-full py-sm rounded-xl font-bold text-label-md hover:opacity-90 active:scale-95 transition-all">
+                    Create Post
+                </button>
+<div class="border-t border-outline-variant my-sm"></div>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md">Settings</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container transition-all duration-200 rounded-xl" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-label-md">Help</span>
+</a>
+</div>
+</nav>
+<!-- Main Feed Content -->
+<main class="flex-1 lg:ml-64 lg:mr-80 px-md py-lg max-w-3xl mx-auto w-full">
+<!-- Composer Box -->
+<section class="bg-white rounded-[14px] border border-outline-variant p-md shadow-sm mb-lg">
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden shrink-0 border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a football enthusiast smiling, soft natural lighting in an outdoor field setting, modern athletic wear, high-quality digital photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN8xD05MNgFL3hoHeM-ASTMHSfxCQXi1EzQAksySa1jBVpf97gtmBnJVa8qGmsxSgGrQMOgy4pRwmsExnoSCIBY4B6zqUKts_sV4vxkiFpOmGXzBk5VIVp4UtOeTcA7wgo1ZuNQ_VIWc4IJvOmIXJx6N72MWOUWnnu4xtIzb6dyEU_0zCSyBFkhgxZFo3NtZvHVISCngnf1KTmv4UFQXNqyf1z0dbGtmAvFcZmcBMuspOtQuJREVWylZ4El4szGuy1Y8YGuiYZgfo"/>
+</div>
+<div class="flex-1">
+<textarea class="w-full border-none focus:ring-0 text-body-lg resize-none p-0 bg-transparent" placeholder="What happened in your football journey today?" rows="2"></textarea>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between mt-md pt-md border-t border-outline-variant gap-sm">
+<div class="flex gap-xs">
+<button class="flex items-center gap-xs px-sm py-1.5 rounded-full hover:bg-surface-container text-on-surface-variant text-label-md transition-colors">
+<span class="material-symbols-outlined text-[20px]">image</span> Photo
+                        </button>
+<button class="flex items-center gap-xs px-sm py-1.5 rounded-full hover:bg-surface-container text-on-surface-variant text-label-md transition-colors">
+<span class="material-symbols-outlined text-[20px]">videocam</span> Video
+                        </button>
+<button class="flex items-center gap-xs px-sm py-1.5 rounded-full hover:bg-surface-container text-on-surface-variant text-label-md transition-colors">
+<span class="material-symbols-outlined text-[20px]">military_tech</span> Achievement
+                        </button>
+<button class="flex items-center gap-xs px-sm py-1.5 rounded-full hover:bg-surface-container text-on-surface-variant text-label-md transition-colors">
+<span class="material-symbols-outlined text-[20px]">scoreboard</span> Result
+                        </button>
+</div>
+<button class="bg-primary text-on-primary px-lg py-2 rounded-full font-bold text-label-md shadow-md hover:shadow-lg transition-all">Post</button>
+</div>
+</section>
+<!-- Feed Items -->
+<div class="space-y-lg">
+<!-- Player Achievement (FUT Card) -->
+<article class="bg-white rounded-[14px] border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A profile picture of a determined football player in a green jersey, dynamic field background with bokeh effect, sharp focus on facial features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZhVXUbAv8MMogoz6Qwl1OsyK9vUWvoajfJi6N16DxvlWgn9ns06p7CWSDvXbOIzIcHr870mN3hu05OzkdJRqw81IM9OfIG6JLUFDfK660_OY7mib8g1dyRXUI92C8CnHTTCMTGKBAVcAFJ27RVcNJ35SBXT1NyQnF8aFuf4Usdn_4gtTeoyQ5JJHPkJMhp4pj-aQrXh8tbo2BgIpkA84VSkEPmtv7o_4TEs2Hq1CnvBWsqFp8iN0etA8mPcE0DGPcPM9xm_QU_hQ"/>
+</div>
+<div>
+<h3 class="font-title-lg text-on-surface leading-tight">Arjun Mehta</h3>
+<p class="text-label-md text-on-surface-variant">2 hours ago • Forward</p>
+</div>
+</div>
+<button class="text-primary font-bold text-label-md px-md py-1 rounded-full border border-primary hover:bg-primary-container transition-colors">Follow</button>
+</div>
+<div class="px-md pb-sm">
+<p class="text-body-md mb-md">Had an absolute blast in today's friendly! Scored my first hat-trick of the season. ⚽⚽⚽ #Khelabase #HatTrick #FootballLife</p>
+<!-- FUT Style Preview Card -->
+<div class="fut-card p-6 flex items-center justify-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex gap-lg items-center z-10">
+<div class="text-center">
+<div class="text-[48px] font-extrabold text-secondary-fixed leading-none">92</div>
+<div class="text-white font-bold text-label-md uppercase tracking-widest">ST</div>
+</div>
+<div class="w-32 h-40 rounded-lg overflow-hidden border-2 border-secondary-fixed shadow-xl">
+<img class="w-full h-full object-cover" data-alt="Full body athletic shot of a football striker celebrating a goal, vibrant green field, dramatic sunlight from the side, vivid high-contrast colors, professional sports photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhlS3QLWx5o7_4kVPVn53GL_rwBE2TpFOM8Ti9viv1zvuvh7FYAPH7k5EFqpimJ2EkNguVTyzYXBmkI0mbpwzs7ojRYE3CNhLvhtNfjjTzbcrTti950ovuP6OoUv9_ivfLNnQMV-qVSvRgCUeH4hIKdN6QVqupSwUnL3OzLG2_ndEZcVWsctu5D3_Sp-CAICx8F_Ito7wMjyAknjArkArCq7ovXe41MjZ4z74_X598ks3ieKamnnjJ-Xxl3S-Jl5Hch3mFsqaSiO8"/>
+</div>
+<div class="space-y-1">
+<div class="text-white font-bold text-title-lg">ARJUN</div>
+<div class="grid grid-cols-2 gap-x-4 text-white/90 text-label-sm">
+<span>PAC 94</span> <span>DRI 88</span>
+<span>SHO 91</span> <span>DEF 45</span>
+<span>PAS 82</span> <span>PHY 85</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-sm flex items-center justify-around border-t border-outline-variant">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors py-2 flex-1 justify-center rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">favorite</span> <span class="text-label-md">124</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors py-2 flex-1 justify-center rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">chat_bubble</span> <span class="text-label-md">18</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors py-2 flex-1 justify-center rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">share</span> <span class="text-label-md">Share</span>
+</button>
+</div>
+</article>
+<!-- Team Announcement -->
+<article class="bg-white rounded-[14px] border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-md flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-contain p-1" data-alt="Minimalist football club logo featuring a stylized shield and ball, emerald green and gold colors, clean vector aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtxdeCI0Y1Dne4KCYzlRkkxtfBjPsN8TnnKF6qWm39vzJM4l553Yroj3e6GKVG87wOQse1Tq-ohYMgrkSvWiYiYO0ngCvVa1VRzntgXORWKcuarehUpp8GC11FTU5XOp3sjWb6p60uCHWHnyzPWK_Cd7O_-RkwjzdQ382J-_9ZsD0WSmWzuyGWqOUpSF1xGyR4_vtZGdPtUjPKRDf1USyGfQJGfUEIn48pZuW8Y3Yj0cr28XE9TzRDoSJyZBFY8AR4qmrj3F7p4gQ"/>
+</div>
+<div>
+<h3 class="font-title-lg text-on-surface leading-tight">Bengaluru Strikers FC</h3>
+<p class="text-label-md text-on-surface-variant">5 hours ago</p>
+</div>
+</div>
+<div class="px-md pb-md">
+<p class="text-body-md mb-md">Welcome to the family! We're thrilled to announce the signing of our new defensive powerhouse. The wall just got stronger. 🛡️</p>
+<div class="rounded-xl overflow-hidden aspect-video border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="High energy football team announcement graphic, a player in professional kit standing heroically against a background of smoke and stadium lights, emerald green brand colors, text 'NEW SIGNING' in bold modern typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABB-42_1F6LSnHthbSGFQwlTQQ4vHXufY6QjvBNgvMM25l0HNijiEmB1vhB50EavzYh8R3RTAJUR22qR5OcbNKJYdfMwOSpqugL-K0VnnCfYn4G68RQ-ohZNc7pRx7A8feiMsW6eg2d_5n5zPl95gXQeZATwkl9ZEQE1K9N44oi_kpAg9Hj7udWyDNMc2gYAv2W68SBF4dfuhDg32fVEsh2vTBAWCnqouW_n6xMAeR1hj-jsrzyMr68qIEUFxpNbnxPKohDcG415Y"/>
+</div>
+</div>
+<div class="p-sm flex items-center justify-around border-t border-outline-variant">
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors py-2 flex-1 justify-center rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">favorite</span> <span class="text-label-md">850</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors py-2 flex-1 justify-center rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">chat_bubble</span> <span class="text-label-md">42</span>
+</button>
+<button class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors py-2 flex-1 justify-center rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined">share</span> <span class="text-label-md">Share</span>
+</button>
+</div>
+</article>
+<!-- Tournament Registration -->
+<article class="bg-white rounded-[14px] border-t-4 border-t-secondary border-x border-b border-outline-variant shadow-sm overflow-hidden">
+<div class="p-md">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">emoji_events</span>
+</div>
+<div>
+<h3 class="font-title-lg text-on-surface leading-tight">Khelabase Cup '24</h3>
+<p class="text-label-md text-on-surface-variant">Organizer: Elite Sports Org</p>
+</div>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-sm py-1 rounded-full text-label-sm font-bold">REGISTRATION OPEN</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md items-center">
+<div class="space-y-sm">
+<h4 class="font-headline-md text-primary">Inter-City Monsoon League</h4>
+<div class="space-y-xs">
+<div class="flex items-center gap-xs text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span> July 15 - Aug 10, 2024
+                                    </div>
+<div class="flex items-center gap-xs text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[18px]">location_on</span> Nehru Stadium, Main Pitch
+                                    </div>
+<div class="flex items-center gap-xs text-on-surface-variant text-body-md">
+<span class="material-symbols-outlined text-[18px]">payments</span> Prize Pool: ₹5,00,000
+                                    </div>
+</div>
+<button class="w-full bg-primary text-on-primary py-sm rounded-xl font-bold text-label-md hover:bg-primary-container transition-all mt-md">Register Team Now</button>
+</div>
+<div class="rounded-xl overflow-hidden h-40 shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A dynamic wide-angle shot of a lush green football stadium at dusk, powerful floodlights illuminating the field, atmospheric mist, high-end commercial sports look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQJ_pWQA3gEpp-774uksZSl9k9ddTfhFdeH5657H-UD0NjqqZIuUGV2K11pRzdGXUXBrtdtQwVWS9O4HYN74TetOLuS6o_w86vc-LtdpP_xhzDC0xUPTfCiwBOSzxudia3GHUBX2ioWr2u-TuOaKGtdUjKsdn41dwdLiU31Hb6wIdcC0szVlYZWTSV5z89wIPW6RZ4Xp8wNX0ZPz2UH2kC5CSnDOkG6KuDbb-Vd59TGLDHWA8zFchejV-M5Vhj1EDfE3zUdPkE6b8"/>
+</div>
+</div>
+</div>
+</article>
+<!-- Looking for Opponent Challenge -->
+<article class="bg-surface-container-low border-2 border-dashed border-primary rounded-[14px] p-md shadow-sm">
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">sports_kabaddi</span>
+<h3 class="font-title-lg text-primary">Looking for Opponent!</h3>
+</div>
+<span class="text-label-md font-bold text-on-surface-variant">Urgent: Tomorrow</span>
+</div>
+<div class="bg-white p-md rounded-xl border border-outline-variant flex items-center justify-between gap-md mb-md">
+<div class="text-center">
+<div class="w-12 h-12 rounded-full mx-auto bg-surface-container overflow-hidden mb-xs">
+<img class="w-full h-full object-contain p-1" data-alt="Minimalist soccer club crest with a phoenix motif, green and white color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJMSfrE7DFba-SJ0MkkAWggPNC_UAf_xVRwwTNzsBuCduSy30KsEWV7SYFw7WimFfqk2dYhD2TgSptjEQcIyz_v7ZKR6gu7VwYcPh10E-oo1DG22UZZvBRZQ4wt-hBvmygiHLRydR44TsJPWVOIGuqJ20oEUpO054Yod1wOSwaXJTzOns28-r-3HG0OaJgEO9raizXLe86wqWkddwfSdflMc4s3_OdKHRaRnPeOaXL0I9qNyyUrdXDI3HQH21c5m-Ne7Lrg7EtJzw"/>
+</div>
+<p class="font-bold text-label-md">Rising Suns FC</p>
+<p class="text-label-sm text-on-surface-variant">Tier 3</p>
+</div>
+<div class="text-headline-md text-outline">VS</div>
+<div class="text-center border-2 border-dashed border-outline-variant rounded-full w-12 h-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline-variant">question_mark</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs text-on-surface-variant text-body-md mb-md">
+<div class="flex justify-between"><span>Location:</span> <span class="font-bold text-on-surface">South Field, Arena 5</span></div>
+<div class="flex justify-between"><span>Time:</span> <span class="font-bold text-on-surface">06:00 PM (IST)</span></div>
+<div class="flex justify-between"><span>Match Type:</span> <span class="font-bold text-on-surface">11-a-side / 90 mins</span></div>
+</div>
+<button class="w-full bg-white border border-primary text-primary py-2 rounded-xl font-bold text-label-md hover:bg-primary hover:text-white transition-all">Accept Challenge</button>
+</article>
+</div>
+</main>
+<!-- Right Sidebar (Desktop only) -->
+<aside class="hidden lg:flex flex-col w-80 fixed right-0 top-16 h-[calc(100vh-64px)] p-md gap-lg overflow-y-auto border-l border-outline-variant bg-surface">
+<!-- Upcoming Match Reminder -->
+<section class="bg-white rounded-[14px] border border-outline-variant p-md shadow-sm">
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">timer</span>
+<h3 class="font-title-lg text-on-surface">Your Next Match</h3>
+</div>
+<div class="bg-surface-container-low p-sm rounded-xl">
+<div class="text-label-sm text-on-surface-variant uppercase mb-xs font-bold">Tomorrow • 7:30 AM</div>
+<div class="font-bold text-body-lg text-primary">Vs Old Guard FC</div>
+<p class="text-label-md text-on-surface-variant">Turf Sports Park, Bengaluru</p>
+<div class="mt-md flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Football player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7jUJgSI-aA0yxynSQ147I8aY_37t-3Ueokru544We42_iHyZiMCQksr2pYmcGjIKxyaU6vGsgHykrK7iVl4_MX6pKnWHblFard083eX6P28qGmJdtdY-PFMszooLZJu1KWUNyn3I5dtmspXALWytjLTXLcr8ZNMm-Dy-JjCEi4C35LxLzkycAALbaHgyy-2daDNUPtaxWSjSPx26TtGrpjmsAYQhZiZK_-zTqJHYS0fFG58V697OmGCel0dCTTt4U9BDGE_8Eb20"/></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Football player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTpH609IAWwJ-mZ0wUEx-MzplwXNsmOh6XxCyvfQx8swFtrFsDWyFNCIB0p6o1UutqLGJiKghKNLEInvWKyqiU2M-Oh0InrSIHKz2RjHrd5Aqm1mgvPBvWZtLV6Cyp6yi6W71G0dkHhDkUwh2FDfw5Iq-G2KjgrFM3jsZOeYzm3rOl53yWwS_Az6T9uev7DBGT9P-2SMyXqldIHHoDdaBhbgOvF4UsCWHe9NE7vu5dgYZdpGCTcjjm6hCt7t3NP4nVU0PebyfcVqs"/></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container-highest overflow-hidden"><img class="w-full h-full object-cover" data-alt="Football player avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiCdmu0R64GJrZX8M9K8GEDnWbLCgWycH0DXiC42utuvdOiYw4rKYqolWyQcyAZUP5sjJ9ouA0gRFn-Cjlv1LCBVdl2Di73gSpFd9mUl7Fr-nsmfTnDWtCjIxZkHctdA_bOptIbPwlFk69-4dLbz9XtehuvXITfxJQn8TTyVv8AMsDViEJqZrO7KKs-35kRPL-8I3baq7IJI8nq4Q0ijDifylXbahZHvHZtFvFtZNWY38Xk6rKHGe5-SGz46EdDHYosiEvsD94NQM"/></div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-container text-on-primary-container text-[10px] flex items-center justify-center font-bold">+8</div>
+</div>
+<button class="mt-md w-full bg-secondary-container text-on-secondary-container py-1.5 rounded-lg text-label-md font-bold">Confirm Availability</button>
+</div>
+</section>
+<!-- Suggested Players -->
+<section class="bg-white rounded-[14px] border border-outline-variant p-md shadow-sm">
+<h3 class="font-title-lg text-on-surface mb-md">Suggested Players</h3>
+<div class="space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A focused young female football player in a training session, wearing a professional athletic bib, outdoor field background, cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0hnEMxH958nsCUtqHIOThLBDho-YT8TOI8JU5U2UkrkDZtOM_RPVQv9LoRI0FxkdKRyvs_SAX4uYdp5iAyLPlaTCB2cjVu1xs-SwbAbRyZlgZ4m2XcbemdRcNSLrwnMtMg4E9aMJDM-DYij1jOG1lwkQuhdBUuz31vNTHaF_4SO5OoZWc34F7nhVaMY-GQkAkA6EP1MYEZmGWqoD3ZSSEVEF3rz78ySAEONAtHATQvRF8scDXTWmcfS6tTqQQvSLHjsiUAVLLMbM"/>
+</div>
+<div>
+<p class="font-bold text-label-md">Rohan K.</p>
+<p class="text-label-sm text-on-surface-variant">Midfielder • Tier 2</p>
+</div>
+</div>
+<button class="text-primary material-symbols-outlined hover:bg-primary-container p-1 rounded-full transition-colors">person_add</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a male goalkeeper in full gear, leaning against a goal post, soft evening lighting, professional sports profile look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUeqdaOdU0PeFhy3usK-g3VWxHp_plpOMxBdmegOinm9RJZsrp8QyKiAGfezGC2m7-aBG3U52jJneAoA-Ekb8rZH4TbsNOhpaQBBVteD82zE9iS8PBhCFZFyaO1DVRRON4N6Z-wHNj1IaSoCKYzw0ZBZGMk73RuN9Ykc9ZB7Mnyxxa7Y_e3kdUWsvfhXFAhuuX8wlkJgSNXphLVJBChXyPP127Afcx-qSrG_ixgIAsi9AJ9wj2CxeiCtXNB81PEXX-KitcRYgsZ0g"/>
+</div>
+<div>
+<p class="font-bold text-label-md">Sana Khan</p>
+<p class="text-label-sm text-on-surface-variant">GK • Tier 1</p>
+</div>
+</div>
+<button class="text-primary material-symbols-outlined hover:bg-primary-container p-1 rounded-full transition-colors">person_add</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A smiling youth football coach in a training tracksuit, holding a whistle, bright outdoor training ground setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWYh0zJKbToYACdzsoubWzgqaIRX05BFwkdApsFkz7iXYvvIn05LKik3ZYwzqohTmEEO5kbXGzZiT01Y52WG6-FhfIuavaJsC7eB5K-clLVkP0all9wP5C0wLO-CgyFh7xg52PKTLJsB3WcRRawmWXLti-RLI_D-RyjmMvT_H9S2z-FWQ4MdxTdssD2mvQkwf5YI2z0aSUTKaXGIhzzQ5ZTtZHf7_jIKZnSrPgTVgGmjfU4UgP-n-zbHvPkmd3SIQP_-DiF0bDuK4"/>
+</div>
+<div>
+<p class="font-bold text-label-md">Vikram Raj</p>
+<p class="text-label-sm text-on-surface-variant">Coach • Elite</p>
+</div>
+</div>
+<button class="text-primary material-symbols-outlined hover:bg-primary-container p-1 rounded-full transition-colors">person_add</button>
+</div>
+</div>
+<button class="mt-md w-full text-primary font-bold text-label-md py-2 border-t border-outline-variant hover:bg-surface-container-low">View All Recommendations</button>
+</section>
+<!-- Trending Tournaments -->
+<section class="bg-white rounded-[14px] border border-outline-variant p-md shadow-sm">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-title-lg text-on-surface">Trending</h3>
+<span class="material-symbols-outlined text-primary text-[20px]">trending_up</span>
+</div>
+<div class="space-y-md">
+<div class="group cursor-pointer">
+<p class="text-label-sm text-on-surface-variant">Corporate Cup</p>
+<p class="font-bold text-label-md group-hover:text-primary transition-colors">Mumbai Corporate Kick-off '24</p>
+<p class="text-label-sm text-on-surface-variant mt-1">2.4k registrants • Closing soon</p>
+</div>
+<div class="group cursor-pointer">
+<p class="text-label-sm text-on-surface-variant">Pro League</p>
+<p class="font-bold text-label-md group-hover:text-primary transition-colors">Karnataka State Premier League</p>
+<p class="text-label-sm text-on-surface-variant mt-1">Season starts in 12 days</p>
+</div>
+<div class="group cursor-pointer">
+<p class="text-label-sm text-on-surface-variant">Open Trials</p>
+<p class="font-bold text-label-md group-hover:text-primary transition-colors">Junior Academy Elite Trials</p>
+<p class="text-label-sm text-on-surface-variant mt-1">Ages 12-16 • Bangalore</p>
+</div>
+</div>
+</section>
+<!-- Footer Links (Mini) -->
+<footer class="p-xs text-label-sm text-on-surface-variant flex flex-wrap gap-x-md gap-y-2">
+<a class="hover:underline" href="#">About</a>
+<a class="hover:underline" href="#">Privacy</a>
+<a class="hover:underline" href="#">Terms</a>
+<a class="hover:underline" href="#">Advertising</a>
+<a class="hover:underline" href="#">Khelabase Business</a>
+<span>© 2024 Khelabase Ecosystem</span>
+</footer>
+</aside>
+</div>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white border-t border-outline-variant px-lg py-2 flex justify-between items-center z-50">
+<button class="flex flex-col items-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px]">Explore</span>
+</button>
+<button class="flex flex-col items-center bg-primary text-white p-3 rounded-full -mt-8 shadow-lg active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-[10px]">Events</span>
+</button>
+<button class="flex flex-col items-center text-on-surface-variant">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px]">Profile</span>
+</button>
+</nav>
+<script>
+        // Simple micro-interaction for follow buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent === 'Follow' || button.textContent === 'Accept Challenge') {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('bg-primary-container');
+                    this.textContent = this.textContent === 'Following' ? 'Follow' : 'Following';
+                });
+            }
+        });
+    </script>
+</body></html>

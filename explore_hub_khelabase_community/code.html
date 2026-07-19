@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><meta charset="utf-8"></head><body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- THEME CONFIG SCRIPT -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dee9fc",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#ffdf9f",
+                        "inverse-primary": "#62df7d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "primary-fixed-dim": "#62df7d",
+                        "primary": "#006b2c",
+                        "secondary": "#795900",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "on-surface": "#121c2a",
+                        "on-primary-fixed": "#002109",
+                        "secondary-container": "#ffc329",
+                        "on-tertiary-fixed": "#00174b",
+                        "on-background": "#121c2a",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#0051d5",
+                        "outline-variant": "#bdcaba",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-primary-container": "#f7fff2",
+                        "tertiary-container": "#316bf3",
+                        "surface-dim": "#d0dbed",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-secondary-container": "#6f5100",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e6eeff",
+                        "on-secondary-fixed": "#261a00",
+                        "outline": "#6e7b6c",
+                        "surface-tint": "#006e2d",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#3e4a3d",
+                        "primary-fixed": "#7ffc97",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#005320",
+                        "surface-variant": "#d9e3f6",
+                        "on-tertiary-container": "#fefcff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-highest": "#d9e3f6",
+                        "primary-container": "#00873a",
+                        "inverse-surface": "#27313f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "14px",
+                        "lg": "14px",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "md": "16px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "xs": "8px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "base": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "title-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "display-lg": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<!-- TOP NAVBAR (From JSON Authority) -->
+<nav class="sticky top-0 z-50 flex items-center justify-between px-lg w-full bg-surface dark:bg-inverse-surface h-16 border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Khelabase</span>
+<div class="hidden md:flex gap-md ml-xl">
+<a href="#" class="text-on-surface-variant dark:text-surface-variant font-body-md">Home</a>
+<a href="#" class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary font-body-md">Explore</a>
+<a href="#" class="text-on-surface-variant dark:text-surface-variant font-body-md">Teams</a>
+<a href="#" class="text-on-surface-variant dark:text-surface-variant font-body-md">Tournaments</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant p-sm hover:bg-surface-container-low transition-colors rounded-full">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant p-sm hover:bg-surface-container-low transition-colors rounded-full">chat</button>
+<div class="w-10 h-10 rounded-full border border-outline overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A profile portrait of a smiling young football player wearing a green athletic jersey, captured in bright natural daylight. The background is a soft-focus lush green football pitch with modern stadium structures in the distance, embodying a professional and energetic athletic lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYnoM2AFA1yCZtDFwGlxAvD9t-EMG_j32QdrGV28FueQONgHA5YZf9G7cQeEWj94DYxcmROXLTkfxP7Ss9vEwclu6iO8AAEhjGd0CDvWlmBz7XAkqQChts21pvReWvRPVbia5kHUK6MgRq1j-DEZBnpNDE8MND_6wsm1w8eG3Ykgg14mJop-aVD8m_mLWatWv5TMfNGxUL8fAQYTuw-3-WCi_jbb0qp68HINM3s_NKvHsrMrpExt-6i3Rm6JRMwf0oWrAGYPrQ4uE">
+</div>
+</div>
+</nav>
+<div class="flex">
+<!-- SIDE NAVBAR (From JSON Authority) -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-64px)] fixed left-0 top-16 p-md gap-md border-r border-outline-variant w-64 bg-surface dark:bg-inverse-surface">
+<nav class="flex flex-col gap-xs flex-1">
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl font-bold flex items-center gap-sm px-md py-sm transition-all duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-md text-label-md">Explore</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+<span class="font-label-md text-label-md">Notifications</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-md text-label-md">Teams</span>
+</a>
+<a class="text-on-surface-variant dark:text-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-label-md text-label-md">Tournaments</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-xs pt-md border-t border-outline-variant">
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container rounded-xl" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-sm px-md py-sm hover:bg-surface-container rounded-xl" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+</div>
+</aside>
+<!-- MAIN CONTENT CANVAS -->
+<main class="flex-1 lg:ml-64 p-lg">
+<!-- Hero Search & Discover Section -->
+<section class="max-w-container-max mx-auto mb-2xl">
+<div class="relative w-full py-xl px-lg rounded-xl overflow-hidden mb-xl bg-[#16A34A] text-white">
+
+<div class="relative z-10 text-center max-w-3xl mx-auto">
+<h1 class="font-headline-lg text-headline-lg mb-md">Discover the Football Ecosystem</h1>
+<p class="font-body-lg text-body-lg mb-xl opacity-90">Find your next challenge, scout top talent, and stay updated with the community.</p>
+<!-- Search Bar -->
+<div class="flex items-center bg-white rounded-xl shadow-lg p-sm border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant px-sm">search</span>
+<input class="flex-1 border-none focus:ring-0 text-on-surface bg-transparent font-body-md py-sm" placeholder="Search players, teams, tournaments, venues..." type="text">
+<button class="bg-primary hover:bg-primary-container text-white px-xl py-sm rounded-lg font-bold transition-all active:scale-95">Search</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap justify-center gap-sm mt-lg">
+<button class="px-lg py-sm rounded-full bg-white/20 border border-white/30 backdrop-blur hover:bg-white/40 transition-colors font-label-md">Players</button>
+<button class="px-lg py-sm rounded-full bg-white/20 border border-white/30 backdrop-blur hover:bg-white/40 transition-colors font-label-md">Teams</button>
+<button class="px-lg py-sm rounded-full bg-white/20 border border-white/30 backdrop-blur hover:bg-white/40 transition-colors font-label-md">Tournaments</button>
+<button class="px-lg py-sm rounded-full bg-white/20 border border-white/30 backdrop-blur hover:bg-white/40 transition-colors font-label-md">Friendly Matches</button>
+<button class="px-lg py-sm rounded-full bg-white/20 border border-white/30 backdrop-blur hover:bg-white/40 transition-colors font-label-md">Venues</button>
+</div>
+</div>
+</div>
+<!-- BENTO GRID SECTION -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg auto-rows-min">
+<!-- Trending Tournaments (Featured Card) -->
+<div class="md:col-span-8 bg-white border border-outline-variant rounded-xl p-lg card-shadow">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+                                Trending Tournaments
+                            </h2>
+<a class="text-primary font-label-md hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<!-- Tournament Card 1 -->
+<div class="group relative overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-primary transition-all">
+<div class="h-32 w-full relative">
+<img class="w-full h-full object-cover" data-alt="Wide angle shot of a vibrant nighttime community football tournament in a modern urban stadium. Bright floodlights illuminate the green synthetic pitch, and a diverse crowd of cheering fans fills the surrounding bleachers. The atmosphere is electric, professional, and captures the spirit of high-stakes community sports." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc2YXL6aq71YhP32GqWpwVlM67p8jNLNYFfezMOsvlTJIy0e9U4UIvg48qT54akmT5nPcSZjoPaPQ1lvEhiWzFJFV09dzxl7DTlm9Y5Z0PrzHkIK_98nWRUvF-kmGuVVrJvp6GyurQxOhHXwMZHww3YyO0OizYBS52zhgEK2V1TZCvDN9P23T1qcUKiX9tp_vSp-xxCYQTgbguyQdnLwyhcxOD6QoMcQ29GftlZa-2jyTkCv7iS3s1na4azDv_3mtsbL7CxWiiNuU">
+<div class="absolute top-sm right-sm bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full font-label-sm">Premium</div>
+</div>
+<div class="p-md">
+<h3 class="font-title-lg text-body-lg font-bold mb-xs">Unity Gold Cup 2024</h3>
+<p class="text-on-surface-variant font-body-md mb-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span> London, UK
+                                    </p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold font-label-md">$2,500 Prize Pool</span>
+<button class="bg-primary text-white px-md py-1 rounded-lg text-label-md">Join</button>
+</div>
+</div>
+</div>
+<!-- Tournament Card 2 -->
+<div class="group relative overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-primary transition-all">
+<div class="h-32 w-full relative">
+<img class="w-full h-full object-cover" data-alt="A scenic outdoor football field during a sunset tournament. The sky is painted in warm oranges and purples, reflecting off the well-maintained grass field. Players are captured in dynamic motion during a match, conveying a sense of community and athletic competition in a beautiful, natural environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmOWqIoLjDQE3uafL_C6VkqeqUh1oW1Gupcxer6I9jOj0oBiI_K-oRERVdf_I8j0GjheXcdqIKy6NvzYBqUk-tNh-3ziRYcn9fmBXhIyNP-ivaOQVU0fteCiMsMkq0AIggB7jAAKAfZAgYqn8R-6HANI0Glj02v9bIHowOBOcLnrrMbeH5mqh0l3CQ5ntqomxryBX3hjd_ctU6dSJ8vTo8101FW3KQDQP4MepFFAVwz298buL16yKfaGLIy4HfZySIZ36TfBcUsxA">
+</div>
+<div class="p-md">
+<h3 class="font-title-lg text-body-lg font-bold mb-xs">Sundown League</h3>
+<p class="text-on-surface-variant font-body-md mb-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span> Manchester, UK
+                                    </p>
+<div class="flex justify-between items-center">
+<span class="text-primary font-bold font-label-md">12 Teams Registered</span>
+<button class="bg-primary text-white px-md py-1 rounded-lg text-label-md">Join</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Performers (Sidebar Style Grid) -->
+<div class="md:col-span-4 bg-white border border-outline-variant rounded-xl p-lg card-shadow">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">military_tech</span>
+                                Top Performers
+                            </h2>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Player Card -->
+<div class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-primary">
+<img class="w-full h-full object-cover" data-alt="A focused close-up portrait of a young male football player with an intense gaze, wearing a crisp white jersey with green trim. The lighting is sharp, highlighting his athletic features against a blurred stadium background, reflecting a high-performance sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDxgjqNeRKhPiYjHd_pxEYLXogJltnYlyYJAJKTZ-hkGSa82YOBY1FiOMFFWs-Y6re2H9K-dZsoQj95JOfqGVD3h1Ohsl0FUOFuk7hcCdAmEGOUGDZhz1PpqH3Kdl7mztw5_-tCoSScpt1GD3KsBmRP2Hj9NlhL1fvKrVqgBuzTeblCqhjTH420OzucsHogN4jFX1YTzqsNv1_5bJ4N6b811Qzrikmq-yFpndo80_NiPRtkQGZj4h5gYZUtbrhpl76A3zKEa2NBWc">
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-body-md">Marcus 'Jet' Chen</h4>
+<p class="text-on-surface-variant text-label-sm">Forward • Apex FC</p>
+</div>
+<div class="text-right">
+<div class="bg-primary text-white px-sm py-1 rounded-lg font-bold text-label-md">89</div>
+<span class="text-[10px] text-on-surface-variant font-label-sm">OVR Rating</span>
+</div>
+</div>
+<!-- Player Card -->
+<div class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional athletic portrait of a female football player in a black and gold team kit, looking determined and confident. The background is a clean, modern training facility with soft ambient lighting, emphasizing her elite status in the football community." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACgZ8RznQpzOHCJBpiAZqeBTSvpzkWA-bJUI8CRkLrljPlDj7uWcKFx78DIvz5XnSnXdAibTOHcIbTyCFUitiL2YCCyy5-YPFmsHj5jzx3kYk6ieMw7YDhlIZOFJbNg7jFUDDb2qsjH7MXsdOgsT_y_aiwCWAOJGOREIGAhm-WobHcfB7MMrgHkTjp6ZX0lXP3JpQ6hK7_fQ4OI-DjDlVAnDYl9-fEL7Ht_zSOFnG9_dtu8-dkOV3BaV5aLQzZvaHK7kMLiMLCP_Y">
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-body-md">Sara Van Dijk</h4>
+<p class="text-on-surface-variant text-label-sm">Defender • Wall Stars</p>
+</div>
+<div class="text-right">
+<div class="bg-primary text-white px-sm py-1 rounded-lg font-bold text-label-md">87</div>
+<span class="text-[10px] text-on-surface-variant font-label-sm">OVR Rating</span>
+</div>
+</div>
+<!-- Player Card -->
+<div class="flex items-center gap-md p-sm rounded-lg hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young football midfielder in a vibrant blue jersey, smiling after a successful match. The sunlight is warm and golden, casting a hero-like glow over the scene, set against the backdrop of a community sports park." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdTC30MZT0LtRngQTUluzxnN-vVvdCtQckV0ScnzkkXkT7PQihp7jsiCYz-k3dJ8bZ_JYHHWLwXpwoHNXiiX8tP-k-JvIb0r-mbWUX_W5cEj4SZ3qr7TE_u3eptMveFvPyC-RF6SM2WeM_Y3jZ4mURejGm6Q6R42UyhBDySwhhmxUQ3vNjmyz8dIJZjiLDE__qukaFYrAgZNQDmQV-rPdFosCtlfBGApld-dZqsD3O0VOR7XJB1lcRwjo-shEeI6klGeZq8xRSM7Y">
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-body-md">Leon Goretzka</h4>
+<p class="text-on-surface-variant text-label-sm">Midfield • Unity United</p>
+</div>
+<div class="text-right">
+<div class="bg-primary text-white px-sm py-1 rounded-lg font-bold text-label-md">85</div>
+<span class="text-[10px] text-on-surface-variant font-label-sm">OVR Rating</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-sm bg-primary text-white rounded-lg font-bold hover:bg-primary-container transition-all active:scale-95 shadow-sm">Find Scouts</button>
+</div>
+<!-- Popular Teams & Win Rates -->
+<div class="md:col-span-12 bg-white border border-outline-variant rounded-xl p-lg card-shadow">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">groups</span>
+                                Popular Teams
+                            </h2>
+<div class="flex gap-xs">
+<button class="p-xs hover:bg-surface-container-low rounded-lg transition-colors border border-outline-variant">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-xs hover:bg-surface-container-low rounded-lg transition-colors border border-outline-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-lg pb-md">
+<!-- Team Card 1 -->
+<div class="min-w-[240px] p-lg border border-outline-variant rounded-xl flex flex-col items-center bg-surface-container-lowest hover:shadow-md transition-shadow">
+<div class="w-20 h-20 mb-md relative">
+<img class="w-full h-full object-contain" data-alt="A sleek, modern geometric football team logo featuring a stylized eagle in emerald green and gold. The logo is displayed on a clean white surface with a subtle 3D shadow, conveying a premium and professional club identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpUSdlAsOOaxG1qyDxjZGCVkBU2EdYrH9tg486bBMJtbrm-Kb8VMbmSijGzBdhhojtXF-bPmgLjxzs4W_SvsPkVwozieCScyIWjcEqhcc_B4At3e0STSD23pSZFt80UBOTqtSHo7cwRIEA26vVyBGcg2rJE312cqy1628LC53sB74lTlI98y3m-YU8vEAWAE6Xy5wgzzY-dQgFWgVXszG1LkyY4jGfeRRR4_bg57r5eii1vB-YlvbPzkE9qAGEkX5pTH_rhQ1flhM">
+</div>
+<h3 class="font-bold text-title-lg mb-xs">Stellar United</h3>
+<p class="text-on-surface-variant text-label-md mb-md">Division 1 • London</p>
+<div class="w-full bg-surface-container rounded-full h-2 mb-1">
+<div class="bg-primary h-full rounded-full w-[88%]"></div>
+</div>
+<div class="flex justify-between w-full">
+<span class="text-label-sm font-bold text-primary">Win Rate 88%</span>
+<span class="text-label-sm text-on-surface-variant">24 Wins</span>
+</div>
+</div>
+<!-- Team Card 2 -->
+<div class="min-w-[240px] p-lg border border-outline-variant rounded-xl flex flex-col items-center bg-surface-container-lowest hover:shadow-md transition-shadow">
+<div class="w-20 h-20 mb-md relative">
+<img class="w-full h-full object-contain" data-alt="A minimalist professional football crest featuring a shield with a roaring lion in deep navy and silver. The design is modern, sharp, and clean, presented as a high-quality branding asset for an elite football club." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlguT77nEZy4YcbOW4xl7yyT1ZMl7FR-29ud-SA1ducLPiWC6QJh8K6fAXTrl-nilMc_RzmvQcx-oyETVgZ1weSV-M5yDJQA-rdYjDx4AYR70j1JEM7z3MPfruvs7sF4qtwnVvDvNn7HFgkqPl9EQmqaXBS8v1h7ADAzmdux8m63XoTNgu_EoiR_cA6zBuSI2DQxesJdU5KzBTejXv3MY6CThow5r2Nm4vB4tqUuSzyYqCVPTAfNV33vPQXYlXyR1ww762JqZ8pdU">
+</div>
+<h3 class="font-bold text-title-lg mb-xs">London Titans</h3>
+<p class="text-on-surface-variant text-label-md mb-md">Elite Tier • Central</p>
+<div class="w-full bg-surface-container rounded-full h-2 mb-1">
+<div class="bg-primary h-full rounded-full w-[72%]"></div>
+</div>
+<div class="flex justify-between w-full">
+<span class="text-label-sm font-bold text-primary">Win Rate 72%</span>
+<span class="text-label-sm text-on-surface-variant">18 Wins</span>
+</div>
+</div>
+<!-- Team Card 3 -->
+<div class="min-w-[240px] p-lg border border-outline-variant rounded-xl flex flex-col items-center bg-surface-container-lowest hover:shadow-md transition-shadow">
+<div class="w-20 h-20 mb-md relative">
+<img class="w-full h-full object-contain" data-alt="A creative football team emblem with an abstract lightning bolt through a soccer ball, utilizing vibrant orange and charcoal grey. The design is bold, energetic, and perfectly fits a modern, high-intensity team brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9DttdNUKLwi3tW7Eqa0I2WQeuEWBMrsB7mEi8oubzaDO6bEACY-Nqq7xJtS-jGylFVnRTYRCv33QYfoX_6aMg14Yrq1iyQ3hCEVFopo4NsTfgfqQj2WJxH6x5uYVy557Au_MrxjkvNXcaPDLY_cy8avaDw0EK_Hk0jkonWdAoIsheiVvk5FM1Uc3tg51dcb0LDpTj5699WZJlnFAk_6VPEXB3zNRM6U5jHR4oqK_TLltLBds0HBp6fMix3EiNpxfD2binV1LpgQs">
+</div>
+<h3 class="font-bold text-title-lg mb-xs">Thunder AFC</h3>
+<p class="text-on-surface-variant text-label-md mb-md">Division 2 • Kent</p>
+<div class="w-full bg-surface-container rounded-full h-2 mb-1">
+<div class="bg-primary h-full rounded-full w-[65%]"></div>
+</div>
+<div class="flex justify-between w-full">
+<span class="text-label-sm font-bold text-primary">Win Rate 65%</span>
+<span class="text-label-sm text-on-surface-variant">15 Wins</span>
+</div>
+</div>
+<!-- Team Card 4 -->
+<div class="min-w-[240px] p-lg border border-outline-variant rounded-xl flex flex-col items-center bg-surface-container-lowest hover:shadow-md transition-shadow">
+<div class="w-20 h-20 mb-md relative">
+<img class="w-full h-full object-contain" data-alt="A sophisticated football club badge with a classic circular motif, featuring a stylized laurel wreath and a crown in burgundy and gold. The style is heritage-inspired yet cleanly executed for a modern digital platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPORfjvId_wZRX1jCet4DWoRqmXRBwQ65mtrMGRGRLaEccsrlfMOIkvhMnKKYlWcsNVAI6LBzrztCP53fqZ5KRX5CrHqccJYC6cn2Xdt7YzQubq4FMDX5oD81vtsDM0d8Kawj1OOde8dPVYeQpMlNNVejU2WPoQ9Won6qC-vd5NCH5iPbPMzuKOY2jgtB7Iw_dDWxr6urT3NNRKpXauyksZS48BwnhM30Qi7_Hrx-t6mKYNaG9JqEk_pPWOGgtD71A4UxejJhrB9U">
+</div>
+<h3 class="font-bold text-title-lg mb-xs">Royal Borough</h3>
+<p class="text-on-surface-variant text-label-md mb-md">Regional League</p>
+<div class="w-full bg-surface-container rounded-full h-2 mb-1">
+<div class="bg-primary h-full rounded-full w-[91%]"></div>
+</div>
+<div class="flex justify-between w-full">
+<span class="text-label-sm font-bold text-primary">Win Rate 91%</span>
+<span class="text-label-sm text-on-surface-variant">30 Wins</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Nearby Friendly Challenges -->
+<div class="md:col-span-7 bg-white border border-outline-variant rounded-xl p-lg card-shadow">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">sports_soccer</span>
+                                Nearby Friendly Challenges
+                            </h2>
+</div>
+<div class="space-y-md">
+<!-- Challenge Item -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-md p-md bg-surface-container-low rounded-lg border border-outline-variant">
+<div class="flex-1">
+<div class="flex items-center gap-xs mb-1">
+<span class="bg-secondary text-on-secondary px-sm py-0.5 rounded text-[10px] font-bold">URGENT</span>
+<h4 class="font-bold text-body-lg">Blue Hawks vs. Open Challenger</h4>
+</div>
+<div class="flex flex-wrap gap-md text-on-surface-variant text-body-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-body-md">calendar_today</span> Sat, 15:00</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-body-md">location_on</span> West Park Arena (2.4km)</span>
+</div>
+</div>
+<button class="bg-primary text-white px-xl py-sm rounded-lg font-bold hover:shadow-lg transition-all active:scale-95">Accept Challenge</button>
+</div>
+<!-- Challenge Item -->
+<div class="flex flex-col sm:flex-row sm:items-center gap-md p-md bg-white rounded-lg border border-outline-variant">
+<div class="flex-1">
+<h4 class="font-bold text-body-lg mb-1">Night Wolves looking for 11v11</h4>
+<div class="flex flex-wrap gap-md text-on-surface-variant text-body-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-body-md">calendar_today</span> Tomorrow, 19:30</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-body-md">location_on</span> City Hub Pitch (4.1km)</span>
+</div>
+</div>
+<button class="border border-primary text-primary px-xl py-sm rounded-lg font-bold hover:bg-primary/5 transition-all">Accept Challenge</button>
+</div>
+</div>
+</div><div class="md:col-span-12 bg-white border border-outline-variant rounded-xl p-lg card-shadow"><div class="flex justify-between items-center mb-lg"><h2 class="font-title-lg text-title-lg flex items-center gap-sm"><span class="material-symbols-outlined text-primary">stadium</span> Popular Venues</h2><a class="text-primary font-label-md hover:underline" href="#">View All</a></div><div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-md"><div class="group border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest hover:border-primary transition-all"><div class="h-32 w-full"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc2YXL6aq71YhP32GqWpwVlM67p8jNLNYFfezMOsvlTJIy0e9U4UIvg48qT54akmT5nPcSZjoPaPQ1lvEhiWzFJFV09dzxl7DTlm9Y5Z0PrzHkIK_98nWRUvF-kmGuVVrJvp6GyurQxOhHXwMZHww3YyO0OizYBS52zhgEK2V1TZCvDN9P23T1qcUKiX9tp_vSp-xxCYQTgbguyQdnLwyhcxOD6QoMcQ29GftlZa-2jyTkCv7iS3s1na4azDv_3mtsbL7CxWiiNuU" class="w-full h-full object-cover" alt="Bashundhara Kings Arena"></div><div class="p-md"><div class="flex justify-between items-start mb-xs"><h3 class="font-bold text-body-md">Bashundhara Kings Arena</h3><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="text-label-sm">4.8</span></div></div><p class="text-on-surface-variant text-label-sm mb-sm">Dhaka</p><div class="flex flex-wrap gap-1 mb-md"><span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-label-md">11-a-side</span><span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-label-md">Turf</span><span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-label-md">Floodlights</span></div><button class="w-full bg-primary text-white py-2 rounded-lg text-label-md font-bold hover:bg-primary-container transition-colors">Book Venue</button></div></div><div class="group border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest hover:border-primary transition-all"><div class="h-32 w-full"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmOWqIoLjDQE3uafL_C6VkqeqUh1oW1Gupcxer6I9jOj0oBiI_K-oRERVdf_I8j0GjheXcdqIKy6NvzYBqUk-tNh-3ziRYcn9fmBXhIyNP-ivaOQVU0fteCiMsMkq0AIggB7jAAKAfZAgYqn8R-6HANI0Glj02v9bIHowOBOcLnrrMbeH5mqh0l3CQ5ntqomxryBX3hjd_ctU6dSJ8vTo8101FW3KQDQP4MepFFAVwz298buL16yKfaGLIy4HfZySIZ36TfBcUsxA" class="w-full h-full object-cover" alt="Army Stadium"></div><div class="p-md"><div class="flex justify-between items-start mb-xs"><h3 class="font-bold text-body-md">Army Stadium</h3><div class="flex items-center gap-1 text-primary"><span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="text-label-sm">4.6</span></div></div><p class="text-on-surface-variant text-label-sm mb-sm">Dhaka</p><div class="flex flex-wrap gap-1 mb-md"><span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-label-md">11-a-side</span><span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-label-md">Grass</span><span class="bg-surface-container px-2 py-0.5 rounded text-[10px] font-label-md">Parking</span></div><button class="w-full bg-primary text-white py-2 rounded-lg text-label-md font-bold hover:bg-primary-container transition-colors">Book Venue</button></div></div></div></div>
+<!-- Latest Transfers / Activity -->
+<div class="md:col-span-5 bg-white border border-outline-variant rounded-xl p-lg card-shadow">
+<h2 class="font-title-lg text-title-lg mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">published_with_changes</span>
+                            Latest Transfers
+                        </h2>
+<div class="relative overflow-hidden">
+<div class="space-y-lg relative z-10">
+<!-- Transfer Row 1 -->
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">person</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-md">
+<p class="font-body-md"><span class="font-bold">David Ray</span> joined <span class="font-bold text-primary">Apex FC</span></p>
+<p class="text-label-sm text-on-surface-variant">2 hours ago • Free Agency</p>
+</div>
+</div>
+<!-- Transfer Row 2 -->
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">swap_horiz</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-md">
+<p class="font-body-md"><span class="font-bold">Leo Kent</span> moved to <span class="font-bold text-primary">Manchester Lions</span></p>
+<p class="text-label-sm text-on-surface-variant">5 hours ago • Team Swap</p>
+</div>
+</div>
+<!-- Transfer Row 3 -->
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container">verified</span>
+</div>
+<div class="flex-1 border-b border-outline-variant pb-md">
+<p class="font-body-md"><span class="font-bold">Unity United</span> renewed <span class="font-bold">Alex Smith</span></p>
+<p class="text-label-sm text-on-surface-variant">Yesterday • Contract Extension</p>
+</div>
+</div>
+<!-- Transfer Row 4 -->
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md"><span class="font-bold">Sarah King</span> registered as Scout</p>
+<p class="text-label-sm text-on-surface-variant">2 days ago • New Profile</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="md:col-span-12 bg-white border border-outline-variant rounded-xl p-lg card-shadow"><div class="flex justify-between items-center mb-lg"><h2 class="font-title-lg text-title-lg flex items-center gap-sm"><span class="material-symbols-outlined text-primary">article</span> Khelabase Blog</h2><a class="text-primary font-label-md hover:underline" href="#">Read More</a></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-lg"><div class="group cursor-pointer"><div class="h-48 w-full rounded-lg overflow-hidden mb-md"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc2YXL6aq71YhP32GqWpwVlM67p8jNLNYFfezMOsvlTJIy0e9U4UIvg48qT54akmT5nPcSZjoPaPQ1lvEhiWzFJFV09dzxl7DTlm9Y5Z0PrzHkIK_98nWRUvF-kmGuVVrJvp6GyurQxOhHXwMZHww3YyO0OizYBS52zhgEK2V1TZCvDN9P23T1qcUKiX9tp_vSp-xxCYQTgbguyQdnLwyhcxOD6QoMcQ29GftlZa-2jyTkCv7iS3s1na4azDv_3mtsbL7CxWiiNuU" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Finishing Drills"></div><span class="bg-primary-container text-on-primary-container px-sm py-1 rounded text-[10px] font-bold uppercase tracking-wider">Training</span><h3 class="font-bold text-title-lg mt-sm mb-xs group-hover:text-primary transition-colors">How to Improve Your Finishing: Top 5 Drills</h3><p class="text-on-surface-variant text-label-sm">Oct 24 • 5 min read</p></div><div class="group cursor-pointer"><div class="h-48 w-full rounded-lg overflow-hidden mb-md"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmOWqIoLjDQE3uafL_C6VkqeqUh1oW1Gupcxer6I9jOj0oBiI_K-oRERVdf_I8j0GjheXcdqIKy6NvzYBqUk-tNh-3ziRYcn9fmBXhIyNP-ivaOQVU0fteCiMsMkq0AIggB7jAAKAfZAgYqn8R-6HANI0Glj02v9bIHowOBOcLnrrMbeH5mqh0l3CQ5ntqomxryBX3hjd_ctU6dSJ8vTo8101FW3KQDQP4MepFFAVwz298buL16yKfaGLIy4HfZySIZ36TfBcUsxA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Scouting Guide"></div><span class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded text-[10px] font-bold uppercase tracking-wider">Scouting</span><h3 class="font-bold text-title-lg mt-sm mb-xs group-hover:text-primary transition-colors">What Scouts Look for in Young Midfielders</h3><p class="text-on-surface-variant text-label-sm">Oct 22 • 8 min read</p></div><div class="group cursor-pointer"><div class="h-48 w-full rounded-lg overflow-hidden mb-md"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDxgjqNeRKhPiYjHd_pxEYLXogJltnYlyYJAJKTZ-hkGSa82YOBY1FiOMFFWs-Y6re2H9K-dZsoQj95JOfqGVD3h1Ohsl0FUOFuk7hcCdAmEGOUGDZhz1PpqH3Kdl7mztw5_-tCoSScpt1GD3KsBmRP2Hj9NlhL1fvKrVqgBuzTeblCqhjTH420OzucsHogN4jFX1YTzqsNv1_5bJ4N6b811Qzrikmq-yFpndo80_NiPRtkQGZj4h5gYZUtbrhpl76A3zKEa2NBWc" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Nutrition"></div><span class="bg-tertiary-container text-on-tertiary-container px-sm py-1 rounded text-[10px] font-bold uppercase tracking-wider">Nutrition</span><h3 class="font-bold text-title-lg mt-sm mb-xs group-hover:text-primary transition-colors">Pre-Match Meals: Fueling for 90 Minutes</h3><p class="text-on-surface-variant text-label-sm">Oct 20 • 4 min read</p></div></div></div>
+</div>
+</section>
+</main><footer class="lg:ml-64 p-xl border-t border-outline-variant bg-surface-container-low"><div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-lg"><div class="flex flex-col gap-xs"><span class="font-display-lg text-headline-md text-primary tracking-tight">Khelabase</span><p class="text-on-surface-variant text-body-md">Empowering the next generation of football talent.</p></div><div class="flex gap-xl"><a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-label-md">Privacy Policy</a><a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-label-md">Terms of Service</a><a href="#" class="text-on-surface-variant hover:text-primary transition-colors font-label-md">Contact Us</a></div><div class="text-on-surface-variant text-label-sm">© 2024 Khelabase. All rights reserved.</div></div><div class="h-20 md:hidden"></div></footer>
+</div>
+<!-- MOBILE BOTTOM NAVIGATION -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant z-50 flex justify-around py-sm px-md">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-[10px] font-label-md font-bold">Explore</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">group</span>
+<span class="text-[10px] font-label-md">Teams</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[10px] font-label-md">Chat</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-md">Profile</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions and effects
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('click', function(e) {
+                if (this.classList.contains('active:scale-95')) return; // Already has it via utility
+                this.classList.add('active:scale-95');
+                setTimeout(() => this.classList.remove('active:scale-95'), 150);
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchContainer = searchInput?.closest('div');
+        if (searchInput && searchContainer) {
+            searchInput.addEventListener('focus', () => {
+                searchContainer.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+                searchContainer.classList.remove('border-outline-variant');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchContainer.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
+                searchContainer.classList.add('border-outline-variant');
+            });
+        }
+    </script>
+
+</body></html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tournament Oversight | Khelabase Super Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#62df7d",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#27313f",
+                        "outline-variant": "#bdcaba",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "primary-fixed": "#7ffc97",
+                        "secondary-fixed": "#ffdf9f",
+                        "on-tertiary-container": "#fefcff",
+                        "on-surface": "#121c2a",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "surface": "#f8f9ff",
+                        "on-surface-variant": "#3e4a3d",
+                        "surface-tint": "#006e2d",
+                        "on-error": "#ffffff",
+                        "outline": "#6e7b6c",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#006b2c",
+                        "on-primary-container": "#f7fff2",
+                        "background": "#f8f9ff",
+                        "surface-container": "#e6eeff",
+                        "on-secondary-container": "#6f5100",
+                        "on-background": "#121c2a",
+                        "primary-container": "#00873a",
+                        "on-tertiary-fixed": "#00174b",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#005320",
+                        "secondary": "#795900",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d9e3f6",
+                        "surface-dim": "#d0dbed",
+                        "tertiary": "#0051d5",
+                        "tertiary-container": "#316bf3",
+                        "primary-fixed-dim": "#62df7d",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dee9fc",
+                        "secondary-container": "#ffc329",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-primary-fixed": "#002109",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "8px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .premium-card {
+            background: #ffffff;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .premium-card:hover {
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+        .active-row {
+            background-color: #f8f9ff;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #f8f8f8 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background overflow-x-hidden">
+<!-- SideNavBar (Persistent) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-inverse-surface shadow-sm flex flex-col border-r border-outline-variant dark:border-outline z-50">
+<div class="px-lg py-xl">
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tight">Khelabase</h1>
+<p class="text-label-md font-label-md text-on-surface-variant opacity-70">Super Admin</p>
+</div>
+<nav class="flex-1 px-sm space-y-1">
+<a class="flex items-center gap-3 px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md font-label-md">User Management</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-lg text-primary dark:text-inverse-primary font-bold border-r-4 border-primary bg-surface-variant/30" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="text-label-md font-label-md">Tournament Oversight</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-md font-label-md">Marketplace Control</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">System Settings</span>
+</a>
+</nav>
+<div class="mt-auto p-lg border-t border-outline-variant/30">
+<div class="flex items-center gap-3 p-sm mb-lg bg-surface-variant/50 rounded-xl">
+<img class="w-10 h-10 rounded-full border-2 border-white" data-alt="Close-up portrait of a professional business administrator in a modern office environment. Soft natural lighting, shallow depth of field. High-performance SaaS admin aesthetic with clean lines and a professional demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcVzSxDxOidQ87H6OXf5lYJRxZzYMpCYReQFp1aXq4OhX1Ci_DKm_4kUrFcawpAEg57y5Qh1M1d24irRg-IjQS4wIhguXqW6_PuXT4DcRrTXjxlidXVOJhlOQTsVIGX7P6a7rQbyMYNkI27Lozhu5pOdAWcd4X_ZBBZzxsC2SU_qaK48QlBACPUkYEilHLzYxU4jAAba-pmQiNw4In90NG5yI6nm2R-OiR4MkgZ5qiR4FC-14X6PXvp6057wuRJ972DOAP5HjwZ8c"/>
+<div>
+<p class="text-label-md font-bold text-on-surface">Alex K.</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Super Admin</p>
+</div>
+</div>
+<a class="flex items-center gap-3 px-md py-sm text-on-surface-variant hover:text-primary transition-colors mb-2" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-md py-sm text-error hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label-md font-bold">Sign Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="h-20 sticky top-0 bg-surface dark:bg-background z-40 flex justify-between items-center px-lg shadow-sm">
+<div class="flex items-center w-1/2">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-primary rounded-xl overflow-hidden transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none focus:ring-0 text-body-md font-body-md text-on-surface" placeholder="Search tournaments, organizers, or venues..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">health_and_safety</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-all text-on-surface-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/50"></div>
+<button class="flex items-center gap-2 px-md py-sm rounded-xl hover:bg-surface-variant transition-all group">
+<span class="text-body-md font-bold text-on-surface">Admin Profile</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-lg lg:p-xl max-w-[1400px] mx-auto w-full">
+<!-- Header & Filter -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-xl gap-6">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-8 bg-primary rounded-full"></span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Tournament Oversight</h2>
+</div>
+<p class="text-body-md text-on-surface-variant max-w-lg">Manage, approve, and audit tournaments across the Khelabase ecosystem. Maintain quality standards for high-performance football matches.</p>
+</div>
+<!-- Toggle Filter -->
+<div class="inline-flex p-1 bg-surface-container-high rounded-xl">
+<button class="px-lg py-2 rounded-lg text-label-md font-bold transition-all bg-surface-container-lowest text-primary shadow-sm" id="btnPending" onclick="toggleFilter('pending')">
+                        Pending Approvals
+                        <span class="ml-2 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px]">12</span>
+</button>
+<button class="px-lg py-2 rounded-lg text-label-md font-bold transition-all text-on-surface-variant hover:text-on-surface" id="btnAll" onclick="toggleFilter('all')">
+                        All Tournaments
+                    </button>
+</div>
+</div>
+<!-- Dashboard Stats (Brief Overview) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg mb-xl">
+<div class="premium-card p-lg flex flex-col gap-1 border-t-4 border-t-primary-container">
+<span class="text-label-md font-bold text-on-surface-variant opacity-60">TOTAL REGISTERED</span>
+<span class="text-headline-md font-bold">148</span>
+</div>
+<div class="premium-card p-lg flex flex-col gap-1 border-t-4 border-t-secondary-container">
+<span class="text-label-md font-bold text-on-surface-variant opacity-60">PENDING ACTION</span>
+<span class="text-headline-md font-bold text-secondary">12</span>
+</div>
+<div class="premium-card p-lg flex flex-col gap-1">
+<span class="text-label-md font-bold text-on-surface-variant opacity-60">TOTAL PRIZE POOL</span>
+<span class="text-headline-md font-bold text-primary">$45.2k</span>
+</div>
+<div class="premium-card p-lg flex flex-col gap-1">
+<span class="text-label-md font-bold text-on-surface-variant opacity-60">MATCHES COMPLETED</span>
+<span class="text-headline-md font-bold">2,104</span>
+</div>
+</div>
+<!-- Tournament Table Container -->
+<div class="premium-card overflow-x-auto min-h-[400px]" id="tournamentContainer">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant/30">
+<tr>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Tournament</th>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Organizer</th>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Venue</th>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Format</th>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Registration</th>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-lg py-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody id="tournamentList">
+<!-- Pending Row 1 -->
+<tr class="group hover:bg-surface-container-lowest transition-all cursor-pointer border-b border-outline-variant/20" onclick="toggleDetails('details-1')">
+<td class="px-lg py-md">
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 rounded-lg overflow-hidden bg-surface-variant shrink-0">
+<img class="w-full h-full object-cover" data-alt="Cinematic wide shot of a lush green football stadium under stadium lights at dusk. The vibrant emerald grass is perfectly manicured. Atmospheric mist hangs low, and the scene is rendered in a high-contrast, premium sports broadcast style with deep greens and gold light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfjbhhW8elc-mB_Xfq1f9k99_-1W6xMP-2ibgF9oiahIOVuLqx2PDGZsFs8HzpRYopqqMww6jq7TRKdFaYbC7GRrDiCjqO7RGu22OSiSkvdVTN8mq67eJMITy_jO4gFwWr03JUWs0gwz1gLQvIdTlt_S645H3lI0n3OtM_VuBv2G4QjaN24TjUA2kEQipBfUywp2U5O32avCvaNQD3gFbqOSGSApoqX2WiMpk3e06JuZuwviIERwkjBUoKDqI7D8cn_sv_ayERRoQ"/>
+</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Champions League Qatar</p>
+<p class="text-label-sm text-on-surface-variant">Nov 12 - Dec 05</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-md bg-surface-variant" data-alt="A minimalist and high-end logo for a premium football organization. The design features sharp geometric shapes and a sophisticated palette of emerald green and dark slate. Clean lines, vector aesthetic, professional corporate branding for elite sports." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAklVyY2eZVW7PW3cq6ztr02vrmGi9oUKgbuc4s91P3YDeO36zMkuT0gL0hiBcThC_TqL2ZcACXkCWJMNWOXpzD2-SGO9H9uErhUnqlF_8piVGIFY50NLrCyH6dfEPpyczybkYCNeiayM3be_Y0p0-4viMg-qgrvP1LhYTDMG6SMw8XSSa57UivcX9BCSGKcnGrukxzbrJqbhht7lOVFa2agK4H0nhytjseVdTtTGcZzd06-JsSxkXWz00zd-JPm3NzYM67SMtGFnc"/>
+<span class="text-body-md text-on-surface">Elite Strikers Hub</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="text-body-md text-on-surface-variant">Khalifa Stadium, Doha</span>
+</td>
+<td class="px-lg py-md">
+<span class="px-2 py-1 rounded bg-surface-variant text-label-md font-bold text-on-surface-variant">11v11</span>
+</td>
+<td class="px-lg py-md">
+<span class="flex items-center gap-1.5 text-primary text-label-md font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                                    Open
+                                </span>
+</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-bold border border-secondary-container flex items-center gap-1 w-fit">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                    PENDING
+                                </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</td>
+</tr>
+<!-- Detail Row 1 -->
+<tr class="hidden bg-surface-container-low transition-all" id="details-1">
+<td class="px-lg py-lg" colspan="7">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg p-md bg-white rounded-2xl shadow-inner border border-outline-variant/30">
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Financials &amp; Teams</h4>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/10">
+<span class="text-body-md text-on-surface-variant">Prize Pool:</span>
+<span class="text-body-md font-bold text-primary">$12,500.00</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/10">
+<span class="text-body-md text-on-surface-variant">Entry Fee:</span>
+<span class="text-body-md font-bold">$150.00 / Team</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-body-md text-on-surface-variant">Registered Teams:</span>
+<span class="text-body-md font-bold">14 / 24</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Audit Logs</h4>
+<p class="text-label-sm text-on-surface-variant italic">Organizer profile verified. Venue availability confirmed. Medical staff credentials pending upload.</p>
+</div>
+<div class="flex items-center justify-end gap-3">
+<button class="px-lg py-3 rounded-xl bg-error text-white text-label-md font-bold hover:scale-[1.02] transition-transform active:scale-95 shadow-sm">Reject Application</button>
+<button class="px-lg py-3 rounded-xl bg-primary text-white text-label-md font-bold hover:scale-[1.02] transition-transform active:scale-95 shadow-lg shadow-primary/20">Approve Tournament</button>
+</div>
+</div>
+</td>
+</tr>
+<!-- Approved Row 1 (Visible only in All) -->
+<tr class="all-tourney-row hidden group hover:bg-surface-container-lowest transition-all cursor-pointer border-b border-outline-variant/20">
+<td class="px-lg py-md">
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 rounded-lg overflow-hidden bg-surface-variant shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up action shot of a professional football match on a pristine emerald green pitch. The player is striking the ball with precision. Vibrant colors, dynamic motion blur, high-performance athletic feel with crisp focus on the texture of the ball and grass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv5ISDr4-bcJlZzrAnnBP1Y9_t9HH8uOY_hMcB0G5Hqle9FZ-k4Cq4oXEJ2Ur7zaluBhPXKKdNuAebEYC8zLzwlcAXy1QWhvYBE480I9AKxdQ-2lrrZ7Y4ViUr7Qm5cJ5MJ_LMXYxKE9n5uJ10c4Ef93fkVurWHpVRLtXvKVdSLm-HKW_2zZaQI6L1GDud1ZyY-QDVliiiLqSEvuEfnrWhcQOVZvVPqrUAS3-w7erOtnqAVf6h2UYhVaHltTjrx_bCya4Iy1plWUo"/>
+</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Summer Solstice 5s</p>
+<p class="text-label-sm text-on-surface-variant">Aug 15 - Aug 20</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-md bg-surface-variant" data-alt="A clean, minimalist logo for a sports marketing agency. Sleek typography, monochromatic black and white with a single gold accent. Modern geometric design, vector graphic, high-end professional appearance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNJGJg-cUS0FIJ6wDiIpgZ5bp-RyJQQuug6DZT29doCQPpjSgEr4_zbMaMqhgsD-Vt75p3sfGdEqpM2FYABLJ7B0Xs5uTZ85R_tuGoMPnhFLQ4pzBAFwPzaMk1BjU7LC_djwvIp3VnNnCSSjCDDBery6zLUxP2i04iAOv5odp_kB79wXrvhRq-JgWldrhYJHLhqRLaYDdEyUIoH1yYIoGuma0Q99MjWUSY0V_OJvAIM9zq3V3rD_HB6qrqtrP1SaXblwkPYm45pTg"/>
+<span class="text-body-md text-on-surface">Urban Sports Lab</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="text-body-md text-on-surface-variant">Al Bayt Grounds</span>
+</td>
+<td class="px-lg py-md">
+<span class="px-2 py-1 rounded bg-surface-variant text-label-md font-bold text-on-surface-variant">5v5</span>
+</td>
+<td class="px-lg py-md">
+<span class="text-on-surface-variant text-label-md font-bold">Closed</span>
+</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 rounded-full bg-primary-container/20 text-primary text-label-sm font-bold border border-primary-container flex items-center gap-1 w-fit">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    APPROVED
+                                </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="px-md py-2 rounded-lg border border-outline text-label-md font-bold hover:bg-surface-variant transition-all">Edit</button>
+</td>
+</tr>
+<!-- Pending Row 2 -->
+<tr class="group hover:bg-surface-container-lowest transition-all cursor-pointer border-b border-outline-variant/20" onclick="toggleDetails('details-2')">
+<td class="px-lg py-md">
+<div class="flex items-center gap-4">
+<div class="w-16 h-10 rounded-lg overflow-hidden bg-surface-variant shrink-0">
+<img class="w-full h-full object-cover" data-alt="A wide panoramic view of a high-tech modern football academy training field at night. Glowing floodlights illuminate a deep emerald green pitch. Minimalist architecture in the background. High-key lighting, premium SaaS design aesthetic, clean and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUBq5PPGGryfECwQ_cbtIRIM7QQHyR2OiP3sp8_7QA_DZaMdb_24XdbOmYeyqGxLp-hMo7E2uwJ1ZRBCPTHivWbEiGR5v3mliCIW2BswZkQGkm87HJ0uGKEI3DiqCKLd5o9n01ek21YVBfOw7Xi4El3mM3OdUl5x4lqMEkTHM7RswDs9iziyVtA_4VF08HCqXAtJImlp8ZsVPdwdXSN8BOOoPvjU67BrJXBqh_0AJ0z-PKouAPAswsKZHuw6AiQM5SyHJJoEa6blM"/>
+</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Masters Futbol Invitational</p>
+<p class="text-label-sm text-on-surface-variant">Jan 05 - Jan 15</p>
+</div>
+</div>
+</td>
+<td class="px-lg py-md">
+<div class="flex items-center gap-2">
+<img class="w-6 h-6 rounded-md bg-surface-variant" data-alt="Abstract minimalist logo with a stylized falcon and a football. Colors include deep emerald, charcoal gray, and metallic gold. Sharp edges, professional sport branding, high-end vector art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFTHXvF7BIlj6PNR7zku1h3AGjqakAGArOLriW9KaOmyG4l4nox8sI4cLBSUpdIv4qA2_HOvUN0GI0LRylBUQ5CNAk1-oDjUbsFOm9WEDs-YA7Smj5ilvyJuCK4qz0nmosdEYWvA97034Tuvhai3J95TPVFTG1tUVM1qaAMT21BEmMYOicNCaPRR1JM4spHZtZZF3kQpR_IXcAMGI8ts-Gl-yn8DIoGqs3eNkUu78ozMocpVfU4dMvxtC8qxBtfHKin-5pUqoWOEE"/>
+<span class="text-body-md text-on-surface">Doha Titans FC</span>
+</div>
+</td>
+<td class="px-lg py-md">
+<span class="text-body-md text-on-surface-variant">Lusail Multi-Complex</span>
+</td>
+<td class="px-lg py-md">
+<span class="px-2 py-1 rounded bg-surface-variant text-label-md font-bold text-on-surface-variant">7v7</span>
+</td>
+<td class="px-lg py-md">
+<span class="flex items-center gap-1.5 text-primary text-label-md font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                                    Open
+                                </span>
+</td>
+<td class="px-lg py-md">
+<span class="px-3 py-1 rounded-full bg-secondary-container/20 text-secondary text-label-sm font-bold border border-secondary-container flex items-center gap-1 w-fit">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                                    PENDING
+                                </span>
+</td>
+<td class="px-lg py-md text-right">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</td>
+</tr>
+<!-- Detail Row 2 -->
+<tr class="hidden bg-surface-container-low transition-all" id="details-2">
+<td class="px-lg py-lg" colspan="7">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg p-md bg-white rounded-2xl shadow-inner border border-outline-variant/30">
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Financials &amp; Teams</h4>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/10">
+<span class="text-body-md text-on-surface-variant">Prize Pool:</span>
+<span class="text-body-md font-bold text-primary">$8,000.00</span>
+</div>
+<div class="flex justify-between items-center py-1 border-b border-outline-variant/10">
+<span class="text-body-md text-on-surface-variant">Entry Fee:</span>
+<span class="text-body-md font-bold">$100.00 / Team</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-body-md text-on-surface-variant">Registered Teams:</span>
+<span class="text-body-md font-bold">8 / 16</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<h4 class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest">Audit Logs</h4>
+<p class="text-label-sm text-on-surface-variant italic">New organizer. High prize pool requires financial escrow confirmation. Venue status: Confirmed.</p>
+</div>
+<div class="flex items-center justify-end gap-3">
+<button class="px-lg py-3 rounded-xl bg-error text-white text-label-md font-bold hover:scale-[1.02] transition-transform active:scale-95 shadow-sm">Reject Application</button>
+<button class="px-lg py-3 rounded-xl bg-primary text-white text-label-md font-bold hover:scale-[1.02] transition-transform active:scale-95 shadow-lg shadow-primary/20">Approve Tournament</button>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex flex-col items-center justify-center py-2xl" id="emptyState">
+<div class="w-64 h-64 mb-lg opacity-40">
+<span class="material-symbols-outlined text-[128px] text-primary-container">task_alt</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface">All caught up!</h3>
+<p class="text-body-md text-on-surface-variant text-center max-w-sm mt-2">There are no pending tournament approvals at the moment. You've cleared the queue!</p>
+<button class="mt-lg px-xl py-3 rounded-xl bg-primary text-white text-label-md font-bold" onclick="toggleFilter('all')">View All Tournaments</button>
+</div>
+</div>
+<!-- Page Footer Pagination -->
+<div class="mt-lg flex items-center justify-between">
+<p class="text-label-md text-on-surface-variant">Showing 1 to 10 of 148 tournaments</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-variant transition-all text-on-surface-variant disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-variant transition-all text-on-surface-variant">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-variant transition-all text-on-surface-variant">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:bg-surface-variant transition-all text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+        function toggleFilter(type) {
+            const btnPending = document.getElementById('btnPending');
+            const btnAll = document.getElementById('btnAll');
+            const rows = document.querySelectorAll('.all-tourney-row');
+            const emptyState = document.getElementById('emptyState');
+            const table = document.querySelector('table');
+
+            if (type === 'pending') {
+                btnPending.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnPending.classList.remove('text-on-surface-variant');
+                btnAll.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnAll.classList.add('text-on-surface-variant');
+                
+                rows.forEach(r => r.classList.add('hidden'));
+                
+                // Logic to show/hide empty state if no pending items existed
+                // For demo, we keep the 2 pending items
+                emptyState.classList.add('hidden');
+                table.classList.remove('hidden');
+            } else {
+                btnAll.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnAll.classList.remove('text-on-surface-variant');
+                btnPending.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnPending.classList.add('text-on-surface-variant');
+                
+                rows.forEach(r => r.classList.remove('hidden'));
+                emptyState.classList.add('hidden');
+                table.classList.remove('hidden');
+            }
+        }
+
+        function toggleDetails(id) {
+            const detailRow = document.getElementById(id);
+            const isHidden = detailRow.classList.contains('hidden');
+            
+            // Close all others first for accordion effect
+            document.querySelectorAll('[id^="details-"]').forEach(row => {
+                row.classList.add('hidden');
+            });
+
+            if (isHidden) {
+                detailRow.classList.remove('hidden');
+            }
+        }
+
+        // Search highlight interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            const listItems = document.querySelectorAll('#tournamentList tr:not([id^="details-"])');
+            listItems.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                row.style.display = text.includes(val) ? '' : 'none';
+            });
+        });
+    </script>
+</body></html>

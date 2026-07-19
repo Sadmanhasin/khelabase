@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Admin - User Management</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#62df7d",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "outline-variant": "#bdcaba",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "primary-fixed": "#7ffc97",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-tertiary-container": "#fefcff",
+                    "on-surface": "#121c2a",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "surface-tint": "#006e2d",
+                    "on-error": "#ffffff",
+                    "outline": "#6e7b6c",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container-low": "#eff4ff",
+                    "primary": "#006b2c",
+                    "on-primary-container": "#f7fff2",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "on-secondary-container": "#6f5100",
+                    "on-background": "#121c2a",
+                    "primary-container": "#00873a",
+                    "on-tertiary-fixed": "#00174b",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-primary-fixed-variant": "#005320",
+                    "secondary": "#795900",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#d9e3f6",
+                    "surface-dim": "#d0dbed",
+                    "tertiary": "#0051d5",
+                    "tertiary-container": "#316bf3",
+                    "primary-fixed-dim": "#62df7d",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "secondary-container": "#ffc329",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-primary-fixed": "#002109",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#eaf1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "xs": "8px",
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+            border-radius: 16px;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E5E7EB; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- SideNavBar (Authority Source: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-surface-container-low dark:bg-inverse-surface shadow-sm border-r border-outline-variant dark:border-outline z-50">
+<!-- Brand Header -->
+<div class="px-lg py-xl">
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary tracking-tight">Khelabase</h1>
+<p class="text-label-md font-label-md text-on-surface-variant opacity-70">Super Admin</p>
+</div>
+<!-- Navigation Tabs -->
+<nav class="flex-1 px-md space-y-1 overflow-y-auto custom-scrollbar">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<!-- Active Tab: User Management -->
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-primary dark:text-inverse-primary font-bold border-r-4 border-primary bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-label-md font-label-md">User Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">sports_soccer</span>
+<span class="text-label-md font-label-md">Tournament Oversight</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">storefront</span>
+<span class="text-label-md font-label-md">Marketplace Control</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors group" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-label-md font-label-md">System Settings</span>
+</a>
+</nav>
+<!-- Footer Actions -->
+<div class="p-md mt-auto border-t border-outline-variant/30">
+<a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-surface-variant transition-colors mb-2" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="text-label-md font-label-md">Help Center</span>
+</a>
+<div class="flex items-center gap-md p-md bg-surface-container rounded-xl">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a senior administrator in a high-tech sports management environment, clean studio lighting, focused expression, wearing a sleek modern blazer, depth of field effect with a blurred modern office background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVM0xzjesGC3xVDESwGuJCBqdLzDEcZiT2sD91ZrFLUD0hI5_VN6fLulEqTQIRxBhuXFYp9xozd9M_HwYwDgIx34uqLcNQm6f5pPTWO0zyln6lnhk7b251zkdxDHDMsehbFzQLZafuOJObtXaL8xngUj8yZ05R1popAQtTwQ5GMG2JmgNxlruYWDx310T-WK9ama7v6FtzhrA_q398jMBuNmnO6evyqw7rkHm-17_Z4MV1l-hu9HOzVegWec-q9lenwC7WybdafSk"/>
+<div class="overflow-hidden">
+<p class="text-label-md font-bold truncate">Khelabase Admin</p>
+<p class="text-[10px] text-on-surface-variant truncate">admin@khelabase.com</p>
+</div>
+<button class="ml-auto text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar (Authority Source: JSON) -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-background shadow-sm px-lg py-md flex justify-between items-center w-full">
+<div class="flex items-center gap-xl flex-1 max-w-2xl">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl py-2 pl-10 pr-4 text-body-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none" placeholder="Search users, tournaments, or logs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-lg">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">health_and_safety</span>
+</button>
+<div class="relative">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant transition-colors text-on-surface-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<button class="flex items-center gap-sm px-sm py-xs hover:bg-surface-variant rounded-lg transition-all">
+<span class="text-label-md font-bold text-on-surface">Admin Profile</span>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Close-up profile avatar of a tech-savvy manager, soft natural lighting, high resolution, minimalist aesthetic, warm skin tones, professional and approachable vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXoAwGwmyWzXb9LUe8N1oifw8xmqU4BQ8WNCr87vS3cGeMmpdQRVGI67AHYxuMHmjrGSV4e8zZOnqYXARpSpLWVSBH67Bm6TY2G9f9_wcLx7JgYP348b0tZvFN1vgw15rIhQSOiJtCk87m7Vt2N6TEXZMon3IdH51U7JZTXe17YlVpYhZEqw57q_4NIiPvgIR56BXI2E4uCGRZCDesU_GrpVsZP6VAfBXEHLGbGiUDBSCZWQNXp-m9LOy-dO5q1M8r3kFx_IoWN5M"/>
+</button>
+</div>
+</header>
+<!-- View Content -->
+<div class="p-lg space-y-lg flex-1">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">User Management</h2>
+<p class="text-body-md text-on-surface-variant mt-1">Manage, verify, and monitor all Khelabase platform users across the country.</p>
+</div>
+<button class="flex items-center gap-xs bg-primary text-on-primary px-lg py-sm rounded-xl font-bold shadow-lg hover:scale-[1.02] transition-transform active:scale-95">
+<span class="material-symbols-outlined">add</span>
+<span>Add New User</span>
+</button>
+</div>
+<!-- Filter Bar Section -->
+<section class="premium-card p-lg grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-md items-end">
+<div class="md:col-span-1">
+<label class="text-label-md font-label-md text-on-surface-variant block mb-2">Search Name/Email</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 text-body-md focus:ring-1 focus:ring-primary outline-none" placeholder="e.g. Tanvir Ahmed" type="text"/>
+</div>
+</div>
+<div>
+<label class="text-label-md font-label-md text-on-surface-variant block mb-2">District</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 text-body-md focus:ring-1 focus:ring-primary outline-none appearance-none">
+<option>All Districts</option>
+<option>Dhaka</option>
+<option>Chittagong</option>
+<option>Sylhet</option>
+<option>Rajshahi</option>
+</select>
+</div>
+<div>
+<label class="text-label-md font-label-md text-on-surface-variant block mb-2">Verification</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 text-body-md focus:ring-1 focus:ring-primary outline-none appearance-none">
+<option>All Status</option>
+<option>Verified</option>
+<option>Pending</option>
+<option>Unverified</option>
+</select>
+</div>
+<div>
+<label class="text-label-md font-label-md text-on-surface-variant block mb-2">Account Status</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg py-2 px-3 text-body-md focus:ring-1 focus:ring-primary outline-none appearance-none">
+<option>Active</option>
+<option>Suspended</option>
+<option>Archived</option>
+</select>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 bg-surface-container text-on-surface py-2 rounded-lg font-bold text-label-md hover:bg-surface-container-high transition-colors">Reset</button>
+<button class="flex-1 bg-secondary text-on-secondary py-2 rounded-lg font-bold text-label-md hover:opacity-90 transition-opacity">Apply</button>
+</div>
+</section>
+<!-- Table Section -->
+<section class="premium-card overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Profile</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Email</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Phone</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">District</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Joined Date</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-lg py-md text-label-md font-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<!-- User Row 1 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-primary/20 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young Bangladeshi footballer, energetic and confident expression, wearing a green jersey, stadium lights in the soft background, high-definition sports photography style, vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVFq97STBBrIN4ZL73dSJs73Yu5UCOTnHSoxvxy-Iu7KfTsDWJFjkYLETO3LksMSOR_C9q9ViXX1Af3qP_c22l5iHk8kBIkZuB3rTokKtm3xmWWkyyiK08vtH2gp3Wl9f8HrrGPNwX0yYSzav-wnJAsZMYjJAjNEcyKjOiIQ_8zgUWZ8pDEKGXCgPh00pBmrxeydZ5z15la1o5oIJ2KdgPw7hFkSeZwlJmok_GxzRr0aIVk0nYtcbBgeobmzx1E5cMnCPBPnqGPh0"/>
+</div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Tanvir Ahmed</span>
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                                                Verified Athlete
+                                            </span>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">tanvir.fc@email.com</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">+880 1712-345678</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Dhaka</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Oct 12, 2023</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-md font-bold bg-primary-container text-on-primary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all" title="View Profile">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-tertiary/10 transition-all" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<div class="relative inline-block">
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-48 bg-white border border-outline-variant rounded-xl shadow-xl z-10 py-2">
+<button class="w-full text-left px-4 py-2 text-body-md hover:bg-error/5 text-error transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">block</span> Suspend
+                                                </button>
+<button class="w-full text-left px-4 py-2 text-body-md hover:bg-error/10 text-error font-bold transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">delete</span> Delete
+                                                </button>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<!-- User Row 2 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant/30 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A professional sports scout profile picture, mature and observant expression, wearing a polo shirt with a crest, outdoor football pitch background during sunset, warm lighting, cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD33r1Lqcl9BDDZ01XJ-jmnCsrHemW2RhBHpaVoEqjaMW4rh3q0ilbDGCKEb6vIN8bH5ZWlXoIIqZB83ULiJ0D3v9L_t_JrFwV9-NZDZ_p1eA4W8zwBB_JlBZRUqoo3gnO-WXzAGcNukB8L5zShn6BL2yLAnXZgikxuPm6BuhpQvXu4asYgq19X5H__zCWs2sL63Hbk32NsfDUyfe7HL7MUx_gSoqXDdvE3yOTexpQQhv1gkyY41yTLyjzuLU_q-QM4Jf-IWbNXIkM"/>
+</div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Rahat Chowdhury</span>
+<span class="text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+                                                Elite Scout
+                                            </span>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">rahat.scout@web.com</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">+880 1812-987654</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Chittagong</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Nov 05, 2023</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-md font-bold bg-secondary-container text-on-secondary-container">
+                                        Pending
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-tertiary/10 transition-all"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- User Row 3 -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant/30 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a female football team manager, confident stance, wearing a stylish team tracksuit, clean modern sports facility in the background, sharp focus, professional lighting, corporate sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCquATF9bxvjIdSABuv5EswbkNaUjYfqc2yi-kHH9QWAWV7n2vlZoq-mjNvKIZ6pW5ZsX-mFHWJ0ADPSgXhuHSlOo3BAnepmlgxOdROsUfLW0cviAQFzismOUHeVmoHRqEaL2jKK3AMB2lUfoKf0o7kUenHeu0yz6GeygAxFKizM5JRBgIqbJKClQw1RxAiG_BTwcXXCYm5FDuFmgp5o7PZsXogLj-GRNS18qALcvzPvQKK-wHM70G9uH1JN-gt4qJO_A67U-ydG1o"/>
+</div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Sabina Khatun</span>
+<span class="text-label-sm font-label-sm text-tertiary flex items-center gap-1">
+                                                Team Manager
+                                            </span>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">sabina.k@khelabase.me</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">+880 1911-000222</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Sylhet</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Dec 01, 2023</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-md font-bold bg-error-container text-on-error-container">
+                                        Suspended
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-tertiary/10 transition-all"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- More rows for visual density -->
+<tr class="hover:bg-surface-container-lowest transition-colors group">
+<td class="px-lg py-md">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full border-2 border-outline-variant/30 overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A candid profile photo of a grassroots sports organizer, friendly smile, wearing a casual jersey, busy local football field background with kids playing, bright daylight, high-quality documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMDIeYy3hua2B7wUcIqZfBGgd38GvcykIPi_7HPT_zcONB-3ZNHuM1mCFt9RmPxehPEgXh--Wpsj7yZ50cs6NnTtX_8cATgU9dJhmAw-PjvpUwej729tIuj0-KPqeEh5-pobU8Yl3duZF4frcGMccdgfhHaiAZdrDETZUAbfgG1PKUCCyClqxpDtjK_NNai8uWyc61qslojKsD_cCFSZxlUlv-uMltgDyJpVtNzzk84nUwbROhKz83DtDp3mpI5lTzalcmeT5FYUQ"/>
+</div>
+<div class="flex flex-col">
+<span class="text-body-md font-bold text-on-surface">Zubayer Khan</span>
+<span class="text-label-sm font-label-sm text-outline flex items-center gap-1">Unverified</span>
+</div>
+</div>
+</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">zubayer.khan@mail.com</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">+880 1515-555666</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Rajshahi</td>
+<td class="px-lg py-md text-body-md text-on-surface-variant">Jan 15, 2024</td>
+<td class="px-lg py-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-md font-bold bg-primary-container text-on-primary-container">
+                                        Active
+                                    </span>
+</td>
+<td class="px-lg py-md text-right">
+<div class="flex justify-end gap-2">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-tertiary/10 transition-all"><span class="material-symbols-outlined text-[20px]">edit</span></button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination (The Footer of the Table) -->
+<div class="px-lg py-md bg-surface-container-low border-t border-outline-variant flex items-center justify-between">
+<p class="text-body-md text-on-surface-variant">
+                        Showing <span class="font-bold text-on-surface">1</span> to <span class="font-bold text-on-surface">10</span> of <span class="font-bold text-on-surface">1,248</span> users
+                    </p>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-outline hover:bg-surface-variant disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-on-primary font-bold text-body-md">1</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-variant text-on-surface-variant font-bold text-body-md">2</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-variant text-on-surface-variant font-bold text-body-md">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-variant text-on-surface-variant font-bold text-body-md">125</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Information / Stats Summary -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="premium-card p-lg flex items-center justify-between border-l-4 border-primary">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Growth (This Month)</p>
+<h3 class="text-headline-md font-headline-md">+12.5%</h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+</div>
+<div class="premium-card p-lg flex items-center justify-between border-l-4 border-secondary">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Verification Queue</p>
+<h3 class="text-headline-md font-headline-md">45 Pending</h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<div class="premium-card p-lg flex items-center justify-between border-l-4 border-tertiary">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant">Total Storage Used</p>
+<h3 class="text-headline-md font-headline-md">2.4 TB</h3>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">database</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Custom Micro-interactions Script -->
+<script>
+        // Simple click handler to close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            const dropdowns = document.querySelectorAll('.relative > div.absolute');
+            dropdowns.forEach(dd => {
+                if (!dd.parentElement.contains(e.target)) {
+                    dd.classList.add('hidden');
+                }
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+    </script>
+</body></html>

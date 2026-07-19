@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Messenger | Team Bashundhara Kings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#f8f9ff",
+                    "surface-container-high": "#dee9fc",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffdf9f",
+                    "inverse-primary": "#62df7d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "background": "#f8f9ff",
+                    "primary-fixed-dim": "#62df7d",
+                    "primary": "#006b2c",
+                    "secondary": "#795900",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "on-surface": "#121c2a",
+                    "on-primary-fixed": "#002109",
+                    "secondary-container": "#ffc329",
+                    "on-tertiary-fixed": "#00174b",
+                    "on-background": "#121c2a",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#0051d5",
+                    "outline-variant": "#bdcaba",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-primary-container": "#f7fff2",
+                    "tertiary-container": "#316bf3",
+                    "surface-dim": "#d0dbed",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-secondary-container": "#6f5100",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "on-secondary-fixed": "#261a00",
+                    "outline": "#6e7b6c",
+                    "surface-tint": "#006e2d",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "primary-fixed": "#7ffc97",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#005320",
+                    "surface-variant": "#d9e3f6",
+                    "on-tertiary-container": "#fefcff",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "primary-container": "#00873a",
+                    "inverse-surface": "#27313f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "md": "16px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "xs": "8px",
+                    "lg": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "base": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .message-bubble-in {
+            border-radius: 4px 16px 16px 16px;
+        }
+        .message-bubble-out {
+            border-radius: 16px 4px 16px 16px;
+        }
+        .pulse-online {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #dee9fc; border-radius: 10px; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface h-screen overflow-hidden">
+<!-- Top Navigation Anchor -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-lg w-full bg-surface dark:bg-inverse-surface h-16 border-b border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim tracking-tight">Khelabase</span>
+<div class="hidden md:flex ml-xl items-center gap-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-colors px-sm py-xs rounded-lg" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary px-sm py-xs" href="#">Messages</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-low transition-colors px-sm py-xs rounded-lg" href="#">Explore</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs rounded-full hover:bg-surface-container-low transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young athlete, looking confident and smiling slightly. The background is a soft-focus modern sports facility with natural sunlight streaming in, maintaining a premium light-mode aesthetic with clean whites and vibrant emerald green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX4ucSC27GWyRygYVBhyMdi0As6m7jUZChKaTB2BFqzleMRv3VnM-GAI3Wej3iH8FYRz-WBbdhzU9H6LfSpCc0zy65Q-SFq8a033W4KC8LaeBzdRjeAzjBWmVNOH4YQm5SwS96aeVWfq2e8cJL_ZHYuFIfYRIpEZUTuyDb-Je91ShYPmZyIwRvGAE-Aaf1c4ySL1SzFgmzhnzfugpJ4sOhi8FGIeI2qD3Ddjl-QfvWH7FfRu34-GzQ2qH8dpmsQ1CM-eR2oHLow4A"/>
+</div>
+</div>
+</header>
+<main class="flex h-[calc(100vh-64px)] overflow-hidden">
+<!-- Left Sidebar: Conversations -->
+<aside class="w-80 border-r border-outline-variant bg-surface flex flex-col shrink-0">
+<div class="p-md flex flex-col gap-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-xl text-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" placeholder="Search chats..." type="text"/>
+</div>
+<div class="flex gap-sm">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-2 rounded-lg active:scale-95 transition-transform">All</button>
+<button class="flex-1 bg-surface-container-high text-on-surface-variant font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-highest transition-colors">Teams</button>
+<button class="flex-1 bg-surface-container-high text-on-surface-variant font-label-md text-label-md py-2 rounded-lg hover:bg-surface-container-highest transition-colors">Direct</button>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1 px-sm pb-md">
+<!-- Active Conversation -->
+<div class="p-md bg-primary-container/20 rounded-xl flex gap-md cursor-pointer group border-l-4 border-primary transition-all">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-on-primary font-bold overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylized logo for an elite football team named Bashundhara Kings, featuring a crown and a shield in vibrant emerald and gold colors. The style is modern, minimalist, and vector-based, set against a clean white backdrop to fit a premium SaaS UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2Hh8ht3sxgLRDcM0FBMw4jUwkdfAZwpRPJaLabutgpbeY9BdMBXrfkY9xGUl7fHLY-vAOTlbuFICwepjdWIXJFWjk3liT8PpV-qlsOmO3tEc6GH7Fz3ElI1mq66xwXz1vruQbcX6HqO2NB7ybDhIf4-jSPpfcs-udD7LfV9Ukr2aDAzhGOzwRNc9bSMnbj9xNwzk95yc6-aSgbvVUTnlCYmG-GnGKNC9MCWTB0nVREac8NpYoB49Q9Oh6QEM1Q43XTeFlJAAGutI"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary border-2 border-surface rounded-full pulse-online"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-title-lg text-body-lg text-on-surface truncate">Team Bashundhara Kings</h3>
+<span class="text-[10px] text-primary font-bold">12:45 PM</span>
+</div>
+<p class="text-body-md text-on-surface-variant truncate font-semibold">Tariq: Let's finalize the tactical board for tomorrow.</p>
+</div>
+</div>
+<!-- Chat Item 2 -->
+<div class="p-md hover:bg-surface-container-low rounded-xl flex gap-md cursor-pointer transition-all">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-xl overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A profile picture of a professional sports organizer, wearing a smart polo shirt. The lighting is bright and airy, with a soft emerald tint in the shadows. High-quality digital photography style with a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsVj816ZvJc2BnkIEC_LFjH2f0qVCecGxYNEXHhQ9oA9R-FeB7ItHNDQ6Rwef7Sbpvu1QFvNeSJWBvaO5mLZGI4uMnuwott03Y3wopl4Ae4YpIIrFBAgLqweN8Ks2Vmh3OChMb8450NSYG6CahKspeyuWpeyhuRfavKXbZv2rh8NLdS1UoqTUhqf2h9rbwTi3C5pc_ppCcRRwWKTBN6hmGSZ94KQOVaC4BTnpNxKNJV5LyAGbrNDfwPiFtAqBFGgibTm-ZJQV6tFs"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-outline border-2 border-surface rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-body-lg text-on-surface truncate">Tournament Admin</h3>
+<span class="text-[10px] text-on-surface-variant">09:12 AM</span>
+</div>
+<p class="text-body-md text-on-surface-variant truncate">Registration for Winter League is now open.</p>
+</div>
+</div>
+<!-- Chat Item 3 -->
+<div class="p-md hover:bg-surface-container-low rounded-xl flex gap-md cursor-pointer transition-all">
+<div class="relative shrink-0">
+<div class="w-12 h-12 rounded-xl overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a young football scout, wearing modern glasses and looking professional. The atmosphere is energetic and bright, using a palette of white, slate, and vibrant green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFmK9kuz8RcvZNhpOotkxzo6QkVtwYCW-t9BwEjv-xU1nq6x1RpAdz7n7y7JiSZbL8a4vt62aEXNUbP3bEPwQUaJ7kHN1Hr6mK10FT2olAwthuNpo0nrOEXpMRryfYDh0L59hkoHSb_oa9rQvaYyOBrdLfJDVTai50YL67rpqnJUalfYr_0YfmPKs91z10iX5b9ATLIzT8lOaqVtOvG5ekMtkWcYAmTf_ebcJ57Ni7wGE1tvv_m5_srwKzayFbORoZp-L_BP2daAs"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary border-2 border-surface rounded-full"></div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start mb-0.5">
+<h3 class="font-body-lg text-on-surface truncate">Jamie Scout</h3>
+<span class="text-[10px] text-on-surface-variant">Yesterday</span>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-body-md text-on-surface-variant truncate italic">Sent a scouting report</p>
+<span class="w-5 h-5 bg-primary text-on-primary text-[10px] flex items-center justify-center rounded-full font-bold">2</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Center: Chat Window -->
+<section class="flex-1 flex flex-col bg-surface-container-lowest relative">
+<!-- Chat Header -->
+<header class="h-16 border-b border-outline-variant px-lg flex items-center justify-between glass-panel sticky top-0 z-10">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<div>
+<h2 class="font-title-lg text-on-surface leading-tight">Team Bashundhara Kings</h2>
+<p class="text-label-md text-primary flex items-center gap-xs">
+<span class="w-2 h-2 bg-primary rounded-full pulse-online"></span>
+                            12 players online
+                        </p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<button class="p-xs rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-on-surface-variant">videocam</span></button>
+<button class="p-xs rounded-full hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-on-surface-variant">call</span></button>
+<button class="p-xs rounded-full hover:bg-surface-container transition-colors lg:hidden" id="infoToggle"><span class="material-symbols-outlined text-on-surface-variant">info</span></button>
+</div>
+</header>
+<!-- Message Area -->
+<div class="flex-1 overflow-y-auto p-lg space-y-lg">
+<!-- Date Divider -->
+<div class="flex justify-center">
+<span class="px-md py-1 bg-surface-container text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full">Today</span>
+</div>
+<!-- Message Received -->
+<div class="flex gap-md max-w-[80%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 mt-auto border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a football coach in his 40s, sharp features, wearing a tactical gilet. Set in a modern, sun-drenched training ground office with clean architectural lines and emerald green sports equipment visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOvZcPrMbtvNRoOS29kErGRCaAvzP-qHE06A0jz9E6Yf4uTBumMUBjEX1B0uZp6MRe05ZsSloq61BuTZxEC-eZpiiY4iYmcCGlcNJFjJShjWJz0jqHfFSI5QTO_GIo8OsU-J3dSwGApKUfGC0-JnD0WNtsldfZkpt1prbJ3KE6JEBsjWaCxqNfoIbwEOWZ5uZrqQ0djr2b1Ld_jp_N-Lf4VYiPr0Tvp1sJJd_2SEGFNawfzmAuRUqzIgJDasowYKozYr1GiuOPKUU"/>
+</div>
+<div>
+<div class="flex items-baseline gap-sm mb-1">
+<span class="font-bold text-body-md text-primary">Coach Mahmud</span>
+<span class="text-[10px] text-on-surface-variant">12:30 PM</span>
+</div>
+<div class="p-md bg-surface-container-high text-on-surface message-bubble-in shadow-sm border border-outline-variant/30">
+<p class="text-body-md">Good session today everyone. The high press was much more coordinated. Let's look at the heatmap from the scrimmage.</p>
+</div>
+</div>
+</div>
+<!-- Message with Shared File -->
+<div class="flex gap-md max-w-[80%]">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 mt-auto border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young athlete, looking confident and smiling slightly. The background is a soft-focus modern sports facility with natural sunlight streaming in, maintaining a premium light-mode aesthetic with clean whites and vibrant emerald green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAveSj9mY0gnk7zWZV-D4QKmmk4S10Z6qTbwnR1LaXjxvzqJhcgxx2g6_yZxYKtmvmNparITmmclbmem9HzcVOY81P72dmDJg7teZSh4YH3dCCHruDXC-xRZAbDnMrFj3sTgIIfUbvS95NEQSKJG5BaoJgTsRAW2zYQJodp8ma9ll7b7kw6kY9O0D3raUfwbvJnhyJP6rOuJ0B9Nt-26GSNNLSEKN1SY3l7KLvrAeugvon7ZFWdhl2_knkryz3OO7fqO6lEbfqH5c"/>
+</div>
+<div class="space-y-sm">
+<div class="flex items-baseline gap-sm mb-1">
+<span class="font-bold text-body-md text-secondary">Tariq J. (Captain)</span>
+<span class="text-[10px] text-on-surface-variant">12:32 PM</span>
+</div>
+<div class="p-md bg-surface-container-high text-on-surface message-bubble-in shadow-sm border border-outline-variant/30">
+<p class="text-body-md">Got the data here. The wing-back positioning is the key focus for tomorrow's drill.</p>
+</div>
+<div class="p-sm bg-white border border-outline-variant rounded-xl flex items-center gap-md hover:shadow-md transition-shadow cursor-pointer">
+<div class="w-10 h-10 bg-error-container text-error rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-label-md font-bold text-on-surface truncate">Tactical_Report_V2.pdf</p>
+<p class="text-[10px] text-on-surface-variant">2.4 MB • PDF Document</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">download</span>
+</div>
+</div>
+</div>
+<!-- Message Sent (Self) -->
+<div class="flex gap-md max-w-[80%] ml-auto flex-row-reverse">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 mt-auto border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A portrait of a fit, athletic man in his 20s, focused and looking slightly away. He is wearing high-end athletic apparel. The background is a brightly lit, modern football stadium tunnel. Colors are crisp whites, greys, and deep greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS-n8bkaoS6Wo1kdjDCwk3fWSXgFiCTipXZkEDm2mpzQu7_q5a66B2FRYIeu8RQ3Jv4QtGr_J41ICMB4Y2GcrbQmzPcvTRe9GEc5_Tbjk0lB7VfPrZeuYPH0Isn2EJYFc_Wz89CR8uA293uZTr2psmQXnbYWAXFBP24YX4yds8OVO48pGo6gDswa8KrqFJYbGhqOUZKNHPdAlru1h1JDRzCm_cAqxYoLe3aoHUnuohdvn9cM3opdV3oAVbrTk6vFSoEueGc6l7Ghw"/>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-baseline gap-sm mb-1">
+<span class="text-[10px] text-on-surface-variant">12:45 PM</span>
+<span class="font-bold text-body-md text-on-surface">You</span>
+</div>
+<div class="p-md bg-primary text-on-primary message-bubble-out shadow-lg">
+<p class="text-body-md">Understood, Coach. I'll make sure the defensive line stays compact during the transitions.</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm mt-1" style="font-variation-settings: 'FILL' 1;">done_all</span>
+</div>
+</div>
+<!-- Typing Indicator -->
+<div class="flex gap-sm items-center py-sm animate-pulse">
+<div class="flex gap-1 px-3 py-2 bg-surface-container-high rounded-full">
+<div class="w-1.5 h-1.5 bg-on-surface-variant/40 rounded-full animate-bounce" style="animation-delay: 0s"></div>
+<div class="w-1.5 h-1.5 bg-on-surface-variant/40 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+<div class="w-1.5 h-1.5 bg-on-surface-variant/40 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+</div>
+<span class="text-[10px] text-on-surface-variant font-medium">Mahmud is typing...</span>
+</div>
+</div>
+<!-- Message Input Area -->
+<footer class="p-lg bg-surface border-t border-outline-variant">
+<div class="max-w-4xl mx-auto">
+<div class="flex items-end gap-sm bg-surface-container-low border border-outline-variant rounded-2xl p-sm focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary transition-all">
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">add_circle</span></button>
+<button class="p-xs text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">mood</span></button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-body-md resize-none py-2 placeholder:text-on-surface-variant/50" placeholder="Type your message..." rows="1"></textarea>
+<button class="w-10 h-10 bg-primary text-on-primary rounded-xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</footer>
+</section>
+<!-- Right Sidebar: Chat Info -->
+<aside class="w-72 border-l border-outline-variant bg-surface hidden xl:flex flex-col shrink-0 overflow-y-auto">
+<!-- Team Info -->
+<div class="p-lg text-center border-b border-outline-variant">
+<div class="w-24 h-24 mx-auto rounded-2xl bg-primary-container flex items-center justify-center mb-md shadow-md border-4 border-white">
+<img class="w-16 h-16" data-alt="Official club crest of Bashundhara Kings, featuring a golden crown and a lion on an emerald background. The design is modern, sharp, and high-fidelity, suitable for a premium sports application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYQ42mlgJAMoSk-1WWiY-PQFc0DuSDjn1gde_87sT8HG8AcCI6wBgVIA_So7TIiCsIrRCoTc_GlxU1rh6h7v4E019y2J_pqI00mUAojfd1xr_7YEF5Mx1lzY5gbhJFrQcXAgSyNZitynkh1K36HHe4UiNKyntyj3uL6AZjdbSlajsMcNECDKGq14pPf-OlF5m4Uf9hlf0iJ-CBb2SGrlb8HNdqMnJNq3EvFRcFQDru_JCBXgyVD-Ok9cevDBm9myclr4uVAPuKTF0"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Bashundhara Kings</h3>
+<p class="text-body-md text-on-surface-variant mt-1">Premier League Ecosystem</p>
+<div class="mt-lg flex gap-sm">
+<button class="flex-1 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Profile</button>
+<button class="flex-1 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Mute</button>
+</div>
+</div>
+<!-- Pinned Announcements -->
+<div class="p-lg">
+<h4 class="text-label-sm font-bold text-primary uppercase tracking-widest mb-md">Pinned Messages</h4>
+<div class="p-md bg-secondary-fixed text-on-secondary-container rounded-xl flex gap-sm border border-secondary-container">
+<span class="material-symbols-outlined text-sm shrink-0">push_pin</span>
+<div>
+<p class="text-body-md font-bold leading-tight">Training Reschedule</p>
+<p class="text-[11px] mt-1 opacity-80">Drills moved to 4 PM tomorrow at the main arena...</p>
+</div>
+</div>
+</div>
+<!-- Members -->
+<div class="p-lg">
+<div class="flex justify-between items-center mb-md">
+<h4 class="text-label-sm font-bold text-on-surface-variant uppercase tracking-widest">Members (24)</h4>
+<span class="material-symbols-outlined text-sm text-primary cursor-pointer">person_add</span>
+</div>
+<div class="space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A portrait of a football coach in his 40s, sharp features, wearing a tactical gilet. Set in a modern, sun-drenched training ground office with clean architectural lines and emerald green sports equipment visible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKWKA2gn6IUNJMjDgFrx6cQXDk-1PwOsVecKHFh_zGYM5CUPhm6B4rLpitv_Zr1UAKR22aTisPrkaVW6615nuY2ZeruITRvVgfqZ98IAe0vT0b9k6GT1lR5vO7i0RehJx25pwZ1oVLDnFKcBYL34i-dAu6ht8HUeM4DU4J0us934F4FrYijmOYo47eBggP5WZM_7ifIi2J8ETYa296Tp4Z_iWZHMC0j4EmvHwC38dusF71RgaUL_Dpv5WOQZmpoZnEo_NyYSZ111c"/>
+</div>
+<div class="flex-1">
+<p class="text-body-md font-bold text-on-surface leading-none">Mahmud Ahmed</p>
+<p class="text-[10px] text-primary">Head Coach</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young athlete, looking confident and smiling slightly. The background is a soft-focus modern sports facility with natural sunlight streaming in, maintaining a premium light-mode aesthetic with clean whites and vibrant emerald green accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUNydaeyrPtg1diQ-KSK5pB11lWVE99FxstbASPYpfyIMfEcCrvtxEyxwthHCFqDY4vFsFHnTxZXj9aFha_5E7mrDK1p6eJNq7wwIO2XR8itHDdwsC7jntXuFHgIZOEBDIzRq0aajeCP6z9vb-X_1fl2k_JkrtwW1BsbAqCSy5h3kQfzuCxgC0x5PogqyJaDSQQ_d5RVuN9CtB-R4tpL03Sy2d7RQIpZEyHXlFTjbxmpgTOdE_MWIR0sNY2rCPhdFv4hHhOvFP9CA"/>
+</div>
+<div class="flex-1">
+<p class="text-body-md font-bold text-on-surface leading-none">Tariq J.</p>
+<p class="text-[10px] text-on-surface-variant">Captain</p>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full border border-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a fit, athletic man in his 20s, focused and looking slightly away. He is wearing high-end athletic apparel. The background is a brightly lit, modern football stadium tunnel. Colors are crisp whites, greys, and deep greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB603ZyVvT6wBlKeZufSN32IJxjL1UOQlhGZqrT3fiBfjw2RcL297yHTMCQ3E72SYRLGEKxWVU6qrkxsIKy1cLtepkrd24d_dVQMXwxpxKjWCHDJdwhpNpB21GtnRP2c459MJPk4gAQyj9kb47_29-EJRbYm60IhXDU-AVw4xCcfTRIWsY6yQ8XdyaCD_RFlJpNpSsuTvtQ4CCmg2kNaH0AzNeC5hCnSo05NvKiiTcZGgOiiOocA_5jXrW2P1y623V81aktuLxx48I"/>
+</div>
+<div class="flex-1">
+<p class="text-body-md font-bold text-on-surface leading-none">Nayan S.</p>
+<p class="text-[10px] text-on-surface-variant">Striker</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg text-body-md text-primary font-bold hover:underline">View all members</button>
+</div>
+<!-- Media Gallery -->
+<div class="p-lg">
+<h4 class="text-label-sm font-bold text-on-surface-variant uppercase tracking-widest mb-md">Shared Media</h4>
+<div class="grid grid-cols-3 gap-xs">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A high-angle bird's eye view of a lush green football pitch at night, illuminated by bright stadium lights. Dramatic shadows and vibrant grass textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT6gp6u5yv2kYFg9abYHIsrZWtWvfoWzOTCMV-MRA2J6-JNFQZcDHH_OWhkZDELKQWVr2_tcgTDIeNr3DLttj_HzrjRJR-yGuKMn9C8JviOw3-GRPPv4vImW-DoW0P_eNWUarLIpQ0I_DmwTxMZT3lG9PrXPUonh1G04Y9RA54RwW4bGHotH3j15R4jvBeXIPdhv-xE_hBiNeGsTIXZh2vi351V-RcnefIRwv92c02zUGNoXe3FLdvGiCIssSoBH5jrFShATe8fNU"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a modern tactical board with magnet players in different formations. Strategic and professional sports setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRdXjYxDzSqhUJ2xZ7qBLF8n3toZCX45LOrrDmY-kZhrG9oja4l3BO5d7igLlr_n5hG_Xwr-T85n2XLPninNd96v9iduqvP_-8asss_2dKvCG7sqfMxf_wiDiZHc5CO6YqferloYWF6l29g2040_T4v_Ytiq14oG931hU8XavMvKCPNxb8ra4o8HY-A_vUlwqwWW5CjoK2DuK5Mgj6QRin-Ce_WgNfbaNjogZRVMHIw50CIif2LI_Umy4m4L2CHhew2jzddyEVAjY"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A dynamic shot of a football flying through a goal net, frozen in time. High-speed photography with sun flare and emerald field background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPR3lDXhwMp3wRMXhtgAKdxP6o8abiZgHD7Micjrr2TunyRVVUv0KzZxkOLs-5GIkoZFtr19Ir002Z6XYdQJ1aOkTYiRSDJPwldWf6H5k427RwbSzFqrDalTQCU1ZQsr-DuZKncYX-qETkG7lJyUL-WzcPdgC5MiZuRlrN5hxSBoHHDLnt8mcfnpAnJqmObR8AGVCht6mpCK7a6lSWa5duTwkyXur22ZDJ3x6i4sS3iItguN9VVzl17DUQvGkvDu-m75dAN1gH_mA"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="Group of football players celebrating a goal together in a tight huddle. Emotional and vibrant shot with cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdYf72M7R7Ko4yKMTI-G6HiuUMaV6QegeN3BvhGBMJs5LpoEuapKzZkXXRnJRuWfn8JzEBvDfzOaxm5TbSbr9onfWDfyvmmLEIP6R1pDzOztfV115YjIB_O1khoEnUZIqVAJYRWpIJLM4N4Nh0m-c4Uk3LkB88dfcgLLd8k-pw37GgMXEqU4GtYI8ThWpwr5C21d85XxgriMof0yHKo0ut6HSAQg42RXVDeUir9hf5FaW06PPIBctkPp5oF_UterxFhdQJQAWKDBw"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg flex items-center justify-center cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="text-label-md text-on-surface-variant font-bold">+12</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Floating Action Button for Mobile Context -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-95 transition-transform z-50">
+<span class="material-symbols-outlined">edit_square</span>
+</button>
+<script>
+        // Micro-interaction for typing simulation
+        const textarea = document.querySelector('textarea');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Simple sidebar toggle logic for mobile (UI representation)
+        const infoToggle = document.getElementById('infoToggle');
+        if (infoToggle) {
+            infoToggle.addEventListener('click', () => {
+                const rightSide = document.querySelector('aside.xl\\:flex');
+                rightSide.classList.toggle('hidden');
+                rightSide.classList.toggle('fixed');
+                rightSide.classList.toggle('inset-0');
+                rightSide.classList.toggle('z-[100]');
+                rightSide.classList.toggle('w-full');
+            });
+        }
+    </script>
+</body></html>

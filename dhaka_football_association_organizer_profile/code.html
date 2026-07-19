@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dhaka Football Association | Khelabase Organizer Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#f7fff2",
+                    "background": "#f8f9ff",
+                    "surface-variant": "#d9e3f6",
+                    "surface-container": "#e6eeff",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "secondary-container": "#ffc329",
+                    "surface-dim": "#d0dbed",
+                    "surface-container-low": "#eff4ff",
+                    "primary": "#006b2c",
+                    "outline": "#6e7b6c",
+                    "surface": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#795900",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#006e2d",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "on-primary-fixed": "#002109",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed": "#00174b",
+                    "tertiary-container": "#316bf3",
+                    "primary-container": "#00873a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed": "#7ffc97",
+                    "on-surface": "#121c2a",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary-fixed": "#261a00",
+                    "on-secondary-container": "#6f5100",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#62df7d",
+                    "on-primary-fixed-variant": "#005320",
+                    "on-background": "#121c2a",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dee9fc",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#fefcff",
+                    "tertiary": "#0051d5",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#62df7d",
+                    "outline-variant": "#bdcaba",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#3e4a3d",
+                    "secondary-fixed-dim": "#f9bd22"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "14px",
+                    "xl": "18px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "sm": "12px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8f9ff;
+            color: #121c2a;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .premium-shadow {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .active-tab {
+            color: #006b2c;
+            border-bottom: 2px solid #006b2c;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface shadow-sm sticky top-0 z-50 docked full-width border-b border-outline-variant/30">
+<div class="flex justify-between items-center w-full px-lg py-sm max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-xl">
+<span class="text-headline-md font-headline-md font-extrabold text-primary">Khelabase</span>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Tournaments</a>
+<a class="text-label-md font-label-md text-primary border-b-2 border-primary pb-1" href="#">Teams</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a professional male football scout with a modern hairstyle, wearing a sleek green branded polo shirt, against a blurred stadium background with soft evening lighting, high-end photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqgM2wRTVRu17n-UxqDNsG3BecsC_JegH5UZ--K57_AQWJjwNCEDA0l8-z-ORhCaJZxHBGTCQEERutwwymmjv-qCXXM2zOHOa76YeLyVoycmbMU9mFLCjfU5GB7yYIbq_ESCIoBfkhwW3CIqfiY8JGAu3zqA5leNJd15lBqj2VewIeWVmogJt4Ezkt45mtmnraGGQ7Ok6ls-aQBIAf21_EmOsbQQ9t3bbIstKul7kp7bnFO4ZegbhathJeprruFrMJNdtImkGQ0C0"/>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full">
+<div class="h-[320px] w-full overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A wide-angle, cinematic aerial shot of a sprawling green football stadium in Dhaka at golden hour, with the city skyline in the far distance, warm sunset lighting, high-resolution premium photography, showcasing a professional sports atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwAsTPr2XYNXQ59z-z5lMkMefQNmUGvbdcStFm45e0IqDjFT7n1S5eR9wYU1uKHMKl9RyaTYPj_I30k3R8Ld-bTWUWBJJoUyvFZQh6FOYWj3zIaLJ3C2swSPH_EMz9egiSNcAGfVQrGqns519Moj3mxePEiu7umGQ1NI-yZoe7qFqsuKF1BdiBXG2WoUXr2DqPaY4Y_sHutA6jgfQ4AUg-UeRsqjFFF7aQ4VC6jKnPWt9zdBQS8alTh3qABZ6t36SaHpiUNshYQP8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto px-lg -mt-24 relative z-10">
+<div class="flex flex-col md:flex-row items-end gap-lg">
+<!-- Profile Picture -->
+<div class="relative">
+<div class="w-40 h-40 rounded-xl bg-surface p-2 shadow-xl border-4 border-surface overflow-hidden">
+<img class="w-full h-full object-cover rounded-lg" data-alt="Professional logo for the Dhaka Football Association featuring a stylized shield with a football and local heritage motifs, deep emerald green and gold color palette, minimalist and modern corporate sports identity design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Gjqr7sNvTzXd1BJTh-E43BU-b_1cu8BVR4l6cwidj1YO2Ewa36Swwtd8oiEJqUrFa8pnFSFydhoO1XOkfLeTRYzxGUza1xmfJoI5FgG6mNb_TLoMwGW4km3nTmqO3hzFAaZfbMmaC6PoMC-V9H1waEZ_6HnVEE8KHRSWxs1lUhIEXL8h4nJ7a7ydgjmxDIzgtg15YisjSyIlpNoIWEnFc_5P5vTvda2jAZlY_1FJLoMcCCpXO2pVYxWWuY9L7zpTZ8sx_8Jc-q0"/>
+</div>
+</div>
+<!-- Identity & Quick Stats -->
+<div class="flex-1 pb-4 flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-lg">
+<div class="text-white">
+<div class="flex items-center gap-xs">
+<h1 class="text-headline-lg font-headline-lg">Dhaka Football Association</h1>
+<span class="material-symbols-outlined text-secondary-container fill-icon text-[24px]">verified</span>
+</div>
+<div class="flex items-center gap-md mt-xs opacity-90 font-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-secondary-container fill-icon">star</span>
+<span>4.8/5 Rating</span>
+</div>
+<span>•</span>
+<span>12k Followers</span>
+<span>•</span>
+<span>Joined 2018</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-sm">
+<button class="bg-surface text-on-surface px-lg py-sm rounded-lg font-title-lg text-body-md premium-shadow hover:bg-surface-container-low transition-all border border-outline-variant">
+                                Message
+                            </button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-title-lg text-body-md premium-shadow hover:brightness-110 transition-all flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+                                Follow
+                            </button>
+<button class="bg-secondary-container text-on-secondary-container px-lg py-sm rounded-lg font-title-lg text-body-md premium-shadow hover:brightness-105 transition-all flex items-center gap-xs font-bold">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+                                Create Tournament
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Grid Section -->
+<section class="max-w-container-max mx-auto px-lg mt-xl">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-lg">
+<div class="bg-surface rounded-lg p-lg border border-outline-variant/30 premium-shadow text-center">
+<p class="text-on-surface-variant font-label-md">Total Tournaments</p>
+<p class="text-headline-md font-headline-md text-primary">42</p>
+</div>
+<div class="bg-surface rounded-lg p-lg border border-outline-variant/30 premium-shadow text-center">
+<p class="text-on-surface-variant font-label-md">Championships</p>
+<p class="text-headline-md font-headline-md text-primary">15</p>
+</div>
+<div class="bg-surface rounded-lg p-lg border border-outline-variant/30 premium-shadow text-center">
+<p class="text-on-surface-variant font-label-md">Teams</p>
+<p class="text-headline-md font-headline-md text-primary">120+</p>
+</div>
+<div class="bg-surface rounded-lg p-lg border border-outline-variant/30 premium-shadow text-center">
+<p class="text-on-surface-variant font-label-md">Players</p>
+<p class="text-headline-md font-headline-md text-primary">2.5k+</p>
+</div>
+</div>
+</section>
+<!-- Navigation Tabs -->
+<section class="max-w-container-max mx-auto px-lg mt-xl border-b border-outline-variant/30">
+<div class="flex gap-xl overflow-x-auto no-scrollbar">
+<button class="pb-md text-title-lg font-title-lg active-tab whitespace-nowrap">Overview</button>
+<button class="pb-md text-title-lg font-title-lg text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Upcoming Tournaments</button>
+<button class="pb-md text-title-lg font-title-lg text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Past Tournaments</button>
+<button class="pb-md text-title-lg font-title-lg text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Sponsors</button>
+<button class="pb-md text-title-lg font-title-lg text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap">Reviews</button>
+</div>
+</section>
+<!-- Main Content Area (Bento Layout) -->
+<section class="max-w-container-max mx-auto px-lg py-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Left Column: Mission & Feed -->
+<div class="md:col-span-8 flex flex-col gap-lg">
+<!-- Mission Statement -->
+<div class="bg-white rounded-lg p-xl premium-shadow border border-outline-variant/20">
+<h2 class="text-headline-md font-headline-md mb-md">Our Mission</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                            To elevate the standards of football in Dhaka by providing a robust competitive framework for players and teams at all levels. We believe in the power of grassroots development and professional event management to foster the next generation of Bangladeshi football stars.
+                        </p>
+</div>
+<!-- Upcoming Tournament Card -->
+<div class="relative rounded-lg overflow-hidden h-[240px] group cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A dynamic action shot of two youth football teams competing on a lush green pitch during a high-stakes tournament, with a vibrant crowd and promotional banners in the background, bright daylight, energetic sports atmosphere, high-end commercial quality." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAlMadfKQU5hi04V6nQ-dPBmPAf6RWd1NsdvQRY9vxqdzgjFntItILhd8oZfpcNEL9ek33GfF4l5CTU0_o3TitzgL3oxsaeV5sNkDknQBbrcVnKMX-COYLvqqOgtbWPY_Lt-F9TJ1A2Xy38fHZLK40qPKWe_D-P0Nkr4eaLF27pe-f9B44nuoGGWm6MZTtthMDosaYbxDprUObH5_NkUWkhHv092i4d1bK7FKLJ9OnHJ6hTRiYkT9idNMwUuFAFfEfx1FKil50nv4')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent"></div>
+<div class="relative z-10 p-xl h-full flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-label-md font-label-md uppercase tracking-wider">Upcoming Major Event</span>
+<h3 class="text-headline-md font-headline-md text-white mt-xs">Dhaka Super Cup 2024</h3>
+</div>
+<div class="bg-white/20 backdrop-blur-md rounded-lg p-sm text-white text-right">
+<p class="text-label-sm font-label-sm uppercase">Prize Pool</p>
+<p class="text-title-lg font-title-lg">৳ 5,00,000</p>
+</div>
+</div>
+<div class="flex items-center gap-xl text-white">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="text-body-md font-body-md">Deadline: Oct 15</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="text-body-md font-body-md">32/48 Teams Joined</span>
+</div>
+<button class="ml-auto bg-white text-primary px-lg py-sm rounded-lg font-bold hover:bg-surface-container transition-all">
+                                    Register Now
+                                </button>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="bg-white rounded-lg p-xl premium-shadow border border-outline-variant/20">
+<h2 class="text-headline-md font-headline-md mb-md">Recent Activity</h2>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="h-10 w-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">emoji_events</span>
+</div>
+<div>
+<p class="text-body-md font-body-md"><span class="font-bold">Victory FC</span> won the DFA Monsoon League Plate.</p>
+<p class="text-label-md font-label-md text-on-surface-variant">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="h-10 w-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">person_add</span>
+</div>
+<div>
+<p class="text-body-md font-body-md">Signed a new partnership with <span class="font-bold">Bata Sports Bangladesh</span>.</p>
+<p class="text-label-md font-label-md text-on-surface-variant">Yesterday at 4:30 PM</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Featured Champion & Details -->
+<div class="md:col-span-4 flex flex-col gap-lg">
+<!-- Featured Champion Card -->
+<div class="bg-white rounded-lg premium-shadow border border-outline-variant/20 overflow-hidden">
+<div class="bg-secondary-container h-2 w-full"></div>
+<div class="p-xl">
+<div class="flex items-center gap-xs text-secondary mb-xs">
+<span class="material-symbols-outlined text-[20px] fill-icon">military_tech</span>
+<span class="text-label-sm font-label-sm uppercase tracking-widest">Reigning Champion</span>
+</div>
+<div class="flex items-center gap-md mt-md">
+<div class="w-16 h-16 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A minimalist circular logo for a fictional football club named 'Mirpur Titans', using black and royal blue colors with a stylized eagle head, professional and sleek sports brand design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVi_7DGqcDUnR1fLSX1_qYK6z2ZCCh-fHY4SUSS-X1_zWsvarCUsUsHE_AZt32ZXHVr3XlHL1tY5HoFDtMpDsY388rWIz4IKxl5Vr-EmFehyG53roljxjVwm1L1FLnRZTuZhkKtlzXTkEOPfPkjUuOUeH7iw00x4y1F8J0093niFuZkL4jdYqtbtjIh5M-JWfDmghCQygFvlHFtKKFwnb9YxnRy_G1AbYA8zQZGr0qFbdVVx0PeXsSS_HlRtp7bbux7si_dbOBoas"/>
+</div>
+<div>
+<h4 class="text-title-lg font-title-lg">Mirpur Titans</h4>
+<p class="text-label-md font-label-md text-on-surface-variant">Winner: Summer League '23</p>
+</div>
+</div>
+<button class="w-full mt-xl py-sm border border-outline-variant rounded-lg text-label-md font-label-md hover:bg-surface-container-low transition-all">
+                                View Champion Profile
+                            </button>
+</div>
+</div>
+<!-- Contact/Location Card -->
+<div class="bg-white rounded-lg p-xl premium-shadow border border-outline-variant/20">
+<h3 class="text-title-lg font-title-lg mb-md">Location &amp; Contact</h3>
+<div class="space-y-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<p class="text-body-md font-body-md text-on-surface-variant">House 12, Road 4, Sector 7, Uttara, Dhaka 1230</p>
+</div>
+<div class="h-40 w-full rounded-lg bg-surface-container overflow-hidden grayscale opacity-80 hover:grayscale-0 transition-all">
+<div class="w-full h-full" data-location="Dhaka, Bangladesh" style="">
+<!-- Map Placeholder -->
+<div class="w-full h-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-4xl text-outline-variant">map</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary">mail</span>
+<p class="text-body-md font-body-md text-on-surface-variant">contact@dfa-dhaka.org</p>
+</div>
+</div>
+</div>
+<!-- Sponsor Highlight -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-lg p-xl">
+<h3 class="text-label-sm font-label-sm uppercase tracking-[2px] opacity-70 mb-md">Elite Sponsor</h3>
+<div class="flex justify-center py-xl">
+<div class="text-headline-md font-bold italic text-white/90">PRAN SPORTS</div>
+</div>
+<p class="text-label-sm font-label-sm text-center opacity-60">Proud Partner Since 2019</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface w-full py-2xl px-lg mt-auto border-t border-outline-variant">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl mb-2xl">
+<div class="md:col-span-2">
+<span class="text-title-lg font-title-lg font-bold text-primary-fixed block mb-md">Khelabase</span>
+<p class="text-inverse-on-surface/70 text-body-md max-w-sm">
+                        Building the future of Bangladeshi football. The digital hub for players, teams, and tournament organizers.
+                    </p>
+</div>
+<div>
+<h4 class="text-label-sm font-label-sm text-primary-fixed uppercase tracking-widest mb-lg">Navigation</h4>
+<ul class="space-y-sm">
+<li><a class="text-inverse-on-surface hover:text-primary-fixed transition-colors text-body-md" href="#">Community</a></li>
+<li><a class="text-inverse-on-surface hover:text-primary-fixed transition-colors text-body-md" href="#">Tournaments</a></li>
+<li><a class="text-inverse-on-surface hover:text-primary-fixed transition-colors text-body-md" href="#">Teams</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-sm font-label-sm text-primary-fixed uppercase tracking-widest mb-lg">Support</h4>
+<ul class="space-y-sm">
+<li><a class="text-inverse-on-surface hover:text-primary-fixed transition-colors text-body-md" href="#">About Us</a></li>
+<li><a class="text-inverse-on-surface hover:text-primary-fixed transition-colors text-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-inverse-on-surface hover:text-primary-fixed transition-colors text-body-md" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-xl border-t border-outline/30 flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-label-sm font-label-sm text-inverse-on-surface/50">
+                    © 2024 Khelabase. Bangladesh's Premier Football Ecosystem.
+                </p>
+<div class="flex gap-lg">
+<span class="material-symbols-outlined text-inverse-on-surface/50 cursor-pointer hover:text-primary-fixed">face_nod</span>
+<span class="material-symbols-outlined text-inverse-on-surface/50 cursor-pointer hover:text-primary-fixed">sports_soccer</span>
+<span class="material-symbols-outlined text-inverse-on-surface/50 cursor-pointer hover:text-primary-fixed">play_circle</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions and simple state handling
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.add('scale-95');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('scale-95');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('scale-95');
+            });
+        });
+
+        // Tab switching logic (Visual only)
+        const tabs = document.querySelectorAll('button.text-title-lg');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('active-tab');
+                    t.classList.add('text-on-surface-variant');
+                });
+                tab.classList.add('active-tab');
+                tab.classList.remove('text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

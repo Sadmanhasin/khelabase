@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase | Bangladesh's Premier Football Ecosystem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-secondary-container": "#6f5100",
+                    "on-surface-variant": "#3e4a3d",
+                    "inverse-primary": "#62df7d",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#bdcaba",
+                    "on-primary-container": "#f7fff2",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "primary-fixed-dim": "#62df7d",
+                    "primary": "#006b2c",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#006e2d",
+                    "on-primary-fixed": "#002109",
+                    "secondary": "#795900",
+                    "secondary-container": "#ffc329",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-dim": "#d0dbed",
+                    "outline": "#6e7b6c",
+                    "tertiary-container": "#316bf3",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#eff4ff",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "tertiary-fixed": "#dbe1ff",
+                    "inverse-surface": "#27313f",
+                    "surface-variant": "#d9e3f6",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dee9fc",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary": "#0051d5",
+                    "on-surface": "#121c2a",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-tertiary-container": "#fefcff",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "on-background": "#121c2a",
+                    "on-tertiary-fixed": "#00174b",
+                    "primary-fixed": "#7ffc97",
+                    "primary-container": "#00873a",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#005320"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "2xl": "48px",
+                    "xs": "8px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "md": "16px"
+            },
+            "fontFamily": {
+                    "label-md": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .premium-card {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+            transition: all 0.3s ease;
+        }
+        .premium-card:hover {
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+            transform: translateY(-4px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm">
+<nav class="max-w-container-max mx-auto flex justify-between items-center px-lg py-sm h-16">
+<div class="flex items-center gap-xl">
+<span class="text-headline-md font-extrabold text-primary tracking-tight">Khelabase</span>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-label-md font-label-md text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Tournaments</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Teams</a>
+<a class="text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex items-center gap-sm">
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="p-xs text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+<button class="hidden sm:block px-lg py-xs text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all active:scale-95">Login</button>
+<button class="px-lg py-xs text-label-md font-label-md bg-primary text-on-primary rounded-lg shadow-sm hover:opacity-90 transition-all active:scale-95">Create</button>
+</div>
+</nav>
+</header>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[716px] flex flex-col items-center justify-center text-center px-gutter py-2xl overflow-hidden">
+
+<div class="max-w-3xl animate-in fade-in slide-in-from-bottom-8 duration-700">
+<h1 class="text-display-lg font-display-lg text-on-surface mb-md md:px-0 px-4">
+                    The Home of Football in Bangladesh
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto">
+                    Discover tournaments, teams, players and organizers in one complete ecosystem. The ultimate platform for local football excellence.
+                </p>
+<!-- Search Bar -->
+<div class="glass-card p-base rounded-2xl flex flex-col md:flex-row items-center gap-base shadow-lg max-w-2xl mx-auto mb-lg">
+<div class="flex-1 flex items-center gap-xs px-md w-full">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-body-md h-12" placeholder="Search tournaments, teams, players, organizers..." type="text"/>
+</div>
+<button class="w-full md:w-auto px-xl h-12 bg-primary text-on-primary font-bold rounded-xl transition-all hover:brightness-110 active:scale-95">Search</button>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap justify-center gap-xs no-scrollbar pb-xs">
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Players</button>
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Teams</button>
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Tournaments</button>
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Organizers</button>
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Academies</button>
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Venues</button>
+<button class="px-md py-xs bg-white border border-outline-variant text-label-md rounded-full hover:border-primary hover:text-primary transition-all">Districts</button>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-surface-container-low py-xl">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-lg text-center">
+<div class="p-lg">
+<div class="text-display-lg font-extrabold text-primary mb-xs" id="stat-players">12,500+</div>
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Active Players</div>
+</div>
+<div class="p-lg border-y md:border-y-0 md:border-x border-outline-variant">
+<div class="text-display-lg font-extrabold text-primary mb-xs" id="stat-teams">680+</div>
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Verified Teams</div>
+</div>
+<div class="p-lg">
+<div class="text-display-lg font-extrabold text-primary mb-xs" id="stat-tournaments">950+</div>
+<div class="text-label-md font-label-md text-on-surface-variant uppercase tracking-widest">Annual Tournaments</div>
+</div>
+</div>
+</section>
+<!-- Trending Now (Tournaments) -->
+<section class="py-2xl max-w-container-max mx-auto px-gutter">
+<div class="flex items-end justify-between mb-xl">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Trending Now</h2>
+<p class="text-body-md text-on-surface-variant">The biggest tournaments happening across Bangladesh right now.</p>
+</div>
+<button class="text-primary font-bold hover:underline flex items-center gap-base">
+                    View All <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Tournament Card 1 -->
+<div class="premium-card bg-white rounded-2xl overflow-hidden flex flex-col border border-outline-variant/30">
+<div class="relative h-48 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A wide cinematic shot of a vibrant football stadium in Dhaka during sunset, with a lush green pitch and modern seating. The lighting is golden and high-contrast, evoking a professional sports broadcast quality. The overall aesthetic is premium, clean, and energetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBptM_KeKfX9IKCelmYvJYrIJWwpfomKA3VyKNQW_Ywy0tS2WJi9P2sCW9vFBUYIJM1cUkPDYwMnXo7fxxTBsaf6nF8MKHelGU8_ddQaap0OGgI3pSYNQVv3oPTYov3V_EQUoyUoUd9Mkr47W1IgW2s3vAk6FPXDOJk8M5o_MYAbk1OkZ1N1Idy-7xfEGEur6YvlvSuqeVC1cAz--sYBD-oTBtkqMLarosCHS15MnCyzHF550smJlyIoQAMP-sHRW_ALEzHQYdYP4"/>
+<div class="absolute top-md right-md px-sm py-1 bg-primary text-on-primary text-label-sm rounded-full">Open for Registration</div>
+</div>
+<div class="p-lg flex-1">
+<h3 class="text-title-lg font-title-lg mb-xs">Dhaka Champions League</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-body-md">Army Stadium, Dhaka</span>
+</div>
+<div class="grid grid-cols-2 gap-md pt-md border-t border-outline-variant">
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Teams</p>
+<p class="text-title-lg font-bold">24 / 32</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Followers</p>
+<p class="text-title-lg font-bold">1.2K</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tournament Card 2 -->
+<div class="premium-card bg-white rounded-2xl overflow-hidden flex flex-col border border-outline-variant/30">
+<div class="relative h-48 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Action shot of a local football tournament banner against a clear blue sky. Professional sports photography style, focusing on the dynamic energy and colors of the tournament branding. Soft depth of field with high-key lighting for a premium SaaS feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkOm2uAZhSf9Iw8DveFw9W_7SqqKHPX5ow6PkZ5qub3Dc-q8gdt4MDdFeJnz-mDSFCM62AL8Ha4fK9yghmzUy0DXPPUMEvHTVHm-fF5MXjM7vNNmT2sXd-sxCaJ7Jpzs6QV8ANTmiKEs6OqrmIuzesOBh5SvyVHOyMYV5c9KOWgQTHhDN_bJVZoW1lf3NZquWCMraYHqF8A5bV0HDYE915MZx7FmyHIef83lxY66I_hTeLknaAajq39pfu8nLJvG5ZBzzPFDMtuQk"/>
+<div class="absolute top-md right-md px-sm py-1 bg-secondary text-on-secondary text-label-sm rounded-full">Ongoing</div>
+</div>
+<div class="p-lg flex-1">
+<h3 class="text-title-lg font-title-lg mb-xs">Sylhet Premier Cup</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-body-md">District Stadium, Sylhet</span>
+</div>
+<div class="grid grid-cols-2 gap-md pt-md border-t border-outline-variant">
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Teams</p>
+<p class="text-title-lg font-bold">16 / 16</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Followers</p>
+<p class="text-title-lg font-bold">850</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tournament Card 3 -->
+<div class="premium-card bg-white rounded-2xl overflow-hidden flex flex-col border border-outline-variant/30">
+<div class="relative h-48 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A bird's eye view of a coastal football ground in Chittagong, featuring a lush green field near the ocean. Bright daylight, high-performance aesthetic, clean lines, and vibrant green and blue tones. The image feels aspirational and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvkN49MBFfdxie3l09oNiKBhiaSQFptHgO_pel0uXk6rNnFioYaI-WIGUAzut_Ksgmy4UIYsG3_Jrw7mPWMU8U6jV0JM41gKzSLV-_ILAu-0UO-bMCgym3aMp30woRvUwojFiVAVXSYdVWhUU1AxoMGMVbYUcjpoobbgeXftrWSS5g1EUxKDNdhL94amuVdcD_gAy-nRnHO_Pp-0Ne9ggE6fqDBxWlTl5Q361nhDW3CLrEYU2FWST1_NKPTMZXtTVDLJDJ5b7ly7w"/>
+<div class="absolute top-md right-md px-sm py-1 bg-tertiary text-on-tertiary text-label-sm rounded-full">Coming Soon</div>
+</div>
+<div class="p-lg flex-1">
+<h3 class="text-title-lg font-title-lg mb-xs">Chattogram Coastal Elite</h3>
+<div class="flex items-center gap-xs text-on-surface-variant mb-md">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-body-md">MA Aziz Stadium, CTG</span>
+</div>
+<div class="grid grid-cols-2 gap-md pt-md border-t border-outline-variant">
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Teams</p>
+<p class="text-title-lg font-bold">0 / 20</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Followers</p>
+<p class="text-title-lg font-bold">420</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Matches (Quick View) -->
+<section class="bg-white py-2xl border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex items-center justify-between mb-xl">
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Upcoming Matches</h2>
+<div class="flex gap-xs">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-all"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-all"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="flex gap-lg overflow-x-auto no-scrollbar pb-lg px-base">
+<!-- Match Card 1 -->
+<div class="min-w-[320px] md:min-w-[400px] premium-card bg-surface-container-low rounded-2xl p-lg border border-outline-variant/20">
+<div class="text-center mb-md">
+<span class="px-sm py-1 bg-white text-primary text-label-sm rounded-full font-bold shadow-sm">Khelabase Cup • Semi Final</span>
+</div>
+<div class="flex items-center justify-between gap-md mb-xl">
+<div class="flex flex-col items-center gap-sm flex-1">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm p-sm">
+<img class="w-full h-full object-contain" data-alt="A minimalist professional football club logo featuring a stylized tiger and football in deep green and gold. Clean vector lines, modern sports branding aesthetic, isolated on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-JJTMRdNeQbt7J-kfb024ClQLn5h8L8GZuoxQSSgKiVSfW7Tab2jYNw65Kf9eyKIuWbHcwjCsinc7ecsOyYRwcOXN-IZ_m-A7deFGLydTPxd1FH5_bDIH8aSA1cdx4WEUbPWLTrIkrbbj5FCchgqrmp8IIYXgdi7HDsvKdODQNp2njl1T__l_8l-rMJ5ZThtlLG8A_B8Je_5ihsSXmKaKaRwrmqrAAJ3b8aCdtODhfh8Y6qbYlzvS3X6bxDuBwzr8yWeMbEW9zFA"/>
+</div>
+<span class="text-title-lg font-bold">Dhaka Tigers</span>
+</div>
+<div class="text-headline-md font-extrabold text-outline">VS</div>
+<div class="flex flex-col items-center gap-sm flex-1">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm p-sm">
+<img class="w-full h-full object-contain" data-alt="A sleek minimalist football club emblem with a falcon and wing motif in vibrant red and black. High-performance sports branding, clean geometric design, isolated on a white circular base." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzQ_FiV6xXLnQpIuug6VUq6wj_i3C3_80fOTCGtEAsIHCQnWhR9Fg6vsuLtYqT83wUbkmHvLWhwZwznhoYHCiu0uv9JHljeRaJjDEs3i40tRD8qaZVefmVsDbygeaRGrfpTcBbLOuTACrrBq17ohj9ZHAXCHFIambyMNj8Kwv0d12s6bMVNoDsUzmy0bo3sYKYicTpPGkHAgUZccMYROJJ2w2ovK4YBOWmHwbDIOhT3HQag-SrKg7x3yDcgebBWmxw1jUbQ6XQM_w"/>
+</div>
+<span class="text-title-lg font-bold">Red Wings FC</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-lg border-t border-outline-variant/40">
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Starts In</p>
+<p class="text-body-lg font-bold text-primary">02d : 14h : 45m</p>
+</div>
+<button class="flex items-center gap-xs px-md py-xs bg-white text-on-surface font-bold rounded-lg border border-outline-variant hover:bg-primary hover:text-on-primary transition-all group">
+<span class="material-symbols-outlined text-[20px] group-hover:fill-white">notifications</span>
+                                Remind Me
+                            </button>
+</div>
+</div>
+<!-- Repeat for more matches -->
+</div>
+</div>
+</section>
+<!-- Top Players Section -->
+<section class="py-2xl max-w-container-max mx-auto px-gutter">
+<div class="flex items-end justify-between mb-xl">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Top Performers</h2>
+<p class="text-body-md text-on-surface-variant">Players leading the leaderboards this season.</p>
+</div>
+<button class="text-primary font-bold hover:underline">View Rankings</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Player Card -->
+<div class="premium-card bg-white rounded-2xl p-lg border border-outline-variant/30 text-center relative">
+<div class="absolute top-md right-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="w-24 h-24 mx-auto mb-md relative">
+<img class="w-full h-full object-cover rounded-full border-4 border-surface-container" data-alt="A professional studio portrait of a young Bangladeshi football player in a green jersey. High-key lighting, clean white background, sharp focus, athletic and confident expression. Modern sports marketing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_cqND2gDTmYlGlWVRqhqgeVgv29h2gt9VVhKWMQX1bOYRjdgbSC8BmYoXuh4v05Og-eridIKS9i6kGqIolZve5hr4rO5BtGO1JK_M4tIL_4kRsm4aBJIb1l2iuSCf9renwTJACzD1N1_3_ekwVNEkWOuQRlUkiVofgi6wPgcoFzjnRfTCGIc57BA59vtFj9Y7dZByAOBl1h1K6oP4XUTSsq4ZOtP5_wmy6Q9OXpuy4aBXgzx1eO3hhWBikzyf2_2Rzbo49Moyd2U"/>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1 rounded-full shadow-md">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="text-title-lg font-bold mb-xs">Arif Ahmed</h3>
+<p class="text-label-md text-on-surface-variant mb-md">Striker • Dhaka Tigers</p>
+<div class="bg-surface-container-low rounded-xl p-md grid grid-cols-2 gap-sm">
+<div>
+<p class="text-label-sm text-on-surface-variant">Rating</p>
+<p class="text-title-lg font-bold text-primary">8.4</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Goals</p>
+<p class="text-title-lg font-bold text-primary">12</p>
+</div>
+</div>
+</div>
+<!-- Duplicate Player Cards for visual balance -->
+<div class="premium-card bg-white rounded-2xl p-lg border border-outline-variant/30 text-center">
+<div class="w-24 h-24 mx-auto mb-md relative">
+<img class="w-full h-full object-cover rounded-full border-4 border-surface-container" data-alt="A professional studio portrait of a Bangladeshi football player, goalkeeper, wearing gloves and a blue jersey. Confident posture, sharp studio lighting, high-contrast, premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCebDVWXYtCmJrXd5Ip8T_9dE0NjBJtMavG0G918urbTXCO75KDFdj0MyeoMtxuRpYFLtgywMnpRDRLg7gj_OT3_UfEXmxi8VJprTLLMEht2c4RMHBbV2QZuxWlsI2EXJNUbKOh7NquPESu8UxkZP4Aed7-hYWxKI2Tp93YC0qoGnPyvccHeXlc8iRY9fY6Y5QyRmskpTybPYcMieUqf7t8AyhNSLWiA4TvOBO1XVVnqoBGiDSVirmwDQrejDO5RlrnxKGpA7kJIuA"/>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1 rounded-full shadow-md">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="text-title-lg font-bold mb-xs">Tamim Iqbal Jr.</h3>
+<p class="text-label-md text-on-surface-variant mb-md">Goal Keeper • CTG Coastal</p>
+<div class="bg-surface-container-low rounded-xl p-md grid grid-cols-2 gap-sm">
+<div>
+<p class="text-label-sm text-on-surface-variant">Cleansheet</p>
+<p class="text-title-lg font-bold text-primary">05</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Saves</p>
+<p class="text-title-lg font-bold text-primary">34</p>
+</div>
+</div>
+</div>
+<div class="premium-card bg-white rounded-2xl p-lg border border-outline-variant/30 text-center">
+<div class="w-24 h-24 mx-auto mb-md relative">
+<img class="w-full h-full object-cover rounded-full border-4 border-surface-container" data-alt="Close-up professional portrait of a football player in a white and gold kit. Vibrant colors, soft light-mode aesthetic, focus on determination. High-end athletic precision style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBed60-onj5NVOcsNafuRrKsinneqG0wCk5kFZ2WgBXGhDQWjhCxIq8f7rVYK9z7uODouXBiXrjrEyS6NTSspCmwcKTM0oU3NBLAg-TP21ybe86zK2d-1Z8QDXSf5IOVq2ZhjsWv7KuVe_9i1LQnPEobubKZlukgjcATeJ82TnBa9jcbNVw4XsVgj8tP2D-f8kQOLla131oh8lo6z9l8MoBLCAhrp85Xv72htPaNGhhVIkywcZpxpfh_CBYszKqfdTtAjsXeHt0qqk"/>
+</div>
+<h3 class="text-title-lg font-bold mb-xs">Mehedi Hasan</h3>
+<p class="text-label-md text-on-surface-variant mb-md">Midfielder • Sylhet City</p>
+<div class="bg-surface-container-low rounded-xl p-md grid grid-cols-2 gap-sm">
+<div>
+<p class="text-label-sm text-on-surface-variant">Rating</p>
+<p class="text-title-lg font-bold text-primary">7.9</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Assists</p>
+<p class="text-title-lg font-bold text-primary">08</p>
+</div>
+</div>
+</div>
+<div class="premium-card bg-white rounded-2xl p-lg border border-outline-variant/30 text-center">
+<div class="w-24 h-24 mx-auto mb-md relative">
+<img class="w-full h-full object-cover rounded-full border-4 border-surface-container" data-alt="Portrait of a female football player in a red jersey, strong athletic presence, cinematic studio lighting, premium and inspiring style, clean white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6bD0MpS_8zRf5tbNGypimu6bCt6e_vU4vI0KcxacNFys1wtKu3-HUbe_I1Xrf4ZEjGqqK90zXyEXrEa-EyvliSZsoMm5UfO-7E6bUGU0qf11QYq8HixTQDYq2_F2uhhhtEy_mqR1CLDVEK1zNwhFt3RCVsTqEeffYkI0VDnIrs53zmcMSbDNWCJmmulQpvnXjOa4JoT-NzjHLSsHWziZ5vRBmUBs6QwwC2bMuzUOKAHR59f6Iu3pDpBO60_iC7-mZHx1w1r20wE"/>
+<div class="absolute bottom-0 right-0 bg-primary text-white p-1 rounded-full shadow-md">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="text-title-lg font-bold mb-xs">Nusrat Jahan</h3>
+<p class="text-label-md text-on-surface-variant mb-md">Forward • Dhaka Queens</p>
+<div class="bg-surface-container-low rounded-xl p-md grid grid-cols-2 gap-sm">
+<div>
+<p class="text-label-sm text-on-surface-variant">Rating</p>
+<p class="text-title-lg font-bold text-primary">8.1</p>
+</div>
+<div>
+<p class="text-label-sm text-on-surface-variant">Goals</p>
+<p class="text-title-lg font-bold text-primary">09</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="max-w-container-max mx-auto px-gutter py-2xl">
+<div class="bg-inverse-surface rounded-[32px] p-2xl text-center relative overflow-hidden">
+
+<div class="relative z-10">
+<h2 class="text-display-lg font-display-lg text-white mb-md">Join Bangladesh's Biggest Football Community</h2>
+<p class="text-body-lg text-white/70 mb-xl max-w-xl mx-auto">Build your team profile, join competitive tournaments, and showcase your skills to the entire nation.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-md">
+<button class="px-2xl py-md bg-primary text-white font-bold text-body-lg rounded-xl shadow-lg hover:scale-105 transition-all">Register as Player</button>
+<button class="px-2xl py-md bg-white/10 text-white border border-white/20 font-bold text-body-lg rounded-xl hover:bg-white/20 transition-all backdrop-blur-sm">Explore Teams</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface text-inverse-on-surface">
+<div class="max-w-container-max mx-auto px-lg py-2xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl mb-2xl">
+<div class="col-span-1 md:col-span-2">
+<span class="text-title-lg font-bold text-primary-fixed mb-md block">Khelabase</span>
+<p class="text-body-md text-inverse-on-surface/70 max-w-md">Khelabase is Bangladesh's first all-in-one football management and discovery platform. We empower players, teams, and organizers to take local football to the next level.</p>
+</div>
+<div>
+<h4 class="text-label-sm font-label-sm uppercase tracking-widest text-primary-fixed mb-lg">Platform</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Tournaments</a></li>
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Teams</a></li>
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Players</a></li>
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Marketplace</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-label-sm font-label-sm uppercase tracking-widest text-primary-fixed mb-lg">Company</h4>
+<ul class="flex flex-col gap-sm">
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">About Us</a></li>
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Community</a></li>
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md hover:text-primary-fixed transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-xl border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-label-sm text-inverse-on-surface/50">© 2024 Khelabase. Bangladesh's Premier Football Ecosystem.</p>
+<div class="flex gap-lg">
+<a class="text-inverse-on-surface/50 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-inverse-on-surface/50 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">sports_soccer</span></a>
+<a class="text-inverse-on-surface/50 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple counter animation logic
+        function animateCounter(id, target) {
+            const el = document.getElementById(id);
+            let count = 0;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            
+            const update = () => {
+                count += increment;
+                if (count < target) {
+                    el.innerText = Math.floor(count).toLocaleString() + '+';
+                    requestAnimationFrame(update);
+                } else {
+                    el.innerText = target.toLocaleString() + '+';
+                }
+            };
+            update();
+        }
+
+        // Trigger on load
+        window.addEventListener('load', () => {
+            animateCounter('stat-players', 12500);
+            animateCounter('stat-teams', 680);
+            animateCounter('stat-tournaments', 950);
+        });
+
+        // Sticky Nav logic
+        window.onscroll = function() {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        };
+    </script>
+</body></html>

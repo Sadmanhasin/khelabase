@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Super Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#62df7d",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "outline-variant": "#bdcaba",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "primary-fixed": "#7ffc97",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-tertiary-container": "#fefcff",
+                    "on-surface": "#121c2a",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "surface-tint": "#006e2d",
+                    "on-error": "#ffffff",
+                    "outline": "#6e7b6c",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container-low": "#eff4ff",
+                    "primary": "#006b2c",
+                    "on-primary-container": "#f7fff2",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "on-secondary-container": "#6f5100",
+                    "on-background": "#121c2a",
+                    "primary-container": "#00873a",
+                    "on-tertiary-fixed": "#00174b",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-primary-fixed-variant": "#005320",
+                    "secondary": "#795900",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#d9e3f6",
+                    "surface-dim": "#d0dbed",
+                    "tertiary": "#0051d5",
+                    "tertiary-container": "#316bf3",
+                    "primary-fixed-dim": "#62df7d",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "secondary-container": "#ffc329",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-primary-fixed": "#002109",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#eaf1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "xs": "8px",
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "md": "16px",
+                    "lg": "24px",
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .sidebar-scroll::-webkit-scrollbar { width: 4px; }
+        .sidebar-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Side Navigation Bar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-inverse-surface shadow-sm flex flex-col border-r border-outline-variant dark:border-outline z-50" id="sidebar">
+<!-- Brand Header -->
+<div class="px-lg py-xl flex items-center gap-sm">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+</div>
+<h1 class="text-headline-md font-headline-md font-extrabold text-primary dark:text-inverse-primary leading-none">Khelabase</h1>
+</div>
+<!-- Nav Links -->
+<nav class="flex-1 overflow-y-auto sidebar-scroll px-md space-y-base pb-lg">
+<div class="text-label-md font-label-md text-on-surface-variant/60 uppercase tracking-widest px-sm mb-xs mt-md">Main Menu</div>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-primary dark:text-inverse-primary font-bold border-r-4 border-primary transition-colors bg-primary/5" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md font-label-md">User Management</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-label-md font-label-md">Profiles</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-label-md font-label-md">Teams</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">corporate_fare</span>
+<span class="text-label-md font-label-md">Organizers</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">stadium</span>
+<span class="text-label-md font-label-md">Venues</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="text-label-md font-label-md">Tournament Oversight</span>
+</a>
+<div class="text-label-md font-label-md text-on-surface-variant/60 uppercase tracking-widest px-sm mb-xs mt-lg">Commerce</div>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">storefront</span>
+<span class="text-label-md font-label-md">Marketplace Control</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-label-md font-label-md">Payments</span>
+</a>
+<div class="text-label-md font-label-md text-on-surface-variant/60 uppercase tracking-widest px-sm mb-xs mt-lg">Operations</div>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-md font-label-md">Reports</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-md rounded-xl text-on-surface-variant dark:text-surface-variant hover:bg-surface-variant dark:hover:bg-surface-container-highest transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">System Settings</span>
+</a>
+</nav>
+<!-- Sidebar Footer -->
+<div class="p-md bg-surface-container-high/30 border-t border-outline-variant">
+<div class="flex items-center gap-sm mb-md">
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A portrait of a professional male super administrator in a high-tech modern office setting. He is wearing a minimalist dark polo shirt with a subtle green logo. The lighting is soft and cinematic, with a blurred dashboard interface visible on monitors in the background. The aesthetic is clean, professional, and sophisticated." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFBzk1kTVo9mZ2sN6khEtcY_wltV7Ke73fcD01nP1b__uNvic_7g3wb58EjOhzHEIqqXobZGL21VEyOvonxfOhmH2eS4uIpaWvzokhAxZbbnX-Zm78TJ39Eq3qYzomViQrDhZUu7E-jtj-0YQlJQ_TLjS06BDVqEE_WB9ZyRoNpBGSuMHVnzDXU7bGXbbqowarvVKxhoNxOBxk16_sxz5xjn0H_hlQ9UoT_WsE91GHVikXQQBc0X40TdYghuWefHKPocS-OGLX-2c"/>
+<div>
+<p class="text-label-md font-label-md text-on-surface">Super Admin</p>
+<p class="text-[10px] text-on-surface-variant">admin@khelabase.com</p>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-xs py-sm bg-primary text-white rounded-xl text-label-md font-label-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+                Support Portal
+            </button>
+</div>
+</aside>
+<!-- Top Bar -->
+<header class="flex justify-between items-center w-full px-lg py-md ml-64 max-w-[calc(100%-16rem)] h-16 bg-surface dark:bg-background shadow-sm sticky top-0 z-40">
+<div class="flex items-center gap-md flex-1">
+<div class="relative w-full max-w-md group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Search tournaments, users, or reports..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">health_and_safety</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-xs"></div>
+<div class="flex items-center gap-xs px-sm py-1.5 rounded-full hover:bg-surface-variant transition-colors cursor-pointer">
+<span class="text-label-md font-label-md text-on-surface">Admin Profile</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-lg space-y-lg">
+<!-- Welcome Header -->
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Dashboard Overview</h2>
+<p class="text-body-lg text-on-surface-variant">Welcome back, Super Admin. Here's what's happening today.</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-2 bg-surface-container-lowest border border-outline-variant rounded-xl text-label-md font-label-md text-on-surface hover:bg-surface-variant transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    Last 30 Days
+                </button>
+<button class="px-md py-2 bg-primary text-white rounded-xl text-label-md font-label-md hover:bg-primary-container transition-colors shadow-sm flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Export Data
+                </button>
+</div>
+</div>
+<!-- KPI Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Total Users -->
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div class="flex items-center gap-xs text-primary font-bold text-label-md bg-primary/5 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                        12%
+                    </div>
+</div>
+<div class="space-y-1">
+<p class="text-label-md font-label-md text-on-surface-variant">Total Users</p>
+<h3 class="text-headline-md font-headline-md">124,582</h3>
+</div>
+<div class="mt-md h-8 flex items-end gap-[2px]">
+<!-- Sparkline Mockup -->
+<div class="flex-1 bg-primary/20 h-2 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/30 h-4 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/20 h-3 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 h-6 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/30 h-5 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/60 h-8 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/50 h-7 rounded-t-sm"></div>
+</div>
+</div>
+<!-- Active Tournaments -->
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary">sports_soccer</span>
+</div>
+<div class="flex items-center gap-xs text-tertiary font-bold text-label-md bg-tertiary/5 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                        8%
+                    </div>
+</div>
+<div class="space-y-1">
+<p class="text-label-md font-label-md text-on-surface-variant">Active Tournaments</p>
+<h3 class="text-headline-md font-headline-md">86</h3>
+</div>
+<div class="mt-md h-8 flex items-end gap-[2px]">
+<div class="flex-1 bg-tertiary/20 h-4 rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/30 h-3 rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/40 h-5 rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/20 h-2 rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/50 h-6 rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/30 h-4 rounded-t-sm"></div>
+<div class="flex-1 bg-tertiary/60 h-8 rounded-t-sm"></div>
+</div>
+</div>
+<!-- Revenue -->
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">payments</span>
+</div>
+<div class="flex items-center gap-xs text-secondary font-bold text-label-md bg-secondary/5 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+                        24%
+                    </div>
+</div>
+<div class="space-y-1">
+<p class="text-label-md font-label-md text-on-surface-variant">Monthly Revenue</p>
+<h3 class="text-headline-md font-headline-md">৳4.2M</h3>
+</div>
+<div class="mt-md h-8 flex items-end gap-[2px]">
+<div class="flex-1 bg-secondary/20 h-2 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/30 h-4 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/40 h-5 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/20 h-3 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/50 h-7 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/60 h-8 rounded-t-sm"></div>
+<div class="flex-1 bg-secondary/40 h-6 rounded-t-sm"></div>
+</div>
+</div>
+<!-- Pending Reports -->
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex justify-between items-start mb-md">
+<div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-error">flag</span>
+</div>
+<div class="flex items-center gap-xs text-error font-bold text-label-md bg-error/5 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[16px]">trending_down</span>
+                        15%
+                    </div>
+</div>
+<div class="space-y-1">
+<p class="text-label-md font-label-md text-on-surface-variant">Pending Reports</p>
+<h3 class="text-headline-md font-headline-md">12</h3>
+</div>
+<div class="mt-md h-8 flex items-end gap-[2px]">
+<div class="flex-1 bg-error/20 h-8 rounded-t-sm"></div>
+<div class="flex-1 bg-error/30 h-6 rounded-t-sm"></div>
+<div class="flex-1 bg-error/40 h-5 rounded-t-sm"></div>
+<div class="flex-1 bg-error/20 h-7 rounded-t-sm"></div>
+<div class="flex-1 bg-error/50 h-4 rounded-t-sm"></div>
+<div class="flex-1 bg-error/60 h-3 rounded-t-sm"></div>
+<div class="flex-1 bg-error/40 h-2 rounded-t-sm"></div>
+</div>
+</div>
+</section>
+<!-- Main Analytics & Feed -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Modern Analytics Chart -->
+<section class="lg:col-span-2 glass-card rounded-xl p-lg space-y-lg relative overflow-hidden">
+<div class="flex justify-between items-center">
+<div>
+<h4 class="text-title-lg font-title-lg text-on-surface">Ecosystem Growth</h4>
+<p class="text-body-md text-on-surface-variant">Growth metrics for registrations vs tournaments</p>
+</div>
+<div class="flex gap-md">
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="text-label-md font-label-md">Registrations</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="text-label-md font-label-md">Tournament Scale</span>
+</div>
+</div>
+</div>
+<!-- Abstract Chart Visualization -->
+<div class="h-64 w-full relative mt-xl">
+
+<div class="absolute inset-0 flex flex-col justify-between">
+<div class="w-full border-b border-outline-variant/30 h-0"></div>
+<div class="w-full border-b border-outline-variant/30 h-0"></div>
+<div class="w-full border-b border-outline-variant/30 h-0"></div>
+<div class="w-full border-b border-outline-variant/30 h-0"></div>
+<div class="w-full border-b border-outline-variant/30 h-0"></div>
+</div>
+<!-- SVG Chart Path Simulation -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 200">
+<!-- Registration Line -->
+<path d="M0,180 L100,160 L200,170 L300,140 L400,120 L500,130 L600,100 L700,80 L800,60 L900,40 L1000,30" fill="none" stroke="#16A34A" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- Tournament Line -->
+<path d="M0,190 L100,185 L200,188 L300,175 L400,170 L500,165 L600,160 L700,150 L800,145 L900,140 L1000,135" fill="none" stroke="#0051d5" stroke-dasharray="8 4" stroke-linecap="round" stroke-width="3"></path>
+<!-- Area Fills -->
+<path d="M0,180 L100,160 L200,170 L300,140 L400,120 L500,130 L600,100 L700,80 L800,60 L900,40 L1000,30 L1000,200 L0,200 Z" fill="url(#grad1)" opacity="0.1"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#16A34A;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#16A34A;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between mt-md px-2">
+<span class="text-label-md font-label-md text-on-surface-variant">May 1</span>
+<span class="text-label-md font-label-md text-on-surface-variant">May 10</span>
+<span class="text-label-md font-label-md text-on-surface-variant">May 20</span>
+<span class="text-label-md font-label-md text-on-surface-variant">May 30</span>
+</div>
+</div>
+</section>
+<!-- Recent Activity Feed -->
+<section class="glass-card rounded-xl p-lg flex flex-col">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="text-title-lg font-title-lg text-on-surface">Recent Activity</h4>
+<button class="text-primary text-label-md font-label-md hover:underline">View All</button>
+</div>
+<div class="space-y-md flex-1 overflow-y-auto max-h-[400px] pr-2">
+<!-- Activity Item 1 -->
+<div class="flex gap-md group">
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[20px] text-primary">person_add</span>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-primary text-[10px] text-white flex items-center justify-center rounded-full border-2 border-white">
+<span class="material-symbols-outlined text-[10px]">done</span>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-body-md text-on-surface"><strong>Rahat Karim</strong> joined as a player.</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant/70">2 mins ago • Dhaka, BD</p>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="flex gap-md group">
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[20px] text-secondary">shopping_cart</span>
+</div>
+<div class="space-y-1">
+<p class="text-body-md text-on-surface">Marketplace order #8492 by <strong>Elite Strikers</strong>.</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant/70">15 mins ago • ৳4,500.00</p>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="flex gap-md group">
+<div class="w-10 h-10 shrink-0 rounded-full bg-error/10 flex items-center justify-center relative">
+<span class="material-symbols-outlined text-[20px] text-error">warning</span>
+</div>
+<div class="space-y-1">
+<p class="text-body-md text-on-surface">Tournament <strong>'Dhaka Bash 2024'</strong> flagged for review.</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant/70">1 hour ago • Missing venue permit</p>
+</div>
+<div class="ml-auto flex items-center">
+<button class="px-2 py-1 bg-surface-container text-label-sm font-label-sm rounded hover:bg-error/20 transition-colors">Resolve</button>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="flex gap-md group">
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container-high flex items-center justify-center relative">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small profile thumbnail of an organizer, mid-thirties, professional sports attire, smiling warmly against a blurred outdoor stadium background during golden hour. High quality photography style, shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBALgg1nWGBwcSogbxkUWvfuDfAA874NpxVDNjrOtKIEcmsx0BjFJlVnzRR-yh8ov25yPanKlm-QXVLRMCvIFo4Ew-NQsCIIybkxxxyCtnOnsj-LrbPnkrRLwiZ2u4OzGusxJhf0vJJjW9Qiz3CmvmroNp2zyv8hiuM4MTrO_RVQID4z7xYfMit2MiakDe2IvlaAYBvoE4dPZa0-vov4e_DY-rusPi63kS_z3Wx1AZH6J4v8LhZ9oJfipn2Gkr9pKT0Bk81bNWNNsc"/>
+</div>
+<div class="space-y-1">
+<p class="text-body-md text-on-surface"><strong>Samin Yeasar</strong> updated venue capacity.</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant/70">3 hours ago • Banani Turf</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Bottom Grid: Quick Actions & Management -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Quick Actions Panel -->
+<section class="glass-card rounded-xl p-lg space-y-md">
+<h4 class="text-title-lg font-title-lg text-on-surface">Administrative Actions</h4>
+<div class="grid grid-cols-2 gap-md">
+<button class="flex flex-col items-center justify-center p-md bg-primary/5 border border-primary/20 rounded-xl hover:bg-primary/10 transition-all group">
+<span class="material-symbols-outlined text-primary mb-xs group-hover:scale-110 transition-transform">task_alt</span>
+<span class="text-label-md font-label-md text-primary">Approve Tournament</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md bg-secondary/5 border border-secondary/20 rounded-xl hover:bg-secondary/10 transition-all group">
+<span class="material-symbols-outlined text-secondary mb-xs group-hover:scale-110 transition-transform">inventory_2</span>
+<span class="text-label-md font-label-md text-secondary">Manage Products</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md bg-tertiary/5 border border-tertiary/20 rounded-xl hover:bg-tertiary/10 transition-all group">
+<span class="material-symbols-outlined text-tertiary mb-xs group-hover:scale-110 transition-transform">monitor_heart</span>
+<span class="text-label-md font-label-md text-tertiary">System Health</span>
+</button>
+<button class="flex flex-col items-center justify-center p-md bg-on-surface/5 border border-outline-variant rounded-xl hover:bg-surface-variant transition-all group">
+<span class="material-symbols-outlined text-on-surface-variant mb-xs group-hover:scale-110 transition-transform">mail</span>
+<span class="text-label-md font-label-md text-on-surface">Broadcast Notification</span>
+</button>
+</div>
+</section>
+<!-- System Health / Status Card -->
+<section class="lg:col-span-2 glass-card rounded-xl p-lg">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="text-title-lg font-title-lg text-on-surface">Infrastructure Status</h4>
+<span class="flex items-center gap-xs px-2 py-1 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest rounded-full">
+<span class="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+                        All Systems Operational
+                    </span>
+</div>
+<div class="space-y-lg">
+<div class="space-y-md">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">dns</span>
+<span class="text-body-md font-body-md text-on-surface">Core API Server</span>
+</div>
+<span class="text-label-md font-label-md text-on-surface-variant">99.98% uptime</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2 overflow-hidden flex gap-[2px]">
+<div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-error flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div><div class="h-full bg-primary flex-1"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg pt-md">
+<div class="space-y-1">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Database Load</p>
+<p class="text-headline-md font-headline-md">24%</p>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary w-[24%] h-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Response Time</p>
+<p class="text-headline-md font-headline-md">142ms</p>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-tertiary w-[15%] h-full"></div>
+</div>
+</div>
+<div class="space-y-1">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">Media Storage</p>
+<p class="text-headline-md font-headline-md">4.8 TB</p>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-secondary w-[65%] h-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+        // Micro-interactions and Tab Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    navLinks.forEach(l => {
+                        l.classList.remove('text-primary', 'dark:text-inverse-primary', 'font-bold', 'border-r-4', 'border-primary', 'bg-primary/5');
+                        l.classList.add('text-on-surface-variant', 'dark:text-surface-variant');
+                    });
+                    link.classList.remove('text-on-surface-variant', 'dark:text-surface-variant');
+                    link.classList.add('text-primary', 'dark:text-inverse-primary', 'font-bold', 'border-r-4', 'border-primary', 'bg-primary/5');
+                });
+            });
+
+            // Randomize sparkline heights slightly for "live" feel
+            const sparklines = document.querySelectorAll('.mt-md.h-8 > div');
+            setInterval(() => {
+                const randomBar = sparklines[Math.floor(Math.random() * sparklines.length)];
+                const originalHeight = randomBar.classList.value.match(/h-(\d)/)?.[1] || 4;
+                const newHeight = Math.max(1, Math.min(8, parseInt(originalHeight) + (Math.random() > 0.5 ? 1 : -1)));
+                randomBar.className = randomBar.className.replace(/h-\d/, `h-${newHeight}`);
+            }, 3000);
+        });
+    </script>
+</body></html>

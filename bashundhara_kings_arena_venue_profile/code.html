@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bashundhara Kings Arena | Khelabase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-glow {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .bento-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bdcaba;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#6e7b6c",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#27313f",
+                      "surface-container-highest": "#d9e3f6",
+                      "secondary-container": "#ffc329",
+                      "tertiary": "#0051d5",
+                      "secondary-fixed-dim": "#f9bd22",
+                      "primary-fixed-dim": "#62df7d",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed": "#002109",
+                      "surface-variant": "#d9e3f6",
+                      "tertiary-fixed-dim": "#b4c5ff",
+                      "on-surface-variant": "#3e4a3d",
+                      "on-primary-fixed-variant": "#005320",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#003ea8",
+                      "on-tertiary-container": "#fefcff",
+                      "tertiary-fixed": "#dbe1ff",
+                      "surface": "#f8f9ff",
+                      "on-background": "#121c2a",
+                      "surface-container-low": "#eff4ff",
+                      "on-secondary-fixed-variant": "#5c4300",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-bright": "#f8f9ff",
+                      "secondary": "#795900",
+                      "primary-fixed": "#7ffc97",
+                      "tertiary-container": "#316bf3",
+                      "primary": "#16A34A", /* Overriding for specific pitch green aesthetic */
+                      "on-surface": "#121c2a",
+                      "on-primary-container": "#f7fff2",
+                      "on-secondary-fixed": "#261a00",
+                      "background": "#f8f9ff",
+                      "surface-container": "#e6eeff",
+                      "inverse-primary": "#62df7d",
+                      "on-tertiary-fixed": "#00174b",
+                      "secondary-fixed": "#ffdf9f",
+                      "surface-dim": "#d0dbed",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#dee9fc",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#006e2d",
+                      "outline-variant": "#bdcaba",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-container": "#6f5100",
+                      "on-error-container": "#93000a",
+                      "primary-container": "#16A34A"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "12px",
+                      "xl": "16px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "lg": "24px",
+                      "xl": "32px",
+                      "margin-mobile": "16px",
+                      "sm": "12px",
+                      "base": "4px",
+                      "2xl": "48px",
+                      "md": "16px",
+                      "container-max": "1280px",
+                      "xs": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Manrope"],
+                      "headline-lg-mobile": ["Manrope"],
+                      "title-lg": ["Manrope"],
+                      "display-lg": ["Manrope"],
+                      "headline-lg": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "label-md": ["Manrope"],
+                      "headline-md": ["Manrope"],
+                      "body-lg": ["Manrope"]
+              },
+              "fontSize": {
+                      "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-lg h-16 max-w-container-max mx-auto bg-surface dark:bg-inverse-surface shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-xl">
+<span class="font-display-lg text-display-lg font-extrabold text-primary dark:text-primary-fixed">Khelabase</span>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md md:font-body-lg md:text-body-lg transition-colors duration-200" href="#">Discovery</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary font-label-md text-label-md md:font-body-lg md:text-body-lg transition-colors duration-200" href="#">Venues</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md md:font-body-lg md:text-body-lg transition-colors duration-200" href="#">Events</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all">settings</button>
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant active:scale-95 transition-transform">
+<img class="w-full h-full object-cover" data-alt="A professional profile headshot of a sports venue manager in a clean white polo shirt, smiling confidently against a soft blurred stadium background. The lighting is natural and bright, conveying a premium and trustworthy service atmosphere. The overall style is modern and professional, matching a high-end sports management platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL5HNXuhzMf5RL6BLYc0U2dCMTackDmk9L7UX56j_LQQXZN80xMKwX_NvZbN_eHVclakTN024xmtov8TwDE9CW2pHzLUfzDp5mMRGIeI6GDKsheCP-tE3ZxJy6-uI06rHrlQXou8OUQoE7Gk9n8Nni3ihMtpeoQBkF0DL9zuwekP0dp9A8uFzZAw1szbcFnJs1CV4cRtstiVpYoRTq0LEjOaUQCUBfRqOLlTTrEjG0tJRABLEMwR685f9djjv3xjexd8DtXysszgw"/>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-16 pb-24">
+<!-- Cinematic Hero Section -->
+<section class="relative w-full h-[512px] min-h-[400px]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A cinematic, wide-angle aerial shot of the Bashundhara Kings Arena during a vibrant sunset. The stadium's modern architecture glows with soft golden light, and the lush green hybrid grass pitch is perfectly manicured. The surrounding cityscape of Dhaka is visible in a soft bokeh blur. The mood is grand, prestigious, and high-performance, consistent with an elite football ecosystem." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwXObmmq7yyMGPsjQ0jhjrPoPpkWcRrU8YoIDDDPh2lI5bSuWSDQzBazmxUfYVc0Nks1HTSP2XO1WOfxmCq5rI3hwrXCLr5p2FzVObCxSab3F8fLKzVOeBREYMpSFli9C9yZuoRL61sJaglwHQeM675464aQ4pn88ikmk7yJC4VqpXRiLMo7SzhoTGFiBWWJkYDlns4AiCVffE3-t442oF-dAoLmbOrxQdkCo818L5aszWXLsVCtPl3vF-oVjgIAWf5DaSPB5U1i0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-lg md:p-xl">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row items-end md:items-center gap-md md:gap-xl">
+<div class="relative w-32 h-32 md:w-40 md:h-40 rounded-xl bg-white p-2 shadow-2xl shrink-0 -mb-12 md:-mb-16 z-10">
+<div class="w-full h-full bg-surface-container-low rounded-lg overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-contain p-2" data-alt="A sharp, minimalist logo for the Bashundhara Kings Arena, featuring a stylized crown integrated with a football, rendered in premium gold and deep emerald green. The logo is centered on a clean white square background with soft shadows, evoking luxury and athletic excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj28sBNCh1ZTMc42wk8EHZ3M1InkSpBYi1pLbZGxv1Nx7xKyVjv1nlThmyuHtl_eOAIcec0beA9Ss2VIaSED4YJupdRYvVhGadiKf4BgY3pfycgW7epBgUFh-1vzxLh8m-h0GBzF96adHoiCHJAjUBQ4w-Fwpc6LX4Bjw8krcr5ycvZjXdJy5ve053qi5BShKkb0NvO_2zn8BX1hNyfcF6PSHj2pTmOglPcULx2XkCP20q-GioMF6hPpB6yn-G2fdKRt44aRqvCB0"/>
+</div>
+</div>
+<div class="flex-grow text-white pb-4">
+<div class="flex items-center gap-xs">
+<h1 class="font-headline-lg text-headline-lg">Bashundhara Kings Arena</h1>
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex flex-wrap items-center gap-md mt-1 text-on-primary-container/80">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-sm opacity-80">(1.2k Reviews)</span>
+</div>
+<span class="opacity-40">•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">group</span>
+<span class="font-bold">12k</span>
+<span class="text-sm opacity-80">Followers</span>
+</div>
+<span class="opacity-40 hidden md:block">•</span>
+<div class="hidden md:flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-sm">Bashundhara Residential Area, Dhaka</span>
+</div>
+</div>
+</div>
+<div class="flex gap-sm pb-4">
+<button class="bg-white/10 backdrop-blur-md border border-white/20 text-white px-md py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-white/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                            Share
+                        </button>
+<button class="bg-primary text-white px-md py-2 rounded-lg font-label-md flex items-center gap-2 hover:brightness-110 shadow-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">add</span>
+                            Follow
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Tabs -->
+<section class="border-b border-outline-variant bg-surface sticky top-16 z-40">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex items-center gap-xl overflow-x-auto no-scrollbar py-4 custom-scrollbar">
+<a class="text-primary font-bold border-b-2 border-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Overview</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Upcoming Matches</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Tournaments</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Reviews</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Facilities</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">Statistics</a>
+<a class="text-on-surface-variant hover:text-primary whitespace-nowrap pb-4 -mb-4 transition-all" href="#">About</a>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<section class="max-w-container-max mx-auto px-lg mt-xl grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Left: Main Overview Content -->
+<div class="lg:col-span-8 space-y-lg">
+<!-- Create Match CTA -->
+<div class="bg-primary-container p-lg rounded-xl flex flex-col md:flex-row justify-between items-center gap-md border border-primary/20">
+<div class="flex items-center gap-md text-on-primary-container">
+<div class="bg-white/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-3xl">sports_soccer</span>
+</div>
+<div>
+<p class="font-title-lg text-title-lg">Ready for a Kickabout?</p>
+<p class="font-body-md text-body-md opacity-80">Organize your next friendly match at the Kings Arena today.</p>
+</div>
+</div>
+<button class="w-full md:w-auto bg-white text-primary px-xl py-3 rounded-xl font-bold hover:shadow-xl active:scale-95 transition-all">Create Friendly Match</button>
+</div>
+<!-- Bento: Description & Facts -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bento-card p-lg space-y-md md:col-span-1">
+<h3 class="font-title-lg text-title-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">info</span>
+                            Venue Description
+                        </h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Bashundhara Kings Arena is Bangladesh's premier private football facility. Designed with international standards, it serves as the home ground for the Bashundhara Kings. The venue provides a professional atmosphere for both elite athletes and passionate amateur teams.
+                        </p>
+</div>
+<div class="bento-card p-lg space-y-md md:col-span-1">
+<h3 class="font-title-lg text-title-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">speed</span>
+                            Quick Facts
+                        </h3>
+<div class="space-y-sm">
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<span class="text-on-surface-variant text-sm font-semibold">Surface</span>
+<span class="text-on-surface font-bold">Hybrid Grass</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<span class="text-on-surface-variant text-sm font-semibold">Pitch Size</span>
+<span class="text-on-surface font-bold">105 x 68 m</span>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low rounded-lg">
+<span class="text-on-surface-variant text-sm font-semibold">Capacity</span>
+<span class="text-on-surface font-bold">6,000 Seats</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Activity Section -->
+<div class="bento-card p-lg">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-title-lg text-title-lg">Recent Activity</h3>
+<button class="text-primary font-label-md hover:underline">View All</button>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-md border-b border-outline-variant last:border-0 hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="w-12 h-12 bg-secondary-container/20 text-secondary rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">emoji_events</span>
+</div>
+<div class="flex-grow">
+<p class="font-semibold text-on-surface">Bashundhara Kings vs. Mohammedan SC</p>
+<p class="text-sm text-on-surface-variant">Bangladesh Premier League • Yesterday</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary">2 - 0</p>
+<p class="text-[10px] uppercase text-on-surface-variant font-bold tracking-wider">Finished</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md border-b border-outline-variant last:border-0 hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="w-12 h-12 bg-primary-container/10 text-primary rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div class="flex-grow">
+<p class="font-semibold text-on-surface">Corporate Friendly: Grameenphone vs. Robi</p>
+<p class="text-sm text-on-surface-variant">Friendly Match • 2 days ago</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-on-surface">4 - 3</p>
+<p class="text-[10px] uppercase text-on-surface-variant font-bold tracking-wider">Finished</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Organizer Partners -->
+<div class="bento-card p-lg">
+<h3 class="font-title-lg text-title-lg mb-md">Organizer Partners</h3>
+<div class="flex flex-wrap gap-lg items-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all">
+<div class="h-12 w-24 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="font-bold text-on-surface-variant">NIKE</span>
+</div>
+<div class="h-12 w-24 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="font-bold text-on-surface-variant">PEPSI</span>
+</div>
+<div class="h-12 w-24 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="font-bold text-on-surface-variant">BFF</span>
+</div>
+<div class="h-12 w-24 bg-surface-container flex items-center justify-center rounded-lg">
+<span class="font-bold text-on-surface-variant">ADIDAS</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Sidebar -->
+<aside class="lg:col-span-4 space-y-lg">
+<!-- Google Map Preview -->
+<div class="bento-card overflow-hidden">
+<div class="h-48 bg-surface-dim relative">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A clean, minimalist vector map illustration of the Bashundhara Residential Area in Dhaka, highlighting the location of the Bashundhara Kings Arena with a prominent green pin. The map design uses soft grays and blues with clear street labels, fitting the modern premium SaaS design system." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoXMV6LKjK6DeppRqd6MKw8ZWCFy7F9W6nQtfYaxbBAoYvd1qVj5upsOTm567VY59F3iFc1GEnColbIcIQEouBLAUxkSS_vJNdEFmhMLgDMgwASnzmQ8BGwQncGl4gjFHRXp4s0v9vAZsAgX5IeTqKNVgF5vsPqS3xe2JeqCP5oPcu45W8or2IpBVhabUc3CUpZGXUg2q3R0MvmzeuWqUXC8en4HY76gFkLWxeRfPglZ70VheqhG4qSnWSOjAefce_rA1HU4IWxck')"></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black/5">
+<a class="bg-white px-md py-2 rounded-lg shadow-lg font-label-md flex items-center gap-2 hover:bg-surface-container transition-all" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-primary">map</span>
+                                Open in Maps
+                             </a>
+</div>
+</div>
+<div class="p-lg space-y-md">
+<div>
+<h4 class="font-bold text-on-surface">Location</h4>
+<p class="text-on-surface-variant text-sm mt-1">N Block, Bashundhara R/A, Dhaka 1229, Bangladesh</p>
+</div>
+<button class="w-full flex items-center justify-center gap-2 bg-surface-container-high hover:bg-surface-container-highest transition-all py-3 rounded-lg font-bold text-primary active:scale-95">
+<span class="material-symbols-outlined">directions</span>
+                            Get Directions
+                        </button>
+</div>
+</div>
+<!-- Opening Hours -->
+<div class="bento-card p-lg space-y-md">
+<h3 class="font-title-lg text-title-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                        Opening Hours
+                    </h3>
+<div class="space-y-sm">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Monday - Friday</span>
+<span class="font-bold">06:00 AM - 11:00 PM</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Saturday - Sunday</span>
+<span class="font-bold">05:00 AM - 12:00 AM</span>
+</div>
+<div class="mt-md p-2 bg-primary-fixed/20 text-primary-fixed-dim rounded text-center text-xs font-bold uppercase tracking-widest">
+                            Currently Open
+                        </div>
+</div>
+</div>
+<!-- Contact Info -->
+<div class="bento-card p-lg space-y-md">
+<h3 class="font-title-lg text-title-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">contact_support</span>
+                        Contact
+                    </h3>
+<div class="space-y-sm">
+<a class="flex items-center gap-md p-2 hover:bg-surface-container rounded-lg transition-colors" href="tel:+880123456789">
+<span class="material-symbols-outlined text-on-surface-variant">call</span>
+<span class="text-sm">+880 1234 56789</span>
+</a>
+<a class="flex items-center gap-md p-2 hover:bg-surface-container rounded-lg transition-colors" href="mailto:booking@kingsarena.com">
+<span class="material-symbols-outlined text-on-surface-variant">mail</span>
+<span class="text-sm">booking@kingsarena.com</span>
+</a>
+<a class="flex items-center gap-md p-2 hover:bg-surface-container rounded-lg transition-colors" href="https://bashundharakings.com" target="_blank">
+<span class="material-symbols-outlined text-on-surface-variant">public</span>
+<span class="text-sm">bashundharakings.com</span>
+</a>
+</div>
+</div>
+<!-- Facility Quick Badges -->
+<div class="flex flex-wrap gap-xs">
+<span class="bg-white border border-outline-variant px-3 py-1 rounded-full text-[11px] font-bold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">wifi</span> Free WiFi
+                    </span>
+<span class="bg-white border border-outline-variant px-3 py-1 rounded-full text-[11px] font-bold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_parking</span> Parking
+                    </span>
+<span class="bg-white border border-outline-variant px-3 py-1 rounded-full text-[11px] font-bold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">restaurant</span> Cafe
+                    </span>
+<span class="bg-white border border-outline-variant px-3 py-1 rounded-full text-[11px] font-bold text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shower</span> Changing Rooms
+                    </span>
+</div>
+</aside>
+</section></main>
+<!-- Footer -->
+<footer class="w-full py-xl px-lg mt-auto flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto bg-inverse-surface border-t border-outline">
+<div class="flex flex-col items-center md:items-start gap-sm">
+<span class="font-headline-md text-headline-md text-on-primary">Khelabase</span>
+<p class="text-surface-variant text-body-md">© 2024 Khelabase. Athletic Precision for the Modern Pitch.</p>
+</div>
+<div class="flex gap-lg mt-xl md:mt-0">
+<a class="text-surface-variant hover:text-primary-fixed font-body-md transition-all" href="#">Privacy Policy</a>
+<a class="text-surface-variant hover:text-primary-fixed font-body-md transition-all" href="#">Terms of Service</a>
+<a class="text-surface-variant hover:text-primary-fixed font-body-md transition-all" href="#">Contact Us</a>
+</div>
+</footer>
+<!-- FAB for quick booking (Mobile only) -->
+<button class="md:hidden fixed bottom-6 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-2xl flex items-center justify-center z-50 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

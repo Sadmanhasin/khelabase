@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mirpur Turf Manager - Khelabase</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#6e7b6c",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#27313f",
+                        "surface-container-highest": "#d9e3f6",
+                        "secondary-container": "#ffc329",
+                        "tertiary": "#0051d5",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "primary-fixed-dim": "#62df7d",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#002109",
+                        "surface-variant": "#d9e3f6",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#3e4a3d",
+                        "on-primary-fixed-variant": "#005320",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "on-tertiary-container": "#fefcff",
+                        "tertiary-fixed": "#dbe1ff",
+                        "surface": "#f8f9ff",
+                        "on-background": "#121c2a",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary": "#795900",
+                        "primary-fixed": "#7ffc97",
+                        "tertiary-container": "#316bf3",
+                        "primary": "#006b2c",
+                        "on-surface": "#121c2a",
+                        "on-primary-container": "#f7fff2",
+                        "on-secondary-fixed": "#261a00",
+                        "background": "#f8f9ff",
+                        "surface-container": "#e6eeff",
+                        "inverse-primary": "#62df7d",
+                        "on-tertiary-fixed": "#00174b",
+                        "secondary-fixed": "#ffdf9f",
+                        "surface-dim": "#d0dbed",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dee9fc",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#006e2d",
+                        "outline-variant": "#bdcaba",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#6f5100",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#00873a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "12px",
+                        "2xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "xl": "32px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "2xl": "48px",
+                        "md": "16px",
+                        "container-max": "1280px",
+                        "xs": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "title-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+            transition: all 0.2s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+        .premium-border {
+            border-top: 2px solid #FBBF24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .active-nav-link {
+            background-color: #00873a;
+            color: #f7fff2;
+        }
+    </style>
+</head>
+<body class="text-on-surface overflow-x-hidden">
+<!-- Top Navigation Bar (Shared Component Logic) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-lg h-16 bg-surface dark:bg-inverse-surface border-b border-outline-variant shadow-sm glass-nav">
+<div class="flex items-center gap-md">
+<span class="font-display-lg text-display-lg font-extrabold text-primary dark:text-primary-fixed" style="font-size: 24px;">Khelabase</span>
+<div class="hidden md:flex items-center ml-xl space-x-lg">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Venues</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Discovery</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary font-label-md text-label-md transition-colors" href="#">Events</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-all">settings</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a stadium manager in a sharp green polo shirt, high-end photography with soft studio lighting and a clean, blurred office background. Modern minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5MEmK9y39jicaJGeY6Pm7lm38DvSPb1ibGE-JhlXtDpcq8v8-3GsCJ0G6T03VVY_2un1R-OOU6MnlyHebOuEekjfcke5-21BHgqReiPPUCD8QUcPgUpoDBeriLAuvS6YIKB9JgnKtPPM3xhUWHLtRGseBP84S4wnm5PabOOoP1oDJ1T-8JTNZFMWclcM1qvTW3qV3tllIffu5O1GIpAwhHAdmNXFOQD8rDsK336ZGs3hWhjfWXS6_sn5MrUNIkOjaxHrWPYyVVkI"/>
+</div>
+</div>
+</header>
+<!-- Side Navigation (Shared Component Logic) -->
+<aside class="hidden lg:flex flex-col h-screen fixed left-0 top-16 p-md w-64 bg-surface-container-lowest border-r border-outline-variant z-40">
+<div class="mb-xl px-sm">
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Stadium Manager</h2>
+<p class="text-label-md font-label-md text-on-surface-variant">Elite Partner</p>
+</div>
+<nav class="flex-1 space-y-base">
+<a class="flex items-center gap-sm px-md py-sm bg-primary-container text-on-primary-container font-bold rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md">Matches</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-label-md">Tournaments</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-label-md">Gallery</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span class="font-label-md">Reviews</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-md">Analytics</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md">Settings</span>
+</a>
+</nav>
+<div class="mt-auto space-y-base">
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-sm px-md rounded-xl hover:opacity-90 transition-opacity flex items-center justify-center gap-sm mb-lg">
+<span class="material-symbols-outlined">add_circle</span>
+                Register New Turf
+            </button>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-error hover:bg-error-container rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-16 min-h-screen px-lg pb-xl max-w-container-max mx-auto">
+<!-- Header Section -->
+<section class="py-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Mirpur Turf Manager</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Welcome back. Here's what's happening at your facility today.</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm bg-surface border border-outline-variant text-on-surface-variant rounded-xl hover:bg-surface-container transition-all flex items-center gap-xs font-label-md">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Manage Facilities
+                </button>
+<button class="px-md py-sm bg-primary text-on-primary rounded-xl hover:opacity-90 transition-all flex items-center gap-xs font-label-md shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+                    Create Friendly Match
+                </button>
+<button class="px-md py-sm bg-secondary-container text-on-secondary-container rounded-xl hover:opacity-90 transition-all flex items-center gap-xs font-label-md shadow-sm">
+<span class="material-symbols-outlined">emoji_events</span>
+                    Host Tournament
+                </button>
+</div>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg mb-xl">
+<div class="bento-card p-lg rounded-2xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary-container p-sm rounded-xl">stadium</span>
+<span class="text-primary font-label-md">+2 vs yesterday</span>
+</div>
+<div class="mt-md">
+<p class="text-label-md font-label-md text-on-surface-variant">Today's Matches</p>
+<h3 class="font-headline-lg text-headline-lg">4</h3>
+</div>
+</div>
+<div class="bento-card p-lg rounded-2xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary bg-tertiary-container text-white p-sm rounded-xl">calendar_month</span>
+<span class="text-tertiary font-label-md">Next 7 days</span>
+</div>
+<div class="mt-md">
+<p class="text-label-md font-label-md text-on-surface-variant">Upcoming Matches</p>
+<h3 class="font-headline-lg text-headline-lg">12</h3>
+</div>
+</div>
+<div class="bento-card p-lg rounded-2xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary bg-secondary-fixed p-sm rounded-xl">groups</span>
+<span class="text-secondary font-label-md">+45 this month</span>
+</div>
+<div class="mt-md">
+<p class="text-label-md font-label-md text-on-surface-variant">Followers</p>
+<h3 class="font-headline-lg text-headline-lg">850</h3>
+</div>
+</div>
+<div class="bento-card p-lg rounded-2xl flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary bg-primary-container p-sm rounded-xl">payments</span>
+<span class="text-primary font-label-md">Payout: 2nd Jan</span>
+</div>
+<div class="mt-md">
+<p class="text-label-md font-label-md text-on-surface-variant">Total Revenue</p>
+<h3 class="font-headline-lg text-headline-lg">৳45,000</h3>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-lg">
+<!-- Today's Schedule -->
+<div class="xl:col-span-2 space-y-lg">
+<div class="bento-card rounded-2xl overflow-hidden">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                            Today's Schedule
+                        </h2>
+<button class="text-primary font-label-md hover:underline transition-all">View All</button>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Match Row 1 -->
+<div class="p-lg hover:bg-surface transition-colors flex items-center justify-between gap-md flex-wrap">
+<div class="flex items-center gap-lg flex-1 min-w-[300px]">
+<div class="text-center w-24">
+<p class="font-headline-md text-headline-md text-on-surface">16:00</p>
+<p class="font-label-md text-label-md text-primary">LIVE</p>
+</div>
+<div class="flex items-center gap-md flex-1 justify-center">
+<div class="text-center space-y-xs">
+<div class="w-12 h-12 rounded-full border border-outline-variant mx-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist professional soccer team logo featuring a stylized eagle in navy blue and gold. Clean vector style on a white background, modern athletic branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYLvt5AlFrPZfUZAkOH_SHynrdRU9cp8_Hwlm6W2LOS1tWEqgipddCKNAjvsQzNuS4PknGwoQzmaqXtUt6H9TKJdLgf0OuteEM__OkzBncxPxf5hJJv53nB7zEPNZ7uVVTWvUfhwkurc8SQclLNVUck7PfNiXgbpm4MZktyydLqJIAZJd3xszoPM1Lvkp1tItufXn1jyc0FxSfTEib0NchVsBuOazKJiPvrcwhyZqvEQ4NSsyCMoy320WdT1P61Jh2n0ERP_06uDA"/>
+</div>
+<p class="font-label-md text-on-surface">Eagles FC</p>
+</div>
+<div class="font-headline-md text-on-surface-variant">VS</div>
+<div class="text-center space-y-xs">
+<div class="w-12 h-12 rounded-full border border-outline-variant mx-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern football club crest showing a stylized shield with a lightning bolt in electric blue and silver. Professional corporate sports design on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn0t2rryza80B3CCD7zX5tLaGE6FOXrnaCL8uDmt7mueMHIEraBKdWLeE8MjsyZiR3BgrT9jNgU3L9s_XBY5F2qQTK_B5urqIy3qN-XA0G5Oy0P30wUHHXMPkpWq4si4vUtf1RrhutOcE8fxqcivtte-LROyD3qjuNcScSVRcC7sXu86n9jwUlQTXZAx7toLY6JT4x2eJRNwll7IjAyqZvd41SZStAK0RDUdCz13vcAenDKuzahPwdVGLfwVKPQRsDQFKBIIEMHfA"/>
+</div>
+<p class="font-label-md text-on-surface">Strikers XI</p>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="px-md py-xs bg-error-container text-on-error-container rounded-full text-label-sm font-label-sm mb-xs">
+                                    Ends in 24:12
+                                </div>
+<button class="font-label-md text-primary hover:underline">Manage Stats</button>
+</div>
+</div>
+<!-- Match Row 2 -->
+<div class="p-lg hover:bg-surface transition-colors flex items-center justify-between gap-md flex-wrap">
+<div class="flex items-center gap-lg flex-1 min-w-[300px]">
+<div class="text-center w-24">
+<p class="font-headline-md text-headline-md text-on-surface">18:30</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Starts in 1h</p>
+</div>
+<div class="flex items-center gap-md flex-1 justify-center">
+<div class="text-center space-y-xs">
+<div class="w-12 h-12 rounded-full border border-outline-variant mx-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional circular sport emblem with a stylized roaring lion in emerald green and white. Elegant minimalist design for a high-performance football team." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2HVAYsI_zJcvdHJzRHlMHRRUd4A4_meuBA1g79HA-XvWBvRuGZJ6d9fVW0is0Nn71yhW-jFRn_hMx11gG9ljiAJRi3xlGEXiIQh6_Hzjpc9C98UFGy1yA4ULb85EfMvLoRd5WOjGsumAWhXJz0SDysxuiIAA6apfT8jhFFvfZyzwY_dkc34XO1524we8cAVJCwza9AUHrie-jNbQIQShmT6Wb5IJxo4CoMbSrC3qWft7IMhOPN6KC5kOtyzDTf-6SxUK4OFFlcnQ"/>
+</div>
+<p class="font-label-md text-on-surface">Royal Lions</p>
+</div>
+<div class="font-headline-md text-on-surface-variant">VS</div>
+<div class="text-center space-y-xs">
+<div class="w-12 h-12 rounded-full border border-outline-variant mx-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A sports logo featuring a stylized mountain peak with a star, using deep crimson and charcoal gray colors. Modern, geometric, and minimalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf-GgmCL7zd_zotDCrEFQopZkpl8tAs3FQX3aphgvn0SWsUCF_pdIQ5Jkt5NJMHlZ9PpMtlVT_amzsQKSz4Zcqw9qkDyRNBAJXbkT_0fXvE1rkre6d9gmuSo3qxykw33_p1s8_fBZUNm7_TCS8B2NRGq-QTnB9xOiKZbnfLVUjUMPCMkz_EF4b4lum4z0GwovJMKWWMg-kYrMa6hmIvwiB217p4f6TADvHEYyPnGsaAomsGctu5sLdqkLskedS_i4qJyQNQNhYCEc"/>
+</div>
+<p class="font-label-md text-on-surface">Summit United</p>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="px-md py-xs bg-surface-container text-on-surface-variant rounded-full text-label-sm font-label-sm mb-xs">
+                                    Confirmed
+                                </div>
+<button class="font-label-md text-primary hover:underline">Check-in Team</button>
+</div>
+</div>
+<!-- Match Row 3 -->
+<div class="p-lg hover:bg-surface transition-colors flex items-center justify-between gap-md flex-wrap opacity-80">
+<div class="flex items-center gap-lg flex-1 min-w-[300px]">
+<div class="text-center w-24">
+<p class="font-headline-md text-headline-md text-on-surface">21:00</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Night Session</p>
+</div>
+<div class="flex items-center gap-md flex-1 justify-center">
+<div class="text-center space-y-xs">
+<div class="w-12 h-12 rounded-full border border-outline-variant mx-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A minimalist football logo with a stylized crescent moon and star, elegant navy and white color scheme. Professional design, vector art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ySwi41BpcjJhdA75HThAiZMG6kPQHPIbKwvTvshLy2od9HiK-796PL9JcoMEOBfHr5Exx6_btanqzid_xM0FxfuiYn6U5jkPf_uQGoP2bxEnEgtaq8WsNx7QNoOK8Qcaugx__WTnwmCoL94Wx-LbmBVPNfSAiBPZfToN63hNULDOh4MGeLEw3wTqLIJDHhPsZsbnHKUNrI6f34mc-oxwa__NUguPlQwl0p9_JNxQtXU0Y5ndcshxvya4dFD4pmv0exV1aVzWIpw"/>
+</div>
+<p class="font-label-md text-on-surface">Night Hawks</p>
+</div>
+<div class="font-headline-md text-on-surface-variant">VS</div>
+<div class="text-center space-y-xs">
+<div class="w-12 h-12 rounded-full border border-outline-variant mx-auto overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A modern sports emblem featuring a stylized wave and sun icon, bright orange and deep blue palette. Clean and professional soccer branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnjEmCSdhmmNATcC0uJTd6CXFnghpd1_SjGvd2YnFaI8UFrfPskrJbmDGyZFtkwGWgUsXI-lG3Bcfe1NvUQNjzcAols-WxIY0xxyiA_KnkOjuOQ1KIs72TSFo1ru0tmBkgwoxvS_NkqmjNj7y35k2YVVyoqhCDhE6TGf4dLu3iWkL_bZjW7TY6oFFtbpAfofE2wG91YyaGnD9klYG7BuOahrNhrJqmOlhXhL6WPkmmmk7zMnHMatj2lpSgiF1ywQef4OZTbscWwRE"/>
+</div>
+<p class="font-label-md text-on-surface">Coastal XI</p>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="px-md py-xs bg-surface-container text-on-surface-variant rounded-full text-label-sm font-label-sm mb-xs">
+                                    Awaiting Prep
+                                </div>
+<button class="font-label-md text-primary hover:underline">Contact Ref</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Announcements Section -->
+<div class="bento-card rounded-2xl premium-border">
+<div class="p-lg border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-title-lg text-title-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">campaign</span>
+                            Announcements
+                        </h2>
+<button class="px-md py-xs bg-primary-container text-on-primary-container rounded-lg font-label-md hover:bg-primary hover:text-white transition-all">New Post</button>
+</div>
+<div class="p-lg space-y-md">
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant border-dashed">
+<div class="flex justify-between mb-xs">
+<p class="font-label-md text-primary">Pitch Maintenance</p>
+<p class="text-label-sm text-on-surface-variant">Posted 2h ago</p>
+</div>
+<p class="font-body-md text-on-surface">Pitch 2 will be closed for light repairs tomorrow from 10:00 AM to 1:00 PM. All bookings during this slot have been rescheduled.</p>
+</div>
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant border-dashed">
+<div class="flex justify-between mb-xs">
+<p class="font-label-md text-secondary">Winter Discount</p>
+<p class="text-label-sm text-on-surface-variant">Posted 1 day ago</p>
+</div>
+<p class="font-body-md text-on-surface">Running a 20% discount on all night slots (after 9 PM) until January 15th! Book your slot now on the Khelabase app.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Bento Area -->
+<div class="space-y-lg">
+<!-- Analytics Snapshot -->
+<div class="bento-card rounded-2xl p-lg">
+<h2 class="font-title-lg text-title-lg mb-lg">Weekly Performance</h2>
+<div class="h-48 w-full bg-surface-container-high rounded-xl relative overflow-hidden group">
+<!-- Simulated Chart -->
+<div class="absolute inset-x-0 bottom-0 h-full flex items-end justify-between px-md pb-xs">
+<div class="w-6 bg-primary rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 40%"></div>
+<div class="w-6 bg-primary rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 55%"></div>
+<div class="w-6 bg-primary rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 45%"></div>
+<div class="w-6 bg-primary rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 80%"></div>
+<div class="w-6 bg-primary rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 65%"></div>
+<div class="w-6 bg-primary-container rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 30%"></div>
+<div class="w-6 bg-secondary-container rounded-t-sm transition-all duration-500 hover:h-[70%]" style="height: 20%"></div>
+</div>
+<div class="absolute top-md left-md">
+<p class="font-label-md text-on-surface-variant">Occupancy Rate</p>
+<p class="font-headline-md text-primary">82%</p>
+</div>
+</div>
+<div class="mt-lg grid grid-cols-2 gap-md">
+<div class="p-sm bg-surface-container rounded-lg">
+<p class="text-label-sm text-on-surface-variant">Returning Teams</p>
+<p class="font-title-lg text-on-surface">64%</p>
+</div>
+<div class="p-sm bg-surface-container rounded-lg">
+<p class="text-label-sm text-on-surface-variant">Cancellation Rate</p>
+<p class="font-title-lg text-on-surface">1.2%</p>
+</div>
+</div>
+</div>
+<!-- Recent Reviews -->
+<div class="bento-card rounded-2xl p-lg">
+<div class="flex justify-between items-center mb-lg">
+<h2 class="font-title-lg text-title-lg">Recent Reviews</h2>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+</div>
+</div>
+<div class="space-y-lg">
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young football player in casual athletic wear, vibrant natural lighting, outdoors in a park setting, modern lifestyle photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf2yv2pQIUWdbZr6saarLbq7aOlHhhRuGJyVVk2FkZ-3abcRnw8x30DtkBk8k7hzYENsd9xZclcx3WDXVevr-1EOkoIUwnb_4mba2g1NoZFHG2Vt5YOkoSqvqcyOyqTXeuri5BE4oUrjwKpdsBYji1LEGXZul1QAo7u0ZMts_zVNqzAb6yAIrTiJvsS03WCPk-uxyXY7qNA6WG2qyqgG5k4RN2CW2Fxonso7qpeOwszIK1sKjjn7lA4zw6wKCgWHUg8eo8qrEgpK4"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Ahsan Habib</p>
+<div class="flex text-secondary mb-xs">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant line-clamp-2">The lighting at Pitch 1 has improved significantly. Great experience!</p>
+</div>
+</div>
+<div class="flex gap-md">
+<div class="w-10 h-10 rounded-full shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A friendly, smiling face of a young male sports coach, soft focus background of a football pitch, clean high-quality portrait photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC0rNbd5-46yfFozNGbR5dXBhMqfD0AHC965iVhBkDMyGSp7-i0po7DNjHFRv2_GYEnQwOI2GyJe8yHmRW09hrHlErPY3HFdLgSahsShMhfxQo_rhc16XnkkMLQICXs1UcJIJ4-mKqAPu2obFe88lKmX5760-lrirrqPEjpteq4AWJn68uJG-S271p-XLx82rYYiLgPm2NA6QD7t9P0FeqRA9ZOsfFUXQbWHZA-xohWa9LaWGoTC-Zlu_ksY2nZhyuKdfl6cBhmEA"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Saikat Islam</p>
+<div class="flex text-secondary mb-xs">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+</div>
+<p class="text-body-md text-on-surface-variant line-clamp-2">Best turf in Mirpur area for night matches. Clean facilities.</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-lg py-sm text-primary font-label-md border border-primary rounded-xl hover:bg-primary-container transition-all">Respond to Reviews</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component Logic) -->
+<footer class="lg:ml-64 bg-inverse-surface dark:bg-surface-container-lowest border-t border-outline py-xl px-lg mt-auto flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto text-primary-fixed dark:text-primary">
+<div class="mb-md md:mb-0">
+<span class="font-headline-md text-headline-md text-on-primary">Khelabase</span>
+<p class="font-body-md text-body-md text-surface-variant mt-xs">© 2024 Khelabase. Athletic Precision for the Modern Pitch.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-opacity" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-opacity" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-opacity" href="#">Venue Partners</a>
+<a class="font-body-md text-body-md text-surface-variant hover:text-primary-fixed transition-opacity" href="#">Contact Us</a>
+</div>
+</footer>
+<script>
+        // Micro-interactions for the simulated chart
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.bg-primary, .bg-primary-container, .bg-secondary-container');
+            bars.forEach(bar => {
+                const originalHeight = bar.style.height;
+                bar.addEventListener('mouseenter', () => {
+                    bar.classList.add('opacity-80');
+                });
+                bar.addEventListener('mouseleave', () => {
+                    bar.classList.remove('opacity-80');
+                });
+            });
+
+            // Smooth reveal for bento cards
+            const cards = document.querySelectorAll('.bento-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(10px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body></html>

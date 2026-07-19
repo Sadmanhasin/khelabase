@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dhaka Super Cup 2024 - Fixtures &amp; Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bdcaba",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "inverse-primary": "#62df7d",
+                    "secondary": "#795900",
+                    "primary-container": "#00873a",
+                    "on-primary-container": "#f7fff2",
+                    "outline": "#6e7b6c",
+                    "secondary-container": "#ffc329",
+                    "background": "#f8f9ff",
+                    "primary-fixed": "#7ffc97",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "surface-dim": "#d0dbed",
+                    "on-background": "#121c2a",
+                    "surface-variant": "#d9e3f6",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "on-primary-fixed": "#002109",
+                    "error": "#ba1a1a",
+                    "primary": "#006b2c",
+                    "inverse-surface": "#27313f",
+                    "primary-fixed-dim": "#62df7d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#005320",
+                    "on-surface": "#121c2a",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "surface-tint": "#006e2d",
+                    "on-tertiary-container": "#fefcff",
+                    "on-secondary-container": "#6f5100",
+                    "tertiary-container": "#316bf3",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#0051d5",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "sm": "12px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "md": "16px",
+                    "base": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .premium-border {
+            border-top: 2px solid #FBBF24;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; height: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .fixture-card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-surface shadow-sm w-full top-0 sticky z-50">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md font-extrabold text-primary">Khelabase</div>
+<div class="hidden md:flex items-center space-x-xl">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Explore</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-lg text-body-lg" href="#">Tournaments</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Teams</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-lg text-body-lg" href="#">Marketplace</a>
+</div>
+<div class="flex items-center space-x-md">
+<div class="hidden md:block relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container rounded-full border-none focus:ring-2 focus:ring-primary text-body-md" placeholder="Search fixtures..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all active:opacity-80">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all active:opacity-80">person</button>
+<button class="md:hidden material-symbols-outlined text-on-surface">menu</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<!-- Header Section -->
+<header class="mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<nav class="flex items-center text-label-md text-outline mb-xs space-x-2">
+<span>Tournaments</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="text-primary">Dhaka Super Cup 2024</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-background">Fixtures &amp; Results</h1>
+<p class="text-body-md text-on-surface-variant mt-1">Experience the pulse of elite Dhaka football.</p>
+</div>
+<!-- View Switcher -->
+<div class="flex bg-surface-container p-1 rounded-xl w-fit">
+<button class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-surface text-primary shadow-sm transition-all duration-200" id="btn-list" onclick="switchView('list')">
+<span class="material-symbols-outlined text-[20px]">format_list_bulleted</span>
+<span class="text-label-md">List View</span>
+</button>
+<button class="flex items-center space-x-2 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" id="btn-bracket" onclick="switchView('bracket')">
+<span class="material-symbols-outlined text-[20px]">account_tree</span>
+<span class="text-label-md">Bracket View</span>
+</button>
+<button class="flex items-center space-x-2 px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" id="btn-calendar" onclick="switchView('calendar')">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span class="text-label-md">Calendar</span>
+</button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Filters Sidebar (Desktop) / Horizontal (Mobile) -->
+<aside class="lg:col-span-3 space-y-xl">
+<div class="glass-card p-lg rounded-2xl">
+<h3 class="text-title-lg font-bold mb-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+                        Filters
+                    </h3>
+<div class="space-y-lg">
+<div>
+<label class="text-label-sm uppercase tracking-wider text-outline mb-sm block">Competition Stage</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-full bg-primary text-on-primary text-label-md">All Stages</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-label-md">Group Stage</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-label-md">Quarter Final</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-label-md">Semi Final</button>
+<button class="px-3 py-1.5 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant text-label-md">Final</button>
+</div>
+</div>
+<div>
+<label class="text-label-sm uppercase tracking-wider text-outline mb-sm block">Match Status</label>
+<div class="space-y-2">
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Upcoming Matches</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Live Games</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary cursor-pointer" type="checkbox"/>
+<span class="text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Completed Results</span>
+</label>
+</div>
+</div>
+<div class="pt-sm">
+<button class="w-full py-3 bg-surface-container-highest text-primary font-bold rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300">
+                                Reset Filters
+                            </button>
+</div>
+</div>
+</div>
+<!-- Premium Ad Placement -->
+<div class="relative overflow-hidden rounded-2xl h-48 premium-border shadow-lg">
+<div class="absolute inset-0 z-0 bg-cover bg-center" data-alt="A cinematic high-action photograph of a football player in a bright emerald jersey striking a ball on a lush green pitch under stadium lights. The aesthetic is clean, professional, and sports-premium, featuring soft golden hour lighting and high-contrast visuals." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC0DpZItPKRlidNtatQUO_Xko6Ll0CkIBzvBhkgeFuuJERaxERoALdjdQ0JPO6fwvB3-LMZ7jHFdsYXzVzxT31L_6lM2oJkUobLKxNLjRNtDze-F2wUODhc7zrgyZ5KmCQJGeUudSd89-zDJGIEagZ8d2Nav6VynaRymUCVGlin_AiDYWRu1BKgKGurl--dXDNQ5jKbIX0cEJItN4SSFw8ZYPQY4-5iESjZTvvrbOtuV4g5LARp65md2zTzhsffvOq-uL_0Ddz5lrA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 p-md flex flex-col justify-end">
+<div class="flex items-center gap-xs text-secondary-container mb-1">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+<span class="text-label-sm">ELITE SCOUTING</span>
+</div>
+<h4 class="text-on-primary font-bold text-title-lg">Unlock Player Stats</h4>
+<p class="text-white/80 text-body-md mb-2">Get deep analytics for every match.</p>
+<button class="bg-secondary-container text-on-secondary-container py-1 px-4 rounded-full text-label-md font-bold w-fit">Upgrade Now</button>
+</div>
+</div>
+</aside>
+<!-- Main Content: Fixtures List -->
+<div class="lg:col-span-9 space-y-xl">
+<!-- Date Group 1: Live Now -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<h2 class="text-title-lg font-bold flex items-center gap-2">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-error"></span>
+</span>
+                            Live Matches
+                        </h2>
+</div>
+<div class="space-y-md">
+<!-- Live Match Card -->
+<div class="glass-card rounded-2xl p-lg flex flex-col md:flex-row items-center gap-lg border-l-4 border-error fixture-card-hover transition-all duration-300">
+<div class="flex-1 flex items-center justify-between w-full md:w-auto">
+<div class="flex flex-col items-center md:items-end flex-1 gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center border-2 border-outline-variant overflow-hidden">
+<img class="w-12 h-12 object-contain" data-alt="A sleek minimalist football crest for a team called Dhaka Dynamos featuring a stylized tiger icon in deep green and gold on a white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAruMYoOobZMJzE3TLWkCX5nRauY-nbfix3FXPy2lePhVJCmhHGXRmUcpnKMVgIsNpCkzLfJ03OaFatkkCbBE0OZKwVXF3ksvA380PBnWnftIdBu1ITS0_nXokhdtbSAl50kArBy9eQinbGcFyYbDCJWh_0Jvof55_YJg5fMKQMa5Cx9irMmL7FuLdrXen8QcPpcVNknfDhvF6kOCJkt4vM13r6QBCM6GCmSd_LNmrP7GrryzrtbIrDdlmAEgRPG4L_FZgz9Nnm9uM"/>
+</div>
+<span class="font-bold text-center md:text-right">Dhaka Dynamos</span>
+</div>
+<div class="flex flex-col items-center px-lg">
+<div class="flex items-center gap-4">
+<span class="text-display-lg font-extrabold text-primary">2</span>
+<span class="text-headline-md text-outline">:</span>
+<span class="text-display-lg font-extrabold text-primary">1</span>
+</div>
+<div class="bg-error/10 text-error px-3 py-1 rounded-full text-label-md font-bold mt-2">68' LIVE</div>
+</div>
+<div class="flex flex-col items-center md:items-start flex-1 gap-2">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center border-2 border-outline-variant overflow-hidden">
+<img class="w-12 h-12 object-contain" data-alt="A professional football team logo for Uttara United featuring a modern shield with a rising sun motif in sky blue and navy colors on a clean white field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlbm4rbvs6G0-15rCapOe_JBduPn_gIhazOYUoqowE1zCICIj3VkewrA_aJ80qfg6lcm1EqknfC8-7Qhh0Xtmbi2y-RaqoRfECDHjG3Aa48UF6JdGv31NxOC-X0XjxV5id52Gun3uTJUgdSyMx2Mh3l3HkJO8VGPB2oFVqYAwQ-Zh56GjSq-jD4JugqcePWHgwOeHseVIF5vYwMv-XbXRzC8qQQTV6e72GPek9DvW0JI-pNDrSFI_K0N4De101QxFaovrY_7T-Jpg"/>
+</div>
+<span class="font-bold text-center md:text-left">Uttara United</span>
+</div>
+</div>
+<div class="h-px md:h-12 w-full md:w-px bg-outline-variant"></div>
+<div class="flex flex-col md:w-48 gap-xs">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-body-md truncate">Bangabandhu National Stadium</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">stadium</span>
+<span class="text-body-md">Group A • Match 12</span>
+</div>
+<div class="mt-2 flex gap-2">
+<button class="flex-1 py-2 bg-primary text-on-primary rounded-xl text-label-md font-bold transition-transform active:scale-95">Match Center</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Date Group 2 -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-2">
+<h2 class="text-title-lg font-bold">Tomorrow, 14 June</h2>
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant text-label-sm rounded uppercase tracking-tighter">Matchday 4</span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-md">
+<!-- Upcoming Match Card 1 -->
+<div class="glass-card rounded-2xl p-md md:p-lg flex flex-col md:flex-row items-center gap-md fixture-card-hover transition-all duration-300">
+<div class="w-full md:w-24 flex flex-col items-center justify-center bg-surface-container rounded-xl py-4">
+<span class="text-headline-md font-bold text-on-background">16:30</span>
+<span class="text-label-md text-outline uppercase">GMT +6</span>
+</div>
+<div class="flex-1 flex items-center justify-between w-full px-lg">
+<div class="flex flex-col md:flex-row items-center gap-3 flex-1 justify-end">
+<span class="font-bold text-on-background order-2 md:order-1 text-center md:text-right">Banani Warriors</span>
+<img class="w-10 h-10 object-contain order-1 md:order-2" data-alt="A minimalist sports crest for Banani Warriors featuring an abstract sword and shield motif in crimson and charcoal on a clean white circle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABO2-wPRwfyoEtvSZs-sYpkXw7n1a9AMeWAXV0bOFrXSVvBwfffsBN1cm5HWXAm56r8LrZit08MvnkdqvmagE1ogVctLDDK30JpjsyLyIcUVLeQHTzGScS7Z0UERYpS27DZFJ7q-Pshgh_Z4IzKgi5kgqyCm3Uw-FwDPDkxirbnvF4Tgg2om4Vxl0QwEX8FMl5gPzvdhQMc6k1ziRxoKWBTOB6AqrcoNLb9j6gusn8MFPagu8keT_goDXGed9vwE4b5h-Raja1jM4"/>
+</div>
+<div class="mx-md">
+<div class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center text-label-md font-bold text-outline">VS</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-3 flex-1 justify-start">
+<img class="w-10 h-10 object-contain" data-alt="A modern football club badge for Gulshan Titans displaying a stylized helm icon in emerald and metallic silver with sharp clean lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbJ1HHZYj5bjOC8PK3K6Oz4SFOHc9gCBZhK2u3Vc3yUvBVHRItD2eW1zwjPc18zqPG3JJrwa-132_gzzTaraSLoetQ7CUTEUMfyEr1H_qE7nRG1zxVTGOeAY4VYlmnDGbBgcoMjh1143xPkmvjjQGMExtv4aeqa0MGZourY2NEX7VgyAdYVjL7iGy3sqqfJ7bokGcrjgBCPlL9ejWZ1A6mJiziWQMVNMfBbbYTScmX-H9AFmFwkhiooPrXL7OCh0jLtjP5Aco6qdE"/>
+<span class="font-bold text-on-background text-center md:text-left">Gulshan Titans</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto">
+<button class="flex-1 md:w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant text-outline hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex-1 md:w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant text-outline hover:text-primary hover:border-primary transition-colors">
+<span class="material-symbols-outlined">directions</span>
+</button>
+<button class="flex-1 md:px-6 py-2 bg-surface-container-highest text-primary rounded-full text-label-md font-bold hover:bg-primary hover:text-on-primary transition-all">Details</button>
+</div>
+</div>
+<!-- Upcoming Match Card 2 (Premium Highlight) -->
+<div class="glass-card rounded-2xl p-md md:p-lg flex flex-col md:flex-row items-center gap-md fixture-card-hover transition-all duration-300 premium-border">
+<div class="w-full md:w-24 flex flex-col items-center justify-center bg-secondary-fixed text-on-secondary-fixed rounded-xl py-4">
+<span class="text-headline-md font-bold">20:00</span>
+<span class="text-label-md uppercase font-bold">Featured</span>
+</div>
+<div class="flex-1 flex items-center justify-between w-full px-lg">
+<div class="flex flex-col md:flex-row items-center gap-3 flex-1 justify-end">
+<span class="font-bold text-on-background order-2 md:order-1 text-center md:text-right">Mirpur Kings</span>
+<img class="w-10 h-10 object-contain order-1 md:order-2" data-alt="A royal themed sports logo for Mirpur Kings featuring a minimalist crown atop a football in royal blue and gold colors on a white circular base." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDmFuus5LIQlceJwTFAYUpwAq8mI1Qo7axkF1NTWWs4hspAUE8gj9sgGwttNynSifAKkgEopWLKDp4ykJp28RFYBy-uk_qnjjoYOkDVH8WTtTRSsyvcyny4TCIxILOmHgUwL93P9a-cwYBwx83_HqEIA_xq9OpqxrzmabSpw6l13Bk2E66mJtfuIAx26VjpN-WNc3cnWZ6jNbzPJZc84JG60JQDIJbR8qGNEpYuto3xd1jKisy_QWV1e2yAbpYQPfHYOV04DE_qb8"/>
+</div>
+<div class="mx-md">
+<div class="w-8 h-8 rounded-full border border-secondary-container bg-secondary-container flex items-center justify-center text-label-md font-bold text-on-secondary-container">VS</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-3 flex-1 justify-start">
+<img class="w-10 h-10 object-contain" data-alt="A sleek modern crest for Motijheel Lions featuring a roaring lion head profile in burnt orange and obsidian black with dynamic lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbPcb9fh9NYBcyiBZ5kvz1_J6oYPycKtn4gukb1LA-SzTP02DwtJj5oMiQaIQJSHop8YGlTLtGg9MWBSSPz8U4-O7l4JEY6OST5QFl_gUpYxDwHf7JV7Dsb7BwzrUDRM5I112EOpcbe05rY_2L9wBIk5udLc4hqvrnJSqIwmPRBxDrzmZIqkJmvE79c6YvTHdovL7aEELaj3r-8pI3-Jju_skK1_60xW67FYLJbJgyuHq6X89MvcVF_4JMYReA7Zl1-MSnzBoWg84"/>
+<span class="font-bold text-on-background text-center md:text-left">Motijheel Lions</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto">
+<button class="flex-1 md:px-6 py-2 bg-secondary-container text-on-secondary-container rounded-full text-label-md font-bold hover:shadow-lg transition-all">Buy Tickets</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Date Group 3: Past Results -->
+<section>
+<div class="flex items-center justify-between mb-md">
+<div class="flex items-center gap-2">
+<h2 class="text-title-lg font-bold">Yesterday, 12 June</h2>
+<span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant text-label-sm rounded uppercase">Completed</span>
+</div>
+</div>
+<div class="space-y-md opacity-80 hover:opacity-100 transition-opacity">
+<div class="glass-card rounded-2xl p-md md:p-lg flex flex-col md:flex-row items-center gap-md">
+<div class="w-full md:w-24 flex flex-col items-center justify-center bg-surface-dim text-on-surface-variant rounded-xl py-4">
+<span class="text-label-md font-bold uppercase">Finished</span>
+</div>
+<div class="flex-1 flex items-center justify-between w-full px-lg">
+<div class="flex items-center gap-3 flex-1 justify-end">
+<span class="font-bold text-on-background hidden md:inline">Dhanmondi FC</span>
+<img class="w-8 h-8 object-contain" data-alt="A clean geometric logo for Dhanmondi FC featuring a stylized 'D' and lake ripples in turquoise and white on a slate gray circle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX8cBWzuEiH7Jq8_Nzmua460tZ7zeKstCsnoUIDrNNzCYIRh5_SpTNLB6gHtZ3lYnWwJ6t4r46N2Gp_raqxRksfxVSSgsONS_jXvRPxN2c8egSP1z1W1WSx6q-G70H95ZHUkkXlczS5L2z46Yu5Gm6P2SL8EvEAKsRiNGwAwCfrrdYgau9NkS_M9FNJ_RT71vHkEOep2DiVcBB9qHR21JYhfV_VtzOv1K-QW5-phjLh9PXWeAaI93RUEyWXPf8nFc3p6kANLYmrjM"/>
+<span class="text-headline-md font-extrabold ml-2">1</span>
+</div>
+<div class="mx-md">
+<div class="h-4 w-[2px] bg-outline-variant"></div>
+</div>
+<div class="flex items-center gap-3 flex-1 justify-start">
+<span class="text-headline-md font-extrabold mr-2">3</span>
+<img class="w-8 h-8 object-contain" data-alt="A bold sports crest for Farmgate Stallions featuring a horse profile in sunset orange and charcoal on a white shield background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZbtWMhj7Ak4dJq2OxSSp8ZK34mekpZ9oa6mBKcx3tAyUQIaqcgAdzFbm3VMW0xjU1T0Tbnhbr6u-3IkkTUVnNoptNqBt4H_r6LgC1uwTK86_pvGGPrBRARfSKBWSHQEudmK2E5rYsuNw9Wcb5EjW9l-c8qSSL71WuYwevphDV3YIQPfNUMHOehV3YlD1iOhhWtI2iEEnjykTu-_BLLsXaFfhoxixrG4SO1ZFlEAEF1miIpW1cUuN7hL-fJD9bjewSDnXzl5Zr7XE"/>
+<span class="font-bold text-on-background hidden md:inline">Farmgate Stallions</span>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<button class="w-full md:px-6 py-2 border border-outline-variant text-on-surface-variant rounded-full text-label-md font-bold hover:bg-surface-container transition-all">Highlights</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-2xl bg-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-2xl px-gutter max-w-container-max mx-auto">
+<div class="space-y-md">
+<div class="font-display-lg text-headline-md font-extrabold text-primary">Khelabase</div>
+<p class="text-body-md text-on-surface-variant">The definitive digital platform for local football leagues, talent scouting, and high-performance match analytics.</p>
+<div class="flex space-x-md">
+<span class="material-symbols-outlined text-primary cursor-pointer">public</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer">chat</span>
+</div>
+</div>
+<div class="space-y-sm">
+<h4 class="text-title-lg font-bold text-on-background">Platform</h4>
+<ul class="space-y-2">
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Scouting</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Elite Membership</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Tournament Manager</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Live Stats</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h4 class="text-title-lg font-bold text-on-background">Community</h4>
+<ul class="space-y-2">
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Community Guidelines</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Supporter Clubs</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Fan Zone</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Events</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h4 class="text-title-lg font-bold text-on-background">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Terms of Service</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:underline hover:text-primary transition-opacity" href="#">Refund Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-lg">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-md">
+<p class="text-body-md text-on-surface-variant">© 2024 Khelabase. Athletic Precision for the Modern Game.</p>
+<div class="flex gap-lg">
+<span class="text-label-sm text-outline">v1.4.2 Stable</span>
+<span class="text-label-sm text-outline">Dhaka Regional Cluster</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB for quick action (Only for top destinations) -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 active:scale-95 z-40">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script>
+        function switchView(view) {
+            const btns = ['btn-list', 'btn-bracket', 'btn-calendar'];
+            btns.forEach(btnId => {
+                const btn = document.getElementById(btnId);
+                if(btnId === `btn-${view}`) {
+                    btn.classList.add('bg-surface', 'text-primary', 'shadow-sm');
+                    btn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+                } else {
+                    btn.classList.remove('bg-surface', 'text-primary', 'shadow-sm');
+                    btn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+                }
+            });
+            // Logic for switching view layouts would go here
+            console.log(`Switching to ${view} view...`);
+        }
+    </script>
+</body></html>

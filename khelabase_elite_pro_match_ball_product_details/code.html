@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase Elite Pro Match Ball - Premium Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .premium-glow {
+            box-shadow: 0px 4px 20px rgba(31, 41, 55, 0.05);
+        }
+        .active-thumb {
+            border-color: #16A34A;
+            border-width: 2px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #16A34A;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d0dbed",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline": "#6e7b6c",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#3e4a3d",
+                        "on-surface": "#121c2a",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#002109",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d9e3f6",
+                        "secondary-fixed": "#ffdf9f",
+                        "on-error": "#ffffff",
+                        "surface-container": "#e6eeff",
+                        "surface": "#f8f9ff",
+                        "on-primary-fixed-variant": "#005320",
+                        "on-background": "#121c2a",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed": "#dbe1ff",
+                        "primary": "#006b2c",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-tint": "#006e2d",
+                        "secondary": "#795900",
+                        "tertiary": "#0051d5",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-container": "#f7fff2",
+                        "inverse-surface": "#27313f",
+                        "on-secondary-container": "#6f5100",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "inverse-primary": "#62df7d",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "on-tertiary-container": "#fefcff",
+                        "surface-container-high": "#dee9fc",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "secondary-container": "#ffc329",
+                        "primary-container": "#00873a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#00174b",
+                        "tertiary-container": "#316bf3",
+                        "primary-fixed-dim": "#62df7d",
+                        "outline-variant": "#bdcaba",
+                        "primary-fixed": "#7ffc97",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#d9e3f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "2xl": "48px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-max": "1280px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "title-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "display-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 bg-surface dark:bg-surface-container-low shadow-sm">
+<div class="max-w-container-max mx-auto px-lg flex items-center justify-between h-16">
+<div class="flex items-center gap-xl">
+<span class="text-title-lg font-display-lg text-primary dark:text-primary-fixed">Khelabase</span>
+<div class="hidden md:flex gap-lg items-center">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Explore</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Tournaments</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Teams</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Marketplace</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-body-md w-64 focus:ring-2 focus:ring-primary" placeholder="Search gear..." type="text"/>
+</div>
+<button class="p-2 hover:bg-surface-container-lowest transition-colors duration-200 rounded-full active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 hover:bg-surface-container-lowest transition-colors duration-200 rounded-full active:scale-95">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-lg py-xl">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-xs text-on-surface-variant font-label-md text-label-md mb-lg">
+<a class="hover:text-primary" href="#">Marketplace</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Equipment</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface">Khelabase Elite Pro Match Ball</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-2xl">
+<!-- Gallery Section -->
+<div class="lg:col-span-7 flex flex-col md:flex-row-reverse gap-md">
+<!-- Main Image -->
+<div class="flex-1 bg-white rounded-xl overflow-hidden premium-glow border border-outline-variant aspect-square group relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional-grade white and emerald green Khelabase Elite Pro Match Ball, featuring high-tech aerodynamic heat-bonded seams and a textured surface. The lighting is crisp and cinematic, highlighting the tactile micro-texture of the casing. The background is a clean, minimalist studio setting with soft grey gradients, reinforcing a premium SaaS product aesthetic. The ball is positioned centrally, radiating quality and performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXYKngBCMMFG2ah6RCGpSrvxFg9V7_WDBprkZPN4b0I3L_8iYyDq5JG00X15Jhd43N55mKeADe3ek6RUscISYYQBQ0qeCNek_A8KWJdvFfjooGjrQTKhyRd8iLYXMbxh-FfQOHSfBBN5A_lUwsEf6OXRAvuR__4hnVQufiK2RvufdSBCu4y4UTOOc_oiFS0tHcCQfY57zDJQYoQxUsOWpv3qPwgfYTKhmot7kessY_HrfdGTMKzImxwoaa7h0Ya-U9s0Gwg9fo5D4"/>
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                        FIFA QUALITY PRO
+                    </div>
+</div>
+<!-- Thumbnails -->
+<div class="flex md:flex-col gap-md overflow-x-auto md:overflow-y-auto md:max-h-[600px] custom-scrollbar pb-2 md:pb-0">
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-white rounded-lg border-2 border-primary overflow-hidden cursor-pointer active-thumb">
+<img class="w-full h-full object-cover" data-alt="Close-up macro shot of the Khelabase Elite Pro Match Ball's textured surface, showing the intricate aerodynamic dimples and the high-precision heat-bonded emerald green seams. Bright, sharp lighting in a modern sports studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNSU31JXfE3uYyS2d84azQxTLoZfCRwP_o4sD8QuxN201YxdHfKfYfd-yQ-Z-Uo9S9gurNC0Lx1kSU8dDdrvUrNtODRR-cyBexEN6BTh5ri32_FJTpB_RyWJH9byqaOHlTmLKN13KVXKfYhicROgQ_QhSlchPSTJPdNdPaRN4puxEJ95oiqVmsn-HHeYFLCWavjnjKwkFKifdSbOgY2d4mbELR89ZCRqs4Y74rtd09tAn75ByQQtlvtnYC0z4HUrXNWBUWEnIh9hc"/>
+</div>
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-white rounded-lg border border-outline-variant overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img class="w-full h-full object-cover" data-alt="The Khelabase Elite Pro Match Ball resting on a professional grass pitch at sunset, with soft golden hour lighting casting long shadows. The emerald green accents on the ball pop against the lush green turf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatBkhi31kP6WnDVfFCFRmjHhOULZS8FTudE9g8AO7dG4L7alGBou6v3bPjTvngBmKWkUEt3RNQhF1WIlgsR--1U8GbDnhyygtKYkNdWVZb_HelGNwvf-98OTagy-ElNNSMUoR9S1P5_7l9WAqvARTWZTRGng3Rkfeb4MIVR6xRd0lI8Zwb5I5XCGIa1AaWteQOzcXl_wuFJarhzfKBBEqy1nYby1auUAgvLUt8Vaqi5t0dquf3tOMF8s_h222ANZU_KsAb5_z1nc"/>
+</div>
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-white rounded-lg border border-outline-variant overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img class="w-full h-full object-cover" data-alt="A lifestyle shot of a professional football player spinning the Khelabase Elite Pro Match Ball on their finger, showcasing the motion blur of the emerald and white design in a high-performance training facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaWAMX0idetaVdBRg3_viOsYWIj1-vAES6Kiko9QgIkpF1nYca-G4w_73vnn5hHROACaBJdk4zp5GirXxwItykruTT_8s5kjcPoGn5uN3QmAzq7Qio0Z4a72Tu0yOnIzHhXUtB8itKI93Dmc0PhzKRo8iOLL2NHnpOJkRqzHBjRy2uh9iSO7qbgdb9B0dRcHQk72hBoVSqS8KkRsdDJ_wbAZvVTExP23WkvuAUuff62cu0cchGUek-ZbIdTjSItIyOuhHVmmq-dow"/>
+</div>
+<div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 bg-white rounded-lg border border-outline-variant overflow-hidden cursor-pointer hover:border-primary transition-colors">
+<img class="w-full h-full object-cover" data-alt="Exploded view or technical diagram visualization of the Khelabase Elite Pro Match Ball's internal bladder and 12-panel construction layers, styled in a clean, architectural blue-and-white technical drawing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxD45Nh6wwoh-gQwbU_yycKR8BGpOfH1cqtFutkfCWjdYw8vTR8FoM19_1ICB8g6rW0EqzLvL6iG9mcitzHY_HHaW3_H3Eo-MYqJzMmU67i622VatQF3ChDzJGFRSNTHoJi-SxxKlP2OtS753aRoizhDaibRZ87IJ-abtavy3_77EunQhbgW4yIlRxM2kwbkWIxGFt0TPodom47aRDhi0tYL5RBZUSjvfXl-xFpgGaXv7EiwHY2kREpHlKcPVpVPWpPCs139Fi8zg"/>
+</div>
+</div>
+</div>
+<!-- Product Info Section -->
+<div class="lg:col-span-5 flex flex-col gap-lg">
+<header>
+<span class="text-primary font-label-md text-label-md uppercase tracking-wider">Khelabase Pro Gear</span>
+<h1 class="text-headline-lg font-headline-lg text-on-surface mt-base">Khelabase Elite Pro Match Ball</h1>
+<div class="flex items-center gap-md mt-sm">
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md underline cursor-pointer">128 Verified Reviews</span>
+</div>
+</header>
+<div class="flex items-baseline gap-md">
+<span class="text-display-lg font-display-lg text-primary">$159.00</span>
+<span class="text-on-surface-variant text-title-lg line-through">$189.00</span>
+</div>
+<p class="text-body-lg text-on-surface-variant">
+                    Engineered for the elite pitch. Featuring our proprietary Aero-Seam™ technology and ultra-grip casing for unmatched flight stability and touch control.
+                </p>
+<!-- Color Swatches -->
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block mb-sm">SELECT COLOR: <span class="text-on-surface">Emerald White</span></span>
+<div class="flex gap-md">
+<button class="w-10 h-10 rounded-full border-2 border-primary p-0.5 ring-2 ring-offset-2 ring-transparent transition-all">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-primary to-white"></div>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-outline-variant p-0.5 hover:border-primary transition-all">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-on-surface to-on-surface-variant"></div>
+</button>
+<button class="w-10 h-10 rounded-full border-2 border-outline-variant p-0.5 hover:border-primary transition-all">
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-tertiary to-white"></div>
+</button>
+</div>
+</div>
+<!-- Size Selector -->
+<div>
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-md text-label-md text-on-surface-variant">SELECT SIZE</span>
+<button class="text-primary font-label-sm text-label-sm underline">Size Guide</button>
+</div>
+<div class="grid grid-cols-4 gap-sm">
+<button class="py-3 border-2 border-outline-variant rounded-xl font-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-all opacity-50 cursor-not-allowed">3</button>
+<button class="py-3 border-2 border-outline-variant rounded-xl font-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-all">4</button>
+<button class="py-3 border-2 border-primary rounded-xl font-label-md text-primary bg-surface-container-low transition-all">5</button>
+<button class="py-3 border-2 border-outline-variant rounded-xl font-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-all">Official</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-sm pt-md">
+<button class="w-full py-4 bg-primary text-white rounded-xl font-title-lg flex items-center justify-center gap-md hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">shopping_bag</span>
+                        Add to Cart
+                    </button>
+<button class="w-full py-4 bg-secondary-container text-on-secondary-container rounded-xl font-title-lg hover:brightness-105 active:scale-[0.98] transition-all border border-secondary/20">
+                        Buy It Now
+                    </button>
+</div>
+<!-- Expandable Details -->
+<div class="mt-xl border-t border-outline-variant">
+<details class="group py-md border-b border-outline-variant" open="">
+<summary class="flex justify-between items-center cursor-pointer list-none font-title-lg text-on-surface">
+                            Product Description
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-md text-on-surface-variant leading-relaxed">
+                            The Elite Pro Match Ball is the pinnacle of football engineering. Designed for professional league play, it utilizes 12 identical panels for a perfectly spherical shape and a textured surface for optimal aerodynamic flight. Its high-rebound natural rubber bladder ensures consistent air retention and explosive responsiveness on every strike.
+                        </div>
+</details>
+<details class="group py-md border-b border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none font-title-lg text-on-surface">
+                            Technical Specifications
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-md text-on-surface-variant">
+<ul class="grid grid-cols-2 gap-sm">
+<li class="flex flex-col"><span class="font-bold text-on-surface">Weight:</span> 420-445g</li>
+<li class="flex flex-col"><span class="font-bold text-on-surface">Seams:</span> Heat-Bonded (Thermal)</li>
+<li class="flex flex-col"><span class="font-bold text-on-surface">Bladder:</span> High-Density Carbon Latex</li>
+<li class="flex flex-col"><span class="font-bold text-on-surface">Certification:</span> FIFA Quality Pro</li>
+</ul>
+</div>
+</details>
+<details class="group py-md border-b border-outline-variant">
+<summary class="flex justify-between items-center cursor-pointer list-none font-title-lg text-on-surface">
+                            Shipping &amp; Returns
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="pt-sm text-body-md text-on-surface-variant">
+                            Enjoy free standard shipping on orders over $150. Returns are accepted within 30 days of purchase in original packaging. Elite members receive lifetime warranty on manufacturing defects.
+                        </div>
+</details>
+</div>
+</div>
+</div>
+<!-- Reviews Section -->
+<section class="mt-2xl border-t border-outline-variant pt-2xl">
+<h2 class="text-headline-md font-headline-md mb-xl">Player Feedback</h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Rating Breakdown -->
+<div class="lg:col-span-4 bg-surface-container-low p-xl rounded-2xl border border-outline-variant">
+<div class="text-center mb-lg">
+<span class="text-display-lg font-display-lg text-on-surface">4.8</span>
+<div class="flex justify-center text-secondary mb-base">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-on-surface-variant font-label-md text-label-md">Based on 128 Reviews</span>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center gap-md">
+<span class="w-4 font-label-sm text-label-sm">5</span>
+<div class="flex-1 h-2 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[85%]"></div>
+</div>
+<span class="w-8 text-right font-label-sm text-label-sm">85%</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="w-4 font-label-sm text-label-sm">4</span>
+<div class="flex-1 h-2 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[10%]"></div>
+</div>
+<span class="w-8 text-right font-label-sm text-label-sm">10%</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="w-4 font-label-sm text-label-sm">3</span>
+<div class="flex-1 h-2 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[3%]"></div>
+</div>
+<span class="w-8 text-right font-label-sm text-label-sm">3%</span>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant/40">
+<span class="w-4 font-label-sm text-label-sm">2</span>
+<div class="flex-1 h-2 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[1%]"></div>
+</div>
+<span class="w-8 text-right font-label-sm text-label-sm">1%</span>
+</div>
+<div class="flex items-center gap-md text-on-surface-variant/40">
+<span class="w-4 font-label-sm text-label-sm">1</span>
+<div class="flex-1 h-2 bg-outline-variant rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[1%]"></div>
+</div>
+<span class="w-8 text-right font-label-sm text-label-sm">1%</span>
+</div>
+</div>
+<button class="w-full mt-xl py-3 border border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-primary-container/10 transition-colors">Write a Review</button>
+</div>
+<!-- Review Feed -->
+<div class="lg:col-span-8 flex flex-col gap-lg">
+<div class="bg-white p-lg rounded-2xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center font-bold text-primary">MS</div>
+<div>
+<h4 class="font-title-lg text-on-surface">Marcus Sterling</h4>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Verified Professional Player • 2 days ago</span>
+</div>
+</div>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-body-md text-on-surface mb-md">"The grip on this ball is exceptional. Played in rainy conditions yesterday and the trajectory remained incredibly consistent. The touch is soft but reactive. Definitely worth the investment for match days."</p>
+<div class="flex gap-sm">
+<div class="w-24 h-24 rounded-lg overflow-hidden border border-outline-variant cursor-zoom-in">
+<img class="w-full h-full object-cover" data-alt="User photo of the Khelabase Elite Pro Match Ball on a rainy pitch, glistening with water droplets to show off the moisture-repelling surface. Atmospheric, moody lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOACjjkhYqZjnAEtkg9u0wOq19SJRs0p7QecdYApkhZFzY-5gWYT84-utobORkCPM0CZ43ax4f9RIp2HdFKn8IkjHu_2VcNek6B-nPVWluOmSMQN-HB41dL4rKMc1Ub6BdjIBmUQQIxuU9TY1wKArK19kx9Mt8SnnxpF9XQA5IGWM27MlSPrHezqvLseklUskMxsBEqvrHRt0EQZtqMswnnEPH-6wIwaneFVgEbO-j6ov2muKNwrJKbINn7yPHHPH4EU5Zr7keR9E"/>
+</div>
+</div>
+</div>
+<div class="bg-white p-lg rounded-2xl border border-outline-variant shadow-sm">
+<div class="flex justify-between items-start mb-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-dim flex items-center justify-center font-bold text-primary">LH</div>
+<div>
+<h4 class="font-title-lg text-on-surface">Lucas Hernandez</h4>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Youth Coach • 1 week ago</span>
+</div>
+</div>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<p class="text-body-md text-on-surface">"Used these for our club's cup final. The kids noticed the difference immediately compared to standard training balls. Beautiful flight and premium feel."</p>
+</div>
+<button class="text-primary font-label-md text-label-md self-center hover:underline mt-md">Load 126 more reviews</button>
+</div>
+</div>
+</section>
+<!-- Related Products -->
+<section class="mt-2xl py-2xl">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">You May Also Like</h2>
+<p class="text-on-surface-variant text-body-md">Complement your performance with pro-level gear.</p>
+</div>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-xs">
+                    View All Gear
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant premium-glow relative aspect-[4/5] mb-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Khelabase Precision Grip Gloves in emerald and black, presented in a sleek dynamic product shot with a dark grey background and focused studio lighting that highlights the latex grip pattern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdZ5hHG3BvX_saMyNQUJNERb-K0gq9WWjUSeHd-yMLAIR7rv5W48ztAjdvfy6wq4HDTiG0_yzDY4HQe37RvwPpDub_KonnS2vOk4PC1eGp5FZjjsmMvlVrcXfyk_pnn8vAfP-x-ewHhAG0ng4kQ8J9Lsp9xsqUR9MXVSVUmyhr766eILVwg8u5Fs9ExEAIG5sWnTjAbbK3aj6swUs9Mesr0K6RyzQ7t9TpXu-8MuoPXO2xUPW-1028UpbhKUva24tqcnL5eNOgQS4"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h3 class="font-title-lg text-on-surface group-hover:text-primary transition-colors">Precision Grip Gloves</h3>
+<div class="flex justify-between items-center mt-base">
+<span class="text-on-surface-variant font-label-md text-label-md">Accessories</span>
+<span class="text-primary font-bold">$75.00</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant premium-glow relative aspect-[4/5] mb-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Khelabase Aero-Form Shin Guards, lightweight carbon fiber texture with emerald green foam padding, displayed on a minimalist white surface with soft ambient shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALQP8Rg-OH7_ih1X6sCdo1x8qYEpscCZGlYPcHsg7uHmaZxM5hbO1FoWsIc4-S0lsItP3KvUpYaJtu0ArF0GbKerS1U1kA7B12P71f5Dy7L10KDftXNhb-x4HmHiKA8MoUCXThsskbiLtbKxhb3YujP9136ztVUITV6pZ5DO4DL92grO2vyjHHS9hmCezYkO4C6ViI5RwIngVwNpQmsyQbyqxx1hMfnxp2owqB0zZbczZOX9oJu2-EqDMpdnqXd-FOqJjyOUXv5_A"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h3 class="font-title-lg text-on-surface group-hover:text-primary transition-colors">Aero-Form Shin Guards</h3>
+<div class="flex justify-between items-center mt-base">
+<span class="text-on-surface-variant font-label-md text-label-md">Protection</span>
+<span class="text-primary font-bold">$45.00</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant premium-glow relative aspect-[4/5] mb-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Khelabase Training Cones Set, high-visibility emerald green and gold markers arranged in a geometric pattern on a pristine white floor. Clean, high-key commercial lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTyt-uyyMij1aRWbWNBpLoLbOw-fGyyX-qV-KoIl3_XjnwIngVgUQgOdVyhmJZKi081fJQm_yhA9TISF4nrsaCrOBb99SEl9j2pKNzTCTo7ZM1RLV7I7O2WPSFcxIJpu5Pj5v8pfWCIi_9y_BIlo08I2RKB2qyCaNOOQ5Nia9TKK0PK_9lzVauLmBn3Kgn9vR0ElV6MvBDm4t2rek6R3rOagegSnZ7XEqbZdarOBpoRQsj7N1WY_ewUhPSKPbET9P9wvRhWzcAAq4"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h3 class="font-title-lg text-on-surface group-hover:text-primary transition-colors">Pro Training Markers</h3>
+<div class="flex justify-between items-center mt-base">
+<span class="text-on-surface-variant font-label-md text-label-md">Equipment</span>
+<span class="text-primary font-bold">$29.00</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group cursor-pointer">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant premium-glow relative aspect-[4/5] mb-md">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Khelabase Team Duffel Bag, water-resistant black fabric with large emerald green logo and premium metal hardware. Professional sports photography style with lifestyle focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb-JHRVK6rSe43SeyYbC5DYoSHl9zKTFJ3jxH83gsSECHLRhA-MrmNH3b_bEgRZo6J4HdwbPEhcRlFcB_hesQFQ9ubOqqL8yriaq1lU5wQEOP8EBkLU3dhQtJyWU266nWsUrq0lwm-veAczvFyR-Mvyx7Lo1jS6Ktkn_Eq-Ykcpl0S9eFsyDFxm2D-IRcGCAIMoXUQqCHPY9eouGkDDxVanYisgYf5sYB--CUeBEGu1tyTqG8TEjZsyAmNVyekaEvD2QF38IDWd9c"/>
+<button class="absolute bottom-4 right-4 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<h3 class="font-title-lg text-on-surface group-hover:text-primary transition-colors">Elite Team Duffel</h3>
+<div class="flex justify-between items-center mt-base">
+<span class="text-on-surface-variant font-label-md text-label-md">Bags</span>
+<span class="text-primary font-bold">$89.00</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl mt-auto bg-surface-container-low dark:bg-surface-dim border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div>
+<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed mb-base block">Khelabase</span>
+<p class="text-on-surface-variant dark:text-on-surface-variant font-body-md text-body-md mb-md">© 2024 Khelabase. Athletic Precision for the Modern Pitch.</p>
+<div class="flex gap-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div class="md:text-right">
+<span class="font-label-md text-label-md text-on-surface-variant mb-sm block uppercase tracking-widest">Connect with our pitch</span>
+<div class="flex md:justify-end gap-md">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</button>
+</div>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('details').forEach((detail) => {
+            detail.addEventListener('click', (e) => {
+                if (detail.hasAttribute('open')) {
+                    // Smooth closing could be added here if needed
+                }
+            });
+        });
+
+        // Simple gallery toggle logic
+        const thumbs = document.querySelectorAll('.cursor-pointer.flex-shrink-0');
+        thumbs.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbs.forEach(t => t.classList.remove('active-thumb', 'border-primary'));
+                thumb.classList.add('active-thumb', 'border-primary');
+            });
+        });
+    </script>
+</body></html>

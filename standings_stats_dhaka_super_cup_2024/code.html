@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dhaka Super Cup 2024 - Standings &amp; Stats</title>
+<!-- Google Fonts: Manrope -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#bdcaba",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "inverse-primary": "#62df7d",
+                    "secondary": "#795900",
+                    "primary-container": "#00873a",
+                    "on-primary-container": "#f7fff2",
+                    "outline": "#6e7b6c",
+                    "secondary-container": "#ffc329",
+                    "background": "#f8f9ff",
+                    "primary-fixed": "#7ffc97",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#e6eeff",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "surface-dim": "#d0dbed",
+                    "on-background": "#121c2a",
+                    "surface-variant": "#d9e3f6",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#dee9fc",
+                    "on-primary-fixed": "#002109",
+                    "error": "#ba1a1a",
+                    "primary": "#006b2c",
+                    "inverse-surface": "#27313f",
+                    "primary-fixed-dim": "#62df7d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-tertiary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#005320",
+                    "on-surface": "#121c2a",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "surface-tint": "#006e2d",
+                    "on-tertiary-container": "#fefcff",
+                    "on-secondary-container": "#6f5100",
+                    "tertiary-container": "#316bf3",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-highest": "#d9e3f6",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#0051d5",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "sm": "12px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "md": "16px",
+                    "base": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "label-sm": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "display-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #f8f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .form-win { @apply bg-primary/10 text-primary border border-primary/20; }
+        .form-draw { @apply bg-surface-variant text-on-surface-variant border border-outline-variant; }
+        .form-loss { @apply bg-error-container text-error border border-error/20; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #bdcaba; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-body-lg text-on-background">
+<!-- TopNavBar -->
+<header class="bg-surface shadow-sm w-full top-0 sticky z-50">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<h1 class="font-display-lg text-headline-md font-extrabold text-primary">Khelabase</h1>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Explore</a>
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1" href="#">Tournaments</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Teams</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors" href="#">Marketplace</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex bg-surface-container rounded-full px-md py-xs items-center gap-xs">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Search..." type="text"/>
+</div>
+<button class="p-xs hover:bg-surface-container-high rounded-full transition-all duration-200 active:opacity-80">
+<span class="material-symbols-outlined text-on-surface">notifications</span>
+</button>
+<button class="p-xs hover:bg-surface-container-high rounded-full transition-all duration-200 active:opacity-80">
+<span class="material-symbols-outlined text-on-surface">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-gutter py-xl">
+<!-- Dashboard Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-2xl gap-md">
+<div>
+<div class="flex items-center gap-xs mb-xs">
+<span class="px-xs py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-md">LIVE SEASON</span>
+<span class="text-on-surface-variant font-body-md">• Dhaka, Bangladesh</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Dhaka Super Cup 2024</h2>
+<p class="text-on-surface-variant text-body-lg">Tournament Analytics &amp; League Standings</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-xs px-lg py-sm bg-surface-container-lowest border border-outline-variant rounded-xl font-label-md text-on-surface hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined">download</span> Export Report
+                </button>
+<button class="flex items-center gap-xs px-lg py-sm bg-primary text-on-primary rounded-xl font-label-md hover:opacity-90 transition-all shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span> Match Center
+                </button>
+</div>
+</div>
+<!-- Bento Grid Stats -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-2xl">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)]">
+<p class="text-on-surface-variant font-label-md uppercase tracking-wider mb-xs">Total Goals</p>
+<div class="flex items-baseline gap-xs">
+<span class="text-headline-lg font-headline-lg">142</span>
+<span class="text-primary text-body-md font-bold">↑ 12%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full mt-md overflow-hidden">
+<div class="h-full bg-primary" style="width: 75%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)]">
+<p class="text-on-surface-variant font-label-md uppercase tracking-wider mb-xs">Clean Sheets</p>
+<div class="flex items-baseline gap-xs">
+<span class="text-headline-lg font-headline-lg">38</span>
+<span class="text-on-surface-variant text-body-md font-bold">Avg 2.1</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full mt-md overflow-hidden">
+<div class="h-full bg-secondary" style="width: 45%"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)]">
+<p class="text-on-surface-variant font-label-md uppercase tracking-wider mb-xs">Cards Issued</p>
+<div class="flex items-baseline gap-xs">
+<span class="text-headline-lg font-headline-lg">84</span>
+<span class="text-error text-body-md font-bold">4 Red</span>
+</div>
+<div class="flex gap-1 mt-md">
+<div class="h-2 w-full bg-secondary-container rounded-full"></div>
+<div class="h-2 w-8 bg-error rounded-full"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] border-t-2 border-t-secondary-container">
+<p class="text-on-surface-variant font-label-md uppercase tracking-wider mb-xs">Next Match</p>
+<div class="text-title-lg font-title-lg text-primary">Live in 02:45:12</div>
+<div class="text-body-md text-on-surface-variant mt-sm">Dhaka Falcons vs Uttara Lions</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- League Table (Main Content) -->
+<div class="lg:col-span-2 space-y-gutter">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-title-lg text-title-lg">League Standings</h3>
+<div class="flex gap-xs">
+<span class="flex items-center gap-1 text-label-md text-on-surface-variant bg-surface-container-lowest px-sm py-1 rounded-full border border-outline-variant">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div> Qualified
+                            </span>
+<span class="flex items-center gap-1 text-label-md text-on-surface-variant bg-surface-container-lowest px-sm py-1 rounded-full border border-outline-variant">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div> Playoffs
+                            </span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md uppercase tracking-wider">
+<th class="px-lg py-sm text-center">Pos</th>
+<th class="px-lg py-sm">Team</th>
+<th class="px-sm py-sm text-center">P</th>
+<th class="px-sm py-sm text-center">W</th>
+<th class="px-sm py-sm text-center">D</th>
+<th class="px-sm py-sm text-center">L</th>
+<th class="px-sm py-sm text-center hidden md:table-cell">GF</th>
+<th class="px-sm py-sm text-center hidden md:table-cell">GA</th>
+<th class="px-sm py-sm text-center">GD</th>
+<th class="px-lg py-sm text-center font-bold">Pts</th>
+<th class="px-lg py-sm text-center">Form</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="px-lg py-lg text-center relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<span class="font-bold">1</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center p-xs overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Minimalist emblem for Dhaka Falcons football club featuring a stylized falcon silhouette in emerald green and white, high-performance athletic logo design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoKc6vjPvAQ5nuzzdzMfjMdEIh7qyvwcpDnyZXzOqNVthW-kg3PxHoM2GedX7R8Lu7XyKQKQde7rhHhfQRjTWkJojUjLVKqZeoYgZRwGJYJ1KwKtCvI9tBpFHZiC1B_9bFJti-IpqMYdJ1cVLqu83bjicMOlnn4RidxD1Pzbv7eODr2-wsJfNzxbAQcDAdkXkdrwDu0U-1PgVz3qOMveIwD2UehKvO-dwU4-80u-dB_T6SYvKAVJFzbu1VwAw8aXdutslPzVsF48I"/>
+</div>
+<div>
+<div class="font-title-lg text-body-lg group-hover:text-primary transition-colors">Dhaka Falcons</div>
+<div class="text-label-md text-on-surface-variant">Last Match: 2-0 W</div>
+</div>
+</div>
+</td>
+<td class="px-sm py-lg text-center font-body-md">12</td>
+<td class="px-sm py-lg text-center font-body-md">9</td>
+<td class="px-sm py-lg text-center font-body-md">2</td>
+<td class="px-sm py-lg text-center font-body-md">1</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">28</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">10</td>
+<td class="px-sm py-lg text-center font-body-md">+18</td>
+<td class="px-lg py-lg text-center font-bold text-primary">29</td>
+<td class="px-lg py-lg text-center">
+<div class="flex justify-center gap-1">
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="px-lg py-lg text-center relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<span class="font-bold">2</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center p-xs overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Professional sports logo for Mirpur Rangers featuring a tiger-inspired geometric icon in orange and deep navy, modern minimalist athletic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZuoH8hOfC9DmW2PuIt_bfg4rSGSBTudtXSAo4JXL8NMGUk4NOgpv1li0kxbSF1uz8NMA6arOYjJ5ER34oNWb_trDQPaaeLbB3XR3fxb-L52gxiYPn7rBh_a1EHUfM0VjFv1wUE_g1S-r4ZA5Fm7QbVnfrXMvr26zy9n8AqmTWO-8htIalG9H87rGYLmLSTJ6XgxFQ13Jv-fwlp_-hYZwdVggUDTtedvN6Qvma-MlNWnIDwN_OXUB9cUAqmu-EmKYM2PQs69W2bQw"/>
+</div>
+<div>
+<div class="font-title-lg text-body-lg group-hover:text-primary transition-colors">Mirpur Rangers</div>
+<div class="text-label-md text-on-surface-variant">Last Match: 3-1 W</div>
+</div>
+</div>
+</td>
+<td class="px-sm py-lg text-center font-body-md">12</td>
+<td class="px-sm py-lg text-center font-body-md">8</td>
+<td class="px-sm py-lg text-center font-body-md">3</td>
+<td class="px-sm py-lg text-center font-body-md">1</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">24</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">12</td>
+<td class="px-sm py-lg text-center font-body-md">+12</td>
+<td class="px-lg py-lg text-center font-bold text-primary">27</td>
+<td class="px-lg py-lg text-center">
+<div class="flex justify-center gap-1">
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="px-lg py-lg text-center relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<span class="font-bold">3</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center p-xs overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Clean corporate-style football crest for Banani United, featuring interlocking letters B and U in a circular frame, royal blue and white color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyFZubjHGeTIFIm59hNXBKRF-e6T43zVp7aOuWJ_mkFDUzKzbx8dNaEQyGu6QhXGdYCBtU3oy9POqculwJMDRaP1WbCiBNjKgUAjlM3ljl9PH5ZtyHcIc79TeU1CftD_P0NThZOGSetu3hbSKlbJrdLei8J17LG-CgBk2rYkBTZz4kKYMuK7cLOlSoOCYvaFd8AcFB1XaXkIycqTHRqKUic4n4_NOgpnrguSatsScWQ0BE6sbWPemPbWr31oSaR-_Y15f_ZFKPb4o"/>
+</div>
+<div>
+<div class="font-title-lg text-body-lg group-hover:text-primary transition-colors">Banani United</div>
+<div class="text-label-md text-on-surface-variant">Last Match: 1-1 D</div>
+</div>
+</div>
+</td>
+<td class="px-sm py-lg text-center font-body-md">12</td>
+<td class="px-sm py-lg text-center font-body-md">7</td>
+<td class="px-sm py-lg text-center font-body-md">2</td>
+<td class="px-sm py-lg text-center font-body-md">3</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">21</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">15</td>
+<td class="px-sm py-lg text-center font-body-md">+6</td>
+<td class="px-lg py-lg text-center font-bold text-primary">23</td>
+<td class="px-lg py-lg text-center">
+<div class="flex justify-center gap-1">
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-loss">L</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="px-lg py-lg text-center relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<span class="font-bold">4</span>
+</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center p-xs overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Dynamic shield logo for Dhanmondi Dynamos, featuring a lightning bolt and modern typography in purple and silver, professional athletic brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLEoDXkWYC46iUks9p5vW_qKOeWApSupv_0Njjr2Ol2xFaCs2mEWOjGlbQ1UaBMCtPtFlMb-k6cXFYhF6nsEqpHp0JzBuGeEoDbocy63BU1rbGofdccHVIrH9gS2t-yJ1xoKexp_ROi1MD-YGpX5rojnN4pU_8hyCw7uLjO5Sb5cHUjcsppqNrSz_NAYAQH9wrmalDnSgSLFZA1dzE1JurGt42QO7MiNC_qRtg89nZ_QD4P2Z8FnAvnPkyhN9dkL50vbnjqH5bsN4"/>
+</div>
+<div>
+<div class="font-title-lg text-body-lg group-hover:text-primary transition-colors">Dhanmondi Dynamos</div>
+<div class="text-label-md text-on-surface-variant">Last Match: 0-1 L</div>
+</div>
+</div>
+</td>
+<td class="px-sm py-lg text-center font-body-md">12</td>
+<td class="px-sm py-lg text-center font-body-md">6</td>
+<td class="px-sm py-lg text-center font-body-md">3</td>
+<td class="px-sm py-lg text-center font-body-md">3</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">19</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">14</td>
+<td class="px-sm py-lg text-center font-body-md">+5</td>
+<td class="px-lg py-lg text-center font-bold text-primary">21</td>
+<td class="px-lg py-lg text-center">
+<div class="flex justify-center gap-1">
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-loss">L</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-background transition-colors group">
+<td class="px-lg py-lg text-center">5</td>
+<td class="px-lg py-lg">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center p-xs overflow-hidden">
+<img class="w-full h-full object-contain" data-alt="Athletic logo for Uttara Lions featuring a roaring lion head profile in gold and black, elegant minimalist sports branding for a premium club." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL-mS1NlfspWzkcTvw8CSIAFNH4C0qBkISC_TRFyTnXIf4cbD_ry4L8utb1MiNrqoQUDVNTcLVyFHuBAVoBUHWXriezR2TIadpa1WnA3LwMFtKI5I6Ax9Enzt7Yb3Yil4OVy3FlNhqunIY_y1bovBkRmlZ_hmGH_S8RK2NB-oh5ibmZHbCqG7J-zdVrvqA7SrMJrzhIScdR6bhKM8yO88F5zff0IdCVH4a2PYJ7vtw7bgAusm3nBN11_25BCDOY4WnQY7rxBGI1zs"/>
+</div>
+<div>
+<div class="font-title-lg text-body-lg group-hover:text-primary transition-colors">Uttara Lions</div>
+<div class="text-label-md text-on-surface-variant">Last Match: 2-2 D</div>
+</div>
+</div>
+</td>
+<td class="px-sm py-lg text-center font-body-md">12</td>
+<td class="px-sm py-lg text-center font-body-md">5</td>
+<td class="px-sm py-lg text-center font-body-md">4</td>
+<td class="px-sm py-lg text-center font-body-md">3</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">17</td>
+<td class="px-sm py-lg text-center font-body-md hidden md:table-cell">16</td>
+<td class="px-sm py-lg text-center font-body-md">+1</td>
+<td class="px-lg py-lg text-center font-bold text-primary">19</td>
+<td class="px-lg py-lg text-center">
+<div class="flex justify-center gap-1">
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-loss">L</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-win">W</span>
+<span class="w-6 h-6 flex items-center justify-center rounded text-xs font-bold form-draw">D</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-lg py-md bg-surface-container-low text-center">
+<button class="text-primary font-label-md hover:underline">VIEW FULL TABLE</button>
+</div>
+</div>
+<!-- Goals by Round Chart Visualization -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-lg shadow-[0px_4px_20px_rgba(31,41,55,0.05)]">
+<h3 class="font-title-lg text-title-lg mb-lg">Scoring Trends (Goals by Round)</h3>
+<div class="h-48 flex items-end justify-between gap-sm px-md">
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[60%] group-hover:h-[65%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R1</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[85%] group-hover:h-[90%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R2</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[70%] group-hover:h-[75%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R3</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[95%] group-hover:h-[100%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R4</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[55%] group-hover:h-[60%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R5</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[80%] group-hover:h-[85%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R6</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-xs">
+<div class="w-full bg-primary-container/20 rounded-t-lg relative group h-24">
+<div class="absolute bottom-0 w-full bg-primary-container rounded-t-lg transition-all duration-500 h-[40%] group-hover:h-[45%]"></div>
+</div>
+<span class="text-label-md text-on-surface-variant">R7</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stats Leaders (Sidebar) -->
+<div class="space-y-gutter">
+<!-- Top Scorer -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h3 class="font-title-lg text-title-lg">Golden Boot</h3>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="p-lg">
+<div class="flex items-center gap-lg mb-lg p-md bg-primary/5 border border-primary/10 rounded-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-1 bg-primary text-on-primary font-label-sm rounded-bl-lg">TOP</div>
+<img class="w-20 h-20 rounded-full object-cover border-2 border-primary" data-alt="Close up athletic headshot of a professional football player in a green jersey, focused expression, cinematic sports photography lighting, high contrast and sharp detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ07aHJ_4s4t1JB9lr9wrvmQyQE5kI0OYAzpQFCaxaipkdczoZ-XtZgyid8vCh4xXj8FCF6PFguVL0Rm7mZnEL_mAyBy3w0l6kQO8Z6bhsZux46npYyRGGuvF9q4259xsP7skZVMLvONsSXkLpYRrTfjs7tDv60cC1evAKM6ITGedmU3K2Ke1QAGUeGvs6P8KqVQre1guGSnzaesKfX2jWVDv0-M2E9aunsxxZ9k6KbBUZOyzm2Iu7fYvmh3vHpoOxhYRIXeengW0"/>
+<div>
+<div class="font-headline-md text-headline-md leading-none">14</div>
+<div class="font-title-lg text-body-lg">Tanvir Ahmed</div>
+<div class="text-label-md text-on-surface-variant">Dhaka Falcons</div>
+</div>
+</div>
+<div class="space-y-md">
+<div class="flex items-center justify-between pb-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<span class="text-label-md text-on-surface-variant font-bold">2</span>
+<div class="text-body-md">S. Haque (Rangers)</div>
+</div>
+<span class="font-bold">11</span>
+</div>
+<div class="flex items-center justify-between pb-sm border-b border-outline-variant/30">
+<div class="flex items-center gap-md">
+<span class="text-label-md text-on-surface-variant font-bold">3</span>
+<div class="text-body-md">M. Karim (United)</div>
+</div>
+<span class="font-bold">9</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-md">
+<span class="text-label-md text-on-surface-variant font-bold">4</span>
+<div class="text-body-md">R. Islam (Lions)</div>
+</div>
+<span class="font-bold">8</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Top Assists -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-title-lg text-title-lg">Playmakers</h3>
+</div>
+<div class="p-lg space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young athletic playmaker in a blue and white kit, clean modern background, elite soccer player aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG--4wMqeJlMPorRVDVeVkth7ipbDgfSHej-phrHbDcOMzHkB5EdSWs0BtIcUvoaxr3HpDalYvBhMYm4bpsRSNW5KDlz8enzrczhoLqJhGvg2gPHCICJuJNxytEeydJ2tD4rFkpUtiWZxgqKiW_na65isn4C-FzMMpT-yucP2dPfUU5b7jsB9VOAQk_JuvhmV1r0roDv_uUR8k9cyJnptaCZYHKXs5PgIx1U6UBTW0rMZB4te5rUAPmPbj4LlmVDWFk9GkAUW12ag"/>
+</div>
+<div class="flex-1">
+<div class="font-title-lg text-body-lg">Jahid Hassan</div>
+<div class="text-label-md text-on-surface-variant">Banani United</div>
+</div>
+<div class="text-headline-md font-bold text-primary">9</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Athletic portrait of a professional soccer athlete wearing a yellow and black jersey, focused gaze, high-end commercial sports photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPyXOOoK9N7-9u_VeZSBOobQpW00sbfqYvw5E-LkmjhujOkX8W55Bs5WcCIUM2MeYG6DvoL7U-9zbAeX-oqpnKiHSf7p-1SuauPhfMsR4NvEYfZhaVCaBVc15KVfjWx_kpj6dnCtLSIu7pGtN59uN55pMUwYwStWBQhJfSrmvbhsz5hM1be5WuW8PfBcbSgTam7ZHGuRPFdcTwxdixdFTgRoOu6gHoLElenkJFcTKpKFzFAMfb7F9lxdESmpWD93LeOkxbT-1DLWs"/>
+</div>
+<div class="flex-1">
+<div class="font-title-lg text-body-lg">Fahim Morshed</div>
+<div class="text-label-md text-on-surface-variant">Mirpur Rangers</div>
+</div>
+<div class="text-headline-md font-bold text-primary">7</div>
+</div>
+</div>
+</div>
+<!-- Clean Sheets -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant shadow-[0px_4px_20px_rgba(31,41,55,0.05)] overflow-hidden">
+<div class="px-lg py-md border-b border-outline-variant bg-surface-container-low">
+<h3 class="font-title-lg text-title-lg">Golden Glove</h3>
+</div>
+<div class="p-lg space-y-md">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Intense portrait of a football goalkeeper in specialized gear, focus on hands and gloves, gritty but professional sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDznjOCPLFc3UHZG0mOZ0rHtQOuBfJok8SpZ_wiY_IvEe3OAL3vDysX2-hhXIlzCSkMjJHylM-csvwxUf06qMCfSk_FYDv1FT673knIquQXAOAm4ZUFPLQAsLoudK8IAvTgxxEfOTgLNCoGmiFma3wUPOvp4angUDHaHWOsJXG7Fbp-gQmFFRgHo8B3Yv0GHPJ7GTr1o_Sy9wJ_bFHXeNOyWtvzi_XdBlQhAlm3HgsVPskxtDRl5-HQPg5SZH6WXI9LvAS9wLZln5Q"/>
+</div>
+<div class="flex-1">
+<div class="font-title-lg text-body-lg">Abir Hossain</div>
+<div class="text-label-md text-on-surface-variant">Dhaka Falcons</div>
+</div>
+<div class="text-headline-md font-bold text-secondary">6</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Team Performance Comparison Section -->
+<section class="mt-2xl">
+<h3 class="font-headline-md text-headline-md mb-lg">Team Performance Comparison</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<div class="text-label-md text-on-surface-variant uppercase mb-xs">Possession Avg</div>
+<div class="flex items-center justify-between">
+<span class="text-title-lg font-title-lg">58.4%</span>
+<span class="text-primary font-bold">Top: Falcons</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<div class="text-label-md text-on-surface-variant uppercase mb-xs">Shots on Target</div>
+<div class="flex items-center justify-between">
+<span class="text-title-lg font-title-lg">6.2 / match</span>
+<span class="text-primary font-bold">Top: Rangers</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<div class="text-label-md text-on-surface-variant uppercase mb-xs">Pass Accuracy</div>
+<div class="flex items-center justify-between">
+<span class="text-title-lg font-title-lg">82.1%</span>
+<span class="text-primary font-bold">Top: United</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant">
+<div class="text-label-md text-on-surface-variant uppercase mb-xs">Fouls Suffered</div>
+<div class="flex items-center justify-between">
+<span class="text-title-lg font-title-lg">14.5 / match</span>
+<span class="text-primary font-bold">Top: Dynamos</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full mt-2xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter py-2xl px-gutter max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<h2 class="font-display-lg text-headline-md font-extrabold text-primary mb-md">Khelabase</h2>
+<p class="text-body-md text-on-surface-variant mb-lg">Empowering local football with elite-level data analysis and community engagement.</p>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">face_nod</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">sports_basketball</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer">alternate_email</span>
+</div>
+</div>
+<div>
+<h4 class="font-label-md uppercase text-on-surface-variant mb-lg">Competition</h4>
+<ul class="space-y-sm text-body-md text-on-surface-variant">
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Tournaments</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Live Scores</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Scouting</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Elite Program</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md uppercase text-on-surface-variant mb-lg">Platform</h4>
+<ul class="space-y-sm text-body-md text-on-surface-variant">
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Community</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Support</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Marketplace</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Teams</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md uppercase text-on-surface-variant mb-lg">Legal</h4>
+<ul class="space-y-sm text-body-md text-on-surface-variant">
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Privacy</a></li>
+<li><a class="hover:underline hover:text-primary transition-opacity duration-200" href="#">Terms</a></li>
+</ul>
+<div class="mt-xl bg-surface-container-high p-md rounded-xl">
+<p class="text-label-md text-on-surface mb-xs">Subscribe to Updates</p>
+<div class="flex gap-2">
+<input class="w-full bg-surface-container-lowest border-none rounded-lg text-xs focus:ring-1 focus:ring-primary" placeholder="Email" type="email"/>
+<button class="bg-primary text-on-primary px-sm py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-lg px-gutter max-w-container-max mx-auto text-center text-on-surface-variant text-body-md">
+            © 2024 Khelabase. Athletic Precision for the Modern Game.
+        </div>
+</footer>
+<script>
+        // Simple interactive micro-interactions
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.classList.add('shadow-inner');
+            });
+            row.addEventListener('mouseleave', () => {
+                row.classList.remove('shadow-inner');
+            });
+        });
+
+        // Search bar animation focus
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchContainer = searchInput?.parentElement;
+        if (searchInput && searchContainer) {
+            searchInput.addEventListener('focus', () => {
+                searchContainer.classList.add('ring-2', 'ring-primary/20', 'w-64');
+                searchContainer.classList.remove('w-48');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchContainer.classList.remove('ring-2', 'ring-primary/20', 'w-64');
+                searchContainer.classList.add('w-48');
+            });
+        }
+    </script>
+</body></html>

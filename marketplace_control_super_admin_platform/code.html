@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Marketplace Management | Khelabase Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#62df7d",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#27313f",
+                        "outline-variant": "#bdcaba",
+                        "tertiary-fixed-dim": "#b4c5ff",
+                        "primary-fixed": "#7ffc97",
+                        "secondary-fixed": "#ffdf9f",
+                        "on-tertiary-container": "#fefcff",
+                        "on-surface": "#121c2a",
+                        "on-tertiary-fixed-variant": "#003ea8",
+                        "surface": "#f8f9ff",
+                        "on-surface-variant": "#3e4a3d",
+                        "surface-tint": "#006e2d",
+                        "on-error": "#ffffff",
+                        "outline": "#6e7b6c",
+                        "on-secondary-fixed": "#261a00",
+                        "surface-container-low": "#eff4ff",
+                        "primary": "#006b2c",
+                        "on-primary-container": "#f7fff2",
+                        "background": "#f8f9ff",
+                        "surface-container": "#e6eeff",
+                        "on-secondary-container": "#6f5100",
+                        "on-background": "#121c2a",
+                        "primary-container": "#00873a",
+                        "on-tertiary-fixed": "#00174b",
+                        "tertiary-fixed": "#dbe1ff",
+                        "on-primary-fixed-variant": "#005320",
+                        "secondary": "#795900",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d9e3f6",
+                        "surface-dim": "#d0dbed",
+                        "tertiary": "#0051d5",
+                        "tertiary-container": "#316bf3",
+                        "primary-fixed-dim": "#62df7d",
+                        "on-secondary-fixed-variant": "#5c4300",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dee9fc",
+                        "secondary-container": "#ffc329",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d9e3f6",
+                        "on-primary-fixed": "#002109",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed-dim": "#f9bd22",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "8px",
+                        "container-max": "1280px",
+                        "sm": "12px",
+                        "md": "16px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        /* Custom scrollbar for data tables */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- Side Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low shadow-sm flex flex-col border-r border-outline-variant z-50">
+<div class="p-lg flex items-center gap-sm">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined font-bold">sports_soccer</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-extrabold text-primary">Khelabase</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Super Admin</span>
+</div>
+</div>
+<nav class="flex-1 mt-md px-sm space-y-1">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-label-md font-label-md">User Management</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined">sports_soccer</span>
+<span class="text-label-md font-label-md">Tournament Oversight</span>
+</a>
+<!-- Active Tab: Marketplace Control -->
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-primary font-bold bg-surface-container border-r-4 border-primary transition-all scale-[0.99]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="text-label-md font-label-md">Marketplace Control</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-variant transition-colors group" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-label-md font-label-md">System Settings</span>
+</a>
+</nav>
+<div class="p-md mt-auto">
+<div class="bg-primary/5 rounded-xl p-md border border-primary/10">
+<p class="text-label-md font-bold text-primary mb-xs">Support Portal</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Need technical help with marketplace logistics?</p>
+<button class="mt-sm w-full bg-primary text-white py-xs rounded-lg text-label-md font-semibold hover:bg-primary-container transition-colors">Open Ticket</button>
+</div>
+</div>
+<footer class="p-sm border-t border-outline-variant">
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-variant transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="text-label-md font-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-md px-md py-sm rounded-xl text-error hover:bg-error-container/20 transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="text-label-md font-label-md">Sign Out</span>
+</a>
+</footer>
+</aside>
+<!-- Top Navigation -->
+<header class="flex justify-between items-center w-full px-lg py-md ml-64 max-w-[calc(100%-16rem)] sticky top-0 bg-surface shadow-sm z-40">
+<div class="flex items-center gap-lg flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-full py-sm pl-11 pr-md focus:ring-2 focus:ring-primary focus:border-primary outline-none text-body-md transition-all" placeholder="Search products, orders, or SKU..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">health_and_safety</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-xs"></div>
+<div class="flex items-center gap-sm cursor-pointer hover:bg-surface-variant p-xs px-sm rounded-full transition-colors">
+<div class="text-right">
+<p class="text-label-md font-bold text-on-surface">Admin Profile</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">Level 4 Access</p>
+</div>
+<img class="w-9 h-9 rounded-full object-cover ring-2 ring-primary/20" data-alt="A professional close-up headshot of a modern super admin for a technology platform, featuring clean lighting, a soft-focus office background with hint of green football field through the window, and high-quality digital photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfaCexRF37FtWI4g4KSwWDD5GEOaxKOwta02hFZB0xN_dD1TTNQd6Mk2fJVvCDsRi-3c_eHNPaAj6iJaJB1JmuTrcipLjKe8ZaLZlvJYxcX8gQUElksmKgY-7qK3lYjLAwZHrddrtQRJbRlZq4_qme81uzWLYfoRNhrccprrJx51JJ3dJ_BJ9lrSJmy2qN0EENbyly_1i3kINwnoq5RYdX3U4GTLGz9MrL9ks3F-IShJKHdXhxt2YIlJXqJYY5eQrlm-1KZl_FCaA"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 p-lg max-w-[calc(100%-16rem)]">
+<!-- Header Actions -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-xl gap-md">
+<div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface">Marketplace Control</h1>
+<p class="text-body-lg text-on-surface-variant">Manage your inventory, optimize sales, and monitor stock health.</p>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-xs px-md py-sm bg-surface-container-highest text-on-surface border border-outline-variant rounded-xl font-bold text-label-md hover:bg-surface-variant transition-all">
+<span class="material-symbols-outlined text-md">download</span>
+                    Export Inventory
+                </button>
+<button class="flex items-center gap-xs px-md py-sm bg-secondary-container text-on-secondary-container rounded-xl font-bold text-label-md hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-md">percent</span>
+                    Discount Manager
+                </button>
+<button class="flex items-center gap-xs px-md py-sm bg-primary text-white rounded-xl font-bold text-label-md shadow-lg shadow-primary/20 hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined text-md">add</span>
+                    Add New Product
+                </button>
+</div>
+</div>
+<!-- Inventory Overview KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mb-xl">
+<!-- Total Products -->
+<div class="glass-card p-xl rounded-2xl flex flex-col relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-xs">Total Products</p>
+<h2 class="text-display-lg font-display-lg text-on-surface">1,284</h2>
+</div>
+<div class="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">inventory_2</span>
+</div>
+</div>
+<div class="mt-md flex items-center gap-xs text-primary font-bold text-label-md">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12 this week</span>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">inventory_2</span>
+</div>
+</div>
+<!-- Active Orders -->
+<div class="glass-card p-xl rounded-2xl flex flex-col relative overflow-hidden group border-l-4 border-l-tertiary">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-xs">Active Orders</p>
+<h2 class="text-display-lg font-display-lg text-on-surface">432</h2>
+</div>
+<div class="w-12 h-12 bg-tertiary/10 text-tertiary rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+</div>
+<div class="mt-md flex items-center gap-xs text-tertiary font-bold text-label-md">
+<span class="material-symbols-outlined text-sm">sync</span>
+<span>86 out for delivery</span>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">local_shipping</span>
+</div>
+</div>
+<!-- Low Stock Alert -->
+<div class="glass-card p-xl rounded-2xl flex flex-col relative overflow-hidden group border-t-2 border-t-secondary">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-xs">Low Stock Items</p>
+<h2 class="text-display-lg font-display-lg text-error">28</h2>
+</div>
+<div class="w-12 h-12 bg-error/10 text-error rounded-xl flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+</div>
+<div class="mt-md flex items-center gap-xs text-secondary font-bold text-label-md">
+<span class="material-symbols-outlined text-sm">notification_important</span>
+<span>Restock recommended</span>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[120px]">report_problem</span>
+</div>
+</div>
+</div>
+<!-- Product Management Table Section -->
+<div class="glass-card rounded-2xl overflow-hidden border border-outline-variant shadow-sm">
+<div class="p-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-md border-b border-outline-variant bg-surface-container-lowest">
+<div class="flex items-center gap-md">
+<h3 class="text-title-lg font-title-lg text-on-surface">Product Catalog</h3>
+<div class="flex bg-surface-variant rounded-lg p-1">
+<button class="px-md py-xs bg-white rounded-md shadow-sm text-label-md font-bold text-primary">All Items</button>
+<button class="px-md py-xs text-label-md font-semibold text-on-surface-variant hover:text-on-surface">Low Stock</button>
+<button class="px-md py-xs text-label-md font-semibold text-on-surface-variant hover:text-on-surface">Featured</button>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<div class="flex items-center gap-xs text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                        Filter by Category:
+                    </div>
+<select class="bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-xs text-label-md font-semibold focus:ring-2 focus:ring-primary outline-none">
+<option>All Categories</option>
+<option>Jerseys</option>
+<option>Boots</option>
+<option>Equipment</option>
+</select>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-left border-b border-outline-variant">
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Product</th>
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Category</th>
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Stock Level</th>
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Price (৳)</th>
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Featured</th>
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="p-md text-label-md font-bold text-on-surface-variant uppercase tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1: Jersey -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-md">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 bg-surface-variant rounded-lg overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A premium close-up studio shot of a high-performance football jersey in emerald green and white, featuring textured breathable fabric and intricate stitching details against a clean, minimal white background in commercial product photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxX4smDHHtc-wdweGN4R0GcA90ScY4U-MRv9mLq0MTH2Tq0OvdGVvwpCsz3zduAefe2Ocd86hWxWKtTl3adlpaq2yFWbj_pyncx-7QrfGUwLqhaKj2VNA79Nw0zVl53yfziHeXA6ePaRnCUI9nzPyvImoAXF2BZizKuYQcV2AkTyhQzpnjpHn8Z_wg0i5t6rm4uaaGgzI3C4q0nl-PLKpe7ZTby9xacNPeuzDCK0I7rRjauVZo7E6CFYiXM5a916v-J51GkYYBv3A"/>
+</div>
+<div>
+<p class="text-body-md font-bold text-on-surface group-hover:text-primary transition-colors">Elite Pro '24 Home Jersey</p>
+<p class="text-label-md text-outline">SKU: KB-JSY-001</p>
+</div>
+</div>
+</td>
+<td class="p-md">
+<span class="px-md py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-md font-bold">Jerseys</span>
+</td>
+<td class="p-md">
+<div class="w-48">
+<div class="flex justify-between mb-1">
+<span class="text-label-md font-bold text-on-surface">142 units</span>
+<span class="text-label-md text-primary font-bold">71%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 71%"></div>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md font-bold text-on-surface">1,850</td>
+<td class="p-md">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="p-md">
+<span class="flex items-center gap-xs text-primary font-bold text-label-md">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+                                    Live
+                                </span>
+</td>
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-sm text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Boots (Low Stock) -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-md">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 bg-surface-variant rounded-lg overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close-up commercial shot of professional football boots with golden studs, vibrant emerald accents, and carbon fiber texture. Dramatic studio lighting with dark shadows and sharp highlights, highlighting the premium quality and athletic design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMZNLi9Tt1AJJo4m-m-XcDtPgwUu_H19xACLGWkqoBrFk4DtwmmRZodUuWDLVDN-nz8pTyaXPbLFDfKftaRcA55SFtcTgepBfWTt8UpdJhTl5pWfDv_pm-HVO0SSQ-eMdnobouLg2zNkdeg6lkqc4RvGuGMEpT_d5uDEVs5kIH-jOygEp-FHSpqwWpruur07t3Z-uYC6Y0jCTMRIyV-tbmcRMq6uPQdJKgUGMnK7VI0VTTDiD3PYBwLHq9gcRjkbKBfhPKV-p506E"/>
+</div>
+<div>
+<p class="text-body-md font-bold text-on-surface group-hover:text-primary transition-colors">Gold Striker Firm Ground</p>
+<p class="text-label-md text-outline">SKU: KB-BTS-442</p>
+</div>
+</div>
+</td>
+<td class="p-md">
+<span class="px-md py-1 bg-secondary/10 text-secondary rounded-full text-label-md font-bold">Boots</span>
+<span class="ml-xs text-[10px] text-secondary-fixed-variant align-middle"><span class="material-symbols-outlined text-xs align-middle">auto_awesome</span> PREMIUM</span>
+</td>
+<td class="p-md">
+<div class="w-48">
+<div class="flex justify-between mb-1">
+<span class="text-label-md font-bold text-error">12 units</span>
+<span class="text-label-md text-error font-bold">12%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-error h-2 rounded-full animate-pulse" style="width: 12%"></div>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md font-bold text-on-surface">5,400</td>
+<td class="p-md">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="p-md">
+<span class="flex items-center gap-xs text-primary font-bold text-label-md">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+                                    Live
+                                </span>
+</td>
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-sm text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Equipment -->
+<tr class="hover:bg-primary/5 transition-colors group">
+<td class="p-md">
+<div class="flex items-center gap-md">
+<div class="w-14 h-14 bg-surface-variant rounded-lg overflow-hidden border border-outline-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="High-quality professional soccer ball with a modern aerodynamic design, emerald green geometric patterns, and glossy finish. Studio product photography with soft shadows on a clean grey background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATjC3t6r6VvA78UK2TwwZ7NVIaRChsaIzGjM1Ma6kAyc3ucFcuA2nCgtZK2s82yxDXFsqH-KAQM73T7nY6KYoMu663ZPb3e3LUUtYxbm60x6SgWPUY0FkK7j6zkSXrv9PWL8LSz-MoBnjpBKtN9sedqIhz_n5mQhnamc9N1-qvWs80a6-kvhNjwawsRnaeEK4A4jv8f0bo--ijMGvHoNnMwZ2Q91tQRpYxwm2RpV94I8SMeU2Ah-pgMTO-kty_4rcSRqZkT1U0GB4"/>
+</div>
+<div>
+<p class="text-body-md font-bold text-on-surface group-hover:text-primary transition-colors">AeroGlide Match Ball</p>
+<p class="text-label-md text-outline">SKU: KB-EQP-089</p>
+</div>
+</div>
+</td>
+<td class="p-md">
+<span class="px-md py-1 bg-surface-variant text-on-surface-variant rounded-full text-label-md font-bold">Equipment</span>
+</td>
+<td class="p-md">
+<div class="w-48">
+<div class="flex justify-between mb-1">
+<span class="text-label-md font-bold text-on-surface">58 units</span>
+<span class="text-label-md text-secondary font-bold">34%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 34%"></div>
+</div>
+</div>
+</td>
+<td class="p-md text-body-md font-bold text-on-surface">2,200</td>
+<td class="p-md">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="p-md">
+<span class="flex items-center gap-xs text-on-surface-variant font-bold text-label-md opacity-60">
+<span class="w-2 h-2 bg-on-surface-variant rounded-full"></span>
+                                    Draft
+                                </span>
+</td>
+<td class="p-md">
+<div class="flex items-center gap-sm">
+<button class="p-sm text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">edit</span></button>
+<button class="p-sm text-on-surface-variant hover:text-error transition-colors"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer -->
+<div class="p-md border-t border-outline-variant flex justify-between items-center bg-surface-container-low">
+<p class="text-label-md text-on-surface-variant font-medium">Showing 3 of 1,284 products</p>
+<div class="flex items-center gap-xs">
+<button class="p-sm rounded-lg hover:bg-surface-variant transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center">
+<button class="w-8 h-8 rounded-lg bg-primary text-white text-label-md font-bold">1</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-variant text-label-md font-bold transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-variant text-label-md font-bold transition-colors">3</button>
+<span class="mx-xs">...</span>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-variant text-label-md font-bold transition-colors">128</button>
+</div>
+<button class="p-sm rounded-lg hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Insights / Management Tools -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg mt-xl">
+<!-- Best Sellers Feed -->
+<div class="glass-card rounded-2xl p-lg">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="text-title-lg font-title-lg text-on-surface">Weekly Best Sellers</h4>
+<span class="text-label-md font-bold text-primary flex items-center gap-xs cursor-pointer hover:underline">
+                        View Analytics <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</span>
+</div>
+<div class="space-y-md">
+<div class="flex items-center justify-between p-md bg-primary/5 rounded-xl border border-primary/10">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">01</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Club Elite Training Socks</p>
+<p class="text-label-md text-on-surface-variant">412 sales this week</p>
+</div>
+</div>
+<p class="text-body-md font-bold text-primary">৳ 1.2M Vol.</p>
+</div>
+<div class="flex items-center justify-between p-md hover:bg-surface-container rounded-xl transition-colors">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-bold text-on-surface-variant">02</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Vortex Grip Keeper Gloves</p>
+<p class="text-label-md text-on-surface-variant">285 sales this week</p>
+</div>
+</div>
+<p class="text-body-md font-bold text-on-surface">৳ 0.9M Vol.</p>
+</div>
+</div>
+</div>
+<!-- Quick Store Home Customization -->
+<div class="glass-card rounded-2xl p-lg bg-gradient-to-br from-surface to-primary/5">
+<div class="flex items-center gap-md mb-lg">
+<div class="w-12 h-12 bg-secondary-container rounded-xl flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">campaign</span>
+</div>
+<div>
+<h4 class="text-title-lg font-title-lg text-on-surface">Featured Campaigns</h4>
+<p class="text-label-md text-on-surface-variant">Active promotions on the storefront.</p>
+</div>
+</div>
+<div class="space-y-sm">
+<div class="flex items-center justify-between p-md bg-white rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary">star</span>
+<span class="text-body-md font-bold text-on-surface">Summer League Clearance</span>
+</div>
+<span class="text-label-sm px-xs py-1 bg-primary text-white rounded uppercase tracking-tighter">Active</span>
+</div>
+<div class="flex items-center justify-between p-md bg-white rounded-xl border border-outline-variant shadow-sm opacity-60">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">event_upcoming</span>
+<span class="text-body-md font-bold text-on-surface">Winter Season Drop</span>
+</div>
+<span class="text-label-sm px-xs py-1 bg-outline text-white rounded uppercase tracking-tighter">Scheduled</span>
+</div>
+<button class="w-full py-md mt-md border-2 border-dashed border-outline-variant rounded-xl text-on-surface-variant font-bold text-label-md hover:border-primary hover:text-primary transition-all">
+                        + Create New Banner Promotion
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction JS -->
+<script>
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transform = 'translateX(4px)';
+                row.style.transition = 'transform 0.2s ease-out';
+            });
+            row.addEventListener('mouseleave', () => {
+                row.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Simple Toggle Feedback
+        document.querySelectorAll('input[type="checkbox"]').forEach(toggle => {
+            toggle.addEventListener('change', (e) => {
+                const statusLabel = e.target.closest('tr').querySelector('.text-primary, .text-on-surface-variant');
+                if(e.target.checked) {
+                   // Visual feedback only for demo
+                   console.log('Promotion Toggled ON');
+                }
+            });
+        });
+    </script>
+</body></html>

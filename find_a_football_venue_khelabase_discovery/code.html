@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Khelabase | Venue Discovery Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#6e7b6c",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#27313f",
+                    "surface-container-highest": "#d9e3f6",
+                    "secondary-container": "#ffc329",
+                    "tertiary": "#0051d5",
+                    "secondary-fixed-dim": "#f9bd22",
+                    "primary-fixed-dim": "#62df7d",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#002109",
+                    "surface-variant": "#d9e3f6",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#3e4a3d",
+                    "on-primary-fixed-variant": "#005320",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#003ea8",
+                    "on-tertiary-container": "#fefcff",
+                    "tertiary-fixed": "#dbe1ff",
+                    "surface": "#f8f9ff",
+                    "on-background": "#121c2a",
+                    "surface-container-low": "#eff4ff",
+                    "on-secondary-fixed-variant": "#5c4300",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-bright": "#f8f9ff",
+                    "secondary": "#795900",
+                    "primary-fixed": "#7ffc97",
+                    "tertiary-container": "#316bf3",
+                    "primary": "#006b2c",
+                    "on-surface": "#121c2a",
+                    "on-primary-container": "#f7fff2",
+                    "on-secondary-fixed": "#261a00",
+                    "background": "#f8f9ff",
+                    "surface-container": "#e6eeff",
+                    "inverse-primary": "#62df7d",
+                    "on-tertiary-fixed": "#00174b",
+                    "secondary-fixed": "#ffdf9f",
+                    "surface-dim": "#d0dbed",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#dee9fc",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#006e2d",
+                    "outline-variant": "#bdcaba",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#6f5100",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#00873a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "24px",
+                    "xl": "32px",
+                    "margin-mobile": "16px",
+                    "sm": "12px",
+                    "base": "4px",
+                    "2xl": "48px",
+                    "md": "16px",
+                    "container-max": "1280px",
+                    "xs": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "title-lg": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Manrope"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "12px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .bento-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 10px 30px rgba(31, 41, 55, 0.1);
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-lg h-16 bg-surface/90 glass-nav border-b border-outline-variant">
+<div class="flex items-center gap-xl max-w-container-max mx-auto w-full">
+<div class="font-display-lg text-display-lg font-extrabold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+                Khelabase
+            </div>
+<div class="hidden md:flex items-center gap-lg flex-1 ml-xl">
+<a class="text-primary font-bold border-b-2 border-primary py-1 font-label-md text-label-md md:font-body-lg md:text-body-lg" href="#">Venues</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md md:font-body-lg md:text-body-lg" href="#">Discovery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md md:font-body-lg md:text-body-lg" href="#">Events</a>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden lg:flex items-center bg-surface-container-low px-md py-xs rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48" placeholder="Search venues..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-xs rounded-full transition-all">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-xs rounded-full transition-all">settings</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young male football enthusiast wearing a modern sports jersey, set against a blurred stadium background. The lighting is crisp and cinematic, emphasizing a premium athletic lifestyle aesthetic with vibrant greens and soft sun-drenched highlights. The image quality is extremely high-resolution and clean." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhah4SVd1_dt-ypmFEhfqpgHfQNiDU5yuQO-yBIa9_ERKC2PWfrL1_e00SdiyTffFBl2aIJLkKeWleIFQ7tdlBb939c231x92iD34qs8VozIZP4BUdPt_g5kPJeqecuCIFrbJETY28Un7IlitYO1O4CvnyEDumR_qded4XruKB_00gN0xIiXyhUS65wO_Hb3jJFtEUjiMIdsjK3NXzNOfGauEvL-ktS2VkKVQVDagqebsQN-SZ9mTfPq2im0E1Y7KILI77LComeAA"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-24 pb-xl px-md md:px-lg max-w-container-max mx-auto">
+<!-- Hero Search Section -->
+<section class="relative mb-2xl rounded-3xl overflow-hidden min-h-[400px] flex flex-col items-center justify-center text-center px-md">
+
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-surface/80 -z-10"></div>
+<h1 class="font-display-lg text-display-lg mb-lg text-on-surface tracking-tight max-w-3xl">Find the perfect pitch near you</h1>
+<div class="w-full max-w-2xl bg-surface-container-lowest shadow-lg rounded-2xl p-base flex flex-col md:flex-row gap-base border border-outline-variant">
+<div class="flex-1 flex items-center px-md gap-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<input class="w-full border-none focus:ring-0 bg-transparent py-md font-body-lg" placeholder="Enter district or venue name" type="text"/>
+</div>
+<div class="h-10 w-px bg-outline-variant hidden md:block self-center"></div>
+<div class="flex items-center px-md gap-sm">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<input class="w-full border-none focus:ring-0 bg-transparent py-md font-body-lg" placeholder="Select date" type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-xl py-md rounded-xl font-bold flex items-center justify-center gap-sm hover:bg-primary-container transition-all active:scale-95">
+<span class="material-symbols-outlined">search</span>
+                    Search
+                </button>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap justify-center gap-sm mt-xl">
+<button class="px-md py-xs rounded-full bg-primary-container text-on-primary-container border border-primary font-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">near_me</span> Nearby
+                </button>
+<button class="px-md py-xs rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors font-label-md">District</button>
+<button class="px-md py-xs rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors font-label-md">Artificial Grass</button>
+<button class="px-md py-xs rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors font-label-md">Indoor/Outdoor</button>
+<button class="px-md py-xs rounded-full bg-surface-container-lowest border border-outline-variant hover:border-primary transition-colors font-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">star</span> Top Rated
+                </button>
+</div>
+</section>
+<!-- Trending Venues Horizontal Scroll -->
+<section class="mb-2xl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-lg text-headline-lg">Trending Venues</h2>
+<a class="text-primary font-bold flex items-center gap-xs hover:gap-md transition-all" href="#">
+                    View All <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="flex gap-lg overflow-x-auto pb-lg hide-scrollbar snap-x">
+<!-- Trending Card 1 -->
+<div class="flex-none w-80 snap-start bento-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A wide-angle landscape shot of the Bashundhara Kings Arena during a vibrant sunset. The stadium features high-end modern architecture, immaculate green grass, and bright floodlights against a purple and orange sky. The atmosphere is professional and prestigious, matching a premium high-performance football ecosystem style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEiVY0sjvznMk_q95JZXmotNKrjN4LSDQUKLxSM42dyljXTovY7D498c6TkMa4Fxb_91F_vOHBtADCWKDlhNvk9U_tpXJVWHBjlI6tMaLMO84ozsGaNA6Id6tCWVG8vuJktYkmKuKBOP1Nz_5yrYTv_8GCBvHT9BTrKnM7sMOdekSiKnDPLE_ftTy3o15Ll-KUYPeQ3Ju6lmIgw1-tI_myBBLq5kxv7jj5cTPTIjWUDsc41pOjVTF1q4q4m4fGA2EJWevlYgUWKgc"/>
+<div class="absolute top-md left-md bg-secondary text-on-secondary px-sm py-1 rounded-full font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> Trending
+                        </div>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg">Bashundhara Kings Arena</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-md mb-md">Bashundhara, Dhaka</p>
+<div class="flex gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined" title="Parking">local_parking</span>
+<span class="material-symbols-outlined" title="Water">water_drop</span>
+<span class="material-symbols-outlined" title="Changing Room">checkroom</span>
+</div>
+</div>
+</div>
+<!-- Trending Card 2 -->
+<div class="flex-none w-80 snap-start bento-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up view of high-quality artificial turf at a modern urban rooftop football court in Uttara. The lighting is bright midday sun with crisp shadows, showcasing the texture of the green grass and white painted lines. The surrounding city skyline is softly blurred in the background, creating a sense of height and premium urban sports culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgrp0WV0zu9kA8XrL2ubr3GeOFRIXHX7shZJ-KdM4nlpXwTsqZku9Q4hYlBsEsP_CY7HC342P-jscpPwD8iUtKTlxNHGySRmGeKuiFFJztF1OLX__OPBnIes7beQLQs_GArMzZ6qwk4RiV3aYWoQ-htJcP_N7pUkMO9OkgJJWJhV8ZKloh0npdVHey4WI1UueRkkdTj4ZdYlOWdy6TyzAiPLtHVQxAlGTmT_Agelm0MFPbNmx2xONYoG62-CSvhWAwV9md1N08bJE"/>
+<div class="absolute top-md left-md bg-primary text-on-primary px-sm py-1 rounded-full font-label-sm">
+                            Elite Partner
+                        </div>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg">Uttara Friends Turf</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.7</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-md mb-md">Sector 4, Uttara</p>
+<div class="flex gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined">lightbulb</span>
+<span class="material-symbols-outlined">wifi</span>
+<span class="material-symbols-outlined">first_page</span>
+</div>
+</div>
+</div>
+<!-- Trending Card 3 -->
+<div class="flex-none w-80 snap-start bento-card bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden group">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional indoor football facility with polished wooden floors and bright neon LED highlights along the walls. The scene is energetic and high-contrast, featuring a sleek, minimalist design that feels like a high-tech sports lab. Vibrant blue and emerald green accents populate the space, reflecting a premium SaaS productivity tool aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq5kHSDjjhUP75KwcSHwa1J3haEAiLQ40FlEK2g0DZLuDmytkE5OMUGJG6cC9gch68M9SqOxEERJmQdLGhLw_8KEwxnd3Sx-Eu7llB9Ju02tWFIxJKEczN8GTWuIaMbi0pNPLqDZxfmp7A6azdy0ZJYUZskG5IrQzEJzRt8tUkucsMJLl7ASugkreLl_naZCob7Eb2ESxDeuiz7U5V1-7MQkOUl9cb1bAVr9lSnLVtgbISVvV2V5Q_9h7anHYRKmF1P6aYjkzw10s"/>
+</div>
+<div class="p-lg">
+<div class="flex justify-between items-start mb-base">
+<h3 class="font-title-lg text-title-lg">Dhanmondi Football Ground</h3>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.5</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-body-md mb-md">Dhanmondi, Dhaka</p>
+<div class="flex gap-sm text-on-surface-variant">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="material-symbols-outlined">stadium</span>
+</div>
+</div>
+</div>
+<!-- Card 4 Placeholder for Scroll -->
+<div class="flex-none w-80 snap-start bg-surface-container-low border-2 border-dashed border-outline-variant rounded-2xl flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-4xl mb-md">add_circle</span>
+<p class="font-bold">Partner with us</p>
+<p class="text-label-sm">Register your turf today</p>
+</div>
+</div>
+</section>
+<!-- Discovery Layout: List + Map Split -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-xl h-[800px]">
+<!-- List Section -->
+<div class="lg:col-span-5 flex flex-col gap-lg overflow-y-auto pr-md hide-scrollbar">
+<div class="sticky top-0 bg-surface py-md z-10 border-b border-outline-variant mb-md flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md">24 Venues in Dhaka</h2>
+<button class="flex items-center gap-xs font-label-md text-primary bg-primary-container/20 px-md py-xs rounded-full">
+<span class="material-symbols-outlined text-[18px]">sort</span> Sort: Popularity
+                    </button>
+</div>
+<!-- List Item 1 -->
+<div class="bento-card flex gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary">
+<div class="w-32 h-32 flex-none rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vibrant professional football pitch viewed from a low angle, focusing on the pristine grass and clear white lines. The background shows a modern stadium with glass and steel architecture under a bright, high-key white sky. The overall feel is clean, airy, and high-performance, resembling a Stripe-inspired design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSLLQQgOViuUEAb2b1zJ1dZtXz8uv7IXBQ813nWtRGWZ68m2ZASSHqzcI-UYpAhfP-OjViWvXo1wB5Upy-OCxtCgO3LA-Fcp7RJDD0B33lBg2WUH-EI0fK5uFuBq5J-he0d0_bNLupSiKFLbxTl9tuDC5R1kK-y2Pg8AsKAKT4LxBWVAjkFrTnrzABc1fVRS2phDQehlCLgWYpUiv_WaF9u20gGSwwAdb-0vbMA6AIzUU8uR0e6hDJw_MtMH6tYyEaoeaN5EU274g"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-lg">Elite Pro Turf</h4>
+<span class="bg-secondary-fixed text-on-secondary-fixed text-[10px] font-extrabold px-xs rounded uppercase">Premium</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Banani, Road 11</p>
+<div class="mt-md flex items-center gap-lg">
+<div class="flex items-center gap-1 text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                4.8
+                            </div>
+<div class="text-primary font-bold text-sm">BDT 1,500/hr</div>
+</div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="bento-card flex gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary">
+<div class="w-32 h-32 flex-none rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An atmospheric night shot of a synthetic grass football court illuminated by bright floodlights. The lighting creates dramatic highlights and deep green tones. The surrounding environment is a clean urban park with minimalist benches and paved walkways. The mood is high-energy yet sophisticated, captured in a premium broadcast quality style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6GY5u1yWZ2w7aBrntqhhTlZFtfHjQ5Tr09P7jWxoXfWCsLoJdohOsRss4XtFLMQua_LbOBBecnEHc1EX8t6cYosTlzXVYlvwjLQ_S8DHVXT4wGxHaZPMzItTPREt3hf63t5EcBioPaZnAAnjdGj-8VppMRms6Ef1mtss0FJQqnHPUWSvJQjjqdVlmE-lM6JrP73ZbnrQ_5M1Q2d04qR94jl0AMpPZuQswisu2J7_kDNl6MG-6ZchYIKVMMf9PCK0p1OVtJkN_d-4"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg">Goal King Arena</h4>
+<p class="text-body-md text-on-surface-variant">Gulshan 2</p>
+<div class="mt-md flex items-center gap-lg">
+<div class="flex items-center gap-1 text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                4.6
+                            </div>
+<div class="text-primary font-bold text-sm">BDT 1,200/hr</div>
+</div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="bento-card flex gap-md p-md bg-surface-container-lowest border border-outline-variant rounded-xl cursor-pointer hover:border-primary">
+<div class="w-32 h-32 flex-none rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern indoor sports facility with high ceilings and bright daylight filtering through large industrial windows. The football pitch is surrounded by a sleek glass barrier. The palette is dominated by emerald greens and neutral grays, embodying athletic precision and a clean SaaS aesthetic. High-quality textures on the walls and flooring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAabPn0uZZILD7Fnsrj-TIFcAmEJC9-2bBINMFE9X7BtBOA_tHTpBScfUuWREuyMcpRYLRXbUv24wy90Ed_3dPm9WpFUqctIS_vycrpy8rcW4rX_-icId6RUhvn7bQjM7WEsjTFcfmjvjIo4hTetPf5knLBRy6hcKB0Cp65GbBG-08vw_3B9ujwJMA77IiQhvf6PsNjeYJpgoKXOwhbIj11-1fhu-Y0J1oUqM1a1VPq4VfPKtWC9THpwy-Z4bb18yFXE5ay_j2ukOA"/>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-lg">Jaff Turf</h4>
+<p class="text-body-md text-on-surface-variant">Mohammadpur</p>
+<div class="mt-md flex items-center gap-lg">
+<div class="flex items-center gap-1 text-secondary text-sm">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                                4.4
+                            </div>
+<div class="text-primary font-bold text-sm">BDT 1,000/hr</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Section -->
+<div class="lg:col-span-7 h-full bg-surface-container-high rounded-3xl overflow-hidden relative border border-outline-variant">
+<div class="w-full h-full bg-slate-200" data-location="Dhaka, Bangladesh" style="">
+<!-- This div serves as the map container anchor -->
+<div class="absolute inset-0 flex items-center justify-center text-on-surface-variant flex-col gap-md">
+<span class="material-symbols-outlined text-6xl text-primary opacity-20">map</span>
+<p class="font-label-md">Interactive Map View</p>
+</div>
+<!-- Floating Map Markers (Simulated) -->
+<div class="absolute top-1/4 left-1/3 bg-primary text-on-primary px-sm py-xs rounded-full font-bold shadow-lg animate-bounce cursor-pointer">
+                        BDT 1.5k
+                    </div>
+<div class="absolute top-1/2 left-1/2 bg-surface text-on-surface px-sm py-xs rounded-full font-bold shadow-md cursor-pointer border border-primary">
+                        BDT 1.2k
+                    </div>
+<div class="absolute bottom-1/3 left-1/4 bg-surface text-on-surface px-sm py-xs rounded-full font-bold shadow-md cursor-pointer border border-primary">
+                        BDT 1.0k
+                    </div>
+</div>
+</div>
+</section>
+<!-- Nearby Tournaments -->
+<section class="mt-2xl mb-xl">
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-lg text-headline-lg">Nearby Tournaments</h2>
+<div class="flex gap-sm">
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Tournament Card 1 -->
+<div class="bg-primary text-on-primary p-lg rounded-2xl relative overflow-hidden group">
+<div class="absolute -right-8 -bottom-8 opacity-10 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[160px]">emoji_events</span>
+</div>
+<div class="flex justify-between items-start relative z-10">
+<div class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-md font-label-sm">UPCOMING</div>
+<div class="text-right">
+<p class="text-label-sm opacity-80">PRIZE POOL</p>
+<p class="font-bold text-lg">BDT 50,000</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mt-xl mb-base">Winter Futsal Cup 2024</h3>
+<p class="opacity-80 mb-xl">Dec 15-20 • Dhanmondi 8/A</p>
+<button class="w-full bg-on-primary text-primary font-bold py-md rounded-xl hover:bg-primary-fixed transition-colors active:scale-95">Register Team</button>
+</div>
+<!-- Tournament Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-2xl relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-high text-on-surface-variant px-sm py-1 rounded-md font-label-sm">6 SLOTS LEFT</div>
+<div class="text-right">
+<p class="text-label-sm text-on-surface-variant opacity-80">ENTRY FEE</p>
+<p class="font-bold text-lg text-primary">BDT 3,000</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mt-xl mb-base text-on-surface">Banani Night League</h3>
+<p class="text-on-surface-variant mb-xl">Jan 5 • Banani Elite Turf</p>
+<button class="w-full border-2 border-primary text-primary font-bold py-md rounded-xl hover:bg-primary-container/10 transition-colors active:scale-95">Register Team</button>
+</div>
+<!-- Tournament Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-2xl relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<div class="bg-error-container text-on-error-container px-sm py-1 rounded-md font-label-sm">FULL</div>
+<div class="text-right">
+<p class="text-label-sm text-on-surface-variant opacity-80">TEAMS</p>
+<p class="font-bold text-lg text-primary">16 / 16</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mt-xl mb-base text-on-surface">Khelabase Invitational</h3>
+<p class="text-on-surface-variant mb-xl">Dec 10 • Kings Arena</p>
+<button class="w-full bg-surface-container-low text-on-surface-variant font-bold py-md rounded-xl cursor-not-allowed">Waitlist Only</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface text-surface py-2xl mt-2xl border-t border-outline">
+<div class="max-w-container-max mx-auto px-lg flex flex-col md:flex-row justify-between items-start gap-xl">
+<div class="max-w-sm">
+<div class="font-headline-md text-headline-md text-on-primary mb-md">Khelabase</div>
+<p class="text-surface-variant font-body-md mb-lg">The ultimate platform for football enthusiasts in Bangladesh. Book pitches, join tournaments, and manage your squad with athletic precision.</p>
+<div class="flex gap-md">
+<a class="w-10 h-10 rounded-full bg-surface-container-highest/10 flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-highest/10 flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-highest/10 flex items-center justify-center hover:bg-primary transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2xl">
+<div class="flex flex-col gap-sm">
+<h5 class="font-bold text-primary-fixed mb-xs">Explore</h5>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors font-body-md" href="#">Venues</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors font-body-md" href="#">Tournaments</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors font-body-md" href="#">Discovery</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h5 class="font-bold text-primary-fixed mb-xs">Legal</h5>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors font-body-md" href="#">Terms of Service</a>
+<a class="text-surface-variant hover:text-primary-fixed transition-colors font-body-md" href="#">Contact Us</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg mt-2xl pt-lg border-t border-outline/20 text-center md:text-left">
+<p class="text-surface-variant font-body-md">© 2024 Khelabase. Athletic Precision for the Modern Pitch.</p>
+</div>
+</footer>
+<!-- Mobile Bottom NavBar (Visible on Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface border-t border-outline-variant px-lg py-sm flex justify-between items-center z-50 glass-nav">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-[10px] font-bold">Bookings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-24 right-lg md:bottom-lg bg-secondary text-on-secondary w-14 h-14 rounded-2xl shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-3xl">add</span>
+<span class="absolute right-16 bg-inverse-surface text-surface px-md py-xs rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">List Your Turf</span>
+</button>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.bento-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential hover effects could be added here
+            });
+        });
+
+        // Search Input Glow Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput?.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary/20', 'border-primary');
+        });
+        searchInput?.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary/20', 'border-primary');
+        });
+    </script>
+</body></html>
