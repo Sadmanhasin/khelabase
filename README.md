@@ -35,15 +35,21 @@ Environment (`.env`):
 - Join requests with approve/decline + notifications
 
 **Phase 3 — Tournaments**
-- Create tournament, public tournament home (overview / teams / fixtures / standings tabs)
+- Create tournament, public tournament home (overview / teams / fixtures / standings / awards tabs)
 - Team registration + organizer approval flow
 - Round-robin fixture generator
 - Live standings engine (auto-recomputed from recorded results)
+- **Live match panel** — log goals/assists/cards/subs with player selection; scores, player stats and standings update automatically; public match center with timeline
+- **Awards engine** — auto Top Scorer / Most Assists / Best Goalkeeper / MVP / Fair Play from logged stats
 - Organizer dashboard + public organizer profiles
 
-**Phase 4 — In progress**
-- Venues: list + profile (done)
-- Marketplace, chat, finance, admin panel — routed and stubbed
+**Phase 4 — Ecosystem**
+- Venues: list + profile
+- **Marketplace**: category browsing, product detail, cart, cash-on-delivery checkout, seller listing, buyer orders, seller notifications
+- **Chat**: 1:1 conversations with unread indicators, message from any profile
+- **Admin panel** (isAdmin-gated): dashboard (platform stats + GMV), user management (verify / grant admin), tournament oversight (status control), marketplace oversight
+
+Still to build: finance/invoicing, reports export, friendly/weekly matches, reviews & reporting, PWA/real-time sockets.
 
 ## Project layout
 
