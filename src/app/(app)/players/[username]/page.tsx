@@ -8,6 +8,7 @@ import { Icon } from "@/components/ui/Icon";
 import { Avatar } from "@/components/ui/Avatar";
 import { Badge } from "@/components/ui/Badge";
 import { FollowButton } from "@/components/FollowButton";
+import { MessageButton } from "@/components/MessageButton";
 import { timeAgo } from "@/lib/utils";
 
 type Props = { params: Promise<{ username: string }> };
@@ -114,12 +115,7 @@ export default async function PlayerProfilePage({ params }: Props) {
               ) : (
                 <>
                   <FollowButton targetType="USER" targetId={user.id} initialFollowing={!!following} path={`/players/${username}`} />
-                  <Link
-                    href="/messages"
-                    className="bg-white border border-outline-variant px-md py-sm rounded-xl font-label-md flex items-center gap-xs hover:bg-surface-container-low"
-                  >
-                    <Icon name="mail" size={18} /> Message
-                  </Link>
+                  {viewerId && <MessageButton userId={user.id} />}
                 </>
               )}
             </div>
